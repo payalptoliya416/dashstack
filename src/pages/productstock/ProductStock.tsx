@@ -4,8 +4,9 @@ import {
   flexRender,
   type ColumnDef,
   getPaginationRowModel,
-  getFilteredRowModel,
-} from "@tanstack/react-table";
+  getFilteredRowModel
+} from '@tanstack/react-table';
+
 import {
   ChevronLeft,
   ChevronRight,
