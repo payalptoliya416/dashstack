@@ -30,7 +30,7 @@ const Customers: React.FC = () => {
             outerRadius={60}
             dataKey="value"
           >
-            {donutData.map((entry, index) => (
+            {donutData.map((_, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={donutColors[index % donutColors.length]}

@@ -1,6 +1,4 @@
 import {
-  ChevronLeft,
-  ChevronRight,
   TrendingDown,
   TrendingUp,
 } from "lucide-react";
