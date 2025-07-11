@@ -167,7 +167,7 @@ export function ProductStock() {
   });
   return (
     <>
-      <div className="flex justify-between flex-col sm:flex-row ">
+      <div className="flex justify-between flex-col sm:flex-row mb-6 sm:mb-0">
         <MainTitle title="Product Stock" />
         <div>
           <div
@@ -184,7 +184,8 @@ export function ProductStock() {
           </div>
         </div>
       </div>
-
+      {/* <div className="grid grid-cols-12">
+        <div className="col-span-12">
       <table className="min-w-full bg-white rounded-xl border border-[#D5D5D5]/50">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -230,6 +231,59 @@ export function ProductStock() {
           ))}
         </tbody>
       </table>
+        </div>
+        </div> */}
+      <div className="grid grid-cols-12">
+        <div className="col-span-12">
+          <div className="w-full overflow-x-auto bg-white rounded-xl">
+            <table className="min-w-full bg-white rounded-xl border border-[#D5D5D5]/50">
+              <thead>
+                {table.getHeaderGroups().map((headerGroup) => (
+                  <tr
+                    key={headerGroup.id}
+                    className="text-left text-sm text-[#202224] border-b border-[#D5D5D5]/60"
+                  >
+                    {headerGroup.headers.map((header) => (
+                      <th
+                        key={header.id}
+                        className="py-4 px-10 font-bold text-sm text-[#202224] whitespace-nowrap"
+                      >
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                      </th>
+                    ))}
+                  </tr>
+                ))}
+              </thead>
+              <tbody>
+                {table.getRowModel().rows.map((row, index) => (
+                  <tr
+                    key={row.id}
+                    className={`${
+                      index === table.getRowModel().rows.length - 1
+                        ? ""
+                        : "border-b border-[#D5D5D5]/60"
+                    } bg-white text-sm font-semibold text-[#202224]`}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <td
+                        key={cell.id}
+                        className="py-4 sm:py-6 px-6 sm:px-[30px] whitespace-nowrap text-[#202224]/90 text-sm font-semibold"
+                      >
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
       <div className="flex justify-between items-center mt-4 text-sm text-gray-500">
         <span>

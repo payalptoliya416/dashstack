@@ -27,8 +27,10 @@ export function Table<T>({ data, columns }: Props<T>) {
 
   return (
     <>
-      <div className=" bg-white rounded-xl">
-        <table className="w-full divide-y divide-[#FCFDFD]">
+    <div className="grid grid-cols-12">
+        <div className="col-span-12">
+          <div className="w-full overflow-x-auto bg-white rounded-xl">
+        <table className="min-w-full divide-y divide-[#FCFDFD]">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id} className="border-b border-[#D5D5D5]/60">
@@ -59,7 +61,7 @@ export function Table<T>({ data, columns }: Props<T>) {
                 {row.getVisibleCells().map((cell) => (
                   <td
                     key={cell.id}
-                    className="py-7 px-8 text-sm font-semibold text-[#202224] whitespace-nowrap"
+                    className="py-4 sm:py-7 px-6 sm:px-8 text-sm font-semibold text-[#202224] whitespace-nowrap"
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
@@ -68,7 +70,9 @@ export function Table<T>({ data, columns }: Props<T>) {
             ))}
           </tbody>
         </table>
-      </div>
+        </div>
+        </div>
+          </div>
       <div className="flex justify-between items-center mt-4">
         <span className="text-sm text-gray-500">
           Showing {table.getRowModel().rows.length} of {data.length}

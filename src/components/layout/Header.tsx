@@ -24,7 +24,7 @@ export const Header : FC<HeaderProps> = ({ onToggleSidebar,  onToggleMobileSideb
   ];
 
   return (
-    <header className="w-full px-4 xl:px-6 py-4 bg-white shadow flex-col sm:flex-row flex justify-between items-center gap-5 lg:gap-auto sticky top-0 z-[9999]">
+    <header className="w-full px-4 xl:px-6 py-4 bg-white shadow flex-col sm:flex-row flex justify-between items-center gap-5 lg:gap-auto sticky top-0 z-[999]">
         {/* ---left side */} 
         <div className="flex sm:justify-center sm:items-center gap-5 xl:gap-[26px] w-full sm:w-auto">
      <button onClick={onToggleMobileSidebar} className="lg:hidden cursor-pointer">

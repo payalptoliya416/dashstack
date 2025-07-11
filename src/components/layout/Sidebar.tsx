@@ -53,7 +53,7 @@ export const Sidebar: FC<SidebarProps> = ({
     <>
       {mobileOpen && (
         <div
-          className="fixed inset-0 bg-[#D5D5D5]/40 backdrop-blur-sm z-40 lg:hidden"
+          className="fixed inset-0 bg-[#D5D5D5]/40 backdrop-blur-sm z-[9999] lg:hidden"
           onClick={onCloseMobile}
         />
       )}
