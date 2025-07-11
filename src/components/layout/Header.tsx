@@ -1,0 +1,96 @@
+import {ChevronDown, Menu, Search } from "lucide-react";
+import { Fragment, useState, type FC } from "react";
+import { Popover, Transition } from "@headlessui/react";
+import { Link } from "react-router-dom";
+import LanguageDropdown from "../../hooks/LanguageDropdown";
+import NotificationPopover from "../../hooks/NotificationPopover";
+import type { Language } from "../../types/Header";
+
+interface HeaderProps {
+  onToggleSidebar: () => void;
+  onToggleMobileSidebar: () => void;
+}
+
+export const Header : FC<HeaderProps> = ({ onToggleSidebar,  onToggleMobileSidebar, }) =>  {
+  const [selectedLanguage, setSelectedLanguage] = useState<Language>({
+    name: 'English',
+    flag: '/images/flag1.png',
+  });
+
+  const languages: Language[] = [
+    { name: 'English', flag: '/images/flag1.png' },
+    { name: 'French', flag: '/images/flag2.png' },
+    { name: 'Spanish', flag: '/images/flag3.png' },
+  ];
+
+  return (
+    <header className="w-full px-4 xl:px-6 py-4 bg-white shadow flex-col sm:flex-row flex justify-between items-center gap-5 lg:gap-auto sticky top-0 z-[9999]">
+        {/* ---left side */} 
+        <div className="flex sm:justify-center sm:items-center gap-5 xl:gap-[26px] w-full sm:w-auto">
+     <button onClick={onToggleMobileSidebar} className="lg:hidden cursor-pointer">
+          <Menu color="#202224" />
+        </button>
+        {/* Desktop Sidebar toggle button */}
+        <button onClick={onToggleSidebar} className="hidden lg:block cursor-pointer">
+          <Menu color="#202224" />
+        </button>
+      <div className="flex items-center bg-gray-100 bg-opacity-[60%] rounded-full w-full sm:w-auto xl:w-[450px] px-4 py-[10px] border border-[#D5D5D5] ">
+        <Search className="text-[#202224] w-5 h-5 mr-[13px]" />
+        <input
+          type="text"
+          placeholder="Search"
+          className="bg-transparent focus:outline-none w-full text-sm text-gray-700 placeholder-[#202224]"
+        />
+      </div>
+        </div>
+        {/* --right side */}
+       <div className="flex items-center gap-5 xl:gap-[25px]">
+        <NotificationPopover/>
+
+          {/* Language Dropdown */}
+      <LanguageDropdown
+      languages={languages}
+      selectedLanguage={selectedLanguage}
+        onChange={setSelectedLanguage}
+       />
+          
+         {/* --admin */}
+           <Popover className="relative">
+      <Popover.Button className="flex items-center gap-1 sm:gap-3 xl:gap-[26px] focus:outline-none cursor-pointer">
+        <img src="/images/admin.png" alt="Admin" className="w-9 sm:auto" />
+        <div className="text-start">
+          <h3 className="text-[#404040] text-xs sm:text-sm font-bold mb-0 sm:mb-[3px] leading-[14px]">
+            Moni Roy
+          </h3> 
+          <span className="text-[#565656] text-xs leading-[12px] font-semibold">
+            Admin
+          </span>
+        </div>
+        <div className="border w-[18px] h-[18px] border-[#5C5C5C] rounded-full flex justify-center items-center">
+          <ChevronDown className="w-4 h-4 text-[#565656]" />
+        </div>
+      </Popover.Button>
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="opacity-0 translate-y-1"
+        enterTo="opacity-100 translate-y-0"
+        leave="transition ease-in duration-75"
+        leaveFrom="opacity-100 translate-y-0"
+        leaveTo="opacity-0 translate-y-1"
+      >
+        <Popover.Panel className="absolute right-0 mt-2 bg-white rounded-xl shadow-lg z-[999] w-[254px]">
+          <div className="text-sm text-gray-700">
+              <Link to='' className="flex py-3 px-5  items-center gap-[10px] border-b border-[rgba(151,151,151,0.25)]"><img src="/images/admin1.png" alt="" />Manage Account</Link>
+              <Link to='' className="flex py-3 px-5  items-center gap-[10px] border-b border-[rgba(151,151,151,0.25)]"><img src="/images/admin2.png" alt="" />Change Password</Link>
+              <Link to='' className="flex py-3 px-5  items-center gap-[10px] border-b border-[rgba(151,151,151,0.25)]"><img src="/images/admin3.png" alt="" />Activity Log </Link>
+              <Link  to='' className="flex py-3 px-5  items-center gap-[10px]"><img src="/images/admin4.png" alt="" />Log out</Link>
+          </div>
+        </Popover.Panel>
+      </Transition>
+           </Popover>
+      </div>
+    </header>
+  );
+};

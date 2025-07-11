@@ -1,0 +1,95 @@
+import {
+  type ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  getPaginationRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+type Props<T> = {
+  data: T[];
+  columns: ColumnDef<T, any>[];
+};
+
+export function Table<T>({ data, columns }: Props<T>) {
+  const table = useReactTable({
+    data,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    initialState: {
+      pagination: {
+        pageSize: 7,
+      },
+    },
+  });
+
+  return (
+    <>
+      <div className=" bg-white rounded-xl">
+        <table className="w-full divide-y divide-[#FCFDFD]">
+          <thead>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr key={headerGroup.id} className="border-b border-[#D5D5D5]/60">
+                {headerGroup.headers.map((header) => (
+                  <th
+                    key={header.id}
+                    className="py-[15px] px-[31px] text-sm font-extrabold text-[#202224] text-start bg-[#FCFDFD]"
+                  >
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext()
+                    )}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody className="">
+            {table.getRowModel().rows.map((row, index) => (
+              <tr
+                key={row.id}
+                className={`${
+                  index === table.getRowModel().rows.length - 1
+                    ? "" 
+                    : "border-b border-[#D5D5D5]/60"
+                }`}
+              >
+                {row.getVisibleCells().map((cell) => (
+                  <td
+                    key={cell.id}
+                    className="py-7 px-8 text-sm font-semibold text-[#202224] whitespace-nowrap"
+                  >
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="flex justify-between items-center mt-4">
+        <span className="text-sm text-gray-500">
+          Showing {table.getRowModel().rows.length} of {data.length}
+        </span>
+        <div className="flex gap-2">
+          <button
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+            className="px-3 py-1 text-sm bg-gray-200 rounded disabled:opacity-50"
+          >
+            <ChevronLeft size={17} />
+          </button>
+          <button
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+            className="px-3 py-1 text-sm bg-gray-200 rounded disabled:opacity-50"
+          >
+            <ChevronRight size={17} />
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}

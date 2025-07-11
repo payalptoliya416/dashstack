@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Nunito Sans', sans-serif;
+
+}
+
+@layer base {
+  body {
+  font-family: var(--font-sans); 
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 2px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+}
