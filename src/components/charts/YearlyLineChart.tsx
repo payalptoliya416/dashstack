@@ -6,6 +6,7 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  CartesianGrid,
 } from "recharts";
 import type { LineChartDataItem } from "../../types/Dashboard";
 
@@ -22,25 +23,37 @@ const YearlyLineChart: React.FC = () => (
     <h2 className="text-lg font-semibold mb-3">Sales Analytics</h2>
      <div className="h-[200px] sm:h-[300px]">
     <ResponsiveContainer width="100%" height='100%'>
-      <LineChart data={lineData}>
-        <XAxis dataKey="year" />
-        <YAxis domain={[0, 100]} />
-        <Tooltip />
-        <Line
-          type="monotone"
-          dataKey="sales"
-          stroke="#3B82F6"
-          strokeWidth={3}
-          dot={{ r: 4, strokeWidth: 2, stroke: "#3B82F6", fill: "#10B981" }}
-        />
-        <Line
-          type="monotone"
-          dataKey="profit"
-          stroke="#10B981"
-          strokeWidth={3}
-          dot={{ r: 5, strokeWidth: 1, stroke: "#fff", fill: "#10B981" }}
-        />
-      </LineChart>
+     <LineChart data={lineData}>
+  <CartesianGrid strokeDasharray="0" stroke="#E5E7EB" vertical={false} />
+  <XAxis
+    dataKey="year"
+    tick={{ fontSize: 12, fill: "#9CA3AF" }}
+    axisLine={false}
+    tickLine={false}
+  />
+  <YAxis
+    domain={[0, 100]}
+    tick={{ fontSize: 12, fill: "#9CA3AF" }}
+    axisLine={false}
+    tickLine={false}
+  />
+  <Tooltip />
+  <Line
+    type="monotone"
+    dataKey="sales"
+    stroke="#3B82F6"
+    strokeWidth={3}
+    dot={{ r: 4, strokeWidth: 2, stroke: "#3B82F6", fill: "#10B981" }}
+  />
+  <Line
+    type="monotone"
+    dataKey="profit"
+    stroke="#10B981"
+    strokeWidth={3}
+    dot={{ r: 5, strokeWidth: 1, stroke: "#fff", fill: "#10B981" }}
+  />
+</LineChart>
+
     </ResponsiveContainer>
      </div>
   </div>

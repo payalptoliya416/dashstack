@@ -7,7 +7,7 @@ import Inbox from "./pages/inbox/Inbox";
 import OrderList from "./pages/orderlist/OrderList";
 import { ProductStock } from "./pages/productstock/ProductStock";
 import Pricing from "./pages/pricing/Pricing";
-// import Calender from "./pages/calender/Calender";
+import Calender from "./pages/calender/Calender";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
                 <Route path="/orderlist" element={<OrderList />} />
                 <Route path="/stock" element={<ProductStock />} />
                 <Route path="/pricing" element={<Pricing />} />
-                {/* <Route path="/calendar" element={<Calender />} /> */}
+                <Route path="/calendar" element={<Calender />} />
                 <Route path="*" element={<DashboardPage />} />
               </Route>
          </Routes>
