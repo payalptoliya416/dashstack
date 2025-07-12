@@ -388,7 +388,7 @@ const CalendarGrid: React.FC = () => {
                   // Determine if this day is the start of a multi-day event,
                   // part of a multi-day event, or a single-day event
                   const isEventStart = date.isSame(eventStart, 'day');
-                  const isEventEnd = date.isSame(eventEnd, 'day');
+                //   const isEventEnd = date.isSame(eventEnd, 'day');
                   const isDuringEvent = date.isBetween(eventStart, eventEnd, null, '[]');
 
 
