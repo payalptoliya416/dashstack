@@ -44,7 +44,7 @@ const FeaturedProductSlider = () => {
       </h2>
 
       {/* Product Image */}
-      <div className="flex-grow flex items-center justify-center mx-auto w-[225px] h-[225px] bg-white rounded-md overflow-hidden border border-gray-200">
+      <div className="flex-grow flex items-center justify-center mx-auto w-[225px] h-[225px] bg-white rounded-md overflow-hidden">
           <img
             src={currentProduct.image}
             alt={currentProduct.name}
