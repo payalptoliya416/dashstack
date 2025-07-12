@@ -113,7 +113,9 @@ const Products: FC = () => {
                   <p className="text-base font-semibold leading-5 sm:leading-[30px] text-white mb-4">
                     {slide.desc}
                   </p>
-                  <button className="bg-[#FF8743] text-white py-1 sm:py-2 rounded-md text-sm leading-[28px] px-5 sm:px-9">
+                  <button  className="bg-[#FF8743] text-white py-1 sm:py-2 rounded-md text-sm leading-[28px] px-5 sm:px-9
+              hover:bg-[#e76e28] active:bg-[#d85d17] focus:outline-none focus:ring-offset-2 focus:ring-[#FF8743]
+              transition duration-150 ease-in-out cursor-pointer shadow-sm hover:shadow-md">
                     Get Started
                   </button>
                 </div>

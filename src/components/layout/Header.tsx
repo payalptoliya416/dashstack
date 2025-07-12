@@ -24,7 +24,7 @@ export const Header : FC<HeaderProps> = ({ onToggleSidebar,  onToggleMobileSideb
   ];
 
   return (
-    <header className="w-full px-4 xl:px-6 py-4 bg-white shadow flex-col sm:flex-row flex justify-between items-center gap-5 lg:gap-auto sticky top-0 z-[999]">
+    <header className="w-full px-4 xl:px-[31px] py-[13px] bg-white shadow flex-col sm:flex-row flex justify-between items-center gap-5 lg:gap-auto sticky top-0 z-[999]">
         {/* ---left side */} 
         <div className="flex sm:justify-center sm:items-center gap-5 xl:gap-[26px] w-full sm:w-auto">
      <button onClick={onToggleMobileSidebar} className="lg:hidden cursor-pointer">
@@ -44,7 +44,7 @@ export const Header : FC<HeaderProps> = ({ onToggleSidebar,  onToggleMobileSideb
       </div>
         </div>
         {/* --right side */}
-       <div className="flex items-center gap-5 xl:gap-[25px]">
+       <div className="flex items-center gap-5 xl:gap-[26px]">
         <NotificationPopover/>
 
           {/* Language Dropdown */}
@@ -56,8 +56,8 @@ export const Header : FC<HeaderProps> = ({ onToggleSidebar,  onToggleMobileSideb
           
          {/* --admin */}
            <Popover className="relative">
-      <Popover.Button className="flex items-center gap-1 sm:gap-3 xl:gap-[26px] focus:outline-none cursor-pointer">
-        <img src="/images/admin.png" alt="Admin" className="w-9 sm:auto" />
+      <Popover.Button className="flex items-center gap-1 sm:gap-3 xl:gap-[20px] focus:outline-none cursor-pointer">
+        <img src="/images/admin.png" alt="Admin" className="w-9 sm:w-auto" />
         <div className="text-start">
           <h3 className="text-[#404040] text-xs sm:text-sm font-bold mb-0 sm:mb-[3px] leading-[14px]">
             Moni Roy

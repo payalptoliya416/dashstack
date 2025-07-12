@@ -12,7 +12,7 @@ export const SidebarItem = ({
 }) => (
   <div
     onClick={() => setActiveTab(item.label)}
-    className={`flex justify-between items-center py-3 px-4 rounded-xl cursor-pointer transition ${
+    className={`flex justify-between items-center py-3 px-4 rounded-xl cursor-pointer transition duration-500 hover:bg-[#4880FF]/13 hover:text-[#4880FF] ${
       activeTab === item.label ? "bg-[#4880FF]/13 text-[#4880FF]" : ""
     }`}
   >

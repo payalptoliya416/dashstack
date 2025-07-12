@@ -53,6 +53,7 @@ export interface MessageProps {
   message: string;
   time: string;
   important: boolean;
+  onToggleStar: () => void;
 }
 
 export interface ChatMessage {
@@ -97,3 +98,16 @@ export interface Product {
   pieces: number;
   colors: string[];
 };
+
+// ----Pricing 
+export interface PricingFeature {
+  label: string;
+  enabled: boolean;
+}
+
+export interface PricingPlan {
+  name: string;
+  price: string;
+  features: PricingFeature[];
+  isPopular?: boolean;
+}

@@ -19,8 +19,8 @@ const LanguageDropdown: FC<Props> = ({ languages, selectedLanguage, onChange }) 
     <div className="relative">
       <Listbox.Button className="flex items-center justify-between w-full gap-[10px] rounded-md cursor-pointer focus:outline-none">
         <div className="flex items-center gap-3 lg:gap-[18px]">
-          <img src={selectedLanguage.flag} alt={selectedLanguage.name} className="w-6 lg:w-10 h-5 lg:h-7 rounded-sm" />
-          <span className="text-gray-700 text-sm sm:text-base">{selectedLanguage.name}</span>
+          <img src={selectedLanguage.flag} alt={selectedLanguage.name} className="w-6 lg:w-10 h-5 lg:h-[27px] rounded-sm" />
+          <span className="text-[#646464] text-sm font-semibold">{selectedLanguage.name}</span>
         </div>
         <ChevronDown className="w-4 h-4 text-[#646464]" />
       </Listbox.Button>

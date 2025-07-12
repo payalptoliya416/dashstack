@@ -52,7 +52,7 @@ function DashboardPage() {
        <MainTitle title="Dashboard"/>
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-[30px] mb-7">
         {dashboardData.map((card, index) => (
-          <div key={index} className="shadow-sm p-4 bg-white rounded-[14px]">
+          <div key={index} className="p-4 bg-white rounded-[14px]"  style={{ boxShadow: "6px 6px 54px 0 rgba(0, 0, 0, 5%)" }}>
             <div className="flex justify-between items-center mb-[29px]">
               <div>
                 <h4 className="mb-[14px] text-[#202224] text-base font-semibold">
@@ -86,11 +86,11 @@ function DashboardPage() {
       <div className="bg-white rounded-xl shadow-lg p-3 sm:p-6 mb-7">
         <SalesDetails />
       </div>
-      <div className="bg-white rounded-xl shadow-lg p-6 mb-7">
-        <Revenue />
-      </div>
       <div className="bg-white shadow-lg rounded-xl p-6 mb-7">
         <Dealsetails />
+      </div>
+      <div className="bg-white rounded-xl shadow-lg p-6 mb-7">
+        <Revenue />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
         <Customers />

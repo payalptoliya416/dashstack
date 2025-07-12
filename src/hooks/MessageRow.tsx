@@ -9,6 +9,7 @@ const MessageRow: FC<MessageProps> = ({
   message,
   time,
   important,
+  onToggleStar 
 }) => {
   const [isChecked, setIsChecked] = useState(false);
   return (
@@ -40,11 +41,16 @@ const MessageRow: FC<MessageProps> = ({
             </svg>
             </div>
 
-        <Star
-          className={`w-4 h-4 ${
-            important ? 'text-[#FFC021] fill-[#FFC021]' : 'text-[#B3B3B3]'
-          }`}
-        />
+        <button onClick={onToggleStar} className='cursor-pointer'>
+          <Star
+            className={`w-4 h-4 transition ${
+              important ? 'text-[#FFC021] fill-[#FFC021]' : 'text-[#B3B3B3]'
+            }`}
+            fill={important ? '#FFC021' : 'none'}
+            stroke={important ? '#FFC021' : '#B3B3B3'}
+          />
+        </button>
+
       </div>
 
       {/* Name */}
@@ -53,8 +59,8 @@ const MessageRow: FC<MessageProps> = ({
       </div>
 
       {/* Label */}
-      <div className={`col-span-3 md:col-span-1 text-end  md:text-start ${important === true ? "hidden":""}`}>
         {label && (
+      <div className={`col-span-3 md:col-span-1 text-end  md:text-start`}>
           <button
             className="text-xs font-medium rounded-md py-[3px] px-2 w-[60px]"
             style={{
@@ -64,14 +70,15 @@ const MessageRow: FC<MessageProps> = ({
           >
             {label}
           </button>
-        )}
       </div>
+        )}
 
       {/* Message */}
-      <div className={` md:mx-2 ${important === true ? "col-span-9 sm:col-span-10 md:col-span-8":"col-span-9 sm:col-span-10 md:col-span-7"}`}>
+      <div
+        className={`md:mx-2 ${label ? 'col-span-6 sm:col-span-8 md:col-span-7' : 'col-span-9 sm:col-span-10 md:col-span-8'  }`}
+      >
         <p className="text-sm font-medium text-[#202224]">{message}</p>
       </div>
-
       {/* Time */}
       <div className="col-span-3 sm:col-span-2 md:col-span-1 text-right">
         <p className="text-sm text-[#555] whitespace-nowrap">{time}</p>

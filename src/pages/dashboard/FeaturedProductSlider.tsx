@@ -3,21 +3,22 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const products = [
   {
-    name: "Beats Headphone 2019",
+    name: "Sony WH-1000XM5",
     price: "$89.00",
-    // image: "/images/product1.png",
-  },
-  {
-    name: "Sony WH-1000XM4",
-    price: "$299.00",
-    // image: "/images/product2.png",
+    image: "/images/shopping.jfif",
   },
   {
     name: "Bose QuietComfort 45",
-    price: "$329.00",
-    // image: "/images/product3.png",
+    price: "$89.00",
+    image: "/images/shopping2.jfif",
+  },
+  {
+    name: "JBL Live 660NC",
+    price: "$89.00",
+    image: "/images/shopping3.jfif",
   },
 ];
+
 
 const FeaturedProductSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,10 +44,13 @@ const FeaturedProductSlider = () => {
       </h2>
 
       {/* Product Image */}
-      <div className="flex-grow flex items-center justify-center">
-        
-      </div>
-
+      <div className="flex-grow flex items-center justify-center mx-auto w-[225px] h-[225px] bg-white rounded-md overflow-hidden border border-gray-200">
+          <img
+            src={currentProduct.image}
+            alt={currentProduct.name}
+            className="w-full h-full object-contain "
+          />
+        </div>
       {/* Product Info */}
       <div className="text-center mt-4">
         <p className="text-[#282D32] text-lg mb-2 font-bold">

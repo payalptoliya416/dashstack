@@ -1,5 +1,6 @@
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import { Link } from "react-router-dom";
 
 type NotificationItem = {
   title: string;
@@ -52,7 +53,7 @@ const NotificationPopover: React.FC = () => {
   return (
     <Popover className="relative">
       <Popover.Button className="relative focus:outline-none cursor-pointer">
-        <span className="absolute -top-[9px] -right-[10px] bg-[#F93C65] bg-opacity-80 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full z-10">
+        <span className="absolute -top-[9px] -right-[10px] bg-[#F93C65] bg-opacity-80 text-white text-xs w-[18px] h-[18px] flex items-center justify-center rounded-full z-10">
           {notifications.length}
         </span>
         <img src="/images/icon.png" alt="Notification Icon" />
@@ -73,14 +74,15 @@ const NotificationPopover: React.FC = () => {
           </h3>
           <ul className="border-b border-[rgba(151,151,151,0.25)]">
             {notifications.map((item, index) => (
-              <li key={index} className="py-3 pl-5 pr-3 flex gap-3 items-center">
+              <li key={index}>
+               <Link to=''  className="py-3 pl-5 pr-3 flex gap-3 items-center">
                 <img src={item.icon} alt={item.title} />
                 <div>
                   <h4 className="text-sm font-semibold mb-[1px] text-[#202224]">
                     {item.title}
                   </h4>
                   <p className="text-[#B5B5B5] font-semibold text-xs">{item.message}</p>
-                </div>
+                </div></Link>
               </li>
             ))}
           </ul>

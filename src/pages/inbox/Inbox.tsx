@@ -42,8 +42,8 @@ const checkboxData: CheckboxItem[] = [
   { id: "work", label: "Work", color: "#FD9A56" },
   { id: "friends", label: "Friends", color: "#D456FD" },
 ];
-
-const messages: MessageProps[] = [
+export type MessageData = Omit<MessageProps, 'onToggleStar'>;
+const messages: MessageData[] = [
   {
     id: 1,
     name: "Jullu Jalal",
@@ -248,22 +248,20 @@ function Inbox() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [activeTab, setActiveTab] = useState<string>("Inbox");
+  const [allMessages, setAllMessages] = useState<MessageData[]>(messages);
 
   const filteredMessages = useMemo(() => {
-    let result = messages;
+  let result = allMessages;
+  if (activeTab === "Starred") {
+    result = allMessages.filter((msg) => msg.important);
+  }
+  return result.filter(
+    (msg) =>
+      msg.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      msg.message.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+}, [searchQuery, activeTab, allMessages]);
 
-    if (activeTab === "Starred") {
-      result = messages.filter((msg) => msg.important);
-    } else if (activeTab === "Inbox") {
-      result = messages;
-    }
-
-    return result.filter(
-      (msg) =>
-        msg.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        msg.message.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }, [searchQuery, activeTab]);
 
   const totalPages = Math.ceil(filteredMessages.length / ITEMS_PER_PAGE);
 
@@ -285,13 +283,21 @@ function Inbox() {
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
   }; 
 
+  const handleToggleStar = (id: number) => {
+  setAllMessages((prev) =>
+    prev.map((msg) =>
+      msg.id === id ? { ...msg, important: !msg.important } : msg
+    )
+  );
+};
+
   return (
     <>
       <MainTitle title="Inbox" />
       <div className="grid grid-cols-12 gap-[21px]">
         <div className="col-span-12 xl:col-span-3 h-full bg-white rounded-xl px-3 xl:px-6 py-3 xl:py-6 border border-[#B9B9B9]/50 flex  items-center justify-center sm:justify-between xl:flex-none xl:block flex-wrap gap-3 ">
 
-          <button className="bg-[#4880FF] text-white py-2 xl:py-3 xl:w-full rounded-md xl:rounded-xl xl:mb-6 px-4 xl:px-6 text-sm order-1">
+          <button className="bg-[#4880FF] text-white py-2 xl:py-3 xl:w-full rounded-md xl:rounded-xl xl:mb-6 px-4 xl:px-6 text-sm order-1 hover:bg-[#3A6FD9] active:bg-[#2E5DC3] focus:ring-offset-2 focus:ring-[#4880FF] transition duration-150 ease-in-out cursor-pointer">
             + Compose
           </button>
           <div className="xl:mb-8 order-3 sm:order-2 mx-4 sm:mx-0">
@@ -412,7 +418,7 @@ function Inbox() {
                 <SentChatView />
               ) : currentMessages.length > 0 ? (
                 currentMessages.map((msg) => (
-                  <MessageRow key={msg.id} {...msg} />
+                 <MessageRow key={msg.id} {...msg} onToggleStar={() => handleToggleStar(msg.id)} />
                 ))
               ) : (
                 <div className="text-center text-gray-500 py-6">

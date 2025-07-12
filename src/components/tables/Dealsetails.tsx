@@ -21,7 +21,7 @@ const columns = [
     header: "Product Name",
     accessorKey: "product",
     cell: ({ row }: any) => (
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 mr-3">
         <img
           src={row.original.image}
           alt={row.original.product}
@@ -67,14 +67,16 @@ function Dealsetails() {
 
   return (
     <>
-      <div className="flex justify-between items-center">
-        <h2 className="text-2xl  mb-[35px] font-bold">Deals Details</h2>
+      <div className="flex justify-between items-center mb-5 sm:mb-0">
+        <h2 className="text-lg sm:text-2xl sm:mb-[35px] font-bold">Deals Details</h2>
         <select className="border rounded px-2 py-1 text-sm border-[#D5D5D5] text-[#2B303466] focus:outline-none">
           <option>October</option>
           <option>November</option>
         </select>
       </div>
-      <div className="overflow-x-auto sm:w-auto w-[350px]">
+       <div className="grid grid-cols-12">
+        <div className="col-span-12">
+          <div className="w-full overflow-x-auto bg-white rounded-xl">
         <table className="w-full text-sm text-left">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -82,7 +84,7 @@ function Dealsetails() {
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
-                    className="text-[#202224] text-sm font-bold py-4 px-6"
+                    className="text-[#202224] text-sm font-bold py-4 px-5 whitespace-nowrap"
                   >
                     {flexRender(
                       header.column.columnDef.header,
@@ -100,7 +102,7 @@ function Dealsetails() {
                 className="border-b border-[rgba(151,151,151,0.25)]"
               >
                 {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id} className="p-5">
+                  <td key={cell.id} className="p-5 whitespace-nowrap">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}
@@ -108,6 +110,8 @@ function Dealsetails() {
             ))}
           </tbody>
         </table>
+        </div>
+        </div>
       </div>
     </>
   );
