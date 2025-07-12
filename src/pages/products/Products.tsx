@@ -1,4 +1,4 @@
-import { useRef, type FC } from "react";
+import { useRef, useState, type FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -57,12 +57,124 @@ const productData = [
     rating: 4,
     reviewsCount: 131,
   },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
+  {
+    images: ["/images/watch1.png", "/images/watch1.png", "/images/watch1.png"],
+    title: "Apple Watch Series 4",
+    price: "$120.00",
+    rating: 4,
+    reviewsCount: 131,
+  },
 ];
 
 const Products: FC = () => {
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
+const [currentPage, setCurrentPage] = useState(1);
+const itemsPerPage = 9;
 
+const totalPages = Math.ceil(productData.length / itemsPerPage);
+const paginatedData = productData.slice(
+  (currentPage - 1) * itemsPerPage,
+  currentPage * itemsPerPage
+);
   return (
     <>
          <MainTitle title="Products"/>
@@ -128,10 +240,34 @@ const Products: FC = () => {
 
       {/* --- */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-[28px]">
-        {productData.map((product, i) => (
+        {paginatedData.map((product, i) => (
           <ProductSliderCard key={i} {...product} />
         ))}
       </div>
+      <div className="flex justify-between items-center mt-6">
+  <span className="text-sm text-gray-500">
+    Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
+    {Math.min(currentPage * itemsPerPage, productData.length)} of {productData.length}
+  </span>
+
+  <div className="flex gap-2">
+    <button
+      onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+      disabled={currentPage === 1}
+      className="px-3 py-1 text-sm bg-gray-200 rounded disabled:opacity-50"
+    >
+      <ChevronLeft size={17} />
+    </button>
+    <button
+      onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+      disabled={currentPage === totalPages}
+      className="px-3 py-1 text-sm bg-gray-200 rounded disabled:opacity-50"
+    >
+      <ChevronRight size={17} />
+    </button>
+  </div>
+</div>
+
     </>
   );
 };

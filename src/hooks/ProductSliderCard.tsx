@@ -28,6 +28,7 @@ export const ProductSliderCard: FC<ProductSliderCardProps> = ({
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
 const [isFavorite, setIsFavorite] = useState(false)
+
   return (
     <div className="bg-white rounded-xl">
       <div className="relative">
