@@ -111,3 +111,46 @@ export interface PricingPlan {
   features: PricingFeature[];
   isPopular?: boolean;
 }
+
+// ----calender
+
+export interface Attendee {
+  image: string;
+}
+export interface Event {
+  id: number;
+  avatar: string;
+  title: string;
+  dateTime: string;
+  address: string;
+  location: string;
+  attendees: Attendee[];
+  extraAttendeeCount?: number;
+  startDate?: string;
+  endDate?: string;  
+}
+
+export interface Attendee {
+  image: string;
+}
+
+export interface EventPopover {
+  id: number;
+  title: string;
+  dateTime: string;
+  address: string;
+  location: string;
+  attendees: Attendee[];
+  extraAttendeeCount?: number;
+  color: string;
+  bg: string;
+  text: string;
+  avatar : string;
+}
+
+export interface EventProps {
+  event: EventPopover;
+   multiDay?: boolean;
+  duration?: number;
+}
+

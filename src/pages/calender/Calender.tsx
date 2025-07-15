@@ -1,26 +1,10 @@
 
 
 
-import React, { useState ,useRef, useEffect, } from "react";
+import React, { useState} from "react";
 import moment from "moment";
-import { Popover } from "@headlessui/react";
 import EventPopover from "./EventPopover";
-interface Attendee {
-  image: string;
-}
-
-interface Event {
-  id: number;
-  avatar: string;
-  title: string;
-  dateTime: string;
-  address: string;
-  location: string;
-  attendees: Attendee[];
-  extraAttendeeCount?: number;
-  startDate?: string;
-  endDate?: string;  
-}
+import type { Event } from "../../types/Dashboard";
 
 const events: Event[] = [
   {
