@@ -8,6 +8,9 @@ import OrderList from "./pages/orderlist/OrderList";
 import { ProductStock } from "./pages/productstock/ProductStock";
 import Pricing from "./pages/pricing/Pricing";
 import Calender from "./pages/calender/Calender";
+import ToDoList from "./pages/todolist/ToDoList";
+import Contact from "./pages/contact/Contact";
+import Invoice from "./pages/invoice/Invoice";
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
                 <Route path="/stock" element={<ProductStock />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/calendar" element={<Calender />} />
+                <Route path="/todo" element={<ToDoList />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/invoice" element={<Invoice />} />
                 <Route path="*" element={<DashboardPage />} />
               </Route>
          </Routes>

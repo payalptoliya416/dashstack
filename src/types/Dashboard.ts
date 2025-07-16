@@ -154,3 +154,34 @@ export interface EventProps {
   duration?: number;
 }
 
+// ---todolist 
+export interface Task {
+  id: number;
+  title: string;
+  completed: boolean;
+  important: boolean;
+}
+
+// ---contact
+export interface ContactItem {
+  id: number;
+  name: string;
+  email: string;
+  image: string;
+}
+
+// ---invoice
+export interface InvoiceData {
+  serialno: string;
+  description: string;
+  quantity: string;
+  basecost: string;
+  totalcost: string;
+}
+export interface InvoiceData {
+  serialno: string;
+  description: string;
+  quantity: string;
+  basecost: string;
+  totalcost: string;
+}
