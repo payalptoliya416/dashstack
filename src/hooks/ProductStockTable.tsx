@@ -7,7 +7,6 @@ import {
   useReactTable,
   type ColumnDef,
 } from "@tanstack/react-table";
-import React from "react";
 
 type Props<T> = {
   data: T[];
