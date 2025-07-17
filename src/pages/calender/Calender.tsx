@@ -5,74 +5,11 @@ import React, { useEffect, useRef, useState} from "react";
 import moment from "moment";
 import EventPopover from "./EventPopover";
 import type { Event } from "../../types/Dashboard";
+import { Link } from "react-router-dom";
+import type {RootState } from "../../redux/store";
+import { useSelector } from "react-redux";
+import MainTitle from "../../hooks/MainTitle";
 
-const events: Event[] = [
-  {
-    id: 1,
-    avatar: "/images/unuser.png",
-    title: "Design Conference",
-    dateTime: "Today 07:19 AM",
-    address: "56 Davion Mission Suite 157",
-    location: "Meaghanberg",
-    attendees: [
-      { image: "/images/us1.png" },
-      { image: "/images/user.png" },
-      { image: "/images/user.png" },
-    ],
-    extraAttendeeCount: 15,
-    startDate: "2019-10-08",
-    endDate: "2019-10-08",
-  },
-  {
-    id: 2,
-    avatar: "/images/user1.png",
-    title: "Weekend Festival",
-    dateTime: "16 October 2019 at 5.00 PM",
-    address: "853 Moore Flats Suite 158",
-    location: "Sweden",
-    attendees: [
-      { image: "/images/us3.png" },
-      { image: "/images/us4.png" },
-      { image: "/images/us5.png" },
-    ],
-    extraAttendeeCount: 20,
-    startDate: "2019-10-16", 
-    endDate: "2019-10-16",
-  },
-  {
-    id: 3,
-    avatar: "/images/user2.png",
-    title: "Glastonbury Festival",
-    dateTime: "20-22 October 2019 at 8.00 PM",
-    address: "646 Walter Road Apt. 571",
-    location: "Turks and Caicos Islands",
-    attendees: [
-      { image: "/images/us6.png" },
-      { image: "/images/us7.png" },
-      { image: "/images/us7.png" },
-    ],
-    extraAttendeeCount: 14,
-    startDate: "2019-10-20", 
-    endDate: "2019-10-22",
-  },
-  {
-    id: 4,
-    avatar: "/images/user3.png",
-    title: "Ultra Europe 2019",
-    dateTime: "25 Octuber 2019 at 10.00 PM",
-    address: "506 Satterfield Tunnel Apt. 963",
-    location: "San Marino",
-    attendees: [
-      { image: "/images/us9.png" },
-      { image: "/images/us10.png" },
-      { image: "/images/us11.png" },
-    ],
-    extraAttendeeCount: 14,
-    startDate: "2019-10-25", 
-    endDate: "2019-10-25",
-  },
- 
-];
 interface CalendarGridProps {
   onShowSidebar: () => void;
 }
@@ -81,7 +18,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
   <div className="py-5 xl:py-6 px-2 xl:px-5 flex flex-row md:flex-col xl:flex-row gap-3 border-b border-[#E0E0E0]/50 last:border-none">
     <div className="w-[38px] h-[38px] rounded-full">
       <div className="w-[38px] h-[38px]">
-      <img src={event.avatar} alt={event.title} className="rounded-full" />
+      <img src={event.avatar} alt={event.title} className="rounded-full w-[38px] h-[38px]" />
       </div>
     </div>
     <div>
@@ -94,9 +31,6 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
       <p className="text-[#202224]/60 text-xs font-semibold">
         {event.address}
       </p>
-      <p className="text-[#202224]/60 text-xs font-semibold">
-        {event.location}
-      </p>
       <div className="flex gap-2 mt-1">
         {event.attendees.map((attendee, idx) => (
           <div key={idx} className="w-6 h-6 rounded-full">
@@ -107,7 +41,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
             />
           </div>
         ))}
-        {event.extraAttendeeCount && (
+        {event.extraAttendeeCount !== undefined && event.extraAttendeeCount > 0 && (
           <div className="w-6 h-6 rounded-full border border-[#4880FF] text-[#4880FF] text-[10px] flex justify-center items-center">
             {event.extraAttendeeCount}+
           </div>
@@ -118,6 +52,8 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
 );
 
 const CalendarGrid: React.FC<CalendarGridProps> = ({ onShowSidebar }) => {
+  const events = useSelector((state: RootState) => state.events.events);
+console.log("events",events )
   const [currentMonth, setCurrentMonth] = useState(moment("2019-10-01"));
 
   const startOfMonth = currentMonth.clone().startOf("month");
@@ -472,8 +408,10 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ onShowSidebar }) => {
 };
 
 const Calender: React.FC = () => {
+  const events = useSelector((state: RootState) => state.events.events);
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
+  const [visibleCount, setVisibleCount] = useState(4); 
    useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       if (
@@ -491,33 +429,49 @@ const Calender: React.FC = () => {
     };
   }, [showSidebar]);
 
+    const handleSeeMore = () => {
+    setVisibleCount((prev) => prev + 4);
+  };
+
+  const visibleEvents = events.slice(0, visibleCount);
+  const hasMore = visibleCount < events.length;
+
   return (
+    <>
+        <MainTitle title="Calendar" />
     <div className="grid grid-cols-12 gap-4 xl:gap-6 bg-[#F8F9FB]"> 
        {showSidebar && (
         <div className="fixed inset-0 bg-black/30 z-[999] md:hidden" />
       )}
       <div ref={sidebarRef} className={`fixed md:static top-0 left-0 h-full md:rounded-xl bg-white  transition-transform duration-300 ease-in-out ${showSidebar ? 'translate-x-0 z-[999]' : '-translate-x-full'} md:translate-x-0 md:col-span-3 col-span-5 md:w-auto shadow-md md:shadow-none`}>
         <div className="px-4 xl:px-6 pt-5 xl:pt-6 border-b border-[#E0E0E0]/50">
-          <button className="bg-[#4880FF] text-sm text-white rounded-md py-2 xl:py-3 px-2 w-full text-center mb-6 hover:bg-blue-600 cursor-pointer">
+          <Link  to="/calendar/add-new-event" className="block bg-[#4880FF] text-sm text-white rounded-md py-2 xl:py-3 px-2 w-full text-center mb-6 hover:bg-blue-600 cursor-pointer">
             + Add New Event
-          </button>
+          </Link>
           <h3 className="text-[#202224] font-bold text-lg mb-[15px]">
             You are going to
           </h3>
         </div>
         <div className="overflow-y-auto h-[600px] sm:h-[700px]">
-        {events.map((event) => (
-          <EventCard key={event.id} event={event} />
-        ))}
+        {visibleEvents.map((event) => (
+        <EventCard key={event.id} event={event} />
+      ))}
+      
+        {hasMore && (
         <div className="text-center">
-          <button className="text-[#202224] font-bold text-sm bg-[#E2EAF8]/70 rounded-xl leading-[28px] py-1 xl:py-[5px] px-5 xl:px-8 mb-[27px] mt-[14px] hover:bg-[#d0dbeb] transition">
+          <button
+            onClick={handleSeeMore}
+            className="text-[#202224] font-bold text-sm bg-[#E2EAF8]/70 rounded-xl leading-[28px] py-1 xl:py-[5px] px-5 xl:px-8 mb-[27px] mt-[14px] hover:bg-[#d0dbeb] transition"
+          >
             See More
           </button>
         </div>
+      )}
         </div>
       </div>
       <CalendarGrid onShowSidebar={() => setShowSidebar(true)} />
     </div>
+    </>
   );
 };
 

@@ -114,26 +114,20 @@ export interface PricingPlan {
 
 // ----calender
 
-export interface Attendee {
-  image: string;
-}
 export interface Event {
   id: number;
   avatar: string;
   title: string;
   dateTime: string;
   address: string;
-  location: string;
-  attendees: Attendee[];
+  attendees:  { image: string }[];
   extraAttendeeCount?: number;
   startDate?: string;
   endDate?: string;  
 }
-
 export interface Attendee {
   image: string;
 }
-
 export interface EventPopover {
   id: number;
   title: string;
@@ -178,10 +172,15 @@ export interface InvoiceData {
   basecost: string;
   totalcost: string;
 }
-export interface InvoiceData {
-  serialno: string;
-  description: string;
-  quantity: string;
-  basecost: string;
-  totalcost: string;
-}
+
+// --team memnder 
+export interface TeamMember  {
+ id: number;       
+  name: string;
+  email: string;
+  phone: string;      
+  position: string;
+  gender: string;    
+  image: string;
+};
+

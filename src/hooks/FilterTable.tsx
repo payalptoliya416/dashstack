@@ -10,20 +10,27 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 type Props<T> = {
   data: T[];
   columns: ColumnDef<T, any>[];
+  isPaginated?: boolean;
 };
 
-export function Table<T>({ data, columns }: Props<T>) {
-  const table = useReactTable({
+export function Table<T>({ data, columns ,isPaginated = true }: Props<T>) {
+   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    initialState: {
-      pagination: {
-        pageSize: 7,
+    ...(isPaginated && { getPaginationRowModel: getPaginationRowModel() }), // 🔥 Conditionally apply
+    ...(isPaginated && {
+      initialState: {
+        pagination: {
+          pageSize: 7,
+        },
       },
-    },
+    }),
   });
+  
+   const rows = isPaginated
+    ? table.getPaginationRowModel().rows
+    : table.getRowModel().rows;
 
   return (
     <>
@@ -49,11 +56,11 @@ export function Table<T>({ data, columns }: Props<T>) {
             ))}
           </thead>
           <tbody className="">
-            {table.getRowModel().rows.map((row, index) => (
+            {rows.map((row, index) => (
               <tr
                 key={row.id}
                 className={`${
-                  index === table.getRowModel().rows.length - 1
+                  index === rows.length - 1
                     ? "" 
                     : "border-b border-[#D5D5D5]/60"
                 }`}
@@ -72,7 +79,8 @@ export function Table<T>({ data, columns }: Props<T>) {
         </table>
         </div>
         </div>
-          </div>
+      </div>
+      {isPaginated && (
       <div className="flex justify-between items-center mt-4">
         <span className="text-sm text-gray-500">
           Showing {table.getRowModel().rows.length} of {data.length}
@@ -93,7 +101,7 @@ export function Table<T>({ data, columns }: Props<T>) {
             <ChevronRight size={17} />
           </button>
         </div>
-      </div>
+      </div>)}
     </>
   );
 }

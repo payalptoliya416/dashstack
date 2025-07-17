@@ -58,7 +58,7 @@
 
     const FilterButton: React.FC<FilterButtonProps> = ({ children, onClick, className, isActive }) => {
     return (
-        <button
+    <button
         type="button"
         onClick={onClick}
         className={`text-[#202224] text-sm px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-[#979797] font-semibold w-full  whitespace-nowrap
@@ -66,7 +66,7 @@
             ${className || ''}`}
         >
         {children}
-        </button>
+    </button>
     );
     };
 
