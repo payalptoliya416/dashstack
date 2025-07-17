@@ -1,7 +1,6 @@
 import {
   useReactTable,
   getCoreRowModel,
-  flexRender,
   type ColumnDef,
   getPaginationRowModel,
   getFilteredRowModel
