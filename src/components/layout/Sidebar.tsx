@@ -22,7 +22,7 @@ import { useDispatch } from "react-redux";
 import { logout } from "../../redux/slice/authSlice";
 
 export const topLinks: SidebarLink[] = [
-  { name: "Dashboard", path: "/", icon: CircleGauge },
+  { name: "Dashboard", path: "/dashboard", icon: CircleGauge },
   { name: "Products", path: "/products", icon: LayoutGrid },
   { name: "Favorites", path: "/favorites", icon: Heart },
   { name: "Inbox", path: "/inbox", icon: MessageSquare },
@@ -55,7 +55,7 @@ export const Sidebar: FC<SidebarProps> = ({
   const navigate = useNavigate();
   const handleLogOut = () => {
     dispatch(logout());       
-    navigate("/login");
+    navigate("/");
   };
 
   return (

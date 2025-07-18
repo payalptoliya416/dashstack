@@ -26,11 +26,13 @@ function Contact() {
             className="col-span-12 sm:col-span-6 xl:col-span-4"
           >
             <div className="rounded-xl">
+              <div className="h-[276px] overflow-hidden rounded-t-xl">
               <img
                 src={contact.image}
                 alt={contact.name}
-                className="rounded-t-xl w-full object-cover"
+                className="rounded-t-xl w-full h-full object-fill"
               />
+              </div>
               <div className="p-4 bg-white border border-[#B9B9B9] border-t-0 rounded-b-2xl text-center">
                 <h3 className="text-[#202224] text-base font-bold mb-1">
                   {contact.name}

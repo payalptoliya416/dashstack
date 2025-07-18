@@ -61,7 +61,7 @@ function Login() {
 
     if (matchedUser) {
       dispatch(login(matchedUser));
-      navigate("/");
+      navigate("/dashboard");
     } else {
       setErrors((prev) => ({
         ...prev,

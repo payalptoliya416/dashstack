@@ -89,7 +89,7 @@ function Register() {
     localStorage.setItem("users", JSON.stringify(updatedUsers));
 
     dispatch(login(newUser));
-    navigate("/");
+    navigate("/dashboard");
   };
 
   return (
@@ -212,7 +212,7 @@ function Register() {
           <p className="text-center text-[#202224]/65 text-base sm:text-lg font-semibold mt-4 flex items-center flex-col sm:flex-row justify-center gap-1">
             Already have an account?
             <Link
-              to="/login"
+              to="/"
               className="text-[#5A8CFF] text-base sm:text-lg font-semibold underline"
             >
               Login

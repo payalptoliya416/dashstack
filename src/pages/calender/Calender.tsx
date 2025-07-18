@@ -31,7 +31,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
       <p className="text-[#202224]/60 text-xs font-semibold">
         {event.address}
       </p>
-      <div className="flex gap-2 mt-1">
+      <div className="flex gap-2 mt-2">
         {event.attendees.map((attendee, idx) => (
           <div key={idx} className="w-6 h-6 rounded-full">
             <img
@@ -42,7 +42,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
           </div>
         ))}
         {event.extraAttendeeCount !== undefined && event.extraAttendeeCount > 0 && (
-          <div className="w-6 h-6 rounded-full border border-[#4880FF] text-[#4880FF] text-[10px] flex justify-center items-center">
+          <div className="w-6 h-6 rounded-full border border-[#4880FF] leading-[10px] text-[#4880FF] text-[10px] flex justify-center items-center">
             {event.extraAttendeeCount}+
           </div>
         )}

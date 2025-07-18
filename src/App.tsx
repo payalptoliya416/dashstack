@@ -28,11 +28,11 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route element={<PrivateRoute />}>
             <Route element={<Layout />}>
-              <Route index element={<DashboardPage />} />
+              <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/products" element={<Products />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/inbox" element={<Inbox />} />

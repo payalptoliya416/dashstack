@@ -157,7 +157,7 @@ function UIElement() {
               data={barData}
               xKey="name"
               stacked={false}
-              barKeys={[{ key: "value1", color: "#0057FF" }]}
+              barKeys={[{ key: "value1", color: "#5286F8" }]}
             />
 
             {/* 2nd chart: fully rounded */}
