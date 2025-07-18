@@ -15,6 +15,7 @@ import eventReducer from "./slice/eventSlice";
 import teammemberReducer from "./slice/teamMemberSlice";
 import settingsReducer from "./slice/settingSlice";
 import taskReducer from "./slice/taskSlice";
+import authReducer from './slice/authSlice';
 
 const rootReducer = combineReducers({
   contact: contactReducer,
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   teammember: teammemberReducer,
   settings: settingsReducer,
   tasks: taskReducer,
+   auth: authReducer,
 });
 
 const persistConfig = {

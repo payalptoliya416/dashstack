@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   CircleGauge,
   LayoutGrid,
@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import type { FC } from "react";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/slice/authSlice";
 
 export const topLinks: SidebarLink[] = [
   { name: "Dashboard", path: "/", icon: CircleGauge },
@@ -49,6 +51,13 @@ export const Sidebar: FC<SidebarProps> = ({
   mobileOpen,
   onCloseMobile,
 }) => {
+    const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleLogOut = () => {
+    dispatch(logout());       
+    navigate("/login");
+  };
+
   return (
     <>
       {mobileOpen && (
@@ -84,32 +93,37 @@ export const Sidebar: FC<SidebarProps> = ({
                 Pages
               </div>
             )}
-            {group.map(({ name, path, icon: Icon }) => (
-                     <NavLink
-  key={name}
-  to={path}
-  className={({ isActive }) =>
-    `group flex items-center gap-2 px-4 py-2 lg:py-4 rounded-md text-sm transition-all duration-300
-    ${collapsed ? "mx-1 justify-center" : "mx-3 xl:mx-6 lg:mx-6"} 
-    ${
-      isActive
-        ? "bg-[#4880FF] text-white shadow-md"
-        : "text-[#202224] hover:bg-[#4880FF]/70 hover:text-white hover:backdrop-blur-md hover:shadow-md"
-    } 
-    relative after:content-[''] after:absolute after:top-0 after:left-[-17px] xl:after:left-[-27px]
-    after:w-[9px] after:h-full after:rounded-r-[20px] after:transition-all after:duration-300
-    ${
-      isActive
-        ? "after:bg-[#4880FF]"
-        : "after:bg-transparent hover:after:bg-[#4880FF]/70"
-    }`
-  }
->
-  <Icon size={16} />
-  {collapsed ? "" : name}
-</NavLink>
+           
+                  {group.map(({ name, path, icon: Icon }) => {
+                    const isLogout = name === "Logout";
 
-            ))}
+                    return (
+                      <NavLink
+                        key={name}
+                        to={isLogout ? "#" : path}
+                        onClick={isLogout ? handleLogOut : undefined}
+                        className={({ isActive }) =>
+                          `group flex items-center gap-2 px-4 py-2 lg:py-4 rounded-md text-sm transition-all duration-300
+                          ${collapsed ? "mx-1 justify-center" : "mx-3 xl:mx-6 lg:mx-6"} 
+                          ${
+                            isActive && !isLogout
+                              ? "bg-[#4880FF] text-white shadow-md"
+                              : "text-[#202224] hover:bg-[#4880FF]/70 hover:text-white hover:backdrop-blur-md hover:shadow-md"
+                          } 
+                          relative after:content-[''] after:absolute after:top-0 after:left-[-17px] xl:after:left-[-27px]
+                          after:w-[9px] after:h-full after:rounded-r-[20px] after:transition-all after:duration-300
+                          ${
+                            isActive && !isLogout
+                              ? "after:bg-[#4880FF]"
+                              : "after:bg-transparent hover:after:bg-[#4880FF]/70"
+                          }`
+                        }
+                      >
+                        <Icon size={16} />
+                        {collapsed ? "" : name}
+                      </NavLink>
+                    );
+                  })}
             {index < 2 && <hr className="my-3 border-t border-[#E0E0E0]" />}
           </div>
         ))}

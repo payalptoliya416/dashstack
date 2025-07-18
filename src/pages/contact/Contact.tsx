@@ -12,7 +12,7 @@ function Contact() {
       <div className="flex justify-between items-start mb-[6px]">
         <MainTitle title="Contact" />
         <Link
-          to="/contact/add-new-dontact"
+          to="/contact/add-new-contact"
           className="text-white text-sm font-bold bg-[#4379EE] rounded-md py-2 sm:py-[11px] px-[27px] transition-all duration-200 hover:shadow-md"
         >
           Add New Contact

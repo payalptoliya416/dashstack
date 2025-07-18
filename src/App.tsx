@@ -18,48 +18,56 @@ import AddNewContact from "./pages/contact/AddNewContact";
 import AddNewEvent from "./pages/calender/AddNewEvent";
 import AddTeamMember from "./pages/team/AddTeamMember";
 import Setting from "./pages/setting/Setting";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import PrivateRoute from "./route/PrivateRoute";
+import NotFound from "./route/NotFound";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<DashboardPage />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/favorites" element={<Favorites />} />
-            <Route path="/inbox" element={<Inbox />} />
-            <Route path="/orderlist" element={<OrderList />} />
-            <Route path="/stock" element={<ProductStock />} />
-            <Route path="/pricing" element={<Pricing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route element={<PrivateRoute />}>
+            <Route element={<Layout />}>
+              <Route index element={<DashboardPage />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/favorites" element={<Favorites />} />
+              <Route path="/inbox" element={<Inbox />} />
+              <Route path="/orderlist" element={<OrderList />} />
+              <Route path="/stock" element={<ProductStock />} />
+              <Route path="/pricing" element={<Pricing />} />
 
-            {/* ---calender-- */}
-            <Route path="/calendar">
-              <Route index element={<Calender />} />
-              <Route path="add-new-event" element={<AddNewEvent />} />
+              {/* ---calender-- */}
+              <Route path="/calendar">
+                <Route index element={<Calender />} />
+                <Route path="add-new-event" element={<AddNewEvent />} />
+              </Route>
+
+              <Route path="/todo" element={<ToDoList />} />
+
+              {/* --contact */}
+              <Route path="/contact">
+                <Route index element={<Contact />} />
+                <Route path="add-new-contact" element={<AddNewContact />} />
+              </Route>
+
+              <Route path="/invoice" element={<Invoice />} />
+              <Route path="/ui-elements" element={<UIElement />} />
+
+              {/* --team-- */}
+              <Route path="/team">
+                <Route index element={<Team />} />
+                <Route path="add-team-member" element={<AddTeamMember />} />
+              </Route>
+
+              <Route path="/table" element={<TablePage />} />
+              <Route path="/settings" element={<Setting />} />
             </Route>
-
-            <Route path="/todo" element={<ToDoList />} />
-
-            {/* --contact */}
-            <Route path="/contact">
-              <Route index element={<Contact />} />
-              <Route path="add-new-dontact" element={<AddNewContact />} />
-            </Route>
-
-            <Route path="/invoice" element={<Invoice />} />
-            <Route path="/ui-elements" element={<UIElement />} />
-
-            {/* --team-- */}
-            <Route path="/team">
-              <Route index element={<Team />} />
-              <Route path="add-team-member" element={<AddTeamMember />} />
-            </Route>
-
-            <Route path="/table" element={<TablePage />} />
-            <Route path="/settings" element={<Setting />} />
-            <Route path="*" element={<DashboardPage />} />
           </Route>
+              <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
