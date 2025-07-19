@@ -60,7 +60,6 @@ function Pricing() {
             key={index}
             className="rounded-3xl bg-[url('/images/pricingbg.png')] bg-cover w-full h-full px-5"
           >
-            {/* Header */}
             <div className="border-b-2 border-[#212121]/10 py-4 sm:py-6 lg:py-10 text-center">
               <h3 className="text-[#202224] text-[22px] font-bold mb-[10px]">
                 {plan.name}
@@ -73,7 +72,6 @@ function Pricing() {
               </h2>
             </div>
 
-            {/* Features */}
             <ul className="flex flex-col gap-5 lg:gap-[29px] text-center py-8 lg:py-10 xpx-5 l:px-6 border-b-2 border-[#212121]/10">
               {plan.features.map((feature, idx) => (
                 <li
@@ -87,7 +85,6 @@ function Pricing() {
               ))}
             </ul>
 
-            {/* Button Section */}
             <div className="flex flex-col justify-center items-center py-6 lg:py-10">
               <button
              className={`rounded-full py-3 md:py-4 lg:py-[19px] px-[48px] mb-6 border border-[#4880FF] 

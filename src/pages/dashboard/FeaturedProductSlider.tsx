@@ -43,7 +43,6 @@ const FeaturedProductSlider = () => {
         Featured Product
       </h2>
 
-      {/* Product Image */}
       <div className="flex-grow flex items-center justify-center mx-auto w-[225px] h-[225px] bg-white rounded-md overflow-hidden">
           <img
             src={currentProduct.image}
@@ -51,7 +50,6 @@ const FeaturedProductSlider = () => {
             className="w-full h-full object-contain "
           />
         </div>
-      {/* Product Info */}
       <div className="text-center mt-4">
         <p className="text-[#282D32] text-lg mb-2 font-bold">
           {currentProduct.name}
@@ -61,7 +59,6 @@ const FeaturedProductSlider = () => {
         </p>
       </div>
 
-      {/* Arrows */}
       <div
         className="absolute left-3 top-1/2 -translate-y-1/2 bg-gray-100 p-2 rounded-full cursor-pointer"
         onClick={prevProduct}

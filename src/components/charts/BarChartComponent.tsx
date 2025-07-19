@@ -29,11 +29,11 @@ const BarChartComponent: React.FC<BarChartProps> = ({
             dataKey={bar.key}
             fill={bar.color}
             barSize={8}
-            stackId={stacked ? "a" : undefined} // only if stacked
+            stackId={stacked ? "a" : undefined} 
             radius={
               fullRounded
                 ? [6, 6, 6, 6]
-                : [6, 6, 0, 0] // top only
+                : [6, 6, 0, 0] 
             }
           />
         ))}

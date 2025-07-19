@@ -115,7 +115,6 @@ function AddTeamMember() {
         className="bg-white border border-[#B9B9B9]/60 rounded-xl py-8 lg:py-[60px] px-5 sm:px-10 lg:px-20 2xl:px-[180px]"
       >
         <form onSubmit={handleSubmit}>
-          {/* Image Upload */}
           <div className="flex justify-center flex-col items-center gap-4 mb-7 sm:mb-10">
             <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-full overflow-hidden bg-[#ECECEE] shadow-sm flex items-center justify-center">
               {image ? (
@@ -142,7 +141,6 @@ function AddTeamMember() {
             )}
           </div>
 
-          {/* Form Fields */}
           <div className="grid grid-cols-12 sm:gap-6 xl:gap-[60px]">
             {[
               ["First Name", "firstName"],
@@ -195,7 +193,6 @@ function AddTeamMember() {
             </div>
           </div>
 
-          {/* Submit Button */}
           <div className="mt-10 text-center">
              <motion.button
         type="submit"

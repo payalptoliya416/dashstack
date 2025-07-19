@@ -1,7 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { Event } from "../../types/Dashboard";
 
-
 export const eventsList: Event[] = [
   {
     id: 1,

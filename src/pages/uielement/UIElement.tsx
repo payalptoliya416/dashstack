@@ -167,7 +167,6 @@ function UIElement() {
 
       {/* Main content area for charts */}
        <AnimatePresence mode="wait">
-
       {(chartFilter === "all" || chartFilter === "bar") && (
         <motion.div   key="bar"  variants={fadeSlideVariant}
             initial="hidden"
@@ -220,7 +219,6 @@ function UIElement() {
         </motion.div>
       )}
      
-
       {/* Pie Charts Section */}
       {(chartFilter === "all" || chartFilter === "pie") && (
         <motion.div  key="pie"

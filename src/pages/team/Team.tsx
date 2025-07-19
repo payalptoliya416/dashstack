@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function Team() {
   const members = useSelector((state: RootState) => state.teammember.members);
-  
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({

@@ -140,9 +140,7 @@ function Setting() {
             )}
           </div>
 
-          {/* Form Fields */}
           <div className="grid grid-cols-12 sm:gap-6 xl:gap-[60px]">
-            {/* Site Name */}
             <div className="col-span-12 sm:col-span-6 mb-6 sm:mb-0">
               <label className="block text-[#606060] text-sm font-semibold mb-[11px]">
                 Site Name
@@ -160,7 +158,6 @@ function Setting() {
               )}
             </div>
 
-            {/* Copyright */}
             <div className="col-span-12 sm:col-span-6 mb-6 sm:mb-0">
               <label className="block text-[#606060] text-sm font-semibold mb-[11px]">
                 Copyright
@@ -178,7 +175,6 @@ function Setting() {
               )}
             </div>
 
-            {/* SEO Title & Keywords */}
             <div className="col-span-12 sm:col-span-6 mb-6 sm:mb-0">
               <div className="flex flex-col sm:gap-6 xl:gap-[60px]">
                 <div className=" mb-6 sm:mb-0">
@@ -216,7 +212,6 @@ function Setting() {
               </div>
             </div>
 
-            {/* SEO Description */}
             <div className="col-span-12 sm:col-span-6 flex flex-col h-full">
               <label
                 className="block text-[#606060] text-sm font-semibold mb-[11px] sm:mt-[6px]"

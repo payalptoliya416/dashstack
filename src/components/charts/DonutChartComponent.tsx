@@ -1,7 +1,6 @@
 import { PieChart, Pie, Cell } from "recharts";
 import type { DonutChartProps } from "../../types/Chart";
 
-
 const DonutChartComponent: React.FC<DonutChartProps> = ({ data, colors }) => {
   return (
     <div className="flex justify-center items-center">

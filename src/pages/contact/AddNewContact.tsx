@@ -156,7 +156,6 @@ function AddNewContact() {
               </div>
             ))}
 
-            {/* Gender */}
             <div className="col-span-12 sm:col-span-6">
               <label className="block text-[#606060] text-sm font-semibold mb-[11px]">
                 Gender
@@ -177,7 +176,6 @@ function AddNewContact() {
             </div>
           </div>
 
-          {/* Submit */}
           <div className="mt-10 text-center">
             <motion.button
         type="submit"

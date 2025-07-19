@@ -123,7 +123,6 @@ dispatch(addEvent(newEvent));
             )}
           </div>
 
-          {/* Form fields */}
           <div className="grid grid-cols-12 sm:gap-6 xl:gap-[60px]">
             {[
               ["Event Name", "eventName"],
