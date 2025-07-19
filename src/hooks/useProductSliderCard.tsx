@@ -99,13 +99,15 @@ const [isFavorite, setIsFavorite] = useState(false)
             ({reviewsCount})
           </span>
         </div>
-
-        <button
-          onClick={onEditClick}
-          className="bg-[#E2EAF8] bg-opacity-[70%] rounded-lg py-[5px] px-[23px] text-sm font-bold"
-        >
-          Edit Product
-        </button>
+    <motion.button
+      onClick={onEditClick}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ duration: 0.2 }}
+      className="bg-[#E2EAF8] bg-opacity-[70%] rounded-lg py-[5px] px-[23px] text-sm font-bold"
+    >
+      Edit Product
+    </motion.button>
       </div>
     </motion.div>
   );

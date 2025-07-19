@@ -18,14 +18,16 @@ function Team() {
       },
     }),
   };
-
+const MotionLink = motion(Link);
   return (
     <>
       <div className="flex justify-between items-start mb-[6px]">
         <MainTitle title="Team" />
-        <Link to='/team/add-team-member' className="text-white text-sm font-bold bg-[#4379EE] rounded-md py-2 sm:py-[11px] px-[27px] transition-all duration-200 hover:shadow-md">
+        <MotionLink  whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ duration: 0.2 }} to='/team/add-team-member' className="text-white text-sm font-bold bg-[#4379EE] rounded-md py-2 sm:py-[11px] px-[27px] transition-all duration-200 hover:shadow-md">
           Add New Member
-        </Link>
+        </MotionLink>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 xl:gap-[30px]">

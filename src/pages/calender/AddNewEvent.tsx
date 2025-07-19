@@ -159,12 +159,15 @@ dispatch(addEvent(newEvent));
 
           {/* Submit */}
           <div className="mt-5 lg:mt-10 text-center">
-            <button
-              type="submit"
-              className="bg-[#4880FF] text-white font-bold px-20 sm:px-24 py-3 sm:py-4 rounded-xl hover:shadow-lg transition-all"
-            >
-              Add Now
-            </button>
+          <motion.button
+        type="submit"
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ duration: 0.2 }}
+        className="bg-[#4880FF] text-white font-bold px-20 sm:px-24 py-3 sm:py-4 rounded-xl"
+      >
+        Add Now
+      </motion.button>  
           </div>
         </form>
       </motion.div>

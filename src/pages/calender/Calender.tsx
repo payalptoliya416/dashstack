@@ -122,7 +122,6 @@ console.log("events",events )
     color: "#516FE9",
   },
 };
-
   return (
     <div className="bg-white rounded-xl col-span-12 md:col-span-9 py-3 px-2 sm:p-5 xl:p-6">
       <div className="flex justify-around md:justify-between items-center mb-5 sm:mb-7 xl:mb-[51px] flex-wrap gap-3 sm:gap-2">
@@ -435,7 +434,7 @@ const Calender: React.FC = () => {
 
   const visibleEvents = events.slice(0, visibleCount);
   const hasMore = visibleCount < events.length;
-
+const MotionLink = motion(Link);
   return (
     <>
         <MainTitle title="Calendar" />
@@ -450,9 +449,15 @@ const Calender: React.FC = () => {
       )}
       <div ref={sidebarRef} className={`fixed md:static top-0 left-0 h-full md:rounded-xl bg-white  transition-transform duration-300 ease-in-out ${showSidebar ? 'translate-x-0 z-[999]' : '-translate-x-full'} md:translate-x-0 md:col-span-3 col-span-5 md:w-auto shadow-md md:shadow-none`}>
         <div className="px-4 xl:px-6 pt-5 xl:pt-6 border-b border-[#E0E0E0]/50">
-          <Link  to="/calendar/add-new-event" className="block bg-[#4880FF] text-sm text-white rounded-md py-2 xl:py-3 px-2 w-full text-center mb-6 hover:bg-blue-600 cursor-pointer">
-            + Add New Event
-          </Link>
+        <MotionLink
+          to="/calendar/add-new-event"
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ duration: 0.2 }}
+          className="block bg-[#4880FF] text-sm text-white rounded-md py-2 xl:py-3 px-2 w-full text-center mb-6"
+        >
+          + Add New Event
+        </MotionLink>
           <h3 className="text-[#202224] font-bold text-lg mb-[15px]">
             You are going to
           </h3>
@@ -464,12 +469,15 @@ const Calender: React.FC = () => {
       
         {hasMore && (
         <div className="text-center">
-          <button
-            onClick={handleSeeMore}
-            className="text-[#202224] font-bold text-sm bg-[#E2EAF8]/70 rounded-xl leading-[28px] py-1 xl:py-[5px] px-5 xl:px-8 mb-[27px] mt-[14px] hover:bg-[#d0dbeb] transition"
-          >
-            See More
-          </button>
+         <motion.button
+  onClick={handleSeeMore}
+  whileHover={{ scale: 1.03 }}
+  whileTap={{ scale: 0.97 }}
+  transition={{ duration: 0.2 }}
+  className="text-[#202224] font-bold text-sm bg-[#E2EAF8]/70 rounded-xl leading-[28px] py-1 xl:py-[5px] px-5 xl:px-8 mb-[27px] mt-[14px]"
+>
+  See More
+</motion.button>
         </div>
       )}
         </div>

@@ -63,7 +63,7 @@ function DashboardPage() {
        <MainTitle title="Dashboard"/>
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-[30px] mb-7">
         {dashboardData.map((card, index) => (
-                    <motion.div  custom={index}
+           <motion.div  custom={index}
             variants={fadeIn}
             initial="hidden"
             animate="visible" key={index} className="p-4 bg-white rounded-[14px]"  style={{ boxShadow: "6px 6px 54px 0 rgba(0, 0, 0, 5%)" }}>

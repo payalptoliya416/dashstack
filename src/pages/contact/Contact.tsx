@@ -7,17 +7,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function Contact() {
   const contacts = useSelector((state: RootState) => state.contact.contacts);
-
+const MotionLink = motion(Link);
   return (
     <>
       <div className="flex justify-between items-start mb-[6px]">
         <MainTitle title="Contact" />
-        <Link
+        <MotionLink
           to="/contact/add-new-contact"
+           whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ duration: 0.2 }}
           className="text-white text-sm font-bold bg-[#4379EE] rounded-md py-2 sm:py-[11px] px-[27px] transition-all duration-200 hover:shadow-md"
         >
           Add New Contact
-        </Link>
+        </MotionLink>
       </div>
 
       <div className="grid grid-cols-12 gap-[30px]">

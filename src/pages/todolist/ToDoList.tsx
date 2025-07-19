@@ -34,12 +34,15 @@ function ToDoList() {
     <>
       <div className="flex justify-between items-start mb-[6px]">
         <MainTitle title="To-Do List" />
-        <button
+        <motion.button
           onClick={handleButtonClick}
-          className="text-white text-sm font-bold bg-[#4379EE] rounded-md py-2 sm:py-[11px] px-[27px] transition-all duration-200 hover:shadow-md"
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ duration: 0.2 }}
+          className="text-white text-sm font-bold bg-[#4379EE] rounded-md py-2 sm:py-[11px] px-[27px]"
         >
-         {showInput ? "Save":" Add New Task "}
-        </button>
+          {showInput ? "Save" : "Add New Task"}
+        </motion.button>
       </div>
  <AnimatePresence>
       {showInput && (
