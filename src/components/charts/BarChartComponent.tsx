@@ -7,14 +7,7 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
-
-type BarChartProps = {
-  data: any[];
-  xKey: string;
-  barKeys: { key: string; color: string }[];
-  stacked?: boolean;
-  fullRounded?: boolean;
-};
+import type { BarChartProps } from "../../types/Chart";
 
 const BarChartComponent: React.FC<BarChartProps> = ({
   data,

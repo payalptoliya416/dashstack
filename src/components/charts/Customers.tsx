@@ -1,10 +1,6 @@
 import React from "react";
 import { PieChart, Pie, Cell } from "recharts";
-
-interface DonutData {
-  name: string;
-  value: number;
-}
+import type { DonutData } from "../../types/Chart";
 
 const donutData: DonutData[] = [
   { name: "New Customers", value: 34249 },
