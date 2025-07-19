@@ -1,8 +1,9 @@
 import { Mail } from "lucide-react";
-import MainTitle from "../../hooks/MainTitle";
+import MainTitle from "../../hooks/useMainTitle";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../redux/store";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Contact() {
   const contacts = useSelector((state: RootState) => state.contact.contacts);
@@ -20,9 +21,15 @@ function Contact() {
       </div>
 
       <div className="grid grid-cols-12 gap-[30px]">
+          <AnimatePresence>
         {contacts.map((contact ,index : number) => (
-          <div
+          <motion.div
             key={index}
+             layout
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, scale: 0.95 }}
+                          transition={{ duration: 0.3, delay: index * 0.05 }}
             className="col-span-12 sm:col-span-6 xl:col-span-4"
           >
             <div className="rounded-xl">
@@ -44,15 +51,17 @@ function Contact() {
                   {contact.email}
                 </a>
                 <a href={`mailto:${contact.email}`} className="inline-block mt-4">
-                  <button className="flex items-center gap-[13px] cursor-pointer text-[#767676] text-sm font-bold px-[25px] py-[10px] border border-[#979797] rounded-md mx-auto">
+                  <motion.button  whileTap={{ scale: 0.95 }}
+                      whileHover={{ scale: 1.02 }} className="flex items-center gap-[13px] cursor-pointer text-[#767676] text-sm font-bold px-[25px] py-[10px] border border-[#979797] rounded-md mx-auto">
                     <Mail strokeWidth={2} size={16} className="text-[#767676]" />
                     Message
-                  </button>
+                  </motion.button>
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
+          </AnimatePresence>
       </div>
     </>
   );

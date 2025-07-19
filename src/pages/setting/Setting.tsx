@@ -1,9 +1,11 @@
 import { useState, useEffect, type ChangeEvent, type FormEvent } from "react";
 import { Camera } from "lucide-react";
-import MainTitle from "../../hooks/MainTitle";
+import MainTitle from "../../hooks/useMainTitle";
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../../redux/store";
 import { setSettings } from "../../redux/slice/settingSlice";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
+import {motion } from 'framer-motion';
 
 function Setting() {
   const dispatch = useDispatch<AppDispatch>();
@@ -93,11 +95,15 @@ function Setting() {
 
     dispatch(setSettings({ ...formData, logo: image }));
   };
-
+  const animation = usePageAnimation();
   return (
     <>
       <MainTitle title="General Settings" />
-      <div className="bg-white border border-[#B9B9B9]/60 rounded-xl py-8 lg:py-[60px] px-5 sm:px-10 lg:px-20 2xl:px-[180px]">
+      <motion.div
+        variants={animation}
+        initial="initial"
+        animate="animate"
+        exit="exit" className="bg-white border border-[#B9B9B9]/60 rounded-xl py-8 lg:py-[60px] px-5 sm:px-10 lg:px-20 2xl:px-[180px]">
         <form onSubmit={handleSubmit}>
           <div className="flex justify-center flex-col items-center gap-4 mb-7 sm:mb-10">
             <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-full overflow-hidden bg-[#ECECEE] shadow-sm flex items-center justify-center">
@@ -232,7 +238,7 @@ function Setting() {
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </>
   );
 }

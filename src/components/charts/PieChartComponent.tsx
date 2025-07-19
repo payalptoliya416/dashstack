@@ -1,9 +1,5 @@
 import { PieChart, Pie, Cell } from "recharts";
-
-type PieChartProps = {
-  data: { name: string; value: number }[];
-  colors: string[];
-};
+import type { PieChartProps } from "../../types/Chart";
 
 const PieChartComponent: React.FC<PieChartProps> = ({ data, colors }) => {
   return (

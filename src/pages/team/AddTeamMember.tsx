@@ -1,10 +1,12 @@
 import { Camera } from "lucide-react";
-import MainTitle from "../../hooks/MainTitle";
+import MainTitle from "../../hooks/useMainTitle";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "../../redux/store";
 import { useNavigate } from "react-router-dom";
 import { addTeamMember } from "../../redux/slice/teamMemberSlice";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
+import { motion } from "framer-motion";
 
 type FormData = {
   firstName: string;
@@ -101,11 +103,17 @@ function AddTeamMember() {
 
     navigate("/team");
   };
-
+  const animation = usePageAnimation();
   return (
     <>
       <MainTitle title="Add Team Member" />
-      <div className="bg-white border border-[#B9B9B9]/60 rounded-xl py-8 lg:py-[60px] px-5 sm:px-10 lg:px-20 2xl:px-[180px]">
+      <motion.div
+        variants={animation}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        className="bg-white border border-[#B9B9B9]/60 rounded-xl py-8 lg:py-[60px] px-5 sm:px-10 lg:px-20 2xl:px-[180px]"
+      >
         <form onSubmit={handleSubmit}>
           {/* Image Upload */}
           <div className="flex justify-center flex-col items-center gap-4 mb-7 sm:mb-10">
@@ -197,7 +205,7 @@ function AddTeamMember() {
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </>
   );
 }

@@ -1,6 +1,8 @@
-import MainTitle from "../../hooks/MainTitle";
-import { ProductSliderCard } from "../../hooks/ProductSliderCard";
+import MainTitle from "../../hooks/useMainTitle";
+import { ProductSliderCard } from "../../hooks/useProductSliderCard";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 import type { productData } from "../../types/Sidebar";
+import {motion} from 'framer-motion';
 
 const productData: productData[] = [
   {
@@ -48,14 +50,22 @@ const productData: productData[] = [
 ];
 
 function Favorites() {
+    const pageAnim = usePageAnimation();
   return (
     <>
+     <motion.div
+      variants={pageAnim}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <MainTitle title="Favorites"/>
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-[28px]">
         {productData.map((product, i) => (
           <ProductSliderCard key={i} {...product} heartColor="#F93C65" />
         ))}
       </div>
+      </motion.div>
     </>
   );
 }

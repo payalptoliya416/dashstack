@@ -1,9 +1,5 @@
 import { PieChart, Pie, Cell } from "recharts";
-
-type DonutChartProps = {
-  data: { name: string; value: number }[];
-  colors: string[];
-};
+import type { DonutChartProps } from "../../types/Chart";
 
 const DonutChartComponent: React.FC<DonutChartProps> = ({ data, colors }) => {
   return (

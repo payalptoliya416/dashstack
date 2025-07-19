@@ -4,9 +4,12 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import type { SlideData } from "../../types/ProductSlider";
-import { ProductSliderCard } from "../../hooks/ProductSliderCard";
-import MainTitle from "../../hooks/MainTitle";
+import { ProductSliderCard } from "../../hooks/useProductSliderCard";
+import MainTitle from "../../hooks/useMainTitle";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
+import { useFadeIn } from "../../hooks/useFadeIn";
+import { motion } from "framer-motion";
+import type { SlideData } from "../../types/Dashboard";
 
 const slides: SlideData[] = [
   {
@@ -175,8 +178,17 @@ const paginatedData = productData.slice(
   (currentPage - 1) * itemsPerPage,
   currentPage * itemsPerPage
 );
+
+ const pageAnimation = usePageAnimation();
+  const fadeIn = useFadeIn();
   return (
     <>
+    <motion.div
+          variants={pageAnimation}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
          <MainTitle title="Products"/>
       <div className="relative mb-[30px]">
         <div className="grid grid-col-12">
@@ -211,7 +223,10 @@ const paginatedData = productData.slice(
         >
           {slides.map((slide: SlideData, index: number) => (
             <SwiperSlide key={index}>
-              <div
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="w-full bg-no-repeat bg-cover bg-center flex items-center rounded-xl py-8 sm:py-[50px]"
                 style={{ backgroundImage: `url('${slide.bg}')` }}
               >
@@ -231,43 +246,50 @@ const paginatedData = productData.slice(
                     Get Started
                   </button>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
         </div>
       </div>
-
-      {/* --- */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-[28px]">
         {paginatedData.map((product, i) => (
-          <ProductSliderCard key={i} {...product} />
+           <motion.div
+                      key={i}
+                      custom={i}
+                      variants={fadeIn}
+                      initial="hidden"
+                      animate="visible"
+                    >
+                      <ProductSliderCard key={i} {...product} />
+                    </motion.div>
         ))}
       </div>
-      <div className="flex justify-between items-center mt-6">
-  <span className="text-sm text-gray-500">
-    Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
-    {Math.min(currentPage * itemsPerPage, productData.length)} of {productData.length}
-  </span>
-
-  <div className="flex gap-2">
-    <button
-      onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-      disabled={currentPage === 1}
-      className="px-3 py-1 text-sm bg-gray-200 rounded disabled:opacity-50"
-    >
-      <ChevronLeft size={17} />
-    </button>
-    <button
-      onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-      disabled={currentPage === totalPages}
-      className="px-3 py-1 text-sm bg-gray-200 rounded disabled:opacity-50"
-    >
-      <ChevronRight size={17} />
-    </button>
-  </div>
-</div>
-
+      <motion.div         initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }} className="flex justify-between items-center mt-6">
+      <span className="text-sm text-gray-500">
+        Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
+        {Math.min(currentPage * itemsPerPage, productData.length)} of {productData.length}
+      </span>
+      <div className="flex gap-2">
+        <button
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+          className="px-3 py-1 text-sm bg-gray-200 rounded disabled:opacity-50"
+        >
+          <ChevronLeft size={17} />
+        </button>
+        <button
+          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+          disabled={currentPage === totalPages}
+          className="px-3 py-1 text-sm bg-gray-200 rounded disabled:opacity-50"
+        >
+          <ChevronRight size={17} />
+        </button>
+      </div>
+      </motion.div>
+        </motion.div>
     </>
   );
 };

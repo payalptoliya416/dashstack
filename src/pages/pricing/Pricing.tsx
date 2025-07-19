@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import MainTitle from "../../hooks/MainTitle";
+import MainTitle from "../../hooks/useMainTitle";
 import type { PricingPlan } from "../../types/Dashboard";
+import { motion } from "framer-motion";
 
 const pricingPlans: PricingPlan[] = [
   {
@@ -51,7 +52,11 @@ function Pricing() {
       <MainTitle title="Pricing" />
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 lg:gap-10">
         {pricingPlans.map((plan, index) => (
-          <div
+          <motion.div
+           initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+            whileHover={{ scale: 1.03 }}
             key={index}
             className="rounded-3xl bg-[url('/images/pricingbg.png')] bg-cover w-full h-full px-5"
           >
@@ -103,7 +108,7 @@ function Pricing() {
                 Start Your 30 Day Free Trial
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </>

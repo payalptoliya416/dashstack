@@ -14,9 +14,12 @@ import {
   Trash2,
 } from "lucide-react";
 import { useState } from "react";
-import MainTitle from "../../hooks/MainTitle";
+import MainTitle from "../../hooks/useMainTitle";
 import type { Product } from "../../types/Dashboard";
-import ProductStockTable from '../../hooks/ProductStockTable';
+import ProductStockTable from '../../hooks/useProductStockTable';
+import { motion } from "framer-motion";
+import { usePageAnimation } from '../../hooks/usePageAnimation';
+import { useFadeIn } from '../../hooks/useFadeIn';
 
 const defaultData: Product[] = [
   {
@@ -165,9 +168,15 @@ export function ProductStock() {
       },
     },
   });
-
+  const pageAnim = usePageAnimation();
+  const fadeIn = useFadeIn();
   return (
-    <>
+     <motion.div
+          variants={pageAnim}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
       <div className="flex justify-between flex-col sm:flex-row mb-6 sm:mb-0">
         <MainTitle title="Product Stock" />
         <div>
@@ -185,6 +194,12 @@ export function ProductStock() {
           </div>
         </div>
       </div>
+        <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              animate="visible"
+              custom={1}
+            >
         <ProductStockTable
         data={data}
         columns={columns}
@@ -193,8 +208,12 @@ export function ProductStock() {
         globalFilter={search}
         onGlobalFilterChange={setSearch}
       />
+            </motion.div>
 
-      <div className="flex justify-between items-center mt-4 text-sm text-gray-500">
+      <motion.div  variants={fadeIn}
+              initial="hidden"
+              animate="visible"
+              custom={0} className="flex justify-between items-center mt-4 text-sm text-gray-500">
         <span>
           Showing {table.getRowModel().rows.length} of {data.length} products
         </span>
@@ -219,7 +238,7 @@ export function ProductStock() {
             <ChevronRight size={17} />
           </button>
         </div>
-      </div>
-    </>
+      </motion.div>
+    </motion.div>
   );
 }

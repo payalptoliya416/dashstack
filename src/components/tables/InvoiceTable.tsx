@@ -7,12 +7,10 @@ import {
 import type { InvoiceData } from "../../types/Dashboard";
 import React from "react";
 
-const data: InvoiceData[] = [
-  { serialno: "1", description: "Children Toy", quantity: "2", basecost: "$20", totalcost: "$80" },
-  { serialno: "2", description: "Makeup", quantity: "2", basecost: "$50", totalcost: "$100" },
-  { serialno: "3", description: "Asus Laptop", quantity: "5", basecost: "$100", totalcost: "$500" },
-  { serialno: "4", description: "Iphone X", quantity: "4", basecost: "$1000", totalcost: "$4000" },
-];
+
+interface Props {
+  data: InvoiceData[];
+}
 
 const columns: ColumnDef<InvoiceData>[] = [
   {
@@ -42,7 +40,7 @@ const columns: ColumnDef<InvoiceData>[] = [
   },
 ];
 
-function InvoiceTable() {
+function InvoiceTable({ data }: Props) {
   const table = useReactTable({
     data,
     columns,

@@ -1,11 +1,15 @@
 
-    import MainTitle from "../../hooks/MainTitle";
+    import MainTitle from "../../hooks/useMainTitle";
     import {Transition, Popover } from '@headlessui/react';
     import { ChevronDown, Funnel, RotateCcw } from 'lucide-react';
     import React, { useState, Fragment } from 'react';
     import type { DateFilterProps, FilterButtonProps, OrderStatusFilterProps, OrderTypeFilterProps } from "../../types/Dashboard";
-    import { Table } from "../../hooks/FilterTable";
+    import { Table } from "../../hooks/useFilterTable";
     import type { ColumnDef } from "@tanstack/react-table";
+    import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
+import { useFadeIn } from "../../hooks/useFadeIn";
+
 
     type Order = {
     id: string;
@@ -307,11 +311,20 @@
     return matchesDate && matchesType && matchesStatus;
     });
 
+     const pageAnimation = usePageAnimation();
 
     return (
-        <>
+      <motion.div
+      variants={pageAnimation}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
         <MainTitle title="Order Lists" />
-        <div className="flex flex-wrap items-center border border-[#B9B9B9]/50 rounded-lg bg-[#F9F9FB] lg:w-max mb-6 justify-center">
+        <motion.div   variants={useFadeIn()}
+        initial="hidden"
+        animate="visible"
+        custom={0} className="flex flex-wrap items-center border border-[#B9B9B9]/50 rounded-lg bg-[#F9F9FB] lg:w-max mb-6 justify-center">
             <div className="px-4 py-1 sm:p-3 xl:p-6 border-r border-[#B9B9B9]/50 flex items-center justify-center my-2 sm:my-0">
             <Funnel className="w-5 h-5" />
             </div>
@@ -427,9 +440,9 @@
             >
             <RotateCcw className="w-5 h-5" /> Reset Filter
             </button>
-        </div>
+        </motion.div>
         <Table data={filteredData} columns={columns} />
-        </>
+        </motion.div>
     );
     }
 

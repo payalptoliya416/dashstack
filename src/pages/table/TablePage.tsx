@@ -1,9 +1,12 @@
 import type { ColumnDef } from "@tanstack/table-core";
-import MainTitle from "../../hooks/MainTitle"
-import { Table } from "../../hooks/FilterTable";
-import ProductStockTable from "../../hooks/ProductStockTable";
+import MainTitle from "../../hooks/useMainTitle"
+import { Table } from "../../hooks/useFilterTable";
+import ProductStockTable from "../../hooks/useProductStockTable";
 import { SquarePen, Trash2 } from "lucide-react";
 import type { Product } from "../../types/Dashboard";
+import {motion} from 'framer-motion';
+import { useFadeIn } from "../../hooks/useFadeIn";
+
  type Order = {
     id: string;
     name: string;
@@ -172,15 +175,19 @@ const productcolumns: ColumnDef<Product>[] = [
     ),
   },
 ];
-
+const fadeIn = useFadeIn();
 function TablePage() {
   return (
     <>
       <MainTitle title="Table"/>
     <div className="border border-[#212121]/6 mb-6"></div>
-      <Table data={data} columns={columns} isPaginated={false} />
+     <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+        <Table data={data} columns={columns} isPaginated={false} />
+      </motion.div>
       <div className="border border-[#212121]/6 my-6"></div>
-      <ProductStockTable data={defaultData} columns={productcolumns} />
+      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+        <ProductStockTable data={defaultData} columns={productcolumns} />
+      </motion.div>
     </>
   )
 }

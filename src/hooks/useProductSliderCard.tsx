@@ -5,6 +5,8 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
+import {motion} from 'framer-motion';
+import { useFadeIn } from "./useFadeIn";
 
 type ProductSliderCardProps = {
   images: string[];
@@ -14,6 +16,7 @@ type ProductSliderCardProps = {
   reviewsCount: number;
   onEditClick?: () => void;
    heartColor?: string;
+     index?: number; 
 };
 
 export const ProductSliderCard: FC<ProductSliderCardProps> = ({
@@ -23,14 +26,19 @@ export const ProductSliderCard: FC<ProductSliderCardProps> = ({
   rating,
   reviewsCount,
   onEditClick,
-  heartColor 
+  heartColor ,
+    index = 0,
 }) => {
+    const fadeIn = useFadeIn();
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
 const [isFavorite, setIsFavorite] = useState(false)
 
   return (
-    <div className="bg-white rounded-xl">
+    <motion.div   variants={fadeIn}
+      initial="hidden"
+      animate="visible"
+      custom={index} className="bg-white rounded-xl">
       <div className="relative">
         <div
           ref={prevRef}
@@ -74,9 +82,9 @@ const [isFavorite, setIsFavorite] = useState(false)
             <h2 className="text-[#202224] text-lg font-bold mb-2">{title}</h2>
             <h3 className="text-[#4880FF] text-base font-bold mb-2">{price}</h3>
           </div>
-          <div className="w-[44px] h-[44px] rounded-full bg-[#F9F9F9] flex justify-center items-center cursor-pointer"    onClick={() => setIsFavorite(!isFavorite)}>
+          <motion.div whileTap={{ scale: 0.85 }} className="w-[44px] h-[44px] rounded-full bg-[#F9F9F9] flex justify-center items-center cursor-pointer"    onClick={() => setIsFavorite(!isFavorite)}>
             <Heart size={18} color={heartColor ? "#FF3B3B" : "#626262"} fill={isFavorite && heartColor? "#FF3B3B" : isFavorite  ? "#000000" :"none"}/>
-          </div>
+          </motion.div>
         </div>
 
         <div className="flex gap-[2px] items-center mb-5">
@@ -99,6 +107,6 @@ const [isFavorite, setIsFavorite] = useState(false)
           Edit Product
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };

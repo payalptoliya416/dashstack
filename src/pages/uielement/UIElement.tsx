@@ -2,10 +2,13 @@ import { ChevronDown, Funnel } from "lucide-react";
 import BarChartComponent from "../../components/charts/BarChartComponent";
 import DonutChartComponent from "../../components/charts/DonutChartComponent";
 import PieChartComponent from "../../components/charts/PieChartComponent";
-import MainTitle from "../../hooks/MainTitle";
+import MainTitle from "../../hooks/useMainTitle";
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react/jsx-runtime";
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useFadeIn } from "../../hooks/useFadeIn";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function UIElement() {
   const barData = Array.from({ length: 10 }, (_, i) => ({
@@ -72,9 +75,26 @@ function UIElement() {
     ["#FF8743", "#E9EFFC"],
     ["#E9EFFC", "#4393FF"],
   ];
-
+  const fadeSlideVariant : any = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+      transition: { duration: 0.3 },
+    },
+  };
   return (
-    <>
+   <motion.div
+       initial="hidden"
+       animate="visible"
+       exit="exit"
+       variants={fadeSlideVariant}
+     >
       <div className="flex items-center justify-between flex-wrap">
         <MainTitle title="UI Elements" />
         <div className="flex flex-wrap items-center border border-[#B9B9B9]/50 rounded-lg bg-[#F9F9FB] lg:w-max mb-6 justify-center">
@@ -148,8 +168,13 @@ function UIElement() {
       </div>
 
       {/* Main content area for charts */}
+       <AnimatePresence mode="wait">
+
       {(chartFilter === "all" || chartFilter === "bar") && (
-        <div className="bg-white border border-[#B9B9B9]/30 rounded-xl mb-4">
+        <motion.div   key="bar"  variants={fadeSlideVariant}
+            initial="hidden"
+            animate="visible"
+            exit="exit" className="bg-white border border-[#B9B9B9]/30 rounded-xl mb-4">
           <h2 className="font-bold text-2xl p-6 pb-0 mb-[10px]">Bar Chart</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-12 p-5 xl:p-[50px]">
             {/* 1st chart: only top-rounded */}
@@ -194,12 +219,17 @@ function UIElement() {
               ]}
             />
           </div>
-        </div>
+        </motion.div>
       )}
+     
 
       {/* Pie Charts Section */}
       {(chartFilter === "all" || chartFilter === "pie") && (
-        <div className="bg-white border border-[#B9B9B9]/30 rounded-xl mb-4">
+        <motion.div  key="pie"
+            variants={fadeSlideVariant}
+            initial="hidden"
+            animate="visible"
+            exit="exit" className="bg-white border border-[#B9B9B9]/30 rounded-xl mb-4">
           <h2 className="font-bold text-2xl p-6 pb-0 mb-[10px]">Pie Chart</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-12 p-5 xl:p-[50px]">
             {pieChartDataList.map((data, idx) => (
@@ -210,12 +240,16 @@ function UIElement() {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
       )}
 
       {/* Donut Charts Section */}
       {(chartFilter === "all" || chartFilter === "donut") && (
-        <div className="bg-white border-[0.3px] border-[#B9B9B9]/30 rounded-xl mb-4">
+        <motion.div  key="donut"
+            variants={fadeSlideVariant}
+            initial="hidden"
+            animate="visible"
+            exit="exit" className="bg-white border-[0.3px] border-[#B9B9B9]/30 rounded-xl mb-4">
           <h2 className="font-bold text-2xl p-6 pb-0 mb-[10px]">Donut Chart</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-12 p-5 xl:p-[50px]">
             {donutChartDataList.map((data, idx) => (
@@ -226,9 +260,10 @@ function UIElement() {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
       )}
-    </>
+        </AnimatePresence>
+    </motion.div>
   );
 }
 

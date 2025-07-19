@@ -1,6 +1,6 @@
 import { Star } from 'lucide-react';
 import { type FC, useState } from 'react';
-import type { MessageProps } from '../types/Dashboard';
+import type { MessageProps } from '../../types/Dashboard';
 
 const MessageRow: FC<MessageProps> = ({
   name,

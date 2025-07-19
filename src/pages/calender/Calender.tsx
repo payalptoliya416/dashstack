@@ -8,8 +8,8 @@ import type { Event } from "../../types/Dashboard";
 import { Link } from "react-router-dom";
 import type {RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
-import MainTitle from "../../hooks/MainTitle";
-
+import MainTitle from "../../hooks/useMainTitle";
+import {motion} from 'framer-motion';
 interface CalendarGridProps {
   onShowSidebar: () => void;
 }
@@ -439,9 +439,14 @@ const Calender: React.FC = () => {
   return (
     <>
         <MainTitle title="Calendar" />
-    <div className="grid grid-cols-12 gap-4 xl:gap-6 bg-[#F8F9FB]"> 
+    <motion.div   initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.4, ease: "easeOut" }} className="grid grid-cols-12 gap-4 xl:gap-6 bg-[#F8F9FB]"> 
        {showSidebar && (
-        <div className="fixed inset-0 bg-black/30 z-[999] md:hidden" />
+        <motion.div    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }} className="fixed inset-0 bg-black/30 z-[999] md:hidden" />
       )}
       <div ref={sidebarRef} className={`fixed md:static top-0 left-0 h-full md:rounded-xl bg-white  transition-transform duration-300 ease-in-out ${showSidebar ? 'translate-x-0 z-[999]' : '-translate-x-full'} md:translate-x-0 md:col-span-3 col-span-5 md:w-auto shadow-md md:shadow-none`}>
         <div className="px-4 xl:px-6 pt-5 xl:pt-6 border-b border-[#E0E0E0]/50">
@@ -470,7 +475,7 @@ const Calender: React.FC = () => {
         </div>
       </div>
       <CalendarGrid onShowSidebar={() => setShowSidebar(true)} />
-    </div>
+    </motion.div>
     </>
   );
 };

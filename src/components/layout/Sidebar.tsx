@@ -88,7 +88,7 @@ export const Sidebar: FC<SidebarProps> = ({
       <nav className="space-y-2">
         {[topLinks, middleLinks, bottomLinks].map((group, index) => (
           <div key={index}>
-            {index === 1 && (
+            {index === 1 && ( 
               <div className="text-xs text-gray-500 font-semibold px-6 mb-1 mt-4 uppercase tracking-wide">
                 Pages
               </div>

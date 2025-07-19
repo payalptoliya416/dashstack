@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Popover } from "@headlessui/react";
 import type { EventProps } from "../../types/Dashboard";
+import { motion } from "framer-motion";
 
 const EventPopover: React.FC<EventProps> = ({ event, multiDay, duration }) => {
     const [alignPosition, setAlignPosition] = useState<"left" | "right" | "center">("right");
@@ -63,6 +64,10 @@ useEffect(() => {
         </Popover.Button>
 
         <Popover.Panel
+        as={motion.div}
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  exit={{ opacity: 0, scale: 0.95 }}
           className={`absolute z-30 mt-2 w-36 sm:w-64 bg-white text-start rounded-lg shadow-lg
              ${verticalAlignPosition === "bottom" ? "top-full mt-2" : ""}
             ${verticalAlignPosition === "top" ? "bottom-full mb-2" : ""}

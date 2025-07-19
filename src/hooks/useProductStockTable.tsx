@@ -1,4 +1,4 @@
-// hooks/ProductStockTable.tsx
+
 import {
   flexRender,
   getCoreRowModel,

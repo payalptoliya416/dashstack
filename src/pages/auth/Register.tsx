@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../redux/slice/authSlice";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "../../redux/store";
+import {motion} from 'framer-motion';
 
 function Register() {
   const navigate = useNavigate();
@@ -94,7 +95,11 @@ function Register() {
 
   return (
     <div className="min-h-screen w-full bg-[url('/images/loginbg.png')] bg-cover bg-center flex items-center justify-center overflow-y-auto px-4 py-10">
-      <div className="bg-white py-14 px-6 sm:px-10 md:py-[90px] md:px-[57px] rounded-xl w-full max-w-[500px] md:max-w-[630px] shadow-lg">
+       <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -40 }}
+        transition={{ duration: 0.4, ease: "easeOut" }} className="bg-white py-14 px-6 sm:px-10 md:py-[90px] md:px-[57px] rounded-xl w-full max-w-[500px] md:max-w-[630px] shadow-lg">
         <h1 className="text-2xl md:text-[32px] mb-[15px] font-bold text-[#202224] text-center">
           Create an Account
         </h1>
@@ -219,7 +224,7 @@ function Register() {
             </Link>
           </p>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 }

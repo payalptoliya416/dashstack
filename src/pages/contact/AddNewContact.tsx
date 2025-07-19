@@ -1,10 +1,12 @@
 import { Camera } from "lucide-react";
-import MainTitle from "../../hooks/MainTitle";
+import MainTitle from "../../hooks/useMainTitle";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import type { AppDispatch } from "../../redux/store";
 import { addContact } from "../../redux/slice/contactSlice";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function AddNewContact() {
   const dispatch = useDispatch<AppDispatch>();
@@ -88,11 +90,14 @@ function AddNewContact() {
 
     navigate("/contact");
   };
-
+  const animation = usePageAnimation();
   return (
     <>
       <MainTitle title="Add New Contact" />
-      <div className="bg-white border border-[#B9B9B9]/60 rounded-xl py-8 lg:py-[60px] px-5 sm:px-10 lg:px-20 2xl:px-[180px]">
+      <motion.div  variants={animation}
+        initial="initial"
+        animate="animate"
+        exit="exit" className="bg-white border border-[#B9B9B9]/60 rounded-xl py-8 lg:py-[60px] px-5 sm:px-10 lg:px-20 2xl:px-[180px]">
         <form onSubmit={handleSubmit}>
           <div className="flex justify-center flex-col items-center gap-4 mb-7 sm:mb-10">
             <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-full overflow-hidden bg-[#ECECEE] shadow-sm flex items-center justify-center">
@@ -182,7 +187,7 @@ function AddNewContact() {
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </>
   );
 }

@@ -13,18 +13,21 @@ import {
   Trash2,
   TriangleAlert,
 } from "lucide-react";
-import MainTitle from "../../hooks/MainTitle";
+import MainTitle from "../../hooks/useMainTitle";
 import type {
   CheckboxItem,
   MailItem,
   MessageProps,
 } from "../../types/Dashboard";
-import MessageRow from "../../hooks/MessageRow";
+import MessageRow from "../../components/ui/MessageRow";
 import { useEffect, useMemo, useState } from "react";
 import SentChatView from "./SentChatView";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { SidebarItem } from "./SidebarItem";
 import { LabelCheckbox } from "./LabelCheckbox";
+import { motion } from "framer-motion";
+import { useFadeIn } from "../../hooks/useFadeIn";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 const mailItems: MailItem[] = [
   { label: "Inbox", icon: <Mail size={16} />, count: 1253 },
@@ -292,7 +295,11 @@ function Inbox() {
 };
 
   return (
-    <>
+   <motion.div
+    {...usePageAnimation()}
+    className="overflow-hidden"
+  >
+
       <MainTitle title="Inbox" />
       <div className="grid grid-cols-12 gap-[21px]">
         <div className="col-span-12 xl:col-span-3 h-full bg-white rounded-xl px-3 xl:px-6 py-3 xl:py-6 border border-[#B9B9B9]/50 flex  items-center justify-center sm:justify-between xl:flex-none xl:block flex-wrap gap-3 ">
@@ -463,7 +470,7 @@ function Inbox() {
           </div>
         </div>
       </div>
-    </>
+     </motion.div>
   );
 }
 

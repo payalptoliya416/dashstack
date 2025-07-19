@@ -1,11 +1,12 @@
 import { Camera } from "lucide-react";
-import MainTitle from "../../hooks/MainTitle";
+import MainTitle from "../../hooks/useMainTitle";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "../../redux/store";
 import { addEvent } from "../../redux/slice/eventSlice";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
+import { motion} from 'framer-motion';
 
 type FormData = {
   eventName: string;
@@ -95,7 +96,9 @@ dispatch(addEvent(newEvent));
   return (
     <>
       <MainTitle title="Add New Event" />
-      <div className="bg-white border border-[#B9B9B9]/60 rounded-xl py-8 lg:py-[60px] px-5 sm:px-10 lg:px-20 2xl:px-[180px]">
+      <motion.div   initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.3 }} className="bg-white border border-[#B9B9B9]/60 rounded-xl py-8 lg:py-[60px] px-5 sm:px-10 lg:px-20 2xl:px-[180px]">
         <form onSubmit={handleSubmit}>
           {/* Image upload */}
           <div className="flex justify-center flex-col items-center gap-4 mb-7 sm:mb-10">
@@ -164,7 +167,7 @@ dispatch(addEvent(newEvent));
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </>
   );
 }

@@ -20,8 +20,8 @@ import AddTeamMember from "./pages/team/AddTeamMember";
 import Setting from "./pages/setting/Setting";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
-import PrivateRoute from "./route/PrivateRoute";
-import NotFound from "./route/NotFound";
+import PrivateRoute from "./constants/PrivateRoute";
+import NotFound from "./pages/notfound/NotFound";
 
 function App() {
   return (
@@ -30,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          
           <Route element={<PrivateRoute />}>
             <Route element={<Layout />}>
               <Route path="/dashboard" element={<DashboardPage />} />
@@ -67,7 +68,8 @@ function App() {
               <Route path="/settings" element={<Setting />} />
             </Route>
           </Route>
-              <Route path="*" element={<NotFound />} />
+         
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>

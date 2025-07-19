@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Star, Trash2, CircleX, Check } from "lucide-react";
-import MainTitle from "../../hooks/MainTitle";
+import MainTitle from "../../hooks/useMainTitle";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   addTask,
   toggleComplete,
@@ -40,9 +41,12 @@ function ToDoList() {
          {showInput ? "Save":" Add New Task "}
         </button>
       </div>
-
+ <AnimatePresence>
       {showInput && (
-        <div className="border border-[#D5D5D5]/60 rounded-xl bg-[#FBFCFF] py-[28px] px-8 mb-6 flex gap-4 items-center">
+        <motion.div initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.3 }} className="border border-[#D5D5D5]/60 rounded-xl bg-[#FBFCFF] py-[28px] px-8 mb-6 flex gap-4 items-center">
           <input
             type="text"
             value={taskTitle}
@@ -50,13 +54,20 @@ function ToDoList() {
             placeholder="Write your task name here"
             className="w-[435px] py-2 px-4 rounded-md border border-[#D5D5D5]/60 bg-[#F5F6FA]"
           />
-        </div>
+        </motion.div>
       )}
+ </AnimatePresence>
 
       <div className="space-y-4">
+           <AnimatePresence>
         {tasks.map((task) => (
-          <div
+          <motion.div
             key={task.id}
+             layout
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
             className={`flex justify-between items-center p-4 sm:p-8 rounded-xl border transition-all duration-200 ${
               task.completed
                 ? "bg-[#4379EE] text-white"
@@ -79,15 +90,16 @@ function ToDoList() {
 
             <div className="flex items-center gap-4 sm:gap-8">
               {task.completed ? (
-                <button
+                <motion.button
+                 whileTap={{ scale: 0.9 }}
                   onClick={() => dispatch(deleteTask(task.id))}
                   className="cursor-pointer p-1 rounded-xl bg-[#6C99FF] py-2 sm:py-[11px] px-4 sm:px-[22px] flex justify-center items-center"
                 >
                   <Trash2 className="text-white" strokeWidth={1} size={17} />
-                </button>
+                </motion.button>
               ) : (
                 <>
-                  <button onClick={() => dispatch(toggleImportant(task.id))}>
+                  <motion.button   whileTap={{ scale: 0.9 }} onClick={() => dispatch(toggleImportant(task.id))}>
                     <Star
                       className={
                         task.important
@@ -97,18 +109,21 @@ function ToDoList() {
                       strokeWidth={1.5}
                       size={24}
                     />
-                  </button>
+                  </motion.button>
+                    <motion.div whileTap={{ scale: 0.9 }}>
                   <CircleX
                           onClick={() => dispatch(deleteTask(task.id))}
                     className="text-[#B3B3B3] cursor-pointer"
                     strokeWidth={1}
                     size={24}
                   />
+                    </motion.div>
                 </>
               )}
             </div>
-          </div>
+          </motion.div>
         ))}
+           </AnimatePresence>
       </div>
     </>
   );
