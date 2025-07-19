@@ -24,6 +24,7 @@ export interface RevenueDataItem {
   name: string;
   sales: number;
   profit: number;
+  month: string;
 };
 
 export interface DonutDataItem {

@@ -99,18 +99,18 @@ const SentChatView: FC = () => {
               />
             )}
             <div
-              className={`p-5 rounded-t-2xl max-w-[70%] text-sm ${
+              className={`p-3 md:p-5 rounded-t-2xl max-w-[70%] text-sm ${
                 msg.sender === "me"
                   ? "bg-[#4880FF] text-white rounded-l-2xl"
                   : "bg-[#F6F6F6] text-[#202224] rounded-r-2xl"
               }`}
             >
-              <div className="mb-[21px] break-words">
+              <div className="mb-4 md:mb-[21px] break-words">
                 {msg.type === "image" ? (
                   <img
                     src={msg.text}
                     alt="uploaded"
-                    className="rounded-md max-w-[200px] h-auto"
+                    className="rounded-md max-w-[100px] md:max-w-[200px] h-auto"
                   />
                 ) : msg.type === "link" ? (
                   <a
@@ -132,7 +132,7 @@ const SentChatView: FC = () => {
               </div>
 
               {/* Footer */}
-              <div className="flex justify-end gap-4 items-center text-xs">
+              <div className="flex justify-end gap-3 sm:gap-4 items-center text-xs">
                 <span
                   className={
                     msg.sender === "me" ? "text-white" : "text-[#757575]"

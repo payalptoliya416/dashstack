@@ -342,9 +342,9 @@ function Inbox() {
           </div>
           </div>
           <div className="order-4 sm:order-3 mx-4 sm:mx-0">
-          <h3 className="text-[#202224] mb-4 font-bold text-base hidden xl:block">Label</h3>
+          <h3 className="text-[#202224] mb-8 font-bold text-base hidden xl:block">Label</h3>
 
-          <div className="hidden xl:flex gap-[12px] flex-col mb-5">
+          <div className="hidden xl:flex gap-6 flex-col mb-10">
             {checkboxData.map((item) => (
               <LabelCheckbox key={item.id} item={item} />
             ))}
