@@ -7,8 +7,6 @@ import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react/jsx-runtime";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useFadeIn } from "../../hooks/useFadeIn";
-import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function UIElement() {
   const barData = Array.from({ length: 10 }, (_, i) => ({

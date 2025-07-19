@@ -26,7 +26,6 @@ import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { SidebarItem } from "./SidebarItem";
 import { LabelCheckbox } from "./LabelCheckbox";
 import { motion } from "framer-motion";
-import { useFadeIn } from "../../hooks/useFadeIn";
 import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 const mailItems: MailItem[] = [
