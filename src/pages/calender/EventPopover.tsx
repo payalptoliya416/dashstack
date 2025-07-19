@@ -104,7 +104,7 @@ useEffect(() => {
                 className="w-6 h-6 rounded-full"
               />
             ))}
-            {event.extraAttendeeCount && (
+             {event.extraAttendeeCount !== undefined && event.extraAttendeeCount > 0 && (
               <div className="w-6 h-6 rounded-full border border-[#4880FF] leading-[10px] text-[#4880FF] text-[10px] flex justify-center items-center">
                 {event.extraAttendeeCount}+
               </div>

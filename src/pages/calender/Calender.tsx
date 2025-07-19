@@ -225,9 +225,9 @@ console.log("events",events )
                   const isDuringEvent = date.isBetween(eventStart, eventEnd, undefined, "[]");
 
                   const styles = eventStyles[event.title] || {
-                    bg: "bg-[#E2E2E2]",
-                    text: "text-[#202224]",
-                    color: "#999999",
+                    bg: "bg-[#E9E3FD]",
+                    text: "text-[#7551E9]",
+                    color: "#7551E9",
                   };
 
                 if (isMultiDay && isEventStart) {
@@ -301,9 +301,9 @@ console.log("events",events )
             <div className="flex-1 h-full relative px-1">
               {eventsAtHour.map((event: any) => {
                 const styles = eventStyles[event.title] || {
-                  bg: "bg-[#E2E2E2]",
-                  text: "text-[#202224]",
-                  color: "#999999",
+                  bg: "bg-[#E9E3FD]",
+                  text: "text-[#7551E9]",
+                  color: "#7551E9",
                 };
                 return (
                   <div key={event.id} className="absolute top-1 left-0 right-0">
@@ -353,9 +353,9 @@ console.log("events",events )
             const isDuringEvent = date.isBetween(eventStart, eventEnd, undefined, "[]");
 
             const styles = eventStyles[event.title] || {
-              bg: "bg-[#E2E2E2]",
-              text: "text-[#202224]",
-              color: "#999999",
+              bg: "bg-[#E9E3FD]",
+              text: "text-[#7551E9]",
+              color: "#7551E9",
             };
 
             if (isMultiDay && isEventStart) {
