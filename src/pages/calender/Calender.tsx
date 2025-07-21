@@ -2,7 +2,6 @@
 
 
 import React, { useEffect, useRef, useState} from "react";
-// import moment from "moment";
 import EventPopover from "./EventPopover";
 import type { Event } from "../../types/Dashboard";
 import { Link } from "react-router-dom";
@@ -64,12 +63,6 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
 
 const CalendarGrid: React.FC<CalendarGridProps> = ({ onShowSidebar }) => {
   const events = useSelector((state: RootState) => state.events.events);
-  // const [currentMonth, setCurrentMonth] = useState(moment("2019-10-01"));
-  // const startOfMonth = currentMonth.clone().startOf("month");
-  // const endOfMonth = currentMonth.clone().endOf("month");
-  // const startDay = startOfMonth.clone().startOf("week");
-  // const endDay = endOfMonth.clone().endOf("week");
-// Replace moment() with dayjs()
 const [currentMonth, setCurrentMonth] = useState(dayjs("2019-10-01"));
 
 const startOfMonth = currentMonth.startOf("month");
@@ -80,34 +73,16 @@ const endDay = endOfMonth.endOf("week");
 
   const [viewMode, setViewMode] = useState<"day" | "week" | "month">("month");
     const currentDate = currentMonth; 
-
-    // const weekStart = currentMonth.clone().startOf("week");
-    // const weekDays: moment.Moment[] = [];
-
-    // for (let i = 0; i < 7; i++) {
-    //   weekDays.push(weekStart.clone().add(i, "day"));
-    // }
     const weekStart = currentMonth.startOf("week");
 const weekDays: dayjs.Dayjs[] = [];
 
 for (let i = 0; i < 7; i++) {
   weekDays.push(weekStart.add(i, "day"));
 }
-
-//   const handleToday = () => {
-//   setCurrentMonth(moment());
-//  };
 const handleToday = () => {
   setCurrentMonth(dayjs());
 };
 
-  // const calendarDays: moment.Moment[] = [];
-  // let day = startDay.clone();
-
-  // while (day.isBefore(endDay) || day.isSame(endDay, 'day')) {
-  //   calendarDays.push(day.clone());
-  //   day.add(1, "day");
-  // }
 const calendarDays: dayjs.Dayjs[] = [];
 let day = startDay;
 
@@ -116,13 +91,6 @@ while (day.isSame(endDay) || day.isBefore(endDay)) {
   day = day.add(1, "day");
 }
 
-  // const handlePrevMonth = () => {
-  //   setCurrentMonth(currentMonth.clone().subtract(1, "month"));
-  // };
-
-  // const handleNextMonth = () => {
-  //   setCurrentMonth(currentMonth.clone().add(1, "month"));
-  // };
 const handlePrevMonth = () => {
   setCurrentMonth(currentMonth.subtract(1, "month"));
 };
@@ -131,13 +99,6 @@ const handleNextMonth = () => {
   setCurrentMonth(currentMonth.add(1, "month"));
 };
 
-  // const getEventsForDate = (date: moment.Moment) => {
-  //   return events.filter((event) => {
-  //     const eventStart = moment(event.startDate);
-  //     const eventEnd = moment(event.endDate);
-  //     return date.isBetween(eventStart, eventEnd, null, '[]') || date.isSame(eventStart, 'day') || date.isSame(eventEnd, 'day');
-  //   });
-  // };
   const getEventsForDate = (date: dayjs.Dayjs) => {
   return events.filter((event) => {
     const eventStart = dayjs(event.startDate);
@@ -256,7 +217,6 @@ const handleNextMonth = () => {
         {calendarDays.map((date, idx) => {
           const isCurrentMonth = date.month() === currentMonth.month();
           const dayEvents = getEventsForDate(date);
-          // const isToday = date.isSame(moment(), 'day');
 const isToday = date.isSame(dayjs(), 'day');
           return (
             <div
@@ -269,17 +229,12 @@ const isToday = date.isSame(dayjs(), 'day');
                 <div  className="absolute bottom-0 left-0 right-0 w-full bg-no-repeat bg-cover bg-left bg-[url(/images/pattern2.png)]"
                 >
                  {dayEvents.map((event: any) => {
-                  // const eventStart = moment(event.startDate);
-                  // const eventEnd = moment(event.endDate);
                   const eventStart = dayjs(event.startDate);
 const eventEnd = dayjs(event.endDate);
 
-                  // const duration = eventEnd.diff(eventStart, "days") + 1;
 const duration = eventEnd.diff(eventStart, "day") + 1;
 
-                  // const isMultiDay = duration > 1;
-                  // const isEventStart = date.isSame(eventStart, "day");
-                  // const isDuringEvent = date.isBetween(eventStart, eventEnd, undefined, "[]");
+              
                   const isMultiDay = duration > 1;
 const isEventStart = date.isSame(eventStart, "day");
 const isDuringEvent = date.isBetween(eventStart, eventEnd, undefined, "[]");
@@ -346,7 +301,6 @@ const isDuringEvent = date.isBetween(eventStart, eventEnd, undefined, "[]");
 
     <div className="rounded-xl border border-[#E0E0E0] overflow-hidden shadow-sm bg-white">
       {Array.from({ length: 24 }).map((_, hour) => {
-        // const hourLabel = moment().startOf("day").add(hour, "hours").format("h A");
         const hourLabel = dayjs().startOf("day").add(hour, "hour").format("h A");
 
         const eventsAtHour = getEventsForDate(currentDate).filter((event) =>

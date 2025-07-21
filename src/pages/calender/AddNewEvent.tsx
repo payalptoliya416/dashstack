@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import type { AppDispatch } from "../../redux/store";
 import { addEvent } from "../../redux/slice/eventSlice";
 import { useNavigate } from "react-router-dom";
-// import moment from "moment";
 import dayjs from "dayjs";
 import { motion} from 'framer-motion';
 
@@ -66,8 +65,6 @@ function AddNewEvent() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
-// const formattedDateTime = moment(`${formData.date} ${formData.time}`, "YYYY-MM-DD HH:mm")
-//   .format("D MMMM, YYYY [at] h:mm A");
 const formattedDateTime = dayjs(`${formData.date} ${formData.time}`)
   .format("D MMMM, YYYY [at] h:mm A");
    const newEvent = {
