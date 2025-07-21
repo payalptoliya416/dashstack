@@ -249,6 +249,7 @@ const mailItemsBase = [
   const ITEMS_PER_PAGE = 12;
 
   function Inbox() {
+    const [selectedLabels, setSelectedLabels] = useState<string[]>([]);
     const [searchQuery, setSearchQuery] = useState<string>("");
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [activeTab, setActiveTab] = useState<string>("Inbox");
@@ -276,18 +277,28 @@ const mailItemsBase = [
 
   return { ...item, count };
 });
-    const filteredMessages = useMemo(() => {
-    let result = allMessages;
-    if (activeTab === "Starred") {
-      result = allMessages.filter((msg) => msg.important);
-    }
-    return result.filter(
-      (msg) =>
-        msg.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        msg.message.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }, [searchQuery, activeTab, allMessages]);
 
+const filteredMessages = useMemo(() => {
+  let result = allMessages;
+
+  if (activeTab === "Starred") {
+    result = result.filter((msg) => msg.important);
+  }
+
+  if (selectedLabels.length > 0) {
+    result = result.filter(
+      (msg) =>
+        msg.label &&
+        selectedLabels.includes(msg.label.toLowerCase())
+    );
+  }
+
+  return result.filter(
+    (msg) =>
+      msg.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      msg.message.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+}, [searchQuery, activeTab, allMessages, selectedLabels]);
 
     const totalPages = Math.ceil(filteredMessages.length / ITEMS_PER_PAGE);
 
@@ -372,9 +383,14 @@ const mailItemsBase = [
             <h3 className="text-[#202224] mb-8 font-bold text-base hidden xl:block">Label</h3>
 
             <div className="hidden xl:flex gap-6 flex-col mb-10">
-              {checkboxData.map((item) => (
-                <LabelCheckbox key={item.id} item={item} />
-              ))}
+            {checkboxData.map((item) => (
+  <LabelCheckbox
+    key={item.id}
+    item={item}
+    selectedLabels={selectedLabels}
+    setSelectedLabels={setSelectedLabels}
+  />
+))}
             </div>
 
             <div className="xl:hidden">
@@ -385,7 +401,8 @@ const mailItemsBase = [
 
                 <PopoverPanel  anchor="bottom" className="mt-2 bg-white p-4 rounded-xl shadow-xl border border-[#B9B9B9]/50 space-y-4">
                   {checkboxData.map((item) => (
-                    <LabelCheckbox key={item.id} item={item} />
+                    <LabelCheckbox key={item.id} item={item}   selectedLabels={selectedLabels}
+    setSelectedLabels={setSelectedLabels} />
                   ))}
                 </PopoverPanel>
               </Popover>
