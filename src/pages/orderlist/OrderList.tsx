@@ -303,9 +303,6 @@ const DateFilter: React.FC<DateFilterProps> = ({
       </p>
       <div className="text-center pb-3 sm:pb-[29px]">
         <button
-          // onClick={() => {
-          // onSelectDate(selectedDates.length > 0 ? selectedDates[0] : null);
-          // }}
           onClick={() => {
             onSelectDate(selectedDates);
           }}
@@ -434,7 +431,6 @@ const OrderStatusFilter: React.FC<OrderStatusFilterProps> = ({
 };
 
 function OrderList() {
-  // const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedDates, setSelectedDates] = useState<string[]>([]);
   const [selectedOrderTypes, setSelectedOrderTypes] = useState<string[]>([]);
   const [selectedOrderStatuses, setSelectedOrderStatuses] = useState<string[]>(
@@ -517,20 +513,12 @@ function OrderList() {
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 translate-y-1"
               >
-                {/* Ensure z-index is high enough */}
                 <Popover.Panel className="absolute z-50 mt-3 transform -translate-x-1/2 -left-6 sm:left-1/2">
                   {({ close }) => (
-                    // <DateFilter
-                    // selectedDate={selectedDate}
-                    // onSelectDate={(date) => {
-                    //     setSelectedDate(date);
-                    //     close();
-                    // }}
-                    // />
                     <DateFilter
-                      selectedDate={selectedDates[0]} // Optional: just for highlighting
+                      selectedDate={selectedDates[0]}
                       onSelectDate={(dates) => {
-                        setSelectedDates(dates); // Accept full array
+                        setSelectedDates(dates); 
                         close();
                       }}
                     />
