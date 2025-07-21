@@ -74,10 +74,15 @@ export interface FilterButtonProps {
   isActive?: boolean;
 }
 
+// export interface DateFilterProps {
+//   selectedDate: string | null;
+//   onSelectDate: (date: string | null) => void;
+// }
+
 export interface DateFilterProps {
-  selectedDate: string | null;
-  onSelectDate: (date: string | null) => void;
-}
+  selectedDate: string | undefined;
+  onSelectDate: (dates: string[]) => void; // changed from single date
+};
 
 export interface OrderTypeFilterProps {
   selectedTypes: string[];
