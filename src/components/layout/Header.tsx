@@ -103,31 +103,31 @@ export const Header: FC<HeaderProps> = ({
           >
             <Popover.Panel className="absolute right-0 mt-2 bg-white rounded-xl shadow-lg z-[999] w-[254px]">
               <div className="text-sm text-gray-700">
-                <Link
-                  to=""
+                <a
+                  href="javascript:void(0)"
                   className="flex py-3 px-5  items-center gap-[10px] border-b border-[rgba(151,151,151,0.25)]"
                 >
                   <img src="/images/admin1.png" alt="" />
                   Manage Account
-                </Link>
-                <Link
-                  to=""
+                </a>
+                <a
+                  href="javascript:void(0)"
                   className="flex py-3 px-5  items-center gap-[10px] border-b border-[rgba(151,151,151,0.25)]"
                 >
                   <img src="/images/admin2.png" alt="" />
                   Change Password
-                </Link>
-                <Link
-                  to=""
+                </a>
+                <a
+                  href="javascript:void(0)"
                   className="flex py-3 px-5  items-center gap-[10px] border-b border-[rgba(151,151,151,0.25)]"
                 >
                   <img src="/images/admin3.png" alt="" />
                   Activity Log{" "}
-                </Link>
-                <Link to="" className="flex py-3 px-5  items-center gap-[10px]" onClick={handleLogOut}>
+                </a>
+                <a href="javascript:void(0)" className="flex py-3 px-5  items-center gap-[10px]" onClick={handleLogOut}>
                   <img src="/images/admin4.png" alt="" />
                   Log out
-                </Link>
+                </a>
               </div>
             </Popover.Panel>
           </Transition>

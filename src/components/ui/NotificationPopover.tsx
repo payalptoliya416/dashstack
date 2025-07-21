@@ -75,14 +75,14 @@ const NotificationPopover: React.FC = () => {
           <ul className="border-b border-[rgba(151,151,151,0.25)]">
             {notifications.map((item, index) => (
               <li key={index}>
-               <Link to=''  className="py-3 pl-5 pr-3 flex gap-3 items-center">
+               <a href="javascript:void(0)"  className="py-3 pl-5 pr-3 flex gap-3 items-center">
                 <img src={item.icon} alt={item.title} />
                 <div>
                   <h4 className="text-sm font-semibold mb-[1px] text-[#202224]">
                     {item.title}
                   </h4>
                   <p className="text-[#B5B5B5] font-semibold text-xs">{item.message}</p>
-                </div></Link>
+                </div></a>
               </li>
             ))}
           </ul>

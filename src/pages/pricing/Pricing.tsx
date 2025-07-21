@@ -98,12 +98,12 @@ function Pricing() {
                 Get Started
               </button>
 
-              <Link
-                to=""
+              <a
+                href="javascript:void(0)"
                 className="text-[#212121] text-base underline font-bold"
               >
                 Start Your 30 Day Free Trial
-              </Link>
+              </a>
             </div>
           </motion.div>
         ))}
