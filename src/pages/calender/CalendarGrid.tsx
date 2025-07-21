@@ -22,7 +22,7 @@ const startDay = startOfMonth.startOf("week");
 const endDay = endOfMonth.endOf("week");
 
   const [viewMode, setViewMode] = useState<"day" | "week" | "month">("month");
-  const weekStart = currentMonth.startOf("week");
+const weekStart = currentDate.startOf("week"); 
   const weekDays: dayjs.Dayjs[] = [];
 
   for (let i = 0; i < 7; i++) {
@@ -301,9 +301,14 @@ const handleNext = () => {
                 .add(hour, "hour")
                 .format("h A");
 
-              const eventsAtHour = getEventsForDate(currentDate).filter(
-                (event) => dayjs(event.startDate).hour() === hour
-              );
+            //   const eventsAtHour = getEventsForDate(currentDate).filter(
+            //     (event) => dayjs(event.startDate).hour() === hour
+            //   );
+                const eventsToday = getEventsForDate(currentDate);
+
+                const eventsStartingNow = eventsToday.filter((event) =>
+                dayjs(event.startDate).hour() === hour
+                );
 
               return (
                 <div
@@ -314,7 +319,7 @@ const handleNext = () => {
                     {hourLabel}
                   </div>
                   <div className="flex-1 h-full relative px-1">
-                    {eventsAtHour.map((event: any) => {
+                    {eventsStartingNow.map((event: any) => {
                       const styles = eventStyles[event.title] || {
                         bg: "bg-[#E9E3FD]",
                         text: "text-[#7551E9]",
