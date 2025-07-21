@@ -1,10 +1,11 @@
 
-import React, {useState } from "react";
+import React, { useState } from "react";
 import EventPopover from "./EventPopover";
 import type { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
+import { Popover } from "@headlessui/react";
 
 dayjs.extend(isBetween);
 
@@ -220,127 +221,125 @@ const handleNext = () => {
                   <span className="font-semibold absolute top-2 right-2 text-xs md:text-sm xl:text-base">
                     {date.date()}
                   </span>
-                  <div className="absolute bottom-0 left-0 right-0 w-full bg-no-repeat bg-cover bg-left bg-[url(/images/pattern2.png)]">
-                    {dayEvents.map((event: any) => {
-                      const eventStart = dayjs(event.startDate);
-                      const eventEnd = dayjs(event.endDate);
+                <div className="absolute bottom-0 left-0 right-0 w-full bg-no-repeat bg-cover bg-left bg-[url(/images/pattern2.png)]">
+              {dayEvents.slice(0, 1).map((event: any) => {
+            const eventStart = dayjs(event.startDate);
+            const eventEnd = dayjs(event.endDate);
+            const duration = eventEnd.diff(eventStart, "day") + 1;
+            const styles = eventStyles[event.title] || {
+                bg: "bg-[#E9E3FD]",
+                text: "text-[#7551E9]",
+                color: "#7551E9",
+            };
 
-                      const duration = eventEnd.diff(eventStart, "day") + 1;
+        return (
+            <div key={event.id} className="flex">
+            <EventPopover
+                key={event.id}
+                event={{
+                ...event,
+                ...styles,
+                location: event.location ?? "",
+                }}
+                multiDay={duration > 1}
+                duration={duration}
+            />
 
-                      const isMultiDay = duration > 1;
-                      const isEventStart = date.isSame(eventStart, "day");
-                      const isDuringEvent = date.isBetween(
-                        eventStart,
-                        eventEnd,
-                        undefined,
-                        "[]"
-                      );
+            {dayEvents.length > 1 && (
+                <Popover className="relative z-10">
+                <Popover.Button className={`w-6 h-6 rounded-full border border-[#4880FF] leading-[10px] text-[#4880FF] text-[10px] flex justify-center items-center focus:outline-none mx-auto mt-2 `}>
+                    {dayEvents.length - 1}+
+                </Popover.Button>
 
-                      const styles = eventStyles[event.title] || {
-                        bg: "bg-[#E9E3FD]",
-                        text: "text-[#7551E9]",
-                        color: "#7551E9",
-                      };
+                <Popover.Panel className="absolute z-30 mt-2 w-max bg-white rounded-lg shadow-lg p-2">
+                    {dayEvents.slice(1).map((event: any) => {
+              const duration =
+                dayjs(event.endDate).diff(dayjs(event.startDate), "day") + 1;
+              const styles = eventStyles[event.title] || {
+                bg: "bg-[#E9E3FD]",
+                text: "text-[#7551E9]",
+                color: "#7551E9",
+              };
 
-                      if (isMultiDay && isEventStart) {
-                        return (
-                          <EventPopover
-                            key={event.id}
-                            event={{ ...event, ...styles }}
-                            multiDay
-                            duration={duration}
-                          />
-                        );
-                      }
-
-                      // PART of Multi-Day (not start)
-                      if (isMultiDay && isDuringEvent && !isEventStart) {
-                        return (
-                          <div
-                            key={event.id + "_part"}
-                            className={`relative z-0 text-[10px] py-[2px] px-1 w-full ${styles.bg}`}
-                            style={{
-                              backgroundImage: "url('/images/pattern2.png')",
-                              backgroundRepeat: "repeat",
-                              backgroundSize: "cover",
-                            }}
-                          />
-                        );
-                      }
-
-                      if (!isMultiDay && isEventStart) {
-                        return (
-                          <EventPopover
-                            key={event.id}
-                            event={{ ...event, ...styles }}
-                            multiDay
-                            duration={duration}
-                          />
-                        );
-                      }
-
-                      return null;
-                    })}
-                  </div>
+              return (
+                <EventPopover
+                  key={event.id}
+                  event={{
+                    ...event,
+                    ...styles,
+                    location: event.location ?? "", 
+                  }}
+                  multiDay={duration > 1}
+                  duration={duration}
+                />
+              );
+            })}
+          </Popover.Panel>
+        </Popover>
+      )}
+            </div>
+            );
+              })}
+                </div>
                 </div>
               );
             })}
           </div>
         </>
       )}
-      {viewMode === "day" && (
+      
+    {viewMode === "day" && (
         <div className="px-4 sm:px-6 md:px-8 py-4">
-          <h2 className="text-lg font-semibold text-[#202224] mb-4">
+            <h2 className="text-lg font-semibold text-[#202224] mb-4">
             {currentDate.format("dddd, MMMM D, YYYY")}
-          </h2>
+            </h2>
 
-          <div className="rounded-xl border border-[#E0E0E0] overflow-hidden shadow-sm bg-white">
+            <div className="rounded-xl border border-[#E0E0E0] overflow-hidden shadow-sm bg-white">
             {Array.from({ length: 24 }).map((_, hour) => {
-              const hourLabel = dayjs()
-                .startOf("day")
-                .add(hour, "hour")
-                .format("h A");
-
-            //   const eventsAtHour = getEventsForDate(currentDate).filter(
-            //     (event) => dayjs(event.startDate).hour() === hour
-            //   );
+                const hourLabel = dayjs().startOf("day").add(hour, "hour").format("h A");
                 const eventsToday = getEventsForDate(currentDate);
 
-                const eventsStartingNow = eventsToday.filter((event) =>
-                dayjs(event.startDate).hour() === hour
+                const eventsStartingNow = eventsToday.filter(
+                (event) => dayjs(event.startDate).hour() === hour
                 );
 
-              return (
+                return (
+                    <>
                 <div
-                  key={hour}
-                  className="relative h-11 border-b border-[#E0E0E0] last:border-b-0 flex"
+                    key={hour}
+                    className="h-11 border-b relative border-[#E0E0E0] last:border-b-0 flex"
                 >
-                  <div className="w-16 px-2 text-[10px] sm:text-xs text-gray-400 pt-2">
+                    <div className="w-16 px-2 text-[10px] sm:text-xs text-gray-400 pt-2">
                     {hourLabel}
-                  </div>
-                  <div className="flex-1 h-full relative px-1">
+                    </div>
+                     <div className="flex-1 h-full relative px-1">
                     {eventsStartingNow.map((event: any) => {
-                      const styles = eventStyles[event.title] || {
+                        const styles = eventStyles[event.title] || {
                         bg: "bg-[#E9E3FD]",
                         text: "text-[#7551E9]",
                         color: "#7551E9",
-                      };
-                      return (
+                        };
+
+                        const startMinute = dayjs(event.startDate).minute();
+                        const topOffset = (startMinute / 60) * 44; 
+                        return (
                         <div
-                          key={event.id}
-                          className="absolute top-1 left-0 right-0"
+                            key={event.id}
+                            className="absolute left-0 right-0"
+                            style={{ top: `${topOffset}px` }}
                         >
-                          <EventPopover event={{ ...event, ...styles }} />
+                            <EventPopover event={{ ...event, ...styles }} />
                         </div>
-                      );
+                        );
                     })}
-                  </div>
+                    </div>
                 </div>
-              );
+                    </>
+                );
             })}
-          </div>
+            </div>
         </div>
-      )}
+    )}
 
       {viewMode === "week" && (
         <div className="px-4 sm:px-6 md:px-8 py-4">

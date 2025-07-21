@@ -4,6 +4,7 @@ import type { EventProps } from "../../types/Dashboard";
 import { motion } from "framer-motion";
 
 const EventPopover: React.FC<EventProps> = ({ event, multiDay, duration }) => {
+  console.log("event",event)
     const [alignPosition, setAlignPosition] = useState<"left" | "right" | "center">("right");
   const [verticalAlignPosition, setVerticalAlignPosition] = useState<"top" | "bottom">("bottom");
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -42,11 +43,12 @@ useEffect(() => {
 
 
   return (
+    <>
     <Popover as="div" className="relative inline-block w-full">
       <>
         <Popover.Button
           ref={buttonRef}
-          className={`relative z-10 text-[10px] font-bold py-1 sm:py-2 xl:py-[11px] pl-2 xl:pl-[13px] pr-1 flex items-center overflow-hidden focus:outline-none cursor-pointer ${event.bg} ${event.text}`}
+          className={`relative z-10 text-[10px] font-bold py-1 sm:py-2 xl:py-[11px] pl-2 xl:pl-[13px] pr-1 flex w-full items-center overflow-hidden focus:outline-none cursor-pointer ${event.bg} ${event.text}`}
           style={{
             backgroundImage: "url('/images/pattern2.png')",
             backgroundRepeat: "repeat",
@@ -64,10 +66,10 @@ useEffect(() => {
         </Popover.Button>
 
         <Popover.Panel
-        as={motion.div}
-  initial={{ opacity: 0, scale: 0.95 }}
-  animate={{ opacity: 1, scale: 1 }}
-  exit={{ opacity: 0, scale: 0.95 }}
+          as={motion.div}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
           className={`absolute z-30 mt-2 w-36 sm:w-64 bg-white text-start rounded-lg shadow-lg
              ${verticalAlignPosition === "bottom" ? "top-full mt-2" : ""}
             ${verticalAlignPosition === "top" ? "bottom-full mb-2" : ""}
@@ -82,7 +84,7 @@ useEffect(() => {
               alt=""
               className="rounded-md mb-[5px]"
             />
-            <div className="text-sm sm:text-base font-bold text-[#202224]">
+            <div className="text-sm sm:text-base font-bold text-[#202224] break-words">
               {event.title}
             </div>
             <div className="text-xs sm:text-sm font-semibold text-[#646464] mb-[3px]">
@@ -113,6 +115,7 @@ useEffect(() => {
         </Popover.Panel>
       </>
     </Popover>
+    </>
   );
 };
 
