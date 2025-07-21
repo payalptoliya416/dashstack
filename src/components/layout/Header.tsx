@@ -1,7 +1,6 @@
 import { ChevronDown, Menu, Search } from "lucide-react";
 import { Fragment, useState, type FC } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { Link } from "react-router-dom";
 import LanguageDropdown from "../ui/LanguageDropdown";
 import NotificationPopover from "../ui/NotificationPopover";
 import type { Language } from "../../types/Header";

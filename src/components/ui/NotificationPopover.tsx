@@ -1,6 +1,5 @@
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
 
 type NotificationItem = {
   title: string;
