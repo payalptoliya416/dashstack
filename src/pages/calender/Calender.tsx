@@ -2,7 +2,7 @@
 
 
 import React, { useEffect, useRef, useState} from "react";
-import moment from "moment";
+// import moment from "moment";
 import EventPopover from "./EventPopover";
 import type { Event } from "../../types/Dashboard";
 import { Link } from "react-router-dom";
@@ -10,6 +10,17 @@ import type {RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
 import MainTitle from "../../hooks/useMainTitle";
 import {motion} from 'framer-motion';
+import dayjs from "dayjs";
+import isBetween from "dayjs/plugin/isBetween";
+import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
+import weekday from "dayjs/plugin/weekday";
+import isSameOrAfter from "dayjs/plugin/isSameOrAfter";
+
+dayjs.extend(isBetween);
+dayjs.extend(isSameOrBefore);
+dayjs.extend(isSameOrAfter);
+dayjs.extend(weekday);
+
 interface CalendarGridProps {
   onShowSidebar: () => void;
 }
@@ -53,48 +64,92 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
 
 const CalendarGrid: React.FC<CalendarGridProps> = ({ onShowSidebar }) => {
   const events = useSelector((state: RootState) => state.events.events);
-  const [currentMonth, setCurrentMonth] = useState(moment("2019-10-01"));
-  const startOfMonth = currentMonth.clone().startOf("month");
-  const endOfMonth = currentMonth.clone().endOf("month");
-  const startDay = startOfMonth.clone().startOf("week");
-  const endDay = endOfMonth.clone().endOf("week");
+  // const [currentMonth, setCurrentMonth] = useState(moment("2019-10-01"));
+  // const startOfMonth = currentMonth.clone().startOf("month");
+  // const endOfMonth = currentMonth.clone().endOf("month");
+  // const startDay = startOfMonth.clone().startOf("week");
+  // const endDay = endOfMonth.clone().endOf("week");
+// Replace moment() with dayjs()
+const [currentMonth, setCurrentMonth] = useState(dayjs("2019-10-01"));
+
+const startOfMonth = currentMonth.startOf("month");
+const endOfMonth = currentMonth.endOf("month");
+
+const startDay = startOfMonth.startOf("week");
+const endDay = endOfMonth.endOf("week");
 
   const [viewMode, setViewMode] = useState<"day" | "week" | "month">("month");
-    const currentDate = currentMonth.clone(); 
+    const currentDate = currentMonth; 
 
-    const weekStart = currentMonth.clone().startOf("week");
-    const weekDays: moment.Moment[] = [];
+    // const weekStart = currentMonth.clone().startOf("week");
+    // const weekDays: moment.Moment[] = [];
 
-    for (let i = 0; i < 7; i++) {
-      weekDays.push(weekStart.clone().add(i, "day"));
-    }
-  const handleToday = () => {
-  setCurrentMonth(moment());
- };
+    // for (let i = 0; i < 7; i++) {
+    //   weekDays.push(weekStart.clone().add(i, "day"));
+    // }
+    const weekStart = currentMonth.startOf("week");
+const weekDays: dayjs.Dayjs[] = [];
 
-  const calendarDays: moment.Moment[] = [];
-  let day = startDay.clone();
+for (let i = 0; i < 7; i++) {
+  weekDays.push(weekStart.add(i, "day"));
+}
 
-  while (day.isBefore(endDay) || day.isSame(endDay, 'day')) {
-    calendarDays.push(day.clone());
-    day.add(1, "day");
-  }
+//   const handleToday = () => {
+//   setCurrentMonth(moment());
+//  };
+const handleToday = () => {
+  setCurrentMonth(dayjs());
+};
 
-  const handlePrevMonth = () => {
-    setCurrentMonth(currentMonth.clone().subtract(1, "month"));
-  };
+  // const calendarDays: moment.Moment[] = [];
+  // let day = startDay.clone();
 
-  const handleNextMonth = () => {
-    setCurrentMonth(currentMonth.clone().add(1, "month"));
-  };
+  // while (day.isBefore(endDay) || day.isSame(endDay, 'day')) {
+  //   calendarDays.push(day.clone());
+  //   day.add(1, "day");
+  // }
+const calendarDays: dayjs.Dayjs[] = [];
+let day = startDay;
 
-  const getEventsForDate = (date: moment.Moment) => {
-    return events.filter((event) => {
-      const eventStart = moment(event.startDate);
-      const eventEnd = moment(event.endDate);
-      return date.isBetween(eventStart, eventEnd, null, '[]') || date.isSame(eventStart, 'day') || date.isSame(eventEnd, 'day');
-    });
-  };
+while (day.isSame(endDay) || day.isBefore(endDay)) {
+  calendarDays.push(day);
+  day = day.add(1, "day");
+}
+
+  // const handlePrevMonth = () => {
+  //   setCurrentMonth(currentMonth.clone().subtract(1, "month"));
+  // };
+
+  // const handleNextMonth = () => {
+  //   setCurrentMonth(currentMonth.clone().add(1, "month"));
+  // };
+const handlePrevMonth = () => {
+  setCurrentMonth(currentMonth.subtract(1, "month"));
+};
+
+const handleNextMonth = () => {
+  setCurrentMonth(currentMonth.add(1, "month"));
+};
+
+  // const getEventsForDate = (date: moment.Moment) => {
+  //   return events.filter((event) => {
+  //     const eventStart = moment(event.startDate);
+  //     const eventEnd = moment(event.endDate);
+  //     return date.isBetween(eventStart, eventEnd, null, '[]') || date.isSame(eventStart, 'day') || date.isSame(eventEnd, 'day');
+  //   });
+  // };
+  const getEventsForDate = (date: dayjs.Dayjs) => {
+  return events.filter((event) => {
+    const eventStart = dayjs(event.startDate);
+    const eventEnd = dayjs(event.endDate);
+    return (
+      date.isBetween(eventStart, eventEnd, null, "[]") ||
+      date.isSame(eventStart, "day") ||
+      date.isSame(eventEnd, "day")
+    );
+  });
+};
+
   const eventStyles: Record<
   string,
   { bg: string; text: string; color: string }
@@ -201,8 +256,8 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ onShowSidebar }) => {
         {calendarDays.map((date, idx) => {
           const isCurrentMonth = date.month() === currentMonth.month();
           const dayEvents = getEventsForDate(date);
-          const isToday = date.isSame(moment(), 'day');
-
+          // const isToday = date.isSame(moment(), 'day');
+const isToday = date.isSame(dayjs(), 'day');
           return (
             <div
               key={idx}
@@ -214,13 +269,21 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ onShowSidebar }) => {
                 <div  className="absolute bottom-0 left-0 right-0 w-full bg-no-repeat bg-cover bg-left bg-[url(/images/pattern2.png)]"
                 >
                  {dayEvents.map((event: any) => {
-                  const eventStart = moment(event.startDate);
-                  const eventEnd = moment(event.endDate);
-                  const duration = eventEnd.diff(eventStart, "days") + 1;
+                  // const eventStart = moment(event.startDate);
+                  // const eventEnd = moment(event.endDate);
+                  const eventStart = dayjs(event.startDate);
+const eventEnd = dayjs(event.endDate);
 
+                  // const duration = eventEnd.diff(eventStart, "days") + 1;
+const duration = eventEnd.diff(eventStart, "day") + 1;
+
+                  // const isMultiDay = duration > 1;
+                  // const isEventStart = date.isSame(eventStart, "day");
+                  // const isDuringEvent = date.isBetween(eventStart, eventEnd, undefined, "[]");
                   const isMultiDay = duration > 1;
-                  const isEventStart = date.isSame(eventStart, "day");
-                  const isDuringEvent = date.isBetween(eventStart, eventEnd, undefined, "[]");
+const isEventStart = date.isSame(eventStart, "day");
+const isDuringEvent = date.isBetween(eventStart, eventEnd, undefined, "[]");
+
 
                   const styles = eventStyles[event.title] || {
                     bg: "bg-[#E9E3FD]",
@@ -283,9 +346,11 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ onShowSidebar }) => {
 
     <div className="rounded-xl border border-[#E0E0E0] overflow-hidden shadow-sm bg-white">
       {Array.from({ length: 24 }).map((_, hour) => {
-        const hourLabel = moment().startOf("day").add(hour, "hours").format("h A");
+        // const hourLabel = moment().startOf("day").add(hour, "hours").format("h A");
+        const hourLabel = dayjs().startOf("day").add(hour, "hour").format("h A");
+
         const eventsAtHour = getEventsForDate(currentDate).filter((event) =>
-          moment(event.startDate).hour() === hour
+          dayjs(event.startDate).hour() === hour
         );
 
         return (
@@ -342,8 +407,8 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ onShowSidebar }) => {
           </div>
 
           {getEventsForDate(date).map((event: any) => {
-            const eventStart = moment(event.startDate);
-            const eventEnd = moment(event.endDate);
+            const eventStart = dayjs(event.startDate);
+            const eventEnd = dayjs(event.endDate);
             const duration = eventEnd.diff(eventStart, "days") + 1;
 
             const isMultiDay = duration > 1;

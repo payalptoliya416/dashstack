@@ -15,6 +15,7 @@
         "@tailwindcss/vite": "^4.1.11",
         "@tanstack/react-table": "^8.21.3",
         "@tanstack/table-core": "^8.21.3",
+        "dayjs": "^1.11.13",
         "framer-motion": "^12.23.6",
         "html2canvas": "^1.4.1",
         "jspdf": "^3.0.1",
