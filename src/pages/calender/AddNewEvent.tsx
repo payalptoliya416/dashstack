@@ -7,14 +7,7 @@ import { addEvent } from "../../redux/slice/eventSlice";
 import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 import { motion} from 'framer-motion';
-
-type FormData = {
-  eventName: string;
-  time: string;
-  date: string;
-  address: string;
-  contactNumber: string;
-};
+import type { FormData } from "../../types/Dashboard";
 
 type FormErrors = Partial<Record<keyof FormData | "image", string>>;
 

@@ -131,14 +131,6 @@ export interface Event {
   startDate?: string;
   endDate?: string;  
 }
-export interface FormData {
-  eventName: string;
-  time: string;
-  date: string;
-  address: string;
-  contactNumber: string;
-};
-
 export interface Attendee {
   image: string;
 }
@@ -161,6 +153,13 @@ export interface EventProps {
    multiDay?: boolean;
   duration?: number;
 }
+export interface  FormData {
+  eventName: string;
+  time: string;
+  date: string;
+  address: string;
+  contactNumber: string;
+};
 
 // ---todolist 
 export interface Task {
