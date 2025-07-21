@@ -140,12 +140,11 @@ dispatch(addEvent(newEvent));
                 </label>
                 <input
                   type={
-          name === "date"
-            ? "date"
-            : name === "time"
-            ? "time"
-            : "text"
-        }
+                name === "date"
+                  ? "date"
+                  : name === "time"
+                  ? "time"
+                  : "text"}
                   name={name}
                   value={formData[name as keyof FormData]}
                   onChange={handleInputChange}

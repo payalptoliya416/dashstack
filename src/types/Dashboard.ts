@@ -131,6 +131,14 @@ export interface Event {
   startDate?: string;
   endDate?: string;  
 }
+export interface FormData {
+  eventName: string;
+  time: string;
+  date: string;
+  address: string;
+  contactNumber: string;
+};
+
 export interface Attendee {
   image: string;
 }

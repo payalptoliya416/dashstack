@@ -53,9 +53,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
 
 const CalendarGrid: React.FC<CalendarGridProps> = ({ onShowSidebar }) => {
   const events = useSelector((state: RootState) => state.events.events);
-console.log("events",events )
   const [currentMonth, setCurrentMonth] = useState(moment("2019-10-01"));
-
   const startOfMonth = currentMonth.clone().startOf("month");
   const endOfMonth = currentMonth.clone().endOf("month");
   const startDay = startOfMonth.clone().startOf("week");
