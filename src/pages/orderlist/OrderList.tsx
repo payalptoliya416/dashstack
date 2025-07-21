@@ -28,7 +28,7 @@ const data: Order[] = [
     id: "00001",
     name: "Christine Brooks",
     address: "089 Kutch Green Apt. 448",
-    date: "01 Sep 2025",
+    date: "01 Sep 2019",
     type: "Electric",
     status: "Completed",
   },
