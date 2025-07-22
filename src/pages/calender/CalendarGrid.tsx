@@ -311,9 +311,6 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
                 .add(hour, "hour")
                 .format("h A");
               const eventsToday = getEventsForDate(currentDate);
-              const eventsStartingNow = eventsToday.filter(
-                (event) => dayjs(event.startDate).hour() === hour
-              );
               const hourEvents = eventsToday.filter((event) => {
                 const eventTime = dayjs(
                   event.dateTime,
