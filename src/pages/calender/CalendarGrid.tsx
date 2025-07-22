@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import EventPopover from "./EventPopover";
 import type { RootState } from "../../redux/store";
@@ -15,25 +14,27 @@ interface CalendarGridProps {
   onShowSidebar: () => void;
 }
 
-export const CalendarGrid: React.FC<CalendarGridProps> = ({ onShowSidebar }) => {
-const events = useSelector((state: RootState) => state.events.events);
-const [currentDate, setCurrentDate] = useState(dayjs());
-const currentMonth = currentDate.startOf("month");
-const startOfMonth = currentMonth.startOf("month");
-const endOfMonth = currentMonth.endOf("month");
-const startDay = startOfMonth.startOf("week");
-const endDay = endOfMonth.endOf("week");
+export const CalendarGrid: React.FC<CalendarGridProps> = ({
+  onShowSidebar,
+}) => {
+  const events = useSelector((state: RootState) => state.events.events);
+  const [currentDate, setCurrentDate] = useState(dayjs());
+  const currentMonth = currentDate.startOf("month");
+  const startOfMonth = currentMonth.startOf("month");
+  const endOfMonth = currentMonth.endOf("month");
+  const startDay = startOfMonth.startOf("week");
+  const endDay = endOfMonth.endOf("week");
 
   const [viewMode, setViewMode] = useState<"day" | "week" | "month">("month");
-const weekStart = currentDate.startOf("week"); 
+  const weekStart = currentDate.startOf("week");
   const weekDays: dayjs.Dayjs[] = [];
 
   for (let i = 0; i < 7; i++) {
     weekDays.push(weekStart.add(i, "day"));
   }
-    const handleToday = () => {
+  const handleToday = () => {
     setCurrentDate(dayjs());
-    };
+  };
 
   const calendarDays: dayjs.Dayjs[] = [];
   let day = startDay;
@@ -43,25 +44,25 @@ const weekStart = currentDate.startOf("week");
     day = day.add(1, "day");
   }
 
-const handlePrev = () => {
-  if (viewMode === "month") {
-    setCurrentDate(currentDate.subtract(1, "month"));
-  } else if (viewMode === "week") {
-    setCurrentDate(currentDate.subtract(1, "week"));
-  } else if (viewMode === "day") {
-    setCurrentDate(currentDate.subtract(1, "day"));
-  }
-};
+  const handlePrev = () => {
+    if (viewMode === "month") {
+      setCurrentDate(currentDate.subtract(1, "month"));
+    } else if (viewMode === "week") {
+      setCurrentDate(currentDate.subtract(1, "week"));
+    } else if (viewMode === "day") {
+      setCurrentDate(currentDate.subtract(1, "day"));
+    }
+  };
 
-const handleNext = () => {
-  if (viewMode === "month") {
-    setCurrentDate(currentDate.add(1, "month"));
-  } else if (viewMode === "week") {
-    setCurrentDate(currentDate.add(1, "week"));
-  } else if (viewMode === "day") {
-    setCurrentDate(currentDate.add(1, "day"));
-  }
-};
+  const handleNext = () => {
+    if (viewMode === "month") {
+      setCurrentDate(currentDate.add(1, "month"));
+    } else if (viewMode === "week") {
+      setCurrentDate(currentDate.add(1, "week"));
+    } else if (viewMode === "day") {
+      setCurrentDate(currentDate.add(1, "day"));
+    }
+  };
 
   const getEventsForDate = (date: dayjs.Dayjs) => {
     return events.filter((event) => {
@@ -140,14 +141,14 @@ const handleNext = () => {
             </svg>
           </button>
           <h2 className="text-sm md:text-base xl:text-2xl font-bold text-[#202224]">
-        {viewMode === "month"
-            ? currentDate.format("MMMM YYYY")
-            : viewMode === "week"
-            ? `${currentDate.startOf("week").format("D MMM")} - ${currentDate
-                .endOf("week")
-                .format("D MMM, YYYY")}`
-            : currentDate.format("D MMM, YYYY")}
-        </h2>
+            {viewMode === "month"
+              ? currentDate.format("MMMM YYYY")
+              : viewMode === "week"
+              ? `${currentDate.startOf("week").format("D MMM")} - ${currentDate
+                  .endOf("week")
+                  .format("D MMM, YYYY")}`
+              : currentDate.format("D MMM, YYYY")}
+          </h2>
 
           <button
             onClick={handleNext}
@@ -224,130 +225,146 @@ const handleNext = () => {
                   <span className="font-semibold absolute top-2 right-2 text-xs md:text-sm xl:text-base">
                     {date.date()}
                   </span>
-                <div className="absolute bottom-0 left-0 right-0 w-full bg-no-repeat bg-cover bg-left bg-[url(/images/pattern2.png)]">
-              {dayEvents.slice(0, 1).map((event: any) => {
-            const eventStart = dayjs(event.startDate);
-            const eventEnd = dayjs(event.endDate);
-            const duration = eventEnd.diff(eventStart, "day") + 1;
-            const styles = eventStyles[event.title] || {
-                bg: "bg-[#E9E3FD]",
-                text: "text-[#7551E9]",
-                color: "#7551E9",
-            };
+                  <div className="absolute bottom-0 left-0 right-0 w-full bg-no-repeat bg-cover bg-left bg-[url(/images/pattern2.png)]">
+                    {dayEvents.slice(0, 1).map((event: any) => {
+                      const eventStart = dayjs(event.startDate);
+                      const eventEnd = dayjs(event.endDate);
+                      const duration = eventEnd.diff(eventStart, "day") + 1;
+                      const styles = eventStyles[event.title] || {
+                        bg: "bg-[#E9E3FD]",
+                        text: "text-[#7551E9]",
+                        color: "#7551E9",
+                      };
 
-        return (
-            <div key={event.id} className="flex flex-col">
-            <EventPopover
-                key={event.id}
-                event={{
-                ...event,
-                ...styles,
-                location: event.location ?? "",
-                }}
-                multiDay={duration > 1}
-                duration={duration}
-            />
-            {dayEvents.length > 1 && (
-                <Popover className="relative z-10">
-                <Popover.Button className={` leading-[10px] text-[#FF9E58] bg-[#FF9E58]/40 text-[10px] flex justify-center items-center focus:outline-none mx-auto w-full py-1`}>
-                  See more  {dayEvents.length - 1}+
-                </Popover.Button>
+                      return (
+                        <div key={event.id} className="flex flex-col">
+                          <EventPopover
+                            key={event.id}
+                            event={{
+                              ...event,
+                              ...styles,
+                              location: event.location ?? "",
+                            }}
+                            multiDay={duration > 1}
+                            duration={duration}
+                          />
+                          {dayEvents.length > 1 && (
+                            <Popover className="relative z-10">
+                              <Popover.Button
+                                className={` leading-[10px] text-[#FF9E58] bg-[#FF9E58]/40 text-[10px] flex justify-center items-center focus:outline-none mx-auto w-full py-1`}
+                              >
+                                See more {dayEvents.length - 1}+
+                              </Popover.Button>
 
-                <Popover.Panel className="absolute z-30 mt-2 w-max bg-white rounded-lg shadow-lg p-2">
-                    {dayEvents.slice(1).map((event: any) => {
-              const duration =
-                dayjs(event.endDate).diff(dayjs(event.startDate), "day") + 1;
-              const styles = eventStyles[event.title] || {
-                bg: "bg-[#E9E3FD]",
-                text: "text-[#7551E9]",
-                color: "#7551E9",
-              };
+                              <Popover.Panel
+                                className={` absolute z-30 top-0 left-1/2 -translate-x-1/2 -translate-y-full 
+                                      w-max max-w-[calc(100vw-2rem)] bg-white rounded-lg shadow-lg p-2`}>
+                                {dayEvents.slice(1).map((event: any) => {
+                                  const duration =
+                                    dayjs(event.endDate).diff(
+                                      dayjs(event.startDate),
+                                      "day"
+                                    ) + 1;
+                                  const styles = eventStyles[event.title] || {
+                                    bg: "bg-[#E9E3FD]",
+                                    text: "text-[#7551E9]",
+                                    color: "#7551E9",
+                                  };
 
-              return (
-                <EventPopover
-                  key={event.id}
-                  event={{
-                    ...event,
-                    ...styles,
-                    location: event.location ?? "", 
-                  }}
-                  multiDay={duration > 1}
-                  duration={duration}
-                />
-              );
-            })}
-          </Popover.Panel>
-        </Popover>
-            )}
-            </div>
-            );
-              })}
-                </div>
+                                  return (
+                                    <EventPopover
+                                      key={event.id}
+                                      event={{
+                                        ...event,
+                                        ...styles,
+                                        location: event.location ?? "",
+                                      }}
+                                      multiDay={duration > 1}
+                                      duration={duration}
+                                    />
+                                  );
+                                })}
+                              </Popover.Panel>
+                            </Popover>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               );
             })}
           </div>
         </>
       )}
-      
-    {viewMode === "day" && (
-        <div className="px-4 sm:px-6 md:px-8 py-4">
-            <h2 className="text-lg font-semibold text-[#202224] mb-4">
-            {currentDate.format("dddd, MMMM D, YYYY")}
-            </h2>
 
-            <div className="rounded-xl border border-[#E0E0E0] overflow-hidden shadow-sm bg-white">
+      {viewMode === "day" && (
+        <div className="px-4 sm:px-6 md:px-8 py-4">
+          <h2 className="text-lg font-semibold text-[#202224] mb-4">
+            {currentDate.format("dddd, MMMM D, YYYY")}
+          </h2>
+
+          <div className="rounded-xl border border-[#E0E0E0] overflow-hidden shadow-sm bg-white">
             {Array.from({ length: 24 }).map((_, hour) => {
-                const hourLabel = dayjs().startOf("day").add(hour, "hour").format("h A");
-               const eventsToday = getEventsForDate(currentDate);
-                const eventsStartingNow = eventsToday.filter(
+              const hourLabel = dayjs()
+                .startOf("day")
+                .add(hour, "hour")
+                .format("h A");
+              const eventsToday = getEventsForDate(currentDate);
+              const eventsStartingNow = eventsToday.filter(
                 (event) => dayjs(event.startDate).hour() === hour
-                ); 
-                console.log("eventsStartingNow",eventsStartingNow)
-                 const hourEvents = eventsToday.filter((event) => {
-                const eventTime = dayjs(event.dateTime, "D MMMM, YYYY [at] h:mm A").format("h A");
+              );
+              const hourEvents = eventsToday.filter((event) => {
+                const eventTime = dayjs(
+                  event.dateTime,
+                  "D MMMM, YYYY [at] h:mm A"
+                ).format("h A");
                 return eventTime === hourLabel;
               });
-                return (
-                    <>
-                <div
+              return (
+                <>
+                  <div
                     key={hour}
-                    className="h-11 border-b relative border-[#E0E0E0] last:border-b-0 flex">
+                    className="h-11 border-b relative border-[#E0E0E0] last:border-b-0 flex"
+                  >
                     <div className="w-16 px-2 text-[10px] sm:text-xs text-gray-400 pt-2">
-                    {hourLabel}
+                      {hourLabel}
                     </div>
-                     <div className="flex-1 h-full relative px-1">
-                    {hourEvents.map((event: any) => {
+                    <div className="flex-1 h-full relative px-1">
+                      {hourEvents.map((event: any) => {
                         const styles = eventStyles[event.title] || {
-                        bg: "bg-[#E9E3FD]",
-                        text: "text-[#7551E9]",
-                        color: "#7551E9",
+                          bg: "bg-[#E9E3FD]",
+                          text: "text-[#7551E9]",
+                          color: "#7551E9",
                         };
 
                         const startMinute = dayjs(event.startDate).minute();
-                        const topOffset = (startMinute / 60) * 44; 
+                        const topOffset = (startMinute / 60) * 44;
                         return (
-                        <div
+                          <div
                             key={event.id}
-                            className={` mb-2 ${viewMode === "day" ? "":"absolute  left-0 right-0"}`}
+                            className={` mb-2 ${
+                              viewMode === "day"
+                                ? ""
+                                : "absolute  left-0 right-0"
+                            }`}
                             style={{ top: `${topOffset}px` }}
-                        >
+                          >
                             <EventPopover event={{ ...event, ...styles }} />
-                        </div>
+                          </div>
                         );
-                    })}
+                      })}
                     </div>
-                </div>
-                    </>
-                );
+                  </div>
+                </>
+              );
             })}
-            </div>
+          </div>
         </div>
-    )}
+      )}
 
       {viewMode === "week" && (
         <div className="px-4 sm:px-6 md:px-8 py-4">
-         
           <div className="grid grid-cols-7 text-center text-xs font-bold text-[#202224] bg-[#F1F4F9] rounded-t-xl">
             {weekDays.map((date) => (
               <div key={date.toString()} className="py-3">

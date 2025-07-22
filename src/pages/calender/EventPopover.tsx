@@ -43,7 +43,7 @@ useEffect(() => {
 
   return (
     <>
-    <Popover as="div" className="relative inline-block w-full">
+    <Popover as="div" className="relative inline-block w-full ">
       <>
         <Popover.Button
           ref={buttonRef}
@@ -59,7 +59,7 @@ useEffect(() => {
             className="absolute left-0 top-0 bottom-0 w-[4px]"
             style={{ backgroundColor: event.color }}
           />
-          <span className="ml-1 xl:ml-[6px] font-semibold truncate">
+          <span className="ml-1 xl:ml-[6px] font-semibold break-words max-w-10 sm:max-w-[120px]">
             {event.title}
           </span>
         </Popover.Button>
