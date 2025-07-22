@@ -4,9 +4,9 @@ import { Popover, Transition } from "@headlessui/react";
 import LanguageDropdown from "../ui/LanguageDropdown";
 import NotificationPopover from "../ui/NotificationPopover";
 import type { Language } from "../../types/Header";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/slice/authSlice";
-import type { AppDispatch } from "../../redux/store";
+import type { AppDispatch, RootState } from "../../redux/store";
 
 interface HeaderProps {
   onToggleSidebar: () => void;
@@ -21,6 +21,7 @@ export const Header: FC<HeaderProps> = ({
     name: "English",
     flag: "/images/flag1.png",
   });
+  const user = useSelector((state : RootState)=>state.auth.user);
    const dispatch = useDispatch<AppDispatch>();
 
   const languages: Language[] = [
@@ -80,7 +81,7 @@ export const Header: FC<HeaderProps> = ({
             />
             <div className="text-start">
               <h3 className="text-[#404040] text-xs sm:text-sm font-bold mb-0 sm:mb-[3px] leading-[14px]">
-                Moni Roy
+               {user?.name ?? "Guest"}
               </h3>
               <span className="text-[#565656] text-xs leading-[12px] font-semibold">
                 Admin
