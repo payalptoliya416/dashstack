@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
 import { Popover } from "@headlessui/react";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+dayjs.extend(customParseFormat);
 
 dayjs.extend(isBetween);
 
@@ -191,6 +193,7 @@ const handleNext = () => {
           ))}
         </div>
       </div>
+
       {viewMode === "month" && (
         <>
           <div className="grid grid-cols-7 text-center text-xs bg-[#F1F4F9] rounded-t-xl">
@@ -233,7 +236,7 @@ const handleNext = () => {
             };
 
         return (
-            <div key={event.id} className="flex">
+            <div key={event.id} className="flex flex-col">
             <EventPopover
                 key={event.id}
                 event={{
@@ -244,11 +247,10 @@ const handleNext = () => {
                 multiDay={duration > 1}
                 duration={duration}
             />
-
             {dayEvents.length > 1 && (
                 <Popover className="relative z-10">
-                <Popover.Button className={`w-6 h-6 rounded-full border border-[#4880FF] leading-[10px] text-[#4880FF] text-[10px] flex justify-center items-center focus:outline-none mx-auto mt-2 `}>
-                    {dayEvents.length - 1}+
+                <Popover.Button className={` leading-[10px] text-[#FF9E58] bg-[#FF9E58]/40 text-[10px] flex justify-center items-center focus:outline-none mx-auto w-full py-1`}>
+                  See more  {dayEvents.length - 1}+
                 </Popover.Button>
 
                 <Popover.Panel className="absolute z-30 mt-2 w-max bg-white rounded-lg shadow-lg p-2">
@@ -276,7 +278,7 @@ const handleNext = () => {
             })}
           </Popover.Panel>
         </Popover>
-      )}
+            )}
             </div>
             );
               })}
@@ -297,23 +299,25 @@ const handleNext = () => {
             <div className="rounded-xl border border-[#E0E0E0] overflow-hidden shadow-sm bg-white">
             {Array.from({ length: 24 }).map((_, hour) => {
                 const hourLabel = dayjs().startOf("day").add(hour, "hour").format("h A");
-                const eventsToday = getEventsForDate(currentDate);
-
+               const eventsToday = getEventsForDate(currentDate);
                 const eventsStartingNow = eventsToday.filter(
                 (event) => dayjs(event.startDate).hour() === hour
-                );
-
+                ); 
+                console.log("eventsStartingNow",eventsStartingNow)
+                 const hourEvents = eventsToday.filter((event) => {
+                const eventTime = dayjs(event.dateTime, "D MMMM, YYYY [at] h:mm A").format("h A");
+                return eventTime === hourLabel;
+              });
                 return (
                     <>
                 <div
                     key={hour}
-                    className="h-11 border-b relative border-[#E0E0E0] last:border-b-0 flex"
-                >
+                    className="h-11 border-b relative border-[#E0E0E0] last:border-b-0 flex">
                     <div className="w-16 px-2 text-[10px] sm:text-xs text-gray-400 pt-2">
                     {hourLabel}
                     </div>
                      <div className="flex-1 h-full relative px-1">
-                    {eventsStartingNow.map((event: any) => {
+                    {hourEvents.map((event: any) => {
                         const styles = eventStyles[event.title] || {
                         bg: "bg-[#E9E3FD]",
                         text: "text-[#7551E9]",
@@ -325,7 +329,7 @@ const handleNext = () => {
                         return (
                         <div
                             key={event.id}
-                            className="absolute left-0 right-0"
+                            className={` mb-2 ${viewMode === "day" ? "":"absolute  left-0 right-0"}`}
                             style={{ top: `${topOffset}px` }}
                         >
                             <EventPopover event={{ ...event, ...styles }} />
@@ -354,7 +358,7 @@ const handleNext = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-7 border border-[#E0E0E0] rounded-b-xl overflow-hidden h-[600px] bg-white">
+          <div className="grid grid-cols-7 border border-[#E0E0E0] rounded-b-xl  h-[600px] bg-white">
             {weekDays.map((date) => (
               <div
                 key={date.toString()}

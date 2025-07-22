@@ -4,7 +4,6 @@ import type { EventProps } from "../../types/Dashboard";
 import { motion } from "framer-motion";
 
 const EventPopover: React.FC<EventProps> = ({ event, multiDay, duration }) => {
-  console.log("event",event)
     const [alignPosition, setAlignPosition] = useState<"left" | "right" | "center">("right");
   const [verticalAlignPosition, setVerticalAlignPosition] = useState<"top" | "bottom">("bottom");
   const buttonRef = useRef<HTMLButtonElement>(null);

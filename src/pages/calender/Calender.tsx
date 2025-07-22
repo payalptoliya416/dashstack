@@ -23,7 +23,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
       </div>
     </div>
     <div>
-      <h3 className="text-sm font-bold text-[#202224] leading-[26px]">
+      <h3 className="text-sm font-bold text-[#202224] leading-[26px] break-words">
         {event.title}
       </h3>
       <p className="text-[#202224]/60 text-xs font-semibold">
