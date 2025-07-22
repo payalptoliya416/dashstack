@@ -40,7 +40,6 @@ useEffect(() => {
   return () => window.removeEventListener("resize", checkSpace);
 }, []);
 
-
   return (
     <>
     <Popover as="div" className="relative inline-block w-full ">
