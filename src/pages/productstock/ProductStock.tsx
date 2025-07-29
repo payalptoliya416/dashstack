@@ -178,6 +178,7 @@ const currentPage = table.getState().pagination.pageIndex + 1;
 
 const getPageButtons = () => {
   const pages = [];
+  
   let start = Math.max(2, currentPage - 1);
   let end = Math.min(pageCount - 1, currentPage + 1);
 
