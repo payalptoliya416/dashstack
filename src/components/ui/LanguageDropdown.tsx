@@ -33,7 +33,7 @@ const LanguageDropdown: FC<Props> = ({ languages, selectedLanguage, onChange }) 
               {({ selected }) => (
                 <>
                   <div className="flex items-center gap-5">
-                    <img src={lang.flag} alt={lang.name} className="w-11 h-7" />
+                    <img src={lang.flag} alt={lang.name} className="w-11 h-7" loading="eager" />
                     <span className="text-gray-800">{lang.name}</span>
                   </div>
                   <div className="ml-auto">
