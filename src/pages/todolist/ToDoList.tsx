@@ -13,7 +13,6 @@ import type { AppDispatch, RootState } from "../../redux/store";
 
 function ToDoList() {
   const tasks = useSelector((state: RootState) => state.tasks);
-  console.log("tasks",tasks)
   const dispatch = useDispatch<AppDispatch>();
 
   const [showInput, setShowInput] = useState(false);
