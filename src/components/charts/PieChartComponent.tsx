@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import type { PieChartProps } from "../../types/Chart";
 
 const PieChartComponent: React.FC<PieChartProps> = ({ data, colors }) => {
@@ -19,6 +19,7 @@ const PieChartComponent: React.FC<PieChartProps> = ({ data, colors }) => {
             <Cell key={index} fill={colors[index % colors.length]} />
           ))}
         </Pie>
+        <Tooltip />
       </PieChart>
     </div>
   );

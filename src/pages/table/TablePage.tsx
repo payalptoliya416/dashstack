@@ -165,12 +165,14 @@ const productcolumns: ColumnDef<Product>[] = [
     header: "Action",
     cell: () => (
       <div className="flex bg-[#FAFBFD] rounded-md border border-[#979797]/70 w-max">
-        <button className="border-r border-[#979797]/70 py-2 px-4">
+        <motion.button whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }} className="border-r border-[#979797]/70 py-2 px-4 cursor-pointer">
           <SquarePen className="w-4 h-4 text-black/60" />
-        </button>
-        <button className="py-2 px-4">
-          <Trash2 className="w-4 h-4 text-[#EF3826] " />
-        </button>
+        </motion.button>
+        <motion.button whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }} className="py-2 px-4">
+          <Trash2 className="w-4 h-4 text-[#EF3826] cursor-pointer" />
+        </motion.button>
       </div>
     ),
   },

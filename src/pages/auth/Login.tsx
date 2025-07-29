@@ -6,7 +6,7 @@ import type { AppDispatch } from "../../redux/store";
 import { motion } from "framer-motion";
 
 function Login() {
-   const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -122,7 +122,7 @@ function Login() {
               >
                 Password
               </label>
-              <p className="text-[#202224]/60 text-sm font-semibold cursor-pointer">
+              <p className="text-[#202224]/60 text-sm font-semibold cursor-pointer"   onClick={() => navigate("/forgot-password")}>
                 Forget Password?
               </p>
             </div>
@@ -163,7 +163,7 @@ function Login() {
             <div className="mx-4 sm:mx-10">
               <button
                 type="submit"
-                className="text-white bg-[#4880FF]/90 rounded-md w-full sm:mb-[18px] py-2 sm:py-[15px] hover:bg-[#3c6fe6] transition"
+                className="cursor-pointer text-white bg-[#4880FF]/90 rounded-md w-full sm:mb-[18px] py-2 sm:py-[15px] hover:bg-[#3c6fe6] transition"
               >
                 Sign In
               </button>

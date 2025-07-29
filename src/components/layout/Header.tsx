@@ -4,9 +4,9 @@ import { Popover, Transition } from "@headlessui/react";
 import LanguageDropdown from "../ui/LanguageDropdown";
 import NotificationPopover from "../ui/NotificationPopover";
 import type { Language } from "../../types/Header";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { logout } from "../../redux/slice/authSlice";
-import type { AppDispatch, RootState } from "../../redux/store";
+import type { AppDispatch } from "../../redux/store";
 
 interface HeaderProps {
   onToggleSidebar: () => void;
@@ -21,7 +21,7 @@ export const Header: FC<HeaderProps> = ({
     name: "English",
     flag: "/images/flag1.png",
   });
-  const user = useSelector((state : RootState)=>state.auth.user);
+  // const user = useSelector((state : RootState)=>state.auth.user);
    const dispatch = useDispatch<AppDispatch>();
 
   const languages: Language[] = [
@@ -77,11 +77,13 @@ export const Header: FC<HeaderProps> = ({
             <img
               src="/images/admin.png"
               alt="Admin"
+              loading="eager"
               className="w-9 sm:w-auto"
             />
             <div className="text-start">
               <h3 className="text-[#404040] text-xs sm:text-sm font-bold mb-0 sm:mb-[3px] leading-[14px]">
-               {user?.name ?? "Guest"}
+               {/* {user?.name ?? "Guest"} */}
+               Jhon Doe
               </h3>
               <span className="text-[#565656] text-xs leading-[12px] font-semibold">
                 Admin
@@ -107,25 +109,25 @@ export const Header: FC<HeaderProps> = ({
                   href="javascript:void(0)"
                   className="flex py-3 px-5  items-center gap-[10px] border-b border-[rgba(151,151,151,0.25)]"
                 >
-                  <img src="/images/admin1.png" alt="" />
+                  <img src="/images/admin1.png" loading="eager" alt="" />
                   Manage Account
                 </a>
                 <a
                   href="javascript:void(0)"
                   className="flex py-3 px-5  items-center gap-[10px] border-b border-[rgba(151,151,151,0.25)]"
                 >
-                  <img src="/images/admin2.png" alt="" />
+                  <img src="/images/admin2.png" loading="eager" alt="" />
                   Change Password
                 </a>
                 <a
                   href="javascript:void(0)"
                   className="flex py-3 px-5  items-center gap-[10px] border-b border-[rgba(151,151,151,0.25)]"
                 >
-                  <img src="/images/admin3.png" alt="" />
+                  <img src="/images/admin3.png" loading="eager" alt="" />
                   Activity Log{" "}
                 </a>
                 <a href="javascript:void(0)" className="flex py-3 px-5  items-center gap-[10px]" onClick={handleLogOut}>
-                  <img src="/images/admin4.png" alt="" />
+                  <img src="/images/admin4.png" loading="eager" alt="" />
                   Log out
                 </a>
               </div>

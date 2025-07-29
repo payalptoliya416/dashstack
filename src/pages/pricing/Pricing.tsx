@@ -77,7 +77,7 @@ function Pricing() {
                 <li
                   key={idx}
                   className={`text-base md:text-lg ${
-                    feature.enabled ? "text-[#212121]" : "text-[#212121]/40"
+                    feature.enabled ? "text-[#212121]" : "text-[#212121]/40 line-through"
                   }`}
                 >
                   {feature.label}

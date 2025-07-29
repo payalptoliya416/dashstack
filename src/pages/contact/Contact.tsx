@@ -33,7 +33,7 @@ const MotionLink = motion(Link);
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, scale: 0.95 }}
                           transition={{ duration: 0.3, delay: index * 0.05 }}
-            className="col-span-12 sm:col-span-6 xl:col-span-4"
+            className="col-span-12 sm:col-span-6 xl:col-span-4 2xl:col-span-3"
           >
             <div className="rounded-xl">
               <div className="h-[276px] overflow-hidden rounded-t-xl">

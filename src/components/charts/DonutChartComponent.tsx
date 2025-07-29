@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import type { DonutChartProps } from "../../types/Chart";
 
 const DonutChartComponent: React.FC<DonutChartProps> = ({ data, colors }) => {
@@ -12,7 +12,7 @@ const DonutChartComponent: React.FC<DonutChartProps> = ({ data, colors }) => {
           cy="50%"
           innerRadius={40}
           outerRadius={70}
-           startAngle={90}
+          startAngle={90}
           endAngle={-280}
           isAnimationActive={false}
         >
@@ -20,6 +20,7 @@ const DonutChartComponent: React.FC<DonutChartProps> = ({ data, colors }) => {
             <Cell key={index} fill={colors[index % colors.length]} />
           ))}
         </Pie>
+        <Tooltip />
       </PieChart>
     </div>
   );

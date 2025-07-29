@@ -14,9 +14,9 @@ interface Props {
 
 const columns: ColumnDef<InvoiceData>[] = [
   {
-    header: () => <div className="pl-[60px]">Serial No.</div>,
+    header:"Serial No.",
     accessorKey: "serialno",
-    cell: info => <div className="pl-[60px]">{info.getValue() as string}</div>,
+    cell: info => <div>{info.getValue() as string}</div>,
   },
   {
     header: "Description",
@@ -34,9 +34,9 @@ const columns: ColumnDef<InvoiceData>[] = [
     cell: info => <div>{info.getValue() as string}</div>,
   },
   {
-    header: () => <div className="pr-[60px] text-end">Total Cost</div>,
+    header:"Total Cost",
     accessorKey: "totalcost",
-    cell: info => <div className="pr-[60px] text-end">{info.getValue() as string}</div>,
+    cell: info => <div>{info.getValue() as string}</div>,
   },
 ];
 
@@ -63,7 +63,7 @@ function InvoiceTable({ data }: Props) {
                   {headerGroup.headers.map((header) => (
                     <th
                       key={header.id}
-                      className="text-[#202224] text-sm font-bold py-4 px-5 whitespace-nowrap"
+                      className="text-[#202224] text-sm font-bold py-4 px-5 whitespace-nowrap text-center"
                     >
                       {flexRender(
                         header.column.columnDef.header,
@@ -78,7 +78,7 @@ function InvoiceTable({ data }: Props) {
               {table.getRowModel().rows.map((row) => (
                 <tr key={row.id} className="border-b border-[rgba(151,151,151,0.25)]">
                   {row.getVisibleCells().map((cell) => (
-                    <td key={cell.id} className="p-5 whitespace-nowrap">
+                    <td key={cell.id} className="p-5 whitespace-nowrap text-center">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

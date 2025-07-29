@@ -208,7 +208,7 @@ function Register() {
           <div className="mx-4 sm:mx-10">
             <button
               type="submit"
-              className="text-white bg-[#4880FF]/90 rounded-md w-full sm:mb-[18px] py-2 sm:py-[15px] hover:bg-[#3c6fe6] transition"
+              className="cursor-pointer text-white bg-[#4880FF]/90 rounded-md w-full sm:mb-[18px] py-2 sm:py-[15px] hover:bg-[#3c6fe6] transition"
             >
               Register
             </button>

@@ -319,7 +319,7 @@ const filteredMessages = useMemo(() => {
     const handleNext = () => {
       if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
     }; 
-
+ 
     const handleToggleStar = (id: number) => {
     setAllMessages((prev) =>
       prev.map((msg) =>
@@ -327,6 +327,52 @@ const filteredMessages = useMemo(() => {
       )
     );
   };
+ 
+const getPageButtons = () => {
+  const buttons = [];
+  let start = Math.max(2, currentPage - 1);
+  let end = Math.min(totalPages - 1, currentPage + 1);
+
+  if (currentPage <= 2) {
+    start = 2;
+    end = 4;
+  } else if (currentPage >= totalPages - 1) {
+    start = totalPages - 3;
+    end = totalPages - 1;
+  }
+
+  if (start > 2) {
+    buttons.push(
+      <span key="start-ellipsis" className="px-3 text-gray-500 flex items-end">...</span>
+    );
+  }
+
+  for (let i = start; i <= end; i++) {
+    if (i > 1 && i < totalPages) {
+      buttons.push(
+        <button
+          key={i}
+          onClick={() => setCurrentPage(i)}
+          className={`px-3 text-sm flex justify-center items-center ${
+            currentPage === i
+              ? "bg-gray-800 text-white"
+              : "text-gray-700 hover:bg-gray-200"
+          }`}
+        >
+          {i}
+        </button>
+      );
+    }
+  }
+
+  if (end < totalPages - 1) {
+    buttons.push(
+      <span key="end-ellipsis" className="px-3 text-gray-500 flex items-end">...</span>
+    );
+  }
+
+  return buttons;
+};
 
     return (
     <motion.div
@@ -498,6 +544,7 @@ const filteredMessages = useMemo(() => {
                 >
                   <ChevronLeft size={17} />
                 </button>
+                 {getPageButtons()}
                 <button
                   onClick={handleNext}
                   disabled={currentPage === totalPages || totalPages === 0}

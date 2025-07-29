@@ -6,6 +6,8 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import {motion} from 'framer-motion';
+import { useFadeIn } from "./useFadeIn";
 
 type Props<T> = {
   data: T[];
@@ -18,7 +20,7 @@ export function Table<T>({ data, columns ,isPaginated = true }: Props<T>) {
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    ...(isPaginated && { getPaginationRowModel: getPaginationRowModel() }), // 🔥 Conditionally apply
+    ...(isPaginated && { getPaginationRowModel: getPaginationRowModel() }), 
     ...(isPaginated && {
       initialState: {
         pagination: {
@@ -32,9 +34,55 @@ export function Table<T>({ data, columns ,isPaginated = true }: Props<T>) {
     ? table.getPaginationRowModel().rows
     : table.getRowModel().rows;
 
+  const fadeIn = useFadeIn();
+  const pageCount = table.getPageCount();
+  const currentPage = table.getState().pagination.pageIndex + 1;
+
+const getPageButtons = () => {
+  const pages = [];
+  let start = Math.max(2, currentPage - 1);
+  let end = Math.min(pageCount - 1, currentPage + 1);
+
+  if (currentPage <= 2) {
+    start = 2;
+    end = 4;
+  } else if (currentPage >= pageCount - 1) {
+    start = pageCount - 3;
+    end = pageCount - 1;
+  }
+
+  if (start > 2) {
+    pages.push(<span key="start-ellipsis" className="px-3 text-gray-500 flex items-end">...</span>);
+  }
+
+  for (let i = start; i <= end; i++) {
+    if (i > 1 && i < pageCount) {
+      pages.push(
+        <button
+          key={i}
+          onClick={() => table.setPageIndex(i - 1)}
+          className={`px-3 py-1 text-sm ${
+            currentPage === i
+              ? "bg-gray-800 text-white"
+              : "text-gray-700 hover:bg-gray-200"
+          }`}
+        >
+          {i}
+        </button>
+      );
+    }
+  }
+
+  if (end < pageCount - 1) {
+    pages.push(<div key="end-ellipsis" className="px-3 text-gray-500 flex items-end">...</div>);
+  }
+
+  return pages;
+};
+
   return (
     <>
-    <div className="grid grid-cols-12">
+    <div className="grid grid-cols-12"> 
         <div className="col-span-12">
           <div className="w-full overflow-x-auto bg-white rounded-xl">
         <table className="min-w-full divide-y divide-[#FCFDFD]">
@@ -81,27 +129,36 @@ export function Table<T>({ data, columns ,isPaginated = true }: Props<T>) {
         </div>
       </div>
       {isPaginated && (
-      <div className="flex justify-between items-center mt-4">
-        <span className="text-sm text-gray-500">
-          Showing {table.getRowModel().rows.length} of {data.length}
-        </span>
-        <div className="flex gap-2">
-          <button
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-            className="px-3 py-1 text-sm bg-gray-200 rounded disabled:opacity-50"
-          >
-            <ChevronLeft size={17} />
-          </button>
-          <button
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-            className="px-3 py-1 text-sm bg-gray-200 rounded disabled:opacity-50"
-          >
-            <ChevronRight size={17} />
-          </button>
-        </div>
-      </div>)}
+     <motion.div  variants={fadeIn}
+                 initial="hidden"
+                 animate="visible"
+                 custom={0} className="flex flex-col sm:flex-row gap-2 justify-between items-center mt-4 text-sm text-gray-500">
+           <span>
+             Showing {table.getRowModel().rows.length} of {data.length} products
+           </span>
+   
+           <div className="flex bg-[#FAFBFD] border border-[#979797] rounded-lg overflow-hidden">
+             <button
+               onClick={() => table.previousPage()}
+               disabled={!table.getCanPreviousPage()}
+               className={`py-1 md:py-2 px-3 md:px-[12px] border-r border-[#979797] ${
+                 !table.getCanPreviousPage() ? "opacity-50 cursor-not-allowed" : ""
+               }`}
+             >
+               <ChevronLeft size={17} />
+             </button>
+                 {getPageButtons()}
+             <button
+               onClick={() => table.nextPage()}
+               disabled={!table.getCanNextPage()}
+               className={`py-1 md:py-2 px-3 md:px-[12px] border-l border-[#979797] ${
+                 !table.getCanNextPage() ? "opacity-50 cursor-not-allowed" : ""
+               }`}
+             >
+               <ChevronRight size={17} />
+             </button>
+           </div>
+         </motion.div>)}
     </>
   );
 }

@@ -133,12 +133,14 @@ const columns: ColumnDef<Product>[] = [
     header: "Action",
     cell: () => (
       <div className="flex bg-[#FAFBFD] rounded-md border border-[#979797]/70 w-max">
-        <button className="border-r border-[#979797]/70 py-2 px-4">
+        <motion.button whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }} className="border-r border-[#979797]/70 py-2 px-4 cursor-pointer">
           <SquarePen className="w-4 h-4 text-black/60" />
-        </button>
-        <button className="py-2 px-4">
-          <Trash2 className="w-4 h-4 text-[#EF3826] " />
-        </button>
+        </motion.button>
+        <motion.button whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }} className="py-2 px-4">
+          <Trash2 className="w-4 h-4 text-[#EF3826] cursor-pointer" />
+        </motion.button>
       </div>
     ),
   },
@@ -170,6 +172,52 @@ export function ProductStock() {
   });
   const pageAnim = usePageAnimation();
   const fadeIn = useFadeIn();
+  
+  const pageCount = table.getPageCount();
+const currentPage = table.getState().pagination.pageIndex + 1;
+
+const getPageButtons = () => {
+  const pages = [];
+  let start = Math.max(2, currentPage - 1);
+  let end = Math.min(pageCount - 1, currentPage + 1);
+
+  if (currentPage <= 2) {
+    start = 2;
+    end = 4;
+  } else if (currentPage >= pageCount - 1) {
+    start = pageCount - 3;
+    end = pageCount - 1;
+  }
+
+  if (start > 2) {
+    pages.push(<span key="start-ellipsis" className="px-3 text-gray-500 flex items-end">...</span>);
+  }
+
+  for (let i = start; i <= end; i++) {
+    if (i > 1 && i < pageCount) {
+      pages.push(
+        <button
+          key={i}
+          onClick={() => table.setPageIndex(i - 1)}
+          className={`px-3 text-sm flex justify-center items-center ${
+            currentPage === i
+              ? "bg-gray-800 text-white"
+              : "text-gray-700 hover:bg-gray-200"
+          }`}
+        >
+          {i}
+        </button>
+      );
+    }
+  }
+
+  if (end < pageCount - 1) {
+    pages.push(<span key="end-ellipsis" className="px-3 text-gray-500 flex items-end">...</span>);
+  }
+
+  return pages;
+};
+
   return (
      <motion.div
           variants={pageAnim}
@@ -213,7 +261,7 @@ export function ProductStock() {
       <motion.div  variants={fadeIn}
               initial="hidden"
               animate="visible"
-              custom={0} className="flex justify-between items-center mt-4 text-sm text-gray-500">
+              custom={0} className="flex  flex-col sm:flex-row gap-2  justify-between items-center mt-4 text-sm text-gray-500">
         <span>
           Showing {table.getRowModel().rows.length} of {data.length} products
         </span>
@@ -222,16 +270,17 @@ export function ProductStock() {
           <button
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
-            className={`py-1 md:py-[9px] px-3 md:px-[18px] border-r border-[#979797] ${
+            className={`py-1 md:py-2 px-3 md:px-[12px] border-r border-[#979797] ${
               !table.getCanPreviousPage() ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
             <ChevronLeft size={17} />
           </button>
+              {getPageButtons()}
           <button
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
-            className={`py-1 md:py-[9px] px-3 md:px-[18px] ${
+            className={`py-1 md:py-2 px-3 md:px-[12px] border-l border-[#979797] ${
               !table.getCanNextPage() ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >

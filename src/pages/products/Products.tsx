@@ -170,17 +170,65 @@ const productData = [
 const Products: FC = () => {
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
-const [currentPage, setCurrentPage] = useState(1);
-const itemsPerPage = 9;
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
 
-const totalPages = Math.ceil(productData.length / itemsPerPage);
-const paginatedData = productData.slice(
-  (currentPage - 1) * itemsPerPage,
-  currentPage * itemsPerPage
-);
+  const totalPages = Math.ceil(productData.length / itemsPerPage);
+  const paginatedData = productData.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
  const pageAnimation = usePageAnimation();
   const fadeIn = useFadeIn();
+  
+const getPageButtons = () => {
+  const buttons = [];
+  let start = Math.max(2, currentPage - 1);
+  let end = Math.min(totalPages - 1, currentPage + 1);
+
+  // Adjust bounds for edges
+  if (currentPage <= 2) {
+    start = 2;
+    end = 4;
+  } else if (currentPage >= totalPages - 1) {
+    start = totalPages - 3;
+    end = totalPages - 1;
+  }
+
+  if (start > 2) {
+    buttons.push(
+      <span key="start-ellipsis" className="px-3 text-gray-500 flex items-end">...</span>
+    );
+  }
+
+  for (let i = start; i <= end; i++) {
+    if (i > 1 && i < totalPages) {
+      buttons.push(
+        <button
+          key={i}
+          onClick={() => setCurrentPage(i)}
+          className={`px-3 text-sm flex justify-center items-center ${
+            currentPage === i
+              ? "bg-gray-800 text-white"
+              : "text-gray-700 hover:bg-gray-200"
+          }`}
+        >
+          {i}
+        </button>
+      );
+    }
+  }
+
+  // Add ellipsis after
+  if (end < totalPages - 1) {
+    buttons.push(
+      <span key="end-ellipsis" className="px-3 text-gray-500 flex items-end">...</span>
+    );
+  }
+
+  return buttons;
+};
   return (
     <>
     <motion.div
@@ -267,29 +315,35 @@ const paginatedData = productData.slice(
                     </motion.div>
         ))}
       </div>
-      <motion.div         initial={{ opacity: 0, y: 20 }}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }} className="flex justify-between items-center mt-6">
-      <span className="text-sm text-gray-500">
-        Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
-        {Math.min(currentPage * itemsPerPage, productData.length)} of {productData.length}
-      </span>
-      <div className="flex gap-2">
-        <button
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-          disabled={currentPage === 1}
-          className="px-3 py-1 text-sm bg-gray-200 rounded disabled:opacity-50"
-        >
-          <ChevronLeft size={17} />
-        </button>
-        <button
-          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-          disabled={currentPage === totalPages}
-          className="px-3 py-1 text-sm bg-gray-200 rounded disabled:opacity-50"
-        >
-          <ChevronRight size={17} />
-        </button>
-      </div>
+        transition={{ duration: 0.4 }}
+        className="flex flex-row justify-between items-center gap-4 mt-6"
+      >
+        <span className="text-sm text-gray-600">
+          Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
+          {Math.min(currentPage * itemsPerPage, productData.length)} of{" "}
+          {productData.length}
+        </span>
+
+        <div className="flex bg-[#FAFBFD] border border-[#979797] rounded-lg overflow-hidden">
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className="py-1 md:py-2 px-3 md:px-[12px] border-r border-[#979797] disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <ChevronLeft size={18} className="text-gray-600" />
+          </button>
+          {getPageButtons()}
+          <button
+            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+            disabled={currentPage === totalPages}
+            className="py-1 md:py-2 px-3 md:px-[12px] border-l border-[#979797] disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <ChevronRight size={18} className="text-gray-600" />
+          </button>
+        </div>
       </motion.div>
         </motion.div>
     </>
