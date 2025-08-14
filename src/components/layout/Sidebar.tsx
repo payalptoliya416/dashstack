@@ -76,10 +76,11 @@ export const Sidebar: FC<SidebarProps> = ({
     dispatch(logout());
     navigate("/");
   };
+  
 const location = useLocation();
 
-// On mount, check if any parent menu should be open
 useEffect(() => {
+  // Find parent of current route
   const activeParent = topLinks
     .concat(middleLinks)
     .concat(bottomLinks)
@@ -87,8 +88,16 @@ useEffect(() => {
       (link) =>
         link.children?.some((child) => child.path === location.pathname)
     );
-  if (activeParent) setOpenDropdown(activeParent.name);
+
+  if (activeParent) {
+    // Open the active dropdown
+    setOpenDropdown(activeParent.name);
+  } else {
+    // Close all dropdowns if current route has no children
+    setOpenDropdown(null);
+  }
 }, [location.pathname]);
+
   return (
     <>
       {mobileOpen && (
