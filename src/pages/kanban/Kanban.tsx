@@ -70,7 +70,8 @@ function Kanban() {
           },
         }}
       />
-      <div className="grid grid-cols-4 gap-5 my-7">
+      <div className="w-full overflow-x-auto my-7">
+      <div className="grid grid-cols-4 gap-5 min-w-full ">
          {columns.map((column: Column) => (
                   <div key={column.id}>
                     <div
@@ -255,6 +256,7 @@ function Kanban() {
                     </div>
                   </div>
          ))}
+      </div>
       </div>
      
         <Dialog

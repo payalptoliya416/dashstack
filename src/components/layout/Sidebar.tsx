@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import {
   CircleGauge,
   LayoutGrid,
@@ -20,7 +20,7 @@ import {
   SquareKanban,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
-import { useState, type FC } from "react";
+import { useEffect, useState, type FC } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/slice/authSlice";
 
@@ -76,7 +76,19 @@ export const Sidebar: FC<SidebarProps> = ({
     dispatch(logout());
     navigate("/");
   };
+const location = useLocation();
 
+// On mount, check if any parent menu should be open
+useEffect(() => {
+  const activeParent = topLinks
+    .concat(middleLinks)
+    .concat(bottomLinks)
+    .find(
+      (link) =>
+        link.children?.some((child) => child.path === location.pathname)
+    );
+  if (activeParent) setOpenDropdown(activeParent.name);
+}, [location.pathname]);
   return (
     <>
       {mobileOpen && (
