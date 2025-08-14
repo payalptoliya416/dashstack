@@ -24,7 +24,7 @@ export interface Column {
 interface KanbanState {
   columns: Column[];
   selectedTaskId: string | null;
-  selectedColumnId:any;
+  selectedColumnId: any;
 }
 
 const initialState: KanbanState = {
@@ -77,15 +77,30 @@ const kanbanSlice = createSlice({
       state.selectedColumnId = action.payload;
     },
     deleteColumn: (state, action: PayloadAction<any>) => {
-          state.columns = state.columns.filter(column => column.id !== action.payload);
-        },
-        emptyColumn: (state, action: PayloadAction<any>) => {
-          const column = state.columns.find(c => c.id === action.payload);
-          if (column) {
-            column.tasks = [];
-            column.taskCount = 0;
-          }
-        },
+      state.columns = state.columns.filter(
+        (column) => column.id !== action.payload
+      );
+    },
+    emptyColumn: (state, action: PayloadAction<any>) => {
+      const column = state.columns.find((c) => c.id === action.payload);
+      if (column) {
+        column.tasks = [];
+        column.taskCount = 0;
+      }
+    },
+    addColumn: (
+      state,
+      action: PayloadAction<{ title: string; borderColor: string }>
+    ) => {
+      const newColumn: Column = {
+        id: Math.floor(Math.random() * 10000), // random unique id
+        title: action.payload.title,
+        borderColor: action.payload.borderColor,
+        taskCount: 0,
+        tasks: [],
+      };
+      state.columns.push(newColumn);
+    },
   },
 });
 
@@ -97,6 +112,7 @@ export const {
   setSelectedTask,
   setSelectedColumn,
   emptyColumn,
-  deleteColumn
+  deleteColumn,
+  addColumn,
 } = kanbanSlice.actions;
 export default kanbanSlice.reducer;

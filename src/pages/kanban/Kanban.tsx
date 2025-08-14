@@ -2,7 +2,7 @@ import { CalendarDays, EllipsisVertical, MessageSquareMore, Paperclip, Plus, Set
 import { Fragment, useEffect, useState } from "react";
 import { Dialog, DialogPanel, Menu, Transition } from "@headlessui/react";
 import {  type Column, type Task } from "./KanbanData";
-import { addTask, deleteColumn, deleteTask, emptyColumn, setSelectedColumn, setSelectedTask, updateColumn } from "../../redux/slice/kanbanSlice";
+import { addColumn, addTask, deleteColumn, deleteTask, emptyColumn, setSelectedColumn, setSelectedTask, updateColumn } from "../../redux/slice/kanbanSlice";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../../redux/store";
 import toast, { Toaster } from "react-hot-toast";
@@ -44,19 +44,47 @@ function Kanban() {
     <div className="flex justify-between items-center border-b border-gray-200 pb-5 flex-wrap sm:flex-nowrap gap-5 md:gap-1">
        <h1 className="text-2xl xl:text-[32px] font-bold">Kanban Board</h1>
       <div className="flex gap-2 items-center w-full sm:w-auto justify-end">
-        <div className="flex items-center">
-                <img src="/images/recent1.png" alt="" className="w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline-1 outline-white" />
-                <img src="/images/recent2.png" alt="" className="w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline-1 outline-white -ms-3" />
-                <img src="/images/recent3.png" alt="" className="w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline-1 outline-white -ms-3" />
-                <img src="/images/recent4.png" alt="" className="w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline-1 outline-white -ms-3" />
-                <img src="/images/recent5.png" alt="" className="w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline-1 outline-white -ms-3" />
-        </div>
+      <div className="flex items-center relative">
+  {[
+    "/images/recent1.png",
+    "/images/recent2.png",
+    "/images/recent3.png",
+    "/images/recent4.png",
+    "/images/recent5.png",
+  ].map((src, i) => (
+    <img
+      key={i}
+      src={src}
+      alt=""
+      className={`
+        w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline outline-1 outline-white 
+        ${i !== 0 ? "-ms-3" : ""} 
+        transition-all duration-300 ease-in-out
+         hover:scale-110
+        cursor-pointer
+      `}
+    />
+  ))}
+</div>
+
+        
         <div className="border border-gray-200 rounded bg-[#f1f2f3] p-[10px]">
         <Settings size={14} />
         </div>
-        <button className="flex items-center px-2 sm:px-5 py-2 gap-1 sm:gap-3 bg-[#3E97FF] rounded text-white text-[12px] sm:text-sm">
-            <Plus size={18} /> Add Board
-        </button>
+        <button
+        className="flex items-center px-2 sm:px-5 py-2 gap-1 sm:gap-3 bg-[#3E97FF] rounded text-white text-[12px] sm:text-sm"
+       onClick={() => {
+    const defaultTitle = "New Board"; 
+        const colors = ["#3E97FF", "#F7B923", "#FF6B6B", "#6BCB77"]; 
+        const borderColor = colors[Math.floor(Math.random() * colors.length)];
+
+        dispatch(addColumn({ title: defaultTitle, borderColor }));
+        toast.success(`Board "${defaultTitle}" added successfully!`);
+      }}
+      >
+        <Plus size={18} /> Add Board
+      </button>
+
       </div>
     </div>
   <Toaster 
