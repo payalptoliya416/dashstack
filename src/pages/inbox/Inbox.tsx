@@ -8,10 +8,12 @@
     Plus,
     Search,
     Send,
+    SquarePlus,
     Star,
     Trash,
     Trash2,
     TriangleAlert,
+    Video,
   } from "lucide-react";
   import MainTitle from "../../hooks/useMainTitle";
   import type {
@@ -379,7 +381,6 @@ const getPageButtons = () => {
       {...usePageAnimation()}
       className="overflow-hidden"
     >
-
         <MainTitle title="Inbox" />
         <div className="grid grid-cols-12 gap-[21px]">
           <div className="col-span-12 xl:col-span-3 h-full bg-white rounded-xl px-3 xl:px-6 py-3 xl:py-6 border border-[#B9B9B9]/50 flex  items-center justify-center sm:justify-between xl:flex-none xl:block flex-wrap gap-3 ">
@@ -402,7 +403,6 @@ const getPageButtons = () => {
                 />
               ))}
             </div>
-
             <div className="xl:hidden">
               <Popover className="relative">
                 <PopoverButton className="text-[#202224] font-bold text-base focus:outline-none">
@@ -430,13 +430,13 @@ const getPageButtons = () => {
 
             <div className="hidden xl:flex gap-6 flex-col mb-10">
             {checkboxData.map((item) => (
-  <LabelCheckbox
-    key={item.id}
-    item={item}
-    selectedLabels={selectedLabels}
-    setSelectedLabels={setSelectedLabels}
-  />
-))}
+              <LabelCheckbox
+                key={item.id}
+                item={item}
+                selectedLabels={selectedLabels}
+                setSelectedLabels={setSelectedLabels}
+              />
+            ))}
             </div>
 
             <div className="xl:hidden">
@@ -448,16 +448,44 @@ const getPageButtons = () => {
                 <PopoverPanel  anchor="bottom" className="mt-2 bg-white p-4 rounded-xl shadow-xl border border-[#B9B9B9]/50 space-y-4">
                   {checkboxData.map((item) => (
                     <LabelCheckbox key={item.id} item={item}   selectedLabels={selectedLabels}
-    setSelectedLabels={setSelectedLabels} />
+                    setSelectedLabels={setSelectedLabels} />
                   ))}
                 </PopoverPanel>
               </Popover>
             </div>
             </div>
-            <div className="flex items-center gap-[14px] text-[#202224] opacity-[60%] font-semibold text-sm px-4 order-2 sm:order-4">
+            <div className="order-5 sm:order-4 mx-4 sm:mx-0">
+              <h3 className="text-[#202224] mb-8 font-bold text-base hidden xl:block">Metting</h3>
+              <div className="hidden xl:block">
+              <div className="flex items-center gap-3 text-sm font-semibold px-4 mb-7">
+                <Video size={17}/> New meeting
+              </div>
+              <div className="flex items-center gap-3 text-sm font-semibold px-4 mb-10">
+                <SquarePlus  size={17}/> Join a meeting
+              </div>
+              </div>
+            <div className="xl:hidden">
+              <Popover className="relative">
+                <PopoverButton className="text-[#202224] font-bold text-base focus:outline-none">
+                   Metting
+                </PopoverButton>
+                <PopoverPanel
+                  anchor="bottom"
+                  className="mt-2 rounded-xl bg-white p-2 sm:p-4 shadow-xl border border-[#B9B9B9]/50"
+                >
+                <div className="flex items-center gap-3 text-sm font-semibold px-4 my-3">
+                <Video size={17}/> New meeting
+              </div>
+              <div className="flex items-center gap-3 text-sm font-semibold px-4 my-3">
+                <SquarePlus  size={17}/> Join a meeting
+              </div>
+                </PopoverPanel>
+              </Popover>
+            </div>
+            </div>
+            <div className="flex items-center gap-[14px] text-[#202224] opacity-[60%] font-semibold text-sm px-4 order-2 sm:order-5">
               <Plus size={18} className="text-[#202224]" /> Create New Label
             </div>
-
           </div>
           <div className="col-span-12 xl:col-span-9 h-full">
             <div className="bg-white rounded-xl border border-[#B9B9B9]/50">

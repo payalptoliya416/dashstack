@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/layout/Layout";
-import DashboardPage from "./pages/dashboard/DashboardPage";
+import DashboardPage from "./pages/dashboard/dashboard/DashboardPage";
 import Products from "./pages/products/Products";
 import Favorites from "./pages/favorites/Favorites";
 import Inbox from "./pages/inbox/Inbox";
@@ -24,6 +24,10 @@ import PrivateRoute from "./constants/PrivateRoute";
 import NotFound from "./pages/notfound/NotFound";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import ResetPassword from "./pages/auth/ResetPassword";
+import ECommerce from "./pages/dashboard/ecommerce/ECommerce";
+import Crm from "./pages/dashboard/CRM/Crm";
+import AnalyTics from "./pages/dashboard/analytics/AnalyTics";
+import Kanban from "./pages/kanban/Kanban";
 
 function App() {
   return (
@@ -37,13 +41,21 @@ function App() {
           
           <Route element={<PrivateRoute />}>
             <Route element={<Layout />}>
+
+            {/* --dashboard-- */}
               <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/eCommerce" element={<ECommerce />} />
+              <Route path="/crm" element={<Crm />} />
+              <Route path="/analytics" element={<AnalyTics />} />
+            {/* ---Dashboard-- */}
+
               <Route path="/products" element={<Products />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/inbox" element={<Inbox />} />
               <Route path="/orderlist" element={<OrderList />} />
               <Route path="/stock" element={<ProductStock />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/kanban-board" element={<Kanban />} />
 
               {/* ---calender-- */}
               <Route path="/calendar">

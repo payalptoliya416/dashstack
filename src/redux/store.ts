@@ -15,7 +15,8 @@ import eventReducer from "./slice/eventSlice";
 import teammemberReducer from "./slice/teamMemberSlice";
 import settingsReducer from "./slice/settingSlice";
 import taskReducer from "./slice/taskSlice";
-import authReducer from './slice/authSlice';
+import authReducer from "./slice/authSlice";
+import kanbanReducer from "./slice/kanbanSlice";
 
 const rootReducer = combineReducers({
   contact: contactReducer,
@@ -23,14 +24,15 @@ const rootReducer = combineReducers({
   teammember: teammemberReducer,
   settings: settingsReducer,
   tasks: taskReducer,
-   auth: authReducer,
+  auth: authReducer,
+  kanban: kanbanReducer
 });
 
 const persistConfig = {
   key: "root",
   storage,
   version: 1,
-  blacklist: [], 
+  blacklist: [],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

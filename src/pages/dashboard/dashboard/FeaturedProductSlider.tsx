@@ -19,7 +19,6 @@ const products = [
   },
 ];
 
-
 const FeaturedProductSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 

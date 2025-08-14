@@ -1,4 +1,4 @@
-// src/pages/ResetPassword.tsx
+
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";

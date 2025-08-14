@@ -15,17 +15,30 @@ import {
   ClipboardList,
   Settings,
   LogOut,
+  ChevronRight,
+  Dot,
+  SquareKanban,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
-import type { FC } from "react";
+import { useState, type FC } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/slice/authSlice";
 
 export const topLinks: SidebarLink[] = [
-  { name: "Dashboard", path: "/dashboard", icon: CircleGauge },
+  // { name: "Dashboard", path: "/dashboard", icon: CircleGauge },
+  {
+    name: "Dashboard",
+    icon: CircleGauge,
+    children: [
+      { name: "eCommerce", path: "/eCommerce" },
+      { name: "Analytics", path: "/analytics" },
+      { name: "CRM", path: "/crm" },
+    ],
+  },
   { name: "Products", path: "/products", icon: LayoutGrid },
   { name: "Favorites", path: "/favorites", icon: Heart },
   { name: "Inbox", path: "/inbox", icon: MessageSquare },
+  { name: "Kanban", path: "/kanban-board", icon: SquareKanban },
   { name: "Order Lists", path: "/orderlist", icon: ListChecks },
   { name: "Product Stock", path: "/stock", icon: Table },
 ];
@@ -51,10 +64,16 @@ export const Sidebar: FC<SidebarProps> = ({
   mobileOpen,
   onCloseMobile,
 }) => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  const toggleDropdown = (name: string) => {
+    setOpenDropdown((prev) => (prev === name ? null : name));
+  };
+
   const handleLogOut = () => {
-    dispatch(logout());       
+    dispatch(logout());
     navigate("/");
   };
 
@@ -66,8 +85,8 @@ export const Sidebar: FC<SidebarProps> = ({
           onClick={onCloseMobile}
         />
       )}
-    <aside
-  className={`
+      <aside
+        className={`
     ${mobileOpen ? "left-0 h-full" : "-left-60 h-screen"} 
     lg:left-0
     ${collapsed ? "w-30" : "w-52 xl:w-60"} 
@@ -75,63 +94,131 @@ export const Sidebar: FC<SidebarProps> = ({
     transition-all duration-300 
     fixed top-0 z-[99999] lg:sticky flex flex-col justify-between
   `}
->
-  <div>
-    {/* Fixed top header */}
-    <div className="text-center font-bold text-xl mt-6 mb-[30px] whitespace-nowrap overflow-hidden">
-      <span className="text-[#4880FF]">{collapsed ? "D" : "Dash"}</span>
-      {!collapsed && "Stack"}
-    </div>
+      >
+        <div>
+          {/* Fixed top header */}
+          <div className="text-center font-bold text-xl mt-6 mb-[30px] whitespace-nowrap overflow-hidden">
+            <span className="text-[#4880FF]">{collapsed ? "D" : "Dash"}</span>
+            {!collapsed && "Stack"}
+          </div>
 
-    {/* Scrollable nav list */}
-    <div className="overflow-y-auto h-[calc(100vh-120px)] pr-1">
-      <nav className="space-y-2">
-        {[topLinks, middleLinks, bottomLinks].map((group, index) => (
-          <div key={index}>
-            {index === 1 && ( 
-              <div className="text-xs text-gray-500 font-semibold px-6 mb-1 mt-4 uppercase tracking-wide">
-                Pages
-              </div>
-            )}
-           
-                  {group.map(({ name, path, icon: Icon }) => {
+          {/* Scrollable nav list */}
+          <div className="overflow-y-auto h-[calc(100vh-120px)] pr-1">
+            <nav className="space-y-2">
+              {[topLinks, middleLinks, bottomLinks].map((group, index) => (
+                <div key={index}>
+                  {index === 1 && (
+                    <div className="text-xs text-gray-500 font-semibold px-6 mb-1 mt-4 uppercase tracking-wide">
+                      Pages
+                    </div>
+                  )}
+
+                  {group.map(({ name, path, icon: Icon, children }) => {
                     const isLogout = name === "Logout";
+                    const isOpen = openDropdown === name;
+                    // const isAnyChildActive = children?.some(child => location.pathname === child.path);
+                    // const isParentActive = isOpen || isAnyChildActive;
+
+                    if (!children) {
+                      return (
+                        <NavLink
+                          key={name}
+                          to={isLogout ? "#" : path || "#"}
+                          onClick={isLogout ? handleLogOut : undefined}
+                          className={({ isActive }) =>
+                            `group flex items-center gap-2 px-4 py-2 lg:py-4 my-1 rounded-md text-sm transition-all duration-300
+                        ${
+                          collapsed
+                            ? "mx-1 justify-center"
+                            : "mx-3 xl:mx-6 lg:mx-6"
+                        } 
+                        ${
+                          isActive && !isLogout
+                            ? "bg-[#4880FF] text-white shadow-md"
+                            : "text-[#202224] hover:bg-[#4880FF]/70 hover:text-white hover:backdrop-blur-md hover:shadow-md"
+                        } 
+                        relative after:content-[''] after:absolute after:top-0 after:left-[-17px] xl:after:left-[-27px]
+                        after:w-[9px] after:h-full after:rounded-r-[20px] after:transition-all after:duration-300
+                        ${
+                          isActive && !isLogout
+                            ? "after:bg-[#4880FF]"
+                            : "after:bg-transparent hover:after:bg-[#4880FF]/70"
+                        }`
+                          }
+                        >
+                          <Icon size={16} />
+                          {collapsed ? "" : name}
+                        </NavLink>
+                      );
+                    }
 
                     return (
-                      <NavLink
-                        key={name}
-                        to={isLogout ? "#" : path}
-                        onClick={isLogout ? handleLogOut : undefined}
-                        className={({ isActive }) =>
-                          `group flex items-center gap-2 px-4 py-2 lg:py-4 rounded-md text-sm transition-all duration-300
-                          ${collapsed ? "mx-1 justify-center" : "mx-3 xl:mx-6 lg:mx-6"} 
-                          ${
-                            isActive && !isLogout
-                              ? "bg-[#4880FF] text-white shadow-md"
-                              : "text-[#202224] hover:bg-[#4880FF]/70 hover:text-white hover:backdrop-blur-md hover:shadow-md"
-                          } 
-                          relative after:content-[''] after:absolute after:top-0 after:left-[-17px] xl:after:left-[-27px]
-                          after:w-[9px] after:h-full after:rounded-r-[20px] after:transition-all after:duration-300
-                          ${
-                            isActive && !isLogout
-                              ? "after:bg-[#4880FF]"
-                              : "after:bg-transparent hover:after:bg-[#4880FF]/70"
-                          }`
+                      <div key={name}>
+                        <button
+                          onClick={() => toggleDropdown(name)}
+                          className={`
+                        group flex items-center gap-2 px-4 py-2 lg:py-4 rounded-md text-sm transition-all duration-300
+                        ${
+                          collapsed
+                            ? "mx-1 justify-center"
+                            : "mx-3 xl:mx-6 lg:mx-6"
+                        } 
+                        text-[#202224] hover:bg-[#4880FF]/70 hover:text-white hover:backdrop-blur-md hover:shadow-md
+                        relative after:content-[''] after:absolute after:top-0 after:left-[-17px] xl:after:left-[-27px]
+                        after:w-[9px] after:h-full after:rounded-r-[20px] after:transition-all after:duration-300
+                        ${
+                          isOpen
+                            ? "after:bg-[#4880FF]"
+                            : "after:bg-transparent hover:after:bg-[#4880FF]/70"
                         }
-                      >
-                        <Icon size={16} />
-                        {collapsed ? "" : name}
-                      </NavLink>
+                      `}
+                        >
+                          <Icon size={16} />
+                          {collapsed ? "" : name}
+                          {!collapsed && (
+                            <ChevronRight
+                              size={16}
+                              className={`ml-auto transition-transform duration-300 ${
+                                isOpen ? "rotate-90" : ""
+                              }`}
+                            />
+                          )}
+                        </button>
+
+                        {/* Submenu */}
+                        {isOpen && !collapsed && (
+                          <div className="my-1 space-y-1">
+                            {children.map((sub) => (
+                              <NavLink
+                                key={sub.name}
+                                to={sub.path || "#"}
+                                className={({ isActive }) =>
+                                  `flex items-center gap-2 px-4 py-2 lg:py-2 rounded text-sm transition-all duration-300 mx-3 xl:mx-6 lg:mx-6
+                              ${
+                                isActive
+                                  ? "bg-[#4880FF] text-white shadow-md"
+                                  : "text-[#202224] hover:bg-[#4880FF]/70 hover:text-white hover:shadow-md"
+                              }`
+                                }
+                              >
+                                <Dot size={16} /> {sub.name}
+                              </NavLink>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     );
                   })}
-            {index < 2 && <hr className="my-3 border-t border-[#E0E0E0]" />}
-          </div>
-        ))}
-      </nav>
-    </div>
-  </div>
-</aside>
 
+                  {index < 2 && (
+                    <hr className="my-3 border-t border-[#E0E0E0]" />
+                  )}
+                </div>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </aside>
     </>
   );
 };

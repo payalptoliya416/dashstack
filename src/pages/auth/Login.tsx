@@ -62,7 +62,7 @@ function Login() {
 
     if (matchedUser) {
       dispatch(login(matchedUser));
-      navigate("/dashboard");
+      navigate("/eCommerce");
     } else {
       setErrors((prev) => ({
         ...prev,

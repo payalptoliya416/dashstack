@@ -90,7 +90,7 @@ function Register() {
     localStorage.setItem("users", JSON.stringify(updatedUsers));
 
     dispatch(login(newUser));
-    navigate("/dashboard");
+    navigate("/eCommerce");
   };
 
   return (

@@ -8,7 +8,7 @@ function NotFound() {
         <img src="/images/404.png" alt="" className=" mx-auto mb-6 sm:mb-16 md:mb-[98px]" />
         <h3 className="text-[#202224] font-semibold text-lg sm:text-2xl md:text-[32px] mb-7 md:mb-[35px]">Looks like you’ve got lost….</h3>
         <div className="sm:mx-10">
-        <Link to='/dashboard' className="bg-[#4880FF]/90 text-white py-3 sm:py-[15px] w-full rounded-md block">Back to Dashboard</Link>
+        <Link to='/eCommerce' className="bg-[#4880FF]/90 text-white py-3 sm:py-[15px] w-full rounded-md block">Back to Dashboard</Link>
         </div>
         </div>
       </div>
