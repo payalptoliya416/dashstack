@@ -41,20 +41,20 @@ function Kanban() {
   return (
     <>
   
-    <div className="flex justify-between items-center border-b border-gray-200 pb-5">
+    <div className="flex justify-between items-center border-b border-gray-200 pb-5 flex-wrap sm:flex-nowrap gap-5 md:gap-1">
        <h1 className="text-2xl xl:text-[32px] font-bold">Kanban Board</h1>
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-2 items-center w-full sm:w-auto justify-end">
         <div className="flex items-center">
-                <img src="/images/recent1.png" alt="" className="w-[43px] h-[43px] rounded-full outline-1 outline-white" />
-                <img src="/images/recent2.png" alt="" className="w-[43px] h-[43px] rounded-full outline-1 outline-white -ms-3" />
-                <img src="/images/recent3.png" alt="" className="w-[43px] h-[43px] rounded-full outline-1 outline-white -ms-3" />
-                <img src="/images/recent4.png" alt="" className="w-[43px] h-[43px] rounded-full outline-1 outline-white -ms-3" />
-                <img src="/images/recent5.png" alt="" className="w-[43px] h-[43px] rounded-full outline-1 outline-white -ms-3" />
+                <img src="/images/recent1.png" alt="" className="w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline-1 outline-white" />
+                <img src="/images/recent2.png" alt="" className="w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline-1 outline-white -ms-3" />
+                <img src="/images/recent3.png" alt="" className="w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline-1 outline-white -ms-3" />
+                <img src="/images/recent4.png" alt="" className="w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline-1 outline-white -ms-3" />
+                <img src="/images/recent5.png" alt="" className="w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline-1 outline-white -ms-3" />
         </div>
         <div className="border border-gray-200 rounded bg-[#f1f2f3] p-[10px]">
         <Settings size={14} />
         </div>
-        <button className="flex items-center px-5 py-2 gap-3 bg-[#3E97FF] rounded text-white text-sm">
+        <button className="flex items-center px-2 sm:px-5 py-2 gap-1 sm:gap-3 bg-[#3E97FF] rounded text-white text-[12px] sm:text-sm">
             <Plus size={18} /> Add Board
         </button>
       </div>
@@ -70,10 +70,31 @@ function Kanban() {
           },
         }}
       />
-      <div className="w-full overflow-x-auto my-7">
-      <div className="grid grid-cols-4 gap-5 min-w-full ">
+       <div className="grid grid-cols-12"> 
+        <div className="col-span-12">
+     <div className="w-full overflow-x-auto my-7">
+  <div className="flex gap-5 min-w-max">
          {columns.map((column: Column) => (
-                  <div key={column.id}>
+                  <div key={column.id}
+                   onDragOver={(e) => e.preventDefault()} 
+                    onDrop={(e) => {
+                      const taskId = Number(e.dataTransfer.getData("taskId"));
+                      const sourceColumnId = Number(e.dataTransfer.getData("sourceColumnId"));
+                      
+                      if (sourceColumnId === column.id) return; 
+
+                      const sourceColumn = columns.find(c => c.id === sourceColumnId);
+                      const task = sourceColumn?.tasks.find(t => t.id === taskId);
+                      if (!task) return;
+
+                      dispatch(deleteTask({ columnId: sourceColumnId, taskId }));
+
+                      dispatch(addTask({ columnId: column.id, task }));
+
+                      toast.success(`Task moved to "${column.title}"`);
+                    }}
+                    className="w-80 2xl:w-96 flex-shrink-0"
+                  >
                     <div
                       className={`px-4 py-2 rounded-sm border-t-2 shadow-sm flex justify-between items-center mb-4`}
                       style={{ borderColor: column.borderColor }}
@@ -168,11 +189,16 @@ function Kanban() {
                   {column.tasks.map((task: Task) => (
                     <div
                         key={task.id}
+                          draggable
+                      onDragStart={(e) => {
+                        e.dataTransfer.setData("taskId", task.id.toString());
+                        e.dataTransfer.setData("sourceColumnId", column.id.toString());
+                      }}
                          onClick={() => {
                         dispatch(setSelectedTask(task.id)); 
                         setIsOpen(true); 
                         }}
-                        className="p-6 rounded-lg shadow-sm cursor-pointer hover:shadow-md transition mb-4"
+                        className="p-6 rounded-lg shadow-sm cursor-grab hover:shadow-md transition mb-4"
                     >
                         <h3 className="text-[#252F4A] text-sm font-bold mb-3">{task.title}</h3>
                         <p className="text-[#4B5675] text-sm mb-7">{task.description}</p>
@@ -258,6 +284,8 @@ function Kanban() {
          ))}
       </div>
       </div>
+      </div>
+        </div>
      
         <Dialog
         open={isOpen}
@@ -369,7 +397,7 @@ function Kanban() {
                     }
                     setIsOpen(false);
                     dispatch(setSelectedTask(null));
-                       toast.error("Column deleted successfully!");
+                       toast.success("Column deleted successfully!");
                     }}>
                         Delete
                     </button>
@@ -484,7 +512,7 @@ function Kanban() {
         dispatch(deleteColumn(selectedColumnId));
         dispatch(setSelectedColumn(null)); 
         setIsDelete(false);
-           toast.error("Column deleted successfully!");
+           toast.success("Column deleted successfully!");
       }
     }}
           >
