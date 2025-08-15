@@ -10,14 +10,6 @@ interface Integration {
   description: string;
   enabled: boolean;
 }
-interface AvailableIntegration {
-  id: number;
-  name: string;
-  installs: string;
-  icon: string;
-  description: string;
-  verified: boolean;
-}
 
 
 const integrationsData: Integration[] = [
