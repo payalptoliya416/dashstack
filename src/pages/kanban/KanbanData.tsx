@@ -1,4 +1,3 @@
-// Define interfaces for the data
 export interface Task {
   id: number;
   title: string;

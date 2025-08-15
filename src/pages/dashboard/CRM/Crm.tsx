@@ -12,7 +12,6 @@ import {
   MapPin,
   SquareUser,
 } from "lucide-react";
-import ProgressBar from "./ProgressBar";
 import EllipsisMenu from "../ecommerce/EllipsisMenu";
 import {
   PieChart,
@@ -36,6 +35,7 @@ import type {
 import MainTitle from "../../../hooks/useMainTitle";
 import { usePageAnimation } from "../../../hooks/usePageAnimation";
 import { motion } from "framer-motion";
+import UseProgressBar from "../../../hooks/useProgressBar";
 
 const data: ChartData = [
   { name: "Contacted", value: 37.74, color: "#3E97FF" },
@@ -280,7 +280,7 @@ function Crm() {
               </div>
               <EllipsisVertical size={17} className="mt-1" />
             </div>
-            <ProgressBar
+            <UseProgressBar
               label="Awaiting payment"
               amount="$5,569"
               percentage={56}
@@ -299,7 +299,7 @@ function Crm() {
               </div>
               <EllipsisVertical size={17} className="mt-1" />
             </div>
-            <ProgressBar
+            <UseProgressBar
               label="Converted leads"
               amount="$2,326 "
               percentage={67}
@@ -319,7 +319,7 @@ function Crm() {
               </div>
               <EllipsisVertical size={17} className="mt-1" />
             </div>
-            <ProgressBar
+            <UseProgressBar
               label="Projects progress"
               amount="$3,478"
               percentage={78}

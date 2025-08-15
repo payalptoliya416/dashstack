@@ -41,33 +41,31 @@ function Kanban() {
   return (
     <>
   
-    <div className="flex justify-between items-center border-b border-gray-200 pb-5 flex-wrap sm:flex-nowrap gap-5 md:gap-1">
-       <h1 className="text-2xl xl:text-[32px] font-bold">Kanban Board</h1>
-      <div className="flex gap-2 items-center w-full sm:w-auto justify-end">
-      <div className="flex items-center relative">
-  {[
-    "/images/recent1.png",
-    "/images/recent2.png",
-    "/images/recent3.png",
-    "/images/recent4.png",
-    "/images/recent5.png",
-  ].map((src, i) => (
-    <img
-      key={i}
-      src={src}
-      alt=""
-      className={`
-        w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline outline-1 outline-white 
-        ${i !== 0 ? "-ms-3" : ""} 
-        transition-all duration-300 ease-in-out
-         hover:scale-110
-        cursor-pointer
-      `}
-    />
-  ))}
-</div>
-
-        
+        <div className="flex justify-between items-center border-b border-gray-200 pb-5 flex-wrap sm:flex-nowrap gap-5 md:gap-1">
+          <h1 className="text-2xl xl:text-[32px] font-bold">Kanban Board</h1>
+          <div className="flex gap-2 items-center w-full sm:w-auto justify-end">
+          <div className="flex items-center relative">
+      {[
+        "/images/recent1.png",
+        "/images/recent2.png",
+        "/images/recent3.png",
+        "/images/recent4.png",
+        "/images/recent5.png",
+      ].map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt=""
+          className={`
+            w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline outline-1 outline-white 
+            ${i !== 0 ? "-ms-3" : ""} 
+            transition-all duration-300 ease-in-out
+            hover:scale-110
+            cursor-pointer
+          `}
+        />
+      ))}
+    </div>
         <div className="border border-gray-200 rounded bg-[#f1f2f3] p-[10px]">
         <Settings size={14} />
         </div>
@@ -94,7 +92,7 @@ function Kanban() {
           duration: 3000,
           style: {
             fontSize: '14px',
-            marginTop:'30px'
+            marginTop:'5px'
           },
         }}
       />
@@ -124,7 +122,7 @@ function Kanban() {
                     className="w-80 2xl:w-96 flex-shrink-0"
                   >
                     <div
-                      className={`px-4 py-2 rounded-sm border-t-2 shadow-sm flex justify-between items-center mb-4`}
+                      className={`px-4 py-2 rounded-sm border-t-2 shadow-sm flex justify-between items-center mb-4 bg-white`}
                       style={{ borderColor: column.borderColor }}
                     >
                       <h3 className="text-sm text-[#202224] font-semibold">
@@ -226,7 +224,7 @@ function Kanban() {
                         dispatch(setSelectedTask(task.id)); 
                         setIsOpen(true); 
                         }}
-                        className="p-6 rounded-lg shadow-sm cursor-grab hover:shadow-md transition mb-4"
+                        className="p-6 rounded-lg shadow-sm cursor-grab hover:shadow-md transition mb- bg-white mb-4"
                     >
                         <h3 className="text-[#252F4A] text-sm font-bold mb-3">{task.title}</h3>
                         <p className="text-[#4B5675] text-sm mb-7">{task.description}</p>
@@ -266,7 +264,9 @@ function Kanban() {
                                 key={index}
                                 src={assignee}
                                 alt=""
-                                className={`w-[27px] h-[27px] rounded-full outline-1 outline-white ${
+                                className={`w-[27px] h-[27px] rounded-full outline-1 outline-white  transition-all duration-300 ease-in-out
+                      hover:scale-110
+                      cursor-pointer ${
                                 index > 0 ? "-ms-2" : ""
                                 }`}
                             />
@@ -534,7 +534,7 @@ function Kanban() {
         </p>
         <div className="flex gap-3 items-center justify-center pt-4 pb-3">
           <button
-            className="px-[15px] py-2 text-white rounded text-sm bg-[#3E97FF]"
+            className="px-[15px] py-2 text-white rounded text-sm bg-[#3E97FF] cursor-pointer"
             onClick={() => {
       if (selectedColumnId !== null) {
         dispatch(deleteColumn(selectedColumnId));
@@ -572,7 +572,7 @@ function Kanban() {
         </p>
         <div className="flex gap-3 items-center justify-center pt-4 pb-3">
           <button
-            className="px-[15px] py-2 text-white rounded text-sm bg-[#3E97FF]"
+            className="px-[15px] py-2 text-white rounded text-sm bg-[#3E97FF]  cursor-pointer"
              onClick={() => {
       if (selectedColumnId !== null) {
         dispatch(emptyColumn(selectedColumnId));

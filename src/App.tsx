@@ -28,6 +28,19 @@ import ECommerce from "./pages/dashboard/ecommerce/ECommerce";
 import Crm from "./pages/dashboard/CRM/Crm";
 import AnalyTics from "./pages/dashboard/analytics/AnalyTics";
 import Kanban from "./pages/kanban/Kanban";
+import ProfileOverview from "./pages/userprofile/ProfileOverview";
+import ProfileActivity from "./pages/userprofile/ProfileActivity";
+import ProfileFollowers from "./pages/userprofile/ProfileFollowers";
+import ProfileContacts from "./pages/userprofile/ProfileContacts";
+import ProfileProject from "./pages/userprofile/ProfileProject";
+import ProfileGallery from "./pages/userprofile/ProfileGallery";
+import ProfileLayout from "./pages/userprofile/ProfileLayout";
+import AccountLayout from "./pages/account-setting/AccountLayout";
+import Account from "./pages/account-setting/Account";
+import Security from "./pages/account-setting/Security";
+import AccoNotification from "./pages/account-setting/AccoNotification";
+import PlanBilling from "./pages/account-setting/PlanBilling";
+import Integration from "./pages/account-setting/Integration";
 
 function App() {
   return (
@@ -38,16 +51,15 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          
+
           <Route element={<PrivateRoute />}>
             <Route element={<Layout />}>
-
-            {/* --dashboard-- */}
+              {/* --dashboard-- */}
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/eCommerce" element={<ECommerce />} />
               <Route path="/crm" element={<Crm />} />
               <Route path="/analytics" element={<AnalyTics />} />
-            {/* ---Dashboard-- */}
+              {/* ---Dashboard-- */}
 
               <Route path="/products" element={<Products />} />
               <Route path="/favorites" element={<Favorites />} />
@@ -56,6 +68,25 @@ function App() {
               <Route path="/stock" element={<ProductStock />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/kanban-board" element={<Kanban />} />
+
+              {/* --profile-- */}
+              <Route path="/user-profile" element={<ProfileLayout />}>
+                <Route path="overview" element={<ProfileOverview />} />
+                <Route path="activity" element={<ProfileActivity />} />
+                <Route path="followers" element={<ProfileFollowers />} />
+                <Route path="contacts" element={<ProfileContacts />} />
+                <Route path="projects" element={<ProfileProject />} />
+                <Route path="gallery" element={<ProfileGallery />} />
+              </Route>
+
+              {/* --account setting-- */}
+              <Route path="/account-setting" element={<AccountLayout />}>
+                <Route path="account" element={<Account />} />
+                <Route path="Security" element={<Security />} />
+                <Route path="notification" element={<AccoNotification />} />
+                <Route path="plan-billing" element={<PlanBilling />} />
+                <Route path="integration" element={<Integration />} />
+              </Route>
 
               {/* ---calender-- */}
               <Route path="/calendar">
@@ -84,7 +115,7 @@ function App() {
               <Route path="/settings" element={<Setting />} />
             </Route>
           </Route>
-         
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

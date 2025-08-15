@@ -6,6 +6,7 @@ export type ChartData = {
   color: string;
 }[];
 
+
 export type ProposalStatus = "New" | "Rejected" | "Sent";
 export type WorkStatus = "In Progress" | "Not Interested" | "Completed";
 

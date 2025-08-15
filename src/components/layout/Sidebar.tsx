@@ -18,6 +18,7 @@ import {
   ChevronRight,
   Dot,
   SquareKanban,
+  CircleUser,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import { useEffect, useState, type FC } from "react";
@@ -44,6 +45,29 @@ export const topLinks: SidebarLink[] = [
 ];
 
 export const middleLinks: SidebarLink[] = [
+   {
+    name: "User Profile",
+    icon: CircleUser,
+    children: [
+      { name: "Overview", path: "/user-profile/overview" },
+      { name: "Activity", path: "/user-profile/activity" },
+      { name: "Followers", path: "/user-profile/followers" },
+      { name: "Contacts", path: "/user-profile/contacts" },
+      { name: "Projects", path: "/user-profile/projects" },
+      { name: "Gallery", path: "/user-profile/gallery" },
+    ],
+  },
+   {
+    name: "Account Settings",
+    icon: CircleUser,
+    children: [
+      { name: "Account", path: "/account-setting/account" },
+      { name: "Security", path: "/account-setting/Security" },
+      { name: "Notification", path: "/account-setting/notification" },
+      { name: "Plan & Billing", path: "/account-setting/plan-billing" },
+      { name: "Integration", path: "/account-setting/integration" },
+    ],
+  },
   { name: "Pricing", path: "/pricing", icon: Gift },
   { name: "Calendar", path: "/calendar", icon: CalendarDays },
   { name: "To-Do", path: "/todo", icon: ClipboardList },
@@ -80,7 +104,6 @@ export const Sidebar: FC<SidebarProps> = ({
 const location = useLocation();
 
 useEffect(() => {
-  // Find parent of current route
   const activeParent = topLinks
     .concat(middleLinks)
     .concat(bottomLinks)
@@ -90,10 +113,8 @@ useEffect(() => {
     );
 
   if (activeParent) {
-    // Open the active dropdown
     setOpenDropdown(activeParent.name);
   } else {
-    // Close all dropdowns if current route has no children
     setOpenDropdown(null);
   }
 }, [location.pathname]);
@@ -178,7 +199,7 @@ useEffect(() => {
                         <button
                           onClick={() => toggleDropdown(name)}
                           className={`
-                        group flex items-center gap-2 px-4 py-2 lg:py-4 rounded-md text-sm transition-all duration-300
+                       group flex items-center gap-2 px-4 py-2 lg:py-4 rounded-md text-sm transition-all duration-300
                         ${
                           collapsed
                             ? "mx-1 justify-center"
