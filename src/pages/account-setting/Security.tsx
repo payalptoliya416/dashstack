@@ -59,9 +59,9 @@ const securityButtonOptions: SecurityOption[] = [
 
 function FormRow({ label, children }: FormRowProps) {
   return (
-    <div className="md:grid md:grid-cols-3 gap-2 mb-3 items-start">
-      <div className="text-sm text-[#4B5675] block mb-2 md:mb-0">{label}</div>
-      <div className="col-span-2">{children}</div>
+    <div className="grid grid-cols-12 gap-2 mb-3 items-start">
+      <div className="text-sm col-span-12 lg:col-span-4 text-[#4B5675] block mb-2 md:mb-0">{label}</div>
+      <div className="col-span-12 lg:col-span-5">{children}</div>
     </div>
   );
 }

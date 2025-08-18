@@ -68,6 +68,19 @@ export const middleLinks: SidebarLink[] = [
       { name: "Integration", path: "/account-setting/integration" },
     ],
   },
+   {
+    name: "Other Pages",
+    icon: CircleUser,
+    children: [
+      { name: "Starter", path: "/account-setting/account" },
+      { name: "FAQs", path: "/account-setting/Security" },
+      { name: "Pricing", path: "/account-setting/notification" },
+      { name: "About Us", path: "/account-setting/plan-billing" },
+      { name: "Contact Us", path: "/account-setting/integration" },
+      { name: "Privacy Policy", path: "/account-setting/integration" },
+      { name: "Terms of Services", path: "/account-setting/integration" },
+    ],
+  },
   { name: "Pricing", path: "/pricing", icon: Gift },
   { name: "Calendar", path: "/calendar", icon: CalendarDays },
   { name: "To-Do", path: "/todo", icon: ClipboardList },
@@ -168,11 +181,11 @@ useEffect(() => {
                           to={isLogout ? "#" : path || "#"}
                           onClick={isLogout ? handleLogOut : undefined}
                           className={({ isActive }) =>
-                            `group flex items-center gap-2 px-4 py-2 lg:py-4 my-1 rounded-md text-sm transition-all duration-300
+                            `group flex items-center gap-2 px-2 py-2 lg:py-4 my-1 rounded-md text-sm transition-all duration-300
                         ${
                           collapsed
                             ? "mx-1 justify-center"
-                            : "mx-3 xl:mx-6 lg:mx-6"
+                            : "mx-3 xl:mx-5"
                         } 
                         ${
                           isActive && !isLogout
@@ -199,11 +212,11 @@ useEffect(() => {
                         <button
                           onClick={() => toggleDropdown(name)}
                           className={`
-                       group flex items-center gap-2 px-4 py-2 lg:py-4 rounded-md text-sm transition-all duration-300
+                       group flex items-center gap-2 px-2 py-2 lg:py-4 rounded-md text-sm transition-all duration-300
                         ${
                           collapsed
                             ? "mx-1 justify-center"
-                            : "mx-3 xl:mx-6 lg:mx-6"
+                            : "mx-3 xl:mx-5"
                         } 
                         text-[#202224] hover:bg-[#4880FF]/70 hover:text-white hover:backdrop-blur-md hover:shadow-md
                         relative after:content-[''] after:absolute after:top-0 after:left-[-17px] xl:after:left-[-27px]
@@ -235,7 +248,7 @@ useEffect(() => {
                                 key={sub.name}
                                 to={sub.path || "#"}
                                 className={({ isActive }) =>
-                                  `flex items-center gap-2 px-4 py-2 lg:py-2 rounded text-sm transition-all duration-300 mx-3 xl:mx-6 lg:mx-6
+                                  `flex items-center gap-2 px-2 py-2 lg:py-2 rounded text-sm transition-all duration-300 mx-3 xl:mx-5
                               ${
                                 isActive
                                   ? "bg-[#4880FF] text-white shadow-md"

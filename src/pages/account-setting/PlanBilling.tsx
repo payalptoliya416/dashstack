@@ -43,7 +43,7 @@ const paymentMethods: PaymentMethod[] = [
   },
   {
     id: 4,
-    image: "/images/py4.svg",
+    image: "/images/py-4.svg",
     title: "BankTransfer ending in - 5%",
     subText: "Last time used: 26 March, 2023",
     isDefault: false,
@@ -165,7 +165,7 @@ function PlanBilling() {
     <>
       <div className="p-6 shadow-sm rounded-lg bg-white mb-7">
         <div className="grid grid-cols-12 gap-2 mb-8">
-          <div className="col-span-12 sm:col-span-4 mb-7 sm:mb-0">
+          <div className="col-span-12 md:col-span-4 mb-7 sm:mb-0">
             <h3 className="text-[#252F4A] text-[17px] mb-2 font-bold leading-[17px]">
               Subscription
             </h3>
@@ -173,9 +173,9 @@ function PlanBilling() {
               Manage your subscription plan.
             </p>
           </div>
-          <div className="col-span-12 sm:col-span-5">
+          <div className="col-span-12 md:col-span-8 xl:col-span-6">
             <div className="p-6 shadow-sm rounded-sm mb-8">
-              <div className="flex items-center justify-between mb-7">
+              <div className="flex sm:items-center justify-between mb-7 sm:flex-row flex-col gap-5">
                 <div>
                   <div className="flex items-center gap-2">
                     <h3 className="text-[17px] text-[#252F4A] font-semibold">
@@ -204,15 +204,15 @@ function PlanBilling() {
                 </div>
               </div>
               <div>
-                <div className="grid grid-cols-12 gap-10 items-center">
+                <div className="grid grid-cols-12 gap-5 sm:gap-1 lg:gap-10 items-center">
                   {/* Avatars */}
-                  <div className="col-span-6 flex items-center relative">
+                  <div className="col-span-12 sm:col-span-6 flex items-center relative">
                     {images.map((src, i) => (
                       <img
                         key={i}
                         src={src}
                         alt=""
-                        className={`w-9 md:w-[43px] h-9 md:h-[43px] rounded-full outline outline-1 outline-white 
+                        className={`w-9 lg:w-[43px] h-9 lg:h-[43px] rounded-full outline outline-1 outline-white 
             ${i !== 0 ? "-ms-3" : ""} 
             transition-all duration-300 ease-in-out
             hover:scale-110
@@ -222,7 +222,7 @@ function PlanBilling() {
                   </div>
 
                   {/* Progress Bar */}
-                  <div className="col-span-6 ">
+                  <div className="col-span-12 sm:col-span-6 ">
                     <h3>
                       {" "}
                       {current} out of {total}
@@ -240,9 +240,9 @@ function PlanBilling() {
                 </div>
               </div>
             </div>
-            <div className="py-4 px-6 border border-gray-100 rounded flex items-center justify-between">
+            <div className="py-4 px-6 border border-gray-100 rounded flex items-start sm:items-center justify-between flex-col sm:flex-row gap-4">
               <h3 className="text-[#4B5675] text-sm">Payment method</h3>
-             <div className="flex items-center gap-4">
+             <div className="flex sm:items-center gap-4  flex-col sm:flex-row">
                <p className="text-xs text-[#4B5675]">
                 Mastercard - 03/26 <br /> **** **** **** 9632
               </p>
@@ -251,9 +251,9 @@ function PlanBilling() {
               </button>
              </div>
             </div>
-            <div className="py-4 px-6 border border-t-0 border-gray-100 rounded flex items-center justify-between">
+            <div className="py-4 px-6 border border-t-0 border-gray-100 rounded flex items-start sm:items-center justify-between  flex-col sm:flex-row gap-4">
               <h3 className="text-[#4B5675] text-sm">Billing period</h3>
-             <div className="flex items-center gap-4">
+             <div className="flex sm:items-center gap-4  flex-col sm:flex-row">
                <p className="text-sm text-[#4B5675]">
                 Plan billed monthly
               </p>
@@ -262,9 +262,9 @@ function PlanBilling() {
               </button>
              </div>
             </div>
-            <div className="py-4 px-6 border border-t-0 border-gray-100 rounded flex items-center justify-between">
+            <div className="py-4 px-6 border border-t-0 border-gray-100 rounded flex items-start sm:items-center justify-between  flex-col sm:flex-row gap-4">
               <h3 className="text-[#4B5675] text-sm">License keys</h3>
-             <div className="flex items-center gap-4">
+             <div className="flex sm:items-center gap-4  flex-col sm:flex-row">
                <p className="text-sm text-[#4B5675]">
                Redeem a license key
               </p>
@@ -278,7 +278,7 @@ function PlanBilling() {
 
         <div className="my-9 border-t border-gray-100" />
         <div className="grid grid-cols-12 gap-2 mb-8">
-            <div className="col-span-12 sm:col-span-4 mb-7 sm:mb-0">
+            <div className="col-span-12 md:col-span-4 mb-7 sm:mb-0">
             <h3 className="text-[#252F4A] text-[17px] mb-2 font-bold leading-[17px]">
               Subscription
             </h3>
@@ -286,16 +286,16 @@ function PlanBilling() {
               Manage your subscription plan.
             </p>
           </div>
-             <div className="col-span-12 sm:col-span-5">
+             <div className="col-span-12 md:col-span-8 xl:col-span-6">
             {paymentMethods.map((method, index) => (
               <div
                 key={method.id}
-                className={`px-6 py-4 border border-gray-100 rounded flex justify-between items-center ${
+                className={`px-6 py-4 border border-gray-100 rounded flex flex-col sm:flex-row gap-5 sm:gap-0 justify-between items-start sm:items-center ${
                   index !== 0 ? "border-t-0" : ""
                 }`}
               >
                 {/* Left Side */}
-                <div className="flex gap-5 items-center">
+                <div className="flex gap-5 items-start sm:items-center flex-col sm:flex-row">
                   <img src={method.image} alt="" className="w-8 h-8" />
                   <div>
                     <h3 className="text-sm text-[#252D4A] font-semibold">{method.title}</h3>

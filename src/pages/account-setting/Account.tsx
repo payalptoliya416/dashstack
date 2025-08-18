@@ -9,45 +9,95 @@ interface FormRowProps {
 
 function FormRow({ label, children }: FormRowProps) {
   return (
-    <div className="md:grid md:grid-cols-3 gap-2 mb-3 items-start">
-      <div className="text-sm text-[#4B5675] block mb-2 md:mb-0">{label}</div>
-      <div className="col-span-2">{children}</div>
+    <div className="grid grid-cols-12 gap-2 mb-3 items-start">
+      <div className="text-sm col-span-12 lg:col-span-4 text-[#4B5675] block mb-2 md:mb-0">{label}</div>
+      <div className="col-span-12 lg:col-span-5">{children}</div>
     </div>
   );
 }
 
 function Account() {
     const [enabled, setEnabled] = useState(false)
+     const [image, setImage] = useState<string | null>(null);
 
+    const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setImage(reader.result as string);
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+
+    const handleReset = () => {
+      setImage(null);
+    };
   return (
     <>
      <div className="p-6 shadow-sm rounded-lg bg-white">
          <h3 className="text-[#252F4A] text-sm mb-2 font-bold">Avatar & Cover</h3>
          <p className="text-sm text-[#4B5675] mb-7">Change avatar and cover images in your account</p>
          
-        <FormRow label="Avatar">
-          <div>
-            <div className="w-24 h-24 rounded bg-[#f1f2f3] flex justify-center items-center cursor-pointer">
-              <Plus size={20} className="text-[#4B5675]" />
+         <FormRow label="Avatar">
+        <div>
+          <label>
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={handleImageSelect}
+            />
+            <div className="w-24 h-24 rounded bg-[#f1f2f3] flex justify-center items-center cursor-pointer overflow-hidden">
+              {image ? (
+                <img
+                  src={image}
+                  alt="Avatar"
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <Plus size={20} className="text-[#4B5675]" />
+              )}
             </div>
-            <p className="text-sm text-[#6B7177] mt-2">
-              Click to change avatar image -{" "}
-              <span className="text-[#D13B4C] cursor-pointer">Reset</span>
-            </p>
-          </div>
-        </FormRow>
+          </label>
+          <p className="text-sm text-[#6B7177] mt-2">
+            Click to change avatar image -{" "}
+            <span
+              className="text-[#D13B4C] cursor-pointer"
+              onClick={handleReset}
+            >
+              Reset
+            </span>
+          </p>
+        </div>
+      </FormRow>
 
-        <FormRow label="Cover">
-          <div>
-            <div className="xl:w-[60%] h-48 rounded bg-[#f1f2f3] flex justify-center items-center cursor-pointer">
+      {/* Cover */}
+      <FormRow label="Cover">
+        <div>
+          <div className="w-full h-48 rounded bg-[#f1f2f3] flex justify-center items-center cursor-pointer overflow-hidden">
+            {image ? (
+              <img
+                src={image}
+                alt="Cover"
+                className="w-full h-full object-fill"
+              />
+            ) : (
               <Plus size={20} className="text-[#4B5675]" />
-            </div>
-            <p className="text-sm text-[#6B7177] mt-2">
-              Click to change cover image -{" "}
-              <span className="text-[#D13B4C] cursor-pointer">Reset</span>
-            </p>
+            )}
           </div>
-        </FormRow>
+          <p className="text-sm text-[#6B7177] mt-2">
+            Click to change cover image -{" "}
+            <span
+              className="text-[#D13B4C] cursor-pointer"
+              onClick={handleReset}
+            >
+              Reset
+            </span>
+          </p>
+        </div>
+      </FormRow>
 
         <div className="my-8 border-t border-gray-100" />
          <h3 className="text-[#252F4A] text-sm mb-2 font-bold">Personal Information</h3>
@@ -82,9 +132,9 @@ function Account() {
           <p className="text-sm text-[#4B5675] mb-8">Your personalized preference displayed in your account</p>
           
            <div className="grid grid-cols-12 gap-2 items-start mb-8">
-            <div className="text-sm col-span-12 md:col-span-4"> Public Profile </div>
-            <div className="col-span-12 md:col-span-8">
-              <div className="border rounded-sm border-gray-100 py-4 px-6  w-full xl:max-w-[600px]">
+            <div className="text-sm col-span-12 lg:col-span-4"> Public Profile </div>
+            <div className="col-span-12 lg:col-span-5">
+              <div className="border rounded-sm border-gray-100 py-4 px-6">
                 <div className="flex justify-between items-center gap-3">
                   <div>
                       <h4 className="text-[#252F4A] text-sm mb-1 font-semibold">Make contact info public</h4>
@@ -101,7 +151,7 @@ function Account() {
                    </div>
                 </div>
               </div>
-              <div className="border rounded-sm border-gray-100 py-4 px-6  w-full xl:max-w-[600px] border-t-0">
+              <div className="border rounded-sm border-gray-100 py-4 px-6 border-t-0">
                 <div className="flex justify-between items-center gap-3">
                   <div>
                       <h4 className="text-[#252F4A] text-sm mb-1 font-semibold">Make data syncronize always</h4>
