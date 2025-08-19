@@ -49,6 +49,11 @@ import ContactUs from "./pages/other-pages/ContactUs";
 import PrivacyPolicy from "./pages/other-pages/PrivacyPolicy";
 import TermsOfServices from "./pages/other-pages/TermsOfServices";
 import PagesLayout from "./pages/other-pages/PagesLayout";
+import CommingSoon from "./pages/error-pages/CommingSoon";
+import NotAuthorized from "./pages/error-pages/NotAuthorized";
+import ServerError from "./pages/error-pages/ServerError";
+import UnderMaintenance from "./pages/error-pages/UnderMaintenance";
+import NotFoundPage from "./pages/error-pages/NotFoundPage";
 
 function App() {
   return (
@@ -59,6 +64,12 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
+          
+          <Route path="/comming-soon" element={<CommingSoon />} />
+          <Route path="/401-not-aithorized" element={<NotAuthorized />} />
+          <Route path="/404-not-found" element={<NotFoundPage />} />
+          <Route path="/500-server-error" element={<ServerError />} />
+          <Route path="/under-maintenance" element={<UnderMaintenance />} />
 
           <Route element={<PrivateRoute />}>
             <Route element={<Layout />}>

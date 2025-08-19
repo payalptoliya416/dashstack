@@ -20,6 +20,7 @@ import {
   SquareKanban,
   CircleUser,
   Layers,
+  CircleX,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import { useEffect, useState, type FC } from "react";
@@ -80,6 +81,17 @@ export const middleLinks: SidebarLink[] = [
     { name: "Contact Us", path: "/info/contact-us" },
     { name: "Privacy Policy", path: "/info/privacy-policy" },
     { name: "Terms of Services", path: "/info/terms-of-services" },
+  ]
+  },
+   {
+    name: "Error Pages",
+    icon: CircleX,
+    children: [
+    { name: "404 Not Found", path: "/404-not-found" },
+    { name: "401 Not Authorized", path: "/401-not-aithorized" },
+    { name: "500 Server Error", path: "/500-server-error" },
+    { name: "Comming Soon", path: "/comming-soon" },
+    { name: "Under Maintenance", path: "/under-maintenance" },
   ]
   },
   { name: "Pricing", path: "/pricing", icon: Gift },
