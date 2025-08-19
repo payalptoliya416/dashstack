@@ -21,6 +21,7 @@ import {
   CircleUser,
   Layers,
   CircleX,
+  NotepadTextDashed,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import { useEffect, useState, type FC } from "react";
@@ -47,7 +48,7 @@ export const topLinks: SidebarLink[] = [
 ];
 
 export const middleLinks: SidebarLink[] = [
-   {
+  {
     name: "User Profile",
     icon: CircleUser,
     children: [
@@ -83,7 +84,8 @@ export const middleLinks: SidebarLink[] = [
     { name: "Terms of Services", path: "/info/terms-of-services" },
   ]
   },
-   {
+
+  {
     name: "Error Pages",
     icon: CircleX,
     children: [
@@ -94,6 +96,39 @@ export const middleLinks: SidebarLink[] = [
     { name: "Under Maintenance", path: "/under-maintenance" },
   ]
   },
+
+  {
+    name: "Email Templates",
+    icon: NotepadTextDashed,
+    children: [
+    { name: "Welcome Message", path: "/welcome-message" },
+    { name: "Confirm Account", path: "/confirm-account" },
+    { name: "Reset Password", path: "/email-reset-password" },
+    { name: "Expired Card", path: "/expired-card" },
+    { name: "Coupon Sale", path: "/coupon-sale" },
+    { name: "Latest Update", path: "/latest-update" },
+  ]
+  },
+]
+
+export const componentLink: SidebarLink[] = [
+  {
+    name: "Base UI",
+    icon: Layers,
+    children: [
+      { name: "Accordion", path: "/ui-accordion" },
+      { name: "Avatars", path: "/ui-avatars" },
+      { name: "Buttons", path: "/ui-buttons" },
+      { name: "Cards", path: "/ui-cards" },
+      { name: "Carousel", path: "/ui-carousel" },
+      { name: "Dropdowns", path: "/ui-dropdowns" },
+      { name: "Modals", path: "/ui-modals" },
+      { name: "NavTabs", path: "/ui-navTabs" },
+      { name: "Toasts", path: "/ui-toasts" },
+      { name: "Miscellaneous", path: "/ui-miscellaneous" },
+    ],
+  },
+
   { name: "Pricing", path: "/pricing", icon: Gift },
   { name: "Calendar", path: "/calendar", icon: CalendarDays },
   { name: "To-Do", path: "/todo", icon: ClipboardList },
@@ -133,6 +168,7 @@ useEffect(() => {
   const activeParent = topLinks
     .concat(middleLinks)
     .concat(bottomLinks)
+    .concat(componentLink)
     .find(
       (link) =>
         link.children?.some((child) => child.path === location.pathname)
@@ -173,11 +209,16 @@ useEffect(() => {
           {/* Scrollable nav list */}
           <div className="overflow-y-auto h-[calc(100vh-120px)] pr-1">
             <nav className="space-y-2">
-              {[topLinks, middleLinks, bottomLinks].map((group, index) => (
+              {[topLinks, middleLinks,componentLink, bottomLinks].map((group, index) => (
                 <div key={index}>
                   {index === 1 && (
                     <div className="text-xs text-gray-500 font-semibold px-6 mb-1 mt-4 uppercase tracking-wide">
-                      Pages
+                     UI Pages
+                    </div>
+                  )}
+                  {index === 2 && (
+                    <div className="text-xs text-gray-500 font-semibold px-6 mb-1 mt-4 uppercase tracking-wide">
+                    Components
                     </div>
                   )}
 

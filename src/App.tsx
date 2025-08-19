@@ -42,7 +42,7 @@ import AccoNotification from "./pages/account-setting/AccoNotification";
 import PlanBilling from "./pages/account-setting/PlanBilling";
 import Integration from "./pages/account-setting/Integration";
 import Starter from "./pages/other-pages/Starter";
-import FAQs from "./pages/other-pages/faq/FAQs";
+import FAQs from "./pages/other-pages/FAQs";
 import InfoPages from "./pages/other-pages/InfoPages";
 import AboutUs from "./pages/other-pages/AboutUs";
 import ContactUs from "./pages/other-pages/ContactUs";
@@ -54,6 +54,22 @@ import NotAuthorized from "./pages/error-pages/NotAuthorized";
 import ServerError from "./pages/error-pages/ServerError";
 import UnderMaintenance from "./pages/error-pages/UnderMaintenance";
 import NotFoundPage from "./pages/error-pages/NotFoundPage";
+import WelcomeMessage from "./pages/email-template/WelcomeMessage";
+import ConfirmAccount from "./pages/email-template/ConfirmAccount";
+import ExpiredCard from "./pages/email-template/ExpiredCard";
+import CouponSale from "./pages/email-template/CouponSale";
+import LatestUpdate from "./pages/email-template/LatestUpdate";
+import ResetPasswordTemp from "./pages/email-template/ResetPasswordTemp";
+import UIAvatar from "./pages/base-ui/UIAvatar";
+import UIAccordion from "./pages/base-ui/UIAccordion";
+import UIButton from "./pages/base-ui/UIButton";
+import UICard from "./pages/base-ui/UICard";
+import UICarousel from "./pages/base-ui/UICarousel";
+import UIDropdown from "./pages/base-ui/UIDropdown";
+import UIModals from "./pages/base-ui/UIModals";
+import UINavTabs from "./pages/base-ui/UINavTabs";
+import UIToasts from "./pages/base-ui/UIToasts";
+import UIMiscellaneous from "./pages/base-ui/UIMiscellaneous";
 
 function App() {
   return (
@@ -63,13 +79,22 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-          
+          <Route path="/email-reset-password" element={<ResetPasswordTemp />} />
+
+          {/* error pages */}
           <Route path="/comming-soon" element={<CommingSoon />} />
           <Route path="/401-not-aithorized" element={<NotAuthorized />} />
           <Route path="/404-not-found" element={<NotFoundPage />} />
           <Route path="/500-server-error" element={<ServerError />} />
           <Route path="/under-maintenance" element={<UnderMaintenance />} />
+
+          {/* -email template */}
+          <Route path="/welcome-message" element={<WelcomeMessage />} />
+          <Route path="/confirm-account" element={<ConfirmAccount />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/expired-card" element={<ExpiredCard />} />
+          <Route path="/coupon-sale" element={<CouponSale />} />
+          <Route path="/latest-update" element={<LatestUpdate />} />
 
           <Route element={<PrivateRoute />}>
             <Route element={<Layout />}>
@@ -108,7 +133,7 @@ function App() {
               </Route>
 
               {/* --Other pages-- */}
-                <Route path="Starter" element={<Starter />} />
+              <Route path="Starter" element={<Starter />} />
               <Route path="/info" element={<PagesLayout />}>
                 <Route path="faqs" element={<FAQs />} />
                 <Route path="pricing" element={<InfoPages />} />
@@ -117,6 +142,18 @@ function App() {
                 <Route path="privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="terms-of-services" element={<TermsOfServices />} />
               </Route>
+
+              {/* --Base UI */}
+              <Route path="/ui-accordion" element={<UIAccordion />} />
+              <Route path="/ui-avatars" element={<UIAvatar />} />
+              <Route path="/ui-buttons" element={<UIButton />} />
+              <Route path="/ui-cards" element={<UICard />} />
+              <Route path="/ui-carousel" element={<UICarousel />} />
+              <Route path="/ui-dropdowns" element={<UIDropdown />} />
+              <Route path="/ui-modals" element={<UIModals />} />
+              <Route path="/ui-navTabs" element={<UINavTabs />} />
+              <Route path="/ui-toasts" element={<UIToasts />} />
+              <Route path="/ui-miscellaneous" element={<UIMiscellaneous />} />
 
               {/* ---calender-- */}
               <Route path="/calendar">
