@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Nunito Sans', sans-serif;
+  --font-sans: "Nunito Sans", sans-serif;
 }
 
 @layer base {
   body {
-  font-family: var(--font-sans); 
-  color: #202224;
+    font-family: var(--font-sans);
+    color: #202224;
   }
 
   ::-webkit-scrollbar {
@@ -18,4 +18,27 @@
     background: rgba(0, 0, 0, 0.1);
     border-radius: 4px;
   }
+}
+
+.parent-swiper .mySwiper .swiper-pagination-bullet {
+  background-color: #d1d5db;
+  opacity: 1;
+}
+.parent-swiper .mySwiper .swiper-pagination-bullet-active {
+  background-color: #2563eb;
+  width: 16px;
+  height: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.parent-swiper .mySwiper .swiper-pagination {
+  position: relative !important;
+  margin-top: 20px;
+  text-align: center;
+}
+.parent-swiper .mySwiper {
+  padding-bottom: 40px;
+}
+.parent-swiper .mySwiper .swiper-pagination {
+  bottom: 10px !important;
 }

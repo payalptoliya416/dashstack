@@ -41,6 +41,14 @@ import Security from "./pages/account-setting/Security";
 import AccoNotification from "./pages/account-setting/AccoNotification";
 import PlanBilling from "./pages/account-setting/PlanBilling";
 import Integration from "./pages/account-setting/Integration";
+import Starter from "./pages/other-pages/Starter";
+import FAQs from "./pages/other-pages/faq/FAQs";
+import InfoPages from "./pages/other-pages/InfoPages";
+import AboutUs from "./pages/other-pages/AboutUs";
+import ContactUs from "./pages/other-pages/ContactUs";
+import PrivacyPolicy from "./pages/other-pages/PrivacyPolicy";
+import TermsOfServices from "./pages/other-pages/TermsOfServices";
+import PagesLayout from "./pages/other-pages/PagesLayout";
 
 function App() {
   return (
@@ -86,6 +94,17 @@ function App() {
                 <Route path="notification" element={<AccoNotification />} />
                 <Route path="plan-billing" element={<PlanBilling />} />
                 <Route path="integration" element={<Integration />} />
+              </Route>
+
+              {/* --Other pages-- */}
+                <Route path="Starter" element={<Starter />} />
+              <Route path="/info" element={<PagesLayout />}>
+                <Route path="faqs" element={<FAQs />} />
+                <Route path="pricing" element={<InfoPages />} />
+                <Route path="about-us" element={<AboutUs />} />
+                <Route path="contact-us" element={<ContactUs />} />
+                <Route path="privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="terms-of-services" element={<TermsOfServices />} />
               </Route>
 
               {/* ---calender-- */}

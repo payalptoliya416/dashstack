@@ -19,6 +19,7 @@ import {
   Dot,
   SquareKanban,
   CircleUser,
+  Layers,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import { useEffect, useState, type FC } from "react";
@@ -70,16 +71,16 @@ export const middleLinks: SidebarLink[] = [
   },
    {
     name: "Other Pages",
-    icon: CircleUser,
+    icon: Layers,
     children: [
-      { name: "Starter", path: "/account-setting/account" },
-      { name: "FAQs", path: "/account-setting/Security" },
-      { name: "Pricing", path: "/account-setting/notification" },
-      { name: "About Us", path: "/account-setting/plan-billing" },
-      { name: "Contact Us", path: "/account-setting/integration" },
-      { name: "Privacy Policy", path: "/account-setting/integration" },
-      { name: "Terms of Services", path: "/account-setting/integration" },
-    ],
+    { name: "Starter", path: "/starter" },
+    { name: "FAQs", path: "/info/faqs" },
+    { name: "Pricing", path: "/info/pricing" },
+    { name: "About Us", path: "/info/about-us" },
+    { name: "Contact Us", path: "/info/contact-us" },
+    { name: "Privacy Policy", path: "/info/privacy-policy" },
+    { name: "Terms of Services", path: "/info/terms-of-services" },
+  ]
   },
   { name: "Pricing", path: "/pricing", icon: Gift },
   { name: "Calendar", path: "/calendar", icon: CalendarDays },
