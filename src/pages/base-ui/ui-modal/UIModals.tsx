@@ -1,10 +1,152 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import UIOptionTable from "../UIOptionTable";
+import type { Option } from "../../../types/UiType";
 
 interface ButtonType {
   color: string;
   text: string;
 }
+const ModalOptions: Option[] = [
+  {
+    reference: "Dropdown",
+    details: <>Wrap the dropdown's toggle (your button or link) and the dropdown menu within 
+     <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+          .dropdown
+        </button> ,or another element that declares 
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+          .dropdown
+        </button> position: <br/>
+         <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+          relative;
+        </button>. Ideally, you should use a 
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+            &lt;button&gt;
+        </button>
+        element as the dropdown trigger, but the plugin will work with 
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+            &lt;a&gt;
+        </button>
+         elements as well. The examples shown here use semantic 
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+            &lt;ul&gt;
+        </button> <br/>
+        elements where appropriate, but custom markup is supported.
+    </>,
+  },
+  {
+    reference: "Split button",
+    details: (
+      <>
+       Similarly, create split button dropdowns with virtually the same markup as single button dropdowns, but with the addition of 
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+          .dropdown-toggle-split
+        </button>
+         for proper spacing around the dropdown caret. <br/>
+         We use this extra class to reduce the horizontal
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+          padding
+        </button> on either side of the caret by 25% and remove the 
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+         margin-left
+        </button> <br/> that's added for regular button dropdowns. Those extra changes keep the caret centered in the split button and provide a more appropriately sized hit area next to the main button.
+      </>
+    ),
+  },
+  {
+    reference: "Sizing",
+    details: (
+      <>
+       Button dropdowns work with buttons of all sizes, including default and split dropdown buttons.
+      </>
+    ),
+  },
+  {
+    reference: "Dark dropdowns",
+    details: (
+      <>
+       Opt into darker dropdowns to match a dark navbar or custom style by adding
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+          .dropdown-menu-dark
+        </button> onto an existing
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+          .dropdown-menu
+        </button> . No changes are required to the dropdown items.
+      </>
+    ),
+  },
+  {
+    reference: "Centered",
+    details: (
+      <>
+      Make the dropdown menu centered below the toggle with
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+          .dropdown-center
+        </button>  on the parent element.
+      </>
+    ),
+  },
+  {
+    reference: "Dropup",
+    details: (
+      <>
+     Trigger dropdown menus above elements by adding
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+          .dropup
+        </button> to the parent element.
+      </>
+    ),
+  },
+  {
+    reference: "Dropup centered",
+    details: (
+      <>
+    Make the dropup menu centered above the toggle with
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+         .dropup-center
+        </button>  on the parent element.
+      </>
+    ),
+  },
+  {
+    reference: "Dropend",
+    details: (
+      <>
+   Trigger dropdown menus at the right of the elements by adding 
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+        .dropend
+        </button>   to the parent element.
+      </>
+    ),
+  },
+  {
+    reference: "Dropstart",
+    details: (
+      <>
+   Trigger dropdown menus at the left of the elements by adding
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+       .dropstart
+        </button>    to the parent element.
+      </>
+    ),
+  },
+  {
+    reference: "Documentations",
+    details: (
+      <>
+        Please visit:{" "}
+        <a
+          href="https://react-bootstrap.netlify.app/docs/components/accordion"
+          className="text-[#252f4a] font-bold"
+          target="_blank"
+          rel="noreferrer"
+        >
+          https://react-bootstrap.netlify.app/docs/components/accordion
+        </a>
+      </>
+    ),
+  },
+];
 
 function UIModals() {
     const [isOpen, setIsOpen] = useState(false);
@@ -80,7 +222,7 @@ function UIModals() {
                 leaveTo="opacity-0 scale-95"
               >
                 {/* Modal panel and content */}
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-semibold p-6 leading-6 text-gray-900 flex justify-between items-center"
@@ -98,7 +240,7 @@ function UIModals() {
                   </Dialog.Title>
                   <div className="p-6 border-y border-gray-100">
                     <p className="text-sm text-gray-500">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis et, necessitatibus cupiditate nemo corrupti possimus nesciunt ipsa numquam ea earum velit laboriosam eos omnis officia nam similique neque fuga pariatur. Vitae similique porro adipisci sunt? Sequi, qui dolorem veritatis nobis soluta deserunt illum iure. Asperiores neque eveniet veritatis voluptatem reprehenderit eius repellendus beatae cum ullam, fugit, vero rerum quis consequatur ratione, a facere voluptatum minus doloribus autem molestias. Temporibus deserunt ipsam unde neque impedit enim, fugiat ullam. Quo recusandae cumque nobis, placeat, modi voluptates nemo dicta ullam voluptate laudantium aliquid necessitatibus sit, aliquam deserunt atque dolorum molestiae? Tempora, nostrum nam?
+                    Woohoo, you are reading this text in a modal!
                     </p>
                   </div>
 
@@ -263,6 +405,7 @@ function UIModals() {
         </div>
         </div>
       </div>
+      <UIOptionTable title="Options" options={ModalOptions} />
     </>
   );
 }
