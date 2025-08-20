@@ -37,7 +37,7 @@ const accordionOptions: Option[] = [
     details: (
       <>
         Add class for custom icon{" "}
-        <button className="text-[#e83e8c] py-[2px] px-1 rounded bg-[#f1f2f3] text-sm">
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
           .accordion + .accordion-icon
         </button>
       </>
@@ -48,7 +48,7 @@ const accordionOptions: Option[] = [
     details: (
       <>
         Add class for reversed icon{" "}
-        <button className="text-[#e83e8c] py-[2px] px-1 rounded bg-[#f1f2f3] text-sm">
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
           .accordion + .accordion-reversed
         </button>
       </>
@@ -59,7 +59,7 @@ const accordionOptions: Option[] = [
     details: (
       <>
         Add class for rev-icon icon{" "}
-        <button className="text-[#e83e8c] py-[2px] px-1 rounded bg-[#f1f2f3] text-sm">
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
           .accordion + .accordion-rev-icon
         </button>
       </>
@@ -115,7 +115,6 @@ function Accordion({ title, items, variant }: AccordionProps) {
                 ? openMultiple.includes(index)
                 : openIndex === index;
 
-            // Select icon style based on variant
             let icon = isOpen ? (
               <ChevronUp size={13} />
             ) : (
@@ -127,7 +126,7 @@ function Accordion({ title, items, variant }: AccordionProps) {
             if (variant === "revIcon") {
               icon = (
                 <div className="w-5 h-5 flex justify-center items-center bg-black rounded-full text-white">
-                  {isOpen ? <Plus size={11} /> : <Minus size={11} />}
+                  {isOpen ? <Minus size={11} /> : <Plus size={11} />}
                 </div>
               );
             }

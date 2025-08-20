@@ -42,3 +42,19 @@
 .parent-swiper .mySwiper .swiper-pagination {
   bottom: 10px !important;
 }
+
+.carousel-parent .swiper-button-prev,
+.swiper-button-next {
+  color: white !important;
+  font-size: 12px !important;
+}
+.carousel-parent .swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 22px !important;
+}
+.carousel-parent .swiper-pagination-bullet {
+  width: 26px;
+  border-radius: 5px;
+  height: 3px;
+  background-color: white;
+}

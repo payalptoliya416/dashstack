@@ -24,13 +24,13 @@ interface Option {
 const avatarOptions: Option[] = [
   {
     reference: ".avatar",
-    details: <>Initialize user <button className="text-[#e83e8c] py-[2px] px-1 rounded bg-[#f1f2f3] text-sm">avatar</button></>,
+    details: <>Initialize user <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">avatar</button></>,
   },
   {
     reference: ".avatar-{size}",
     details: (
       <>
-        Use <button className="text-[#e83e8c] py-[2px] px-1 rounded bg-[#f1f2f3] text-sm">(size)</button> as:{" "}
+        Use <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">(size)</button> as:{" "}
         <span className="text-[#252f4a] font-bold">xs, sm, md, lg, xl, xxl</span>
       </>
     ),
@@ -40,7 +40,7 @@ const avatarOptions: Option[] = [
     details: (
       <>
         Use avatar solid color{" "}
-        <button className="text-[#e83e8c] py-[2px] px-1 rounded bg-[#f1f2f3] text-sm">(colors)</button> from{" "}
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">(colors)</button> from{" "}
         <span className="text-[#252f4a] font-bold">bg-colors</span>
       </>
     ),
@@ -50,7 +50,7 @@ const avatarOptions: Option[] = [
     details: (
       <>
         Use avatar soft color{" "}
-        <button className="text-[#e83e8c] py-[2px] px-1 rounded bg-[#f1f2f3] text-sm">(colors)</button> from{" "}
+        <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">(colors)</button> from{" "}
         <span className="text-[#252f4a] font-bold">bg-colors-subtle</span>
       </>
     ),
@@ -59,7 +59,7 @@ const avatarOptions: Option[] = [
     reference: ".rounded-(shape)",
     details: (
       <>
-        Use <button className="text-[#e83e8c] py-[2px] px-1 rounded bg-[#f1f2f3] text-sm">(shape)</button> as:{" "}
+        Use <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">(shape)</button> as:{" "}
         <span className="text-[#252f4a] font-bold">circle, rounded, 0</span>. Default value is{" "}
         <span className="text-[#252f4a] font-bold">circle</span>
       </>
@@ -69,7 +69,7 @@ const avatarOptions: Option[] = [
     reference: ".avatar-status (status)",
     details: (
       <>
-        Use <button className="text-[#e83e8c] py-[2px] px-1 rounded bg-[#f1f2f3] text-sm">(status)</button> as:{" "}
+        Use <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">(status)</button> as:{" "}
         <span className="text-[#252f4a] font-bold">active, busy, inactive</span>
       </>
     ),
@@ -78,7 +78,7 @@ const avatarOptions: Option[] = [
     reference: ".avatar-group .avatar-group-(size)",
     details: (
       <>
-        Use <button className="text-[#e83e8c] py-[2px] px-1 rounded bg-[#f1f2f3] text-sm">(size)</button> as:{" "}
+        Use <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">(size)</button> as:{" "}
         <span className="text-[#252f4a] font-bold">xs, sm, md, lg, xl, xxl</span>
       </>
     ),
