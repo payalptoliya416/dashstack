@@ -67,7 +67,7 @@ import UICard from "./pages/base-ui/uicard/UICard";
 import UICarousel from "./pages/base-ui/carousel/UICarousel";
 import UIDropdown from "./pages/base-ui/dropdown/UIDropdown";
 import UIModals from "./pages/base-ui/ui-modal/UIModals";
-import UINavTabs from "./pages/base-ui/UINavTabs";
+import UINavTabs from "./pages/base-ui/ui-navtab/UINavTabs";
 import UIToasts from "./pages/base-ui/UIToasts";
 import UIMiscellaneous from "./pages/base-ui/UIMiscellaneous";
 

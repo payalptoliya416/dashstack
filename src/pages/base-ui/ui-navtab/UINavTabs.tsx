@@ -1,9 +1,9 @@
 
 function UINavTabs() {
   return (
-    <div>
+    <>
       
-    </div>
+    </>
   )
 }
 

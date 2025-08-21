@@ -321,12 +321,12 @@ export const cardOption: Option[] = [
       <>
         Please visit:{" "}
         <a
-          href="https://react-bootstrap.netlify.app/docs/components/accordion"
+          href="https://react-bootstrap.netlify.app/docs/components/cards"
           className="text-[#252f4a] font-bold"
           target="_blank"
           rel="noreferrer"
         >
-          https://react-bootstrap.netlify.app/docs/components/accordion
+          https://react-bootstrap.netlify.app/docs/components/cards
         </a>
       </>
     ),
