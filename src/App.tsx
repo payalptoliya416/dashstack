@@ -68,8 +68,8 @@ import UICarousel from "./pages/base-ui/carousel/UICarousel";
 import UIDropdown from "./pages/base-ui/dropdown/UIDropdown";
 import UIModals from "./pages/base-ui/ui-modal/UIModals";
 import UINavTabs from "./pages/base-ui/ui-navtab/UINavTabs";
-import UIToasts from "./pages/base-ui/UIToasts";
-import UIMiscellaneous from "./pages/base-ui/UIMiscellaneous";
+import UIToasts from "./pages/base-ui/ui-toast/UIToasts";
+import UIMiscellaneous from "./pages/base-ui/ui-miscellaneous/UIMiscellaneous";
 
 function App() {
   return (

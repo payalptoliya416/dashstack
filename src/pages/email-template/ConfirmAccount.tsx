@@ -1,9 +1,10 @@
-import { CircleQuestionMark, EllipsisVertical, Facebook, Twitter, Youtube, Linkedin } from 'lucide-react';
+import { CircleQuestionMark, EllipsisVertical, Facebook, Twitter, Youtube, Linkedin, ArrowLeft } from 'lucide-react';
 import { Link } from "react-router-dom";
 
 function ConfirmAccount() {
   return (
     <div className="min-h-screen w-full flex justify-center my-5 px-5 sm:px-1">
+      <div>
       <div className="bg-white rounded-xl w-full max-w-[650px] shadow-lg">
          <div className="p-4 sm:p-6 border-b border-gray-200 flex justify-between items-center">
           <div className="text-2xl font-bold text-[#252f4a]">Window</div>
@@ -115,6 +116,15 @@ function ConfirmAccount() {
             </div>
           </div>
         </div>
+      </div>
+          <Link to='/eCommerce' className="block group text-[#3E97FF] text-base cursor-pointer my-11 text-center font-bold">
+          {" "}
+          <ArrowLeft
+            className="inline-block text-[#3E97FF] me-1 transition-transform duration-200 group-hover:-translate-x-1"
+            size={12}
+          />{" "}
+          Back to Home
+        </Link>
       </div>
     </div>
   );
