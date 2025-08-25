@@ -22,6 +22,7 @@ import {
   Layers,
   CircleX,
   NotepadTextDashed,
+  TableProperties,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import { useEffect, useState, type FC } from "react";
@@ -126,6 +127,29 @@ export const componentLink: SidebarLink[] = [
       { name: "NavTabs", path: "/ui-navTabs" },
       { name: "Toasts", path: "/ui-toasts" },
       { name: "Miscellaneous", path: "/ui-miscellaneous" },
+    ],
+  },
+
+  {
+    name: "Icons",
+    icon: Layers,
+    children: [
+      { name: "Flaticon", path: "/icon-flaticon" },
+      { name: "Feather", path: "/icon-feather" },
+      { name: "Bootstrap", path: "/icon-bootstrap" },
+      { name: "BoxIcons", path: "/icon-boxIcons" },
+      { name: "Fontawesome", path: "/icon-fontawesome" },
+      { name: "Lucide", path: "/icon-lucide" },
+      { name: "Tabler", path: "/icon-tabler" },
+      { name: "Weather", path: "/icon-weather" },
+    ],
+  },
+  {
+    name: "Tables",
+    icon: TableProperties,
+    children: [
+      { name: "Boostrap", path: "/table-boostrap" },
+      { name: "ReactTable", path: "/table-react" },
     ],
   },
 

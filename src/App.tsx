@@ -70,6 +70,16 @@ import UIModals from "./pages/base-ui/ui-modal/UIModals";
 import UINavTabs from "./pages/base-ui/ui-navtab/UINavTabs";
 import UIToasts from "./pages/base-ui/ui-toast/UIToasts";
 import UIMiscellaneous from "./pages/base-ui/ui-miscellaneous/UIMiscellaneous";
+import FaltIcon from "./pages/icons/flaticon/FaltIcon";
+import Feather from "./pages/icons/feather/FeatherIcon";
+import BoxIcons from "./pages/icons/BoxIconsIcon";
+import FontAwesome from "./pages/icons/FontAwesomeIcon";
+import BootstrapIcon from "./pages/icons/bootstrap/BootstrapIcon";
+import LucideIcon from "./pages/icons/LucideIcon";
+import TablerIcon from "./pages/icons/TablerIcon";
+import WeatherIcon from "./pages/icons/WeatherIcon";
+import BootstrapTables from "./pages/table-ui/boostraptable/BootstrapTables";
+import ReactTable from "./pages/table-ui/reacttable/ReactTable";
 
 function App() {
   return (
@@ -143,6 +153,10 @@ function App() {
                 <Route path="terms-of-services" element={<TermsOfServices />} />
               </Route>
 
+              {/* --tables-- */}
+              <Route path="/table-boostrap" element={<BootstrapTables />} />
+              <Route path="/table-react" element={<ReactTable />} />
+              
               {/* --Base UI */}
               <Route path="/ui-accordion" element={<UIAccordion />} />
               <Route path="/ui-avatars" element={<UIAvatar />} />
@@ -154,6 +168,16 @@ function App() {
               <Route path="/ui-navTabs" element={<UINavTabs />} />
               <Route path="/ui-toasts" element={<UIToasts />} />
               <Route path="/ui-miscellaneous" element={<UIMiscellaneous />} />
+
+              {/* --Icons */}
+              <Route path="/icon-flaticon" element={<FaltIcon />} />
+              <Route path="/icon-feather" element={<Feather />} />
+              <Route path="/icon-bootstrap" element={<BootstrapIcon />} />
+              <Route path="/icon-boxIcons" element={<BoxIcons />} />
+              <Route path="/icon-fontawesome" element={<FontAwesome />} />
+              <Route path="/icon-lucide" element={<LucideIcon />} />
+              <Route path="/icon-tabler" element={<TablerIcon />} />
+              <Route path="/icon-weather" element={<WeatherIcon />} />
 
               {/* ---calender-- */}
               <Route path="/calendar">
