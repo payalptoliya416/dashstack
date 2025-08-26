@@ -144,14 +144,14 @@ export const componentLink: SidebarLink[] = [
       { name: "Weather", path: "/icon-weather" },
     ],
   },
-  {
-    name: "Tables",
-    icon: TableProperties,
-    children: [
-      { name: "Boostrap", path: "/table-boostrap" },
-      { name: "ReactTable", path: "/table-react" },
-    ],
-  },
+  // {
+  //   name: "Tables",
+  //   icon: TableProperties,
+  //   children: [
+  //     { name: "Boostrap", path: "/table-boostrap" },
+  //     { name: "ReactTable", path: "/table-react" },
+  //   ],
+  // },
 
   { name: "Pricing", path: "/pricing", icon: Gift },
   { name: "Calendar", path: "/calendar", icon: CalendarDays },

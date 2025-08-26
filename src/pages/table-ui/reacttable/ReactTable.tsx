@@ -1,9 +1,10 @@
+import SortingTable from "./SortingTable"
 
 function ReactTable() {
   return (
-    <div>
-      
-    </div>
+    <>
+        <SortingTable/>
+    </>
   )
 }
 

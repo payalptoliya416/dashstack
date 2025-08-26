@@ -1,9 +1,10 @@
 
+
 function BootstrapTables() {
   return (
-    <>
+    <div>
       
-    </>
+    </div>
   )
 }
 
