@@ -1,6 +1,4 @@
 
-import "bootstrap-icons/font/bootstrap-icons.css";
-
 type IconItem = {
   name: string;
   icon: string;

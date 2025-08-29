@@ -22,7 +22,6 @@ import {
   Layers,
   CircleX,
   NotepadTextDashed,
-  TableProperties,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import { useEffect, useState, type FC } from "react";
