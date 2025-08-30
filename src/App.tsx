@@ -72,7 +72,7 @@ import UIToasts from "./pages/base-ui/ui-toast/UIToasts";
 import UIMiscellaneous from "./pages/base-ui/ui-miscellaneous/UIMiscellaneous";
 import FaltIcon from "./pages/icons/flaticon/FaltIcon";
 import Feather from "./pages/icons/feather/FeatherIcon";
-import FontAwesome from "./pages/icons/FontAwesomeIcon";
+import FontAwesome from "./pages/icons/fontawesome/FontAwesomeIcon";
 import BootstrapIcon from "./pages/icons/bootstrap/BootstrapIcon";
 import LucideIcon from "./pages/icons/LucideIcon";
 import TablerIcon from "./pages/icons/TablerIcon";
