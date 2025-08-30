@@ -1,4 +1,4 @@
-// BoxIcon.tsx
+
 import { Search } from "lucide-react";
 import { useState, type ChangeEvent } from "react";
 import { BoxAllIcon, BoxIcons, type IconItem } from "./BoxIconData";
