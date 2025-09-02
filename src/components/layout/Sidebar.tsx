@@ -152,6 +152,19 @@ export const componentLink: SidebarLink[] = [
       { name: "ReactTable", path: "/table-react" },
     ],
   },
+  {
+    name: "Forms",
+    icon: TableProperties,
+    children: [
+      { name: "Radios", path: "/form-radio" },
+      { name: "Checkboxs", path: "/form-checkboxs" },
+      { name: "Switchs", path: "/form-switchs" },
+      { name: "Elements", path: "/form-elements" },
+      { name: "Validation", path: "/form-validaiton" },
+      { name: "InputMask", path: "/form-inputmask" },
+      { name: "noUiSlider", path: "/form-nouislider" },
+    ],
+  },
 
   { name: "Pricing", path: "/pricing", icon: Gift },
   { name: "Calendar", path: "/calendar", icon: CalendarDays },

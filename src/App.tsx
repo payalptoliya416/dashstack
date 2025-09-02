@@ -80,6 +80,13 @@ import WeatherIcon from "./pages/icons/WeatherIcon";
 import BootstrapTables from "./pages/table-ui/boostraptable/BootstrapTables";
 import ReactTable from "./pages/table-ui/reacttable/ReactTable";
 import BoxIcon from "./pages/icons/boxicon/BoxIcon";
+import Radios from "./pages/forms/radios/Radios";
+import CheckBoxs from "./pages/forms/checkboxs/CheckBoxs";
+import Elements from "./pages/forms/Elements";
+import InputMask from "./pages/forms/InputMask";
+import NouiSlider from "./pages/forms/NouiSlider";
+import Switches from "./pages/forms/switches/Switches";
+import Validation from "./pages/forms/Validation";
 
 function App() {
   return (
@@ -156,6 +163,15 @@ function App() {
               {/* --tables-- */}
               <Route path="/table-boostrap" element={<BootstrapTables />} />
               <Route path="/table-react" element={<ReactTable />} />
+
+              {/* --forms-- */}
+              <Route path="/form-radio" element={<Radios />} />
+              <Route path="/form-checkboxs" element={<CheckBoxs />} />
+              <Route path="/form-elements" element={<Elements />} />
+              <Route path="/form-inputmask" element={<InputMask />} />
+              <Route path="/form-nouislider" element={<NouiSlider />} />
+              <Route path="/form-switchs" element={<Switches />} />
+              <Route path="/form-validaiton" element={<Validation />} />
               
               {/* --Base UI */}
               <Route path="/ui-accordion" element={<UIAccordion />} />
