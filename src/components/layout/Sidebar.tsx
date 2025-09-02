@@ -22,6 +22,7 @@ import {
   Layers,
   CircleX,
   NotepadTextDashed,
+  TableProperties,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import { useEffect, useState, type FC } from "react";
@@ -131,7 +132,7 @@ export const componentLink: SidebarLink[] = [
 
   {
     name: "Icons",
-    icon: Layers,
+    icon: Heart,
     children: [
       { name: "Flaticon", path: "/icon-flaticon" },
       { name: "Feather", path: "/icon-feather" },
@@ -143,14 +144,14 @@ export const componentLink: SidebarLink[] = [
       { name: "Weather", path: "/icon-weather" },
     ],
   },
-  // {
-  //   name: "Tables",
-  //   icon: TableProperties,
-  //   children: [
-  //     { name: "Boostrap", path: "/table-boostrap" },
-  //     { name: "ReactTable", path: "/table-react" },
-  //   ],
-  // },
+  {
+    name: "Tables",
+    icon: TableProperties,
+    children: [
+      { name: "Boostrap", path: "/table-boostrap" },
+      { name: "ReactTable", path: "/table-react" },
+    ],
+  },
 
   { name: "Pricing", path: "/pricing", icon: Gift },
   { name: "Calendar", path: "/calendar", icon: CalendarDays },
@@ -289,7 +290,7 @@ useEffect(() => {
                         <button
                           onClick={() => toggleDropdown(name)}
                           className={`
-                       group flex items-center gap-2 px-2 py-2 lg:py-4 rounded-md text-sm transition-all duration-300
+                       group flex items-center gap-2 px-2 py-2 lg:py-4 rounded-md text-sm transition-all duration-300 w-full max-w-[180px] xl:max-w-[200px]
                         ${
                           collapsed
                             ? "mx-1 justify-center"
