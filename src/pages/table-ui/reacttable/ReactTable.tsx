@@ -1,3 +1,5 @@
+import DragDropTable from "./DragDropTable";
+import EditableTable from "./EditableTable";
 import ExpandingTable from "./ExpandingTable";
 import Filtering from "./Filtering";
 import PaginationTable from "./PaginationTable";
@@ -12,6 +14,8 @@ function ReactTable() {
       <PaginationTable/>
       <RowSelection/>
       <ExpandingTable/>
+      <EditableTable/>
+      <DragDropTable/>
     </>
   );
 }

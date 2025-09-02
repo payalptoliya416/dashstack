@@ -10,16 +10,86 @@ type PersonData = {
 };
 
 const defaultData: PersonData[] = [
-  { firstName: "Kiana", lastName: "Herman", age: 35, visits: 16, status: "single", progress: 75 },
-  { firstName: "Zachary", lastName: "Crooks", age: 0, visits: 53, status: "complicated", progress: 26 },
-  { firstName: "Adell", lastName: "Schimmel", age: 3, visits: 24, status: "single", progress: 52 },
-  { firstName: "Nyasia", lastName: "Bartell", age: 25, visits: 68, status: "complicated", progress: 79 },
-  { firstName: "Brandi", lastName: "McKenzie", age: 15, visits: 51, status: "relationship", progress: 68 },
-  { firstName: "Frida", lastName: "Johnson", age: 18, visits: 32, status: "complicated", progress: 33 },
-  { firstName: "Keeley", lastName: "Murphy", age: 33, visits: 100, status: "relationship", progress: 30 },
-  { firstName: "Delfina", lastName: "Tillman", age: 26, visits: 73, status: "relationship", progress: 82 },
-  { firstName: "Lyda", lastName: "Kreiger", age: 10, visits: 49, status: "complicated", progress: 3 },
-  { firstName: "Mohamed", lastName: "Dach", age: 24, visits: 64, status: "relationship", progress: 58 },
+  {
+    firstName: "Kiana",
+    lastName: "Herman",
+    age: 35,
+    visits: 16,
+    status: "single",
+    progress: 75,
+  },
+  {
+    firstName: "Zachary",
+    lastName: "Crooks",
+    age: 0,
+    visits: 53,
+    status: "complicated",
+    progress: 26,
+  },
+  {
+    firstName: "Adell",
+    lastName: "Schimmel",
+    age: 3,
+    visits: 24,
+    status: "single",
+    progress: 52,
+  },
+  {
+    firstName: "Nyasia",
+    lastName: "Bartell",
+    age: 25,
+    visits: 68,
+    status: "complicated",
+    progress: 79,
+  },
+  {
+    firstName: "Brandi",
+    lastName: "McKenzie",
+    age: 15,
+    visits: 51,
+    status: "relationship",
+    progress: 68,
+  },
+  {
+    firstName: "Frida",
+    lastName: "Johnson",
+    age: 18,
+    visits: 32,
+    status: "complicated",
+    progress: 33,
+  },
+  {
+    firstName: "Keeley",
+    lastName: "Murphy",
+    age: 33,
+    visits: 100,
+    status: "relationship",
+    progress: 30,
+  },
+  {
+    firstName: "Delfina",
+    lastName: "Tillman",
+    age: 26,
+    visits: 73,
+    status: "relationship",
+    progress: 82,
+  },
+  {
+    firstName: "Lyda",
+    lastName: "Kreiger",
+    age: 10,
+    visits: 49,
+    status: "complicated",
+    progress: 3,
+  },
+  {
+    firstName: "Mohamed",
+    lastName: "Dach",
+    age: 24,
+    visits: 64,
+    status: "relationship",
+    progress: 58,
+  },
 ];
 
 const PaginationTable = () => {
@@ -85,7 +155,10 @@ const PaginationTable = () => {
               <thead>
                 <tr className="border-b border-gray-200">
                   {columns.map((col) => (
-                    <th key={col.key} className="py-3 px-6 text-left whitespace-nowrap">
+                    <th
+                      key={col.key}
+                      className="py-3 px-6 text-left whitespace-nowrap"
+                    >
                       <div>{col.header}</div>
                       <div className="mt-1">
                         {col.type === "text" && (
@@ -93,7 +166,9 @@ const PaginationTable = () => {
                             type="text"
                             className="border border-gray-100 rounded px-2 py-1 w-full text-sm"
                             value={filters[col.key] || ""}
-                            onChange={(e) => handleTextFilter(col.key, e.target.value)}
+                            onChange={(e) =>
+                              handleTextFilter(col.key, e.target.value)
+                            }
                             placeholder="Search..."
                           />
                         )}
@@ -103,14 +178,18 @@ const PaginationTable = () => {
                               type="number"
                               className="border border-gray-100 rounded px-2 py-1 w-20 text-sm"
                               value={ranges[col.key]?.[0] ?? ""}
-                              onChange={(e) => handleRangeFilter(col.key, 0, e.target.value)}
+                              onChange={(e) =>
+                                handleRangeFilter(col.key, 0, e.target.value)
+                              }
                               placeholder="Min"
                             />
                             <input
                               type="number"
                               className="border border-gray-100 rounded px-2 py-1 w-20 text-sm"
                               value={ranges[col.key]?.[1] ?? ""}
-                              onChange={(e) => handleRangeFilter(col.key, 1, e.target.value)}
+                              onChange={(e) =>
+                                handleRangeFilter(col.key, 1, e.target.value)
+                              }
                               placeholder="Max"
                             />
                           </div>
@@ -121,7 +200,7 @@ const PaginationTable = () => {
                 </tr>
               </thead>
               <tbody>
-                {paginatedData.map((row, i) => ( 
+                {paginatedData.map((row, i) => (
                   <tr key={i} className="border-b border-gray-100">
                     {columns.map((col) => (
                       <td key={col.key} className="py-3 px-6 whitespace-nowrap">
@@ -151,28 +230,40 @@ const PaginationTable = () => {
             <ul className="flex items-center">
               <li
                 className={`px-3 py-[6px] border border-gray-100 cursor-pointer ${
-                  currentPage === 1 ? "text-gray-400 bg-gray-100" : "bg-[#f8f9fa] text-[#252f4a]"
+                  currentPage === 1
+                    ? "text-gray-400 bg-gray-100"
+                    : "bg-[#f8f9fa] text-[#252f4a]"
                 }`}
-                onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
+                onClick={() =>
+                  currentPage > 1 && setCurrentPage(currentPage - 1)
+                }
               >
                 ‹
               </li>
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((num) => (
-                <li
-                  key={num}
-                  className={`px-3 py-[6px] border border-gray-100 cursor-pointer ${
-                    currentPage === num ? "bg-[#3e97ff] text-white" : "bg-[#f8f9fa] text-[#252f4a]"
-                  }`}
-                  onClick={() => setCurrentPage(num)}
-                >
-                  {num}
-                </li>
-              ))}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (num) => (
+                  <li
+                    key={num}
+                    className={`px-3 py-[6px] border border-gray-100 cursor-pointer ${
+                      currentPage === num
+                        ? "bg-[#3e97ff] text-white"
+                        : "bg-[#f8f9fa] text-[#252f4a]"
+                    }`}
+                    onClick={() => setCurrentPage(num)}
+                  >
+                    {num}
+                  </li>
+                )
+              )}
               <li
                 className={`px-3 py-[6px] border border-gray-100 cursor-pointer ${
-                  currentPage === totalPages ? "text-gray-400 bg-gray-100" : "bg-[#f8f9fa] text-[#252f4a]"
+                  currentPage === totalPages
+                    ? "text-gray-400 bg-gray-100"
+                    : "bg-[#f8f9fa] text-[#252f4a]"
                 }`}
-                onClick={() => currentPage < totalPages && setCurrentPage(currentPage + 1)}
+                onClick={() =>
+                  currentPage < totalPages && setCurrentPage(currentPage + 1)
+                }
               >
                 ›
               </li>
