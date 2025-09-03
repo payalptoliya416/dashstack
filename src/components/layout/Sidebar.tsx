@@ -23,6 +23,7 @@ import {
   CircleX,
   NotepadTextDashed,
   TableProperties,
+  Group,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import { useEffect, useState, type FC } from "react";
@@ -148,7 +149,6 @@ export const componentLink: SidebarLink[] = [
     name: "Tables",
     icon: TableProperties,
     children: [
-      { name: "Boostrap", path: "/table-boostrap" },
       { name: "ReactTable", path: "/table-react" },
     ],
   },
@@ -161,8 +161,14 @@ export const componentLink: SidebarLink[] = [
       { name: "Switchs", path: "/form-switchs" },
       { name: "Elements", path: "/form-elements" },
       { name: "Validation", path: "/form-validaiton" },
-      { name: "InputMask", path: "/form-inputmask" },
       { name: "noUiSlider", path: "/form-nouislider" },
+    ],
+  },
+  {
+    name: "Editors",
+    icon: Group,
+    children: [
+      { name: "TinyMCE", path: "/editors" },
     ],
   },
 
