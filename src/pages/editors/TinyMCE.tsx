@@ -125,15 +125,6 @@ function TinyMCE() {
           onEditorChange={(newContent) => setContent(newContent)}
         />
       </div>
-
-      {/* Live Preview */}
-      <div className="p-6 border-t border-gray-100">
-        <h2 className="font-semibold mb-2">Live Preview:</h2>
-        <div
-          className="prose max-w-none"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
-      </div>
     </div>
     </>
   );
