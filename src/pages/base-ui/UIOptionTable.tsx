@@ -33,7 +33,7 @@ const UIOptionTable: React.FC<OptionTableProps> = ({ title = "Options", options 
               {options.map((opt, index) => (
                 <tr
                   key={index}
-                  className="border-t border-gray-100 text-sm text-gray-700 whitespace-nowrap"
+                  className="border-t border-gray-100 text-sm leading-[26px] text-gray-700 whitespace-nowrap"
                 >
                   <td className="px-6 py-3">
                     <button className="text-[#e83e8c] py-[2px] px-2 rounded bg-[#f1f2f3] text-sm">

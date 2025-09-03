@@ -82,11 +82,11 @@ import ReactTable from "./pages/table-ui/reacttable/ReactTable";
 import BoxIcon from "./pages/icons/boxicon/BoxIcon";
 import Radios from "./pages/forms/radios/Radios";
 import CheckBoxs from "./pages/forms/checkboxs/CheckBoxs";
-import Elements from "./pages/forms/Elements";
+import Elements from "./pages/forms/elements/Elements";
 import InputMask from "./pages/forms/InputMask";
 import NouiSlider from "./pages/forms/NouiSlider";
 import Switches from "./pages/forms/switches/Switches";
-import Validation from "./pages/forms/Validation";
+import Validation from "./pages/forms/validation/Validation";
 
 function App() {
   return (

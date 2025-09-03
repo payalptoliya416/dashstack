@@ -2,19 +2,60 @@ import { Check, X } from "lucide-react";
 import { useState } from "react";
 import UIOptionTable from "../../base-ui/UIOptionTable";
 import { switchTable } from "./SwitchData";
+interface ThemeSwitch {
+  id: string;
+  label: string;
+  color: string;
+}
+
+const themeSwitches: ThemeSwitch[] = [
+  { id: "primary", label: "Primary", color: "#3E97FF" },
+  { id: "secondary", label: "Secondary", color: "#505863" },
+  { id: "success", label: "Success", color: "#25B865" },
+  { id: "info", label: "Info", color: "#02A0E4" },
+  { id: "warning", label: "Warning", color: "#E49E3D" },
+  { id: "danger", label: "Danger", color: "#D13B4C" },
+];
+
+const switchSizes = [
+  { width: 40, height: 20, knob: 12, rounded: true },  
+  { width: 48, height: 24, knob: 16, rounded: true },  
+  { width: 48, height: 24, knob: 16, rounded: false }, 
+  { width: 56, height: 28, knob: 20, rounded: true },  
+];
+
+type SwitchStates = {
+  [key: string]: boolean;
+};
 
 const Switches: React.FC = () => {
-  const [isTextOn, setIsTextOn] = useState<boolean>(false);
+  const [isTextOn, setIsTextOn] = useState<boolean>(true);
   const [isTextSquareOn, setIsTextSquareOn] = useState<boolean>(false);
   const [isIconOn, setIsIconOn] = useState<boolean>(false);
   const [isIconSquareOn, setIsIconSquareOn] = useState<boolean>(false);
   const [selectedGroup1, setSelectedGroup1] = useState<string>("");
   const [selectedGroup2, setSelectedGroup2] = useState<string>("");
+
+ const [switchStates, setSwitchStates] = useState<SwitchStates>(() => {
+    const initialState: SwitchStates = {};
+    switchSizes.forEach((sizeIdx) => {
+      themeSwitches.forEach((theme) => {
+        const key = `${theme.id}-${sizeIdx}`;
+        initialState[key] = true;
+      });
+    });
+    return initialState;
+  });
+
+  const toggleSwitch = (key: string) => {
+    setSwitchStates((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-7">
         {/* Default */}
-        <div className="rounded-lg shadow border border-gray-100 bg-white mb-7">
+        <div className="rounded-lg shadow border border-gray-100 bg-white xl:mb-7">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
             Default
           </div>
@@ -42,7 +83,7 @@ const Switches: React.FC = () => {
         </div>
 
         {/* withText */}
-        <div className="rounded-lg shadow border border-gray-100 bg-white mb-7">
+        <div className="rounded-lg shadow border border-gray-100 bg-white xl:mb-7">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
             withText
           </div>
@@ -120,7 +161,7 @@ const Switches: React.FC = () => {
         </div>
 
         {/* withIcon */}
-        <div className="rounded-lg shadow border border-gray-100 bg-white mb-7">
+        <div className="rounded-lg shadow border border-gray-100 bg-white sm:mb-7">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
             withIcon
           </div>
@@ -197,14 +238,13 @@ const Switches: React.FC = () => {
           </div>
         </div>
       </div>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7">
         <div className="rounded-lg shadow border border-gray-100 bg-white mb-7">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
            Sizing
           </div>
           <div className="p-4 md:p-6">
-            <div className="flex gap-4 mb-4">
+            <div className="mb-4">
                <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" />
                 <div className="relative w-10 h-5 bg-white border border-gray-200 rounded-full peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
@@ -213,7 +253,7 @@ const Switches: React.FC = () => {
                 <span className="ml-3 text-sm font-medium text-gray-900">Small</span>
                </label>
             </div>
-            <div className="flex gap-4 mb-4">
+            <div className="mb-4">
                <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" />
                 <div className="relative w-12 h-6 bg-white border border-gray-200 rounded-full peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
@@ -222,7 +262,7 @@ const Switches: React.FC = () => {
                 <span className="ml-3 text-sm font-medium text-gray-900">Default</span>
                </label>
             </div>
-            <div className="flex gap-4 mb-4">
+            <div className="mb-4">
                <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" />
                 <div className="relative w-14 h-7 bg-white border border-gray-200 rounded-full peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
@@ -232,7 +272,7 @@ const Switches: React.FC = () => {
                </label>
             </div>
           <div className="border border-gray-100 my-8"/>
-          <div className="flex gap-4 mb-4">
+          <div className="mb-4">
                <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" />
                 <div className="relative w-10 h-5 bg-white border border-gray-200 rounded peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
@@ -241,7 +281,7 @@ const Switches: React.FC = () => {
                 <span className="ml-3 text-sm font-medium text-gray-900">Small Square</span>
                </label>
             </div>
-            <div className="flex gap-4 mb-4">
+            <div className="mb-4">
                <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" />
                 <div className="relative w-12 h-6 bg-white border border-gray-200 rounded peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
@@ -250,7 +290,7 @@ const Switches: React.FC = () => {
                 <span className="ml-3 text-sm font-medium text-gray-900">Default Square</span>
                </label>
             </div>
-            <div className="flex gap-4 mb-4">
+            <div className="mb-4">
                <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" />
                 <div className="relative w-14 h-7 bg-white border border-gray-200 rounded peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
@@ -267,7 +307,7 @@ const Switches: React.FC = () => {
           </div>
           <div className="p-4 md:p-6">
       {/* Group 1: Rounded */}
-      <div className="flex gap-4 mb-4">
+      <div className="mb-4">
         <label className="inline-flex items-center cursor-pointer">
           <input
             type="checkbox"
@@ -282,7 +322,7 @@ const Switches: React.FC = () => {
         </label>
       </div>
 
-      <div className="flex gap-4 mb-4">
+      <div className="mb-4">
         <label className="inline-flex items-center cursor-pointer">
           <input
             type="checkbox"
@@ -297,7 +337,7 @@ const Switches: React.FC = () => {
         </label>
       </div>
 
-      <div className="flex gap-4 mb-4">
+      <div className="mb-4">
         <label className="inline-flex items-center cursor-pointer">
           <input
             type="checkbox"
@@ -315,7 +355,7 @@ const Switches: React.FC = () => {
       <div className="border border-gray-100 my-8" />
 
       {/* Group 2: Square */}
-      <div className="flex gap-4 mb-4">
+      <div className="mb-4">
         <label className="inline-flex items-center cursor-pointer">
           <input
             type="checkbox"
@@ -330,7 +370,7 @@ const Switches: React.FC = () => {
         </label>
       </div>
 
-      <div className="flex gap-4 mb-4">
+      <div className="mb-4">
         <label className="inline-flex items-center cursor-pointer">
           <input
             type="checkbox"
@@ -345,7 +385,7 @@ const Switches: React.FC = () => {
         </label>
       </div>
 
-      <div className="flex gap-4 mb-4">
+      <div className="mb-4">
         <label className="inline-flex items-center cursor-pointer">
           <input
             type="checkbox"
@@ -362,14 +402,90 @@ const Switches: React.FC = () => {
     </div>
         </div>
       </div>
-        <div className="rounded-lg shadow border border-gray-100 bg-white mb-7">
-          <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
-           Themes
-          </div>
-          <div className="flex items-center gap-5">
-
-          </div>
+       <div className="rounded-lg shadow border border-gray-100 bg-white mb-7">
+      <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
+        Themes
       </div>
+
+      {switchSizes.map((size, sizeIdx) => (
+        <div
+          key={sizeIdx}
+          className="p-6 border-b border-gray-100 flex gap-7 sm:gap-12 items-center flex-wrap"
+        >
+          {themeSwitches.map((theme) => {
+            const key = `${theme.id}-${sizeIdx}`;
+            const isOn = switchStates[key];
+
+            return (
+              <label
+                key={key}
+                className="inline-flex items-center cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  className="sr-only"
+                  checked={isOn}
+                  onChange={() => toggleSwitch(key)}
+                />
+                <div
+                  className={`relative transition border border-gray-100 ${
+                    size.rounded ? "rounded-full" : "rounded-md"
+                  }`}
+                  style={{
+                    width: `${size.width}px`,
+                    height: `${size.height}px`,
+                    backgroundColor: isOn ? theme.color : "white",
+                  }}
+                >
+                  {/* ON/OFF text */}
+                  {isOn ? (
+                    <span
+                      className="absolute font-bold text-white"
+                      style={{
+                        left: "4px",
+                        top: size.height / 4,
+                        fontSize: "8px",
+                      }}
+                    >
+                      ON
+                    </span>
+                  ) : (
+                    <span
+                      className="absolute font-bold text-gray-500"
+                      style={{
+                        right: "4px",
+                        top: size.height / 4,
+                        fontSize: "8px",
+                      }}
+                    >
+                      OFF
+                    </span>
+                  )}
+
+                  {/* Knob */}
+                  <div
+                    className="absolute rounded-full transition-transform"
+                    style={{
+                      top: "3px",
+                      left: "2px",
+                      width: `${size.knob}px`,
+                      height: `${size.knob}px`,
+                      backgroundColor: isOn ? "white" : "#e5e7eb",
+                      transform: isOn
+                        ? `translateX(${size.width - size.knob -7}px)`
+                        : "translateX(0px)",
+                    }}
+                  />
+                </div>
+                <span className="ml-3 text-sm font-medium text-gray-900">
+                  {theme.label}
+                </span>
+              </label>
+            );
+          })}
+        </div>
+      ))}
+    </div>
        <UIOptionTable title="Options" options={switchTable} />
     </>
   );
