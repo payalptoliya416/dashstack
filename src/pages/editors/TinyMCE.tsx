@@ -101,25 +101,9 @@ function TinyMCE() {
             content_style:
               "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
 
-            // ✅ Image upload handler
             images_upload_handler: (blobInfo : any, success : any) => {
-              // For demo: convert to base64
               const base64 = "data:" + blobInfo.blob().type + ";base64," + blobInfo.base64();
               success(base64);
-
-              // 🔥 Real project ma tamara backend API call karo (example below):
-              /*
-              const formData = new FormData();
-              formData.append("file", blobInfo.blob(), blobInfo.filename());
-
-              fetch("http://localhost:5000/upload", {
-                method: "POST",
-                body: formData,
-              })
-                .then((res) => res.json())
-                .then((data) => success(data.url)) // server should return image URL
-                .catch(() => failure("Image upload failed"));
-              */
             },
           }}
           onEditorChange={(newContent) => setContent(newContent)}
