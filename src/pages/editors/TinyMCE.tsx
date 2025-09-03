@@ -6,7 +6,7 @@ function TinyMCE() {
   const editorRef = useRef<any>(null);
   const [content, setContent] = useState<string>("Welcome to TinyMCE!");
 
-  const [contentFull, setContentFUll] = useState<string>("Welcome to Full Feature TinyMCE!");
+  // const [contentFull, setContentFUll] = useState<string>("Welcome to Full Feature TinyMCE!");
 
   return (
     <>
@@ -102,7 +102,7 @@ function TinyMCE() {
               "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
 
             // ✅ Image upload handler
-            images_upload_handler: (blobInfo, success, failure) => {
+            images_upload_handler: (blobInfo : any, success : any) => {
               // For demo: convert to base64
               const base64 = "data:" + blobInfo.blob().type + ";base64," + blobInfo.base64();
               success(base64);
