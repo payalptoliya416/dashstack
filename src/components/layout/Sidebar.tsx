@@ -192,18 +192,18 @@ export const componentLink: SidebarLink[] = [
     ],
   },
 
-  //  {
-  //   name: "Extended",
-  //   icon: Blocks,
-  //   children: [
-  //     { name: "Select2", path: "/select2" },
-  //     { name: "Sweetalert2", path: "/sweetalert2" },
-  //     { name: "Slick Slider", path: "/slickslider" },
-  //     { name: "Dropzone", path: "/dropzone" },
-  //     { name: "Hot Toast", path: "/hot-toast" },
-  //     { name: "Toastity", path: "/toastity" },
-  //   ],
-  // },
+   {
+    name: "Extended",
+    icon: Blocks,
+    children: [
+      { name: "Select2", path: "/select2" },
+      { name: "Sweetalert2", path: "/sweetalert2" },
+      { name: "Slick Slider", path: "/slickslider" },
+      { name: "Dropzone", path: "/dropzone" },
+      { name: "Hot Toast", path: "/hot-toast" },
+      { name: "Toastity", path: "/toastity" },
+    ],
+  },
 
   { name: "Pricing", path: "/pricing", icon: Gift },
   { name: "Calendar", path: "/calendar", icon: CalendarDays },
