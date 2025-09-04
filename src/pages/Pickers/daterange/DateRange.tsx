@@ -10,7 +10,7 @@ function DateRange() {
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Basic
         </div>
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <DateRangeBasic />
         </div>
       </div>
@@ -19,7 +19,7 @@ function DateRange() {
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           DateRangeMultiple
         </div>
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <DateRangeMultiple />
         </div>
       </div>
@@ -28,7 +28,7 @@ function DateRange() {
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           DateRangePicker
         </div>
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <MyDateRangePicker />
         </div>
       </div>
@@ -37,7 +37,7 @@ function DateRange() {
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           DateRangeWeekend
         </div>
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <DateRangeWeekend />
         </div>
       </div>

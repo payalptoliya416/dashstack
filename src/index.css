@@ -58,3 +58,36 @@
   height: 3px;
   background-color: white;
 }
+
+@media (max-width: 1199px) {
+  .rdrDateRangePickerWrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .rdrDateDisplay ,.rdrMonths{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .rdrDateDisplayItem{
+    width: 100% !important;
+  }
+  .rdrDateDisplayItem + .rdrDateDisplayItem{
+    margin-left: 0 !important;
+  }
+}
+@media (max-width: 575px) {
+  .rdrCalendarWrapper {
+    font-size: 10px;
+  }
+  .rdrMonth {
+    width: 240px !important;
+  }
+  .rdrMonthAndYearPickers select {
+    padding: 7px 20px 7px 10px !important;
+  }
+  .rdrNextPrevButton {
+    margin: 0 6px !important;
+  }
+}
