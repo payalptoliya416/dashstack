@@ -58,12 +58,3 @@
   height: 3px;
   background-color: white;
 }
-
-@media (max-width: 768px) {
-  .rdrDateRangeWrapper {
-    flex-direction: column !important;
-  }
-  .rdrCalendarWrapper {
-    width: 100% !important;
-  }
-}
