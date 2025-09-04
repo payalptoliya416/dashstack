@@ -153,14 +153,6 @@ export const componentLink: SidebarLink[] = [
     ],
   },
   {
-    name: "Pickers",
-    icon: TableProperties,
-    children: [
-      { name: "Flatpickr", path: "/flatpickr" },
-      { name: "DateRange", path: "/daterange" },
-    ],
-  },
-  {
     name: "Forms",
     icon: TableProperties,
     children: [
@@ -179,7 +171,14 @@ export const componentLink: SidebarLink[] = [
       { name: "TinyMCE", path: "/editors" },
     ],
   },
-
+   {
+    name: "Pickers",
+    icon: TableProperties,
+    children: [
+      { name: "Flatpickr", path: "/flatpickr" },
+      { name: "DateRange", path: "/daterange" },
+    ],
+  },
   { name: "Pricing", path: "/pricing", icon: Gift },
   { name: "Calendar", path: "/calendar", icon: CalendarDays },
   { name: "To-Do", path: "/todo", icon: ClipboardList },

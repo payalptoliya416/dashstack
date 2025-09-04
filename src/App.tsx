@@ -86,6 +86,8 @@ import NouiSlider from "./pages/forms/NouiSlider";
 import Switches from "./pages/forms/switches/Switches";
 import Validation from "./pages/forms/validation/Validation";
 import TinyMCE from "./pages/editors/TinyMCE";
+import DateRange from "./pages/Pickers/DateRange";
+import FlatePickr from "./pages/Pickers/flatepickr/FlatePickr";
 
 function App() {
   return (
@@ -172,6 +174,10 @@ function App() {
 
               {/* --editors-- */}
               <Route path="/editors" element={<TinyMCE />} />
+
+              {/* --flatepikr-- */}
+              <Route path="/flatpickr" element={<FlatePickr />} />
+              <Route path="/daterange" element={<DateRange />} />
               
               {/* --Base UI */}
               <Route path="/ui-accordion" element={<UIAccordion />} />
