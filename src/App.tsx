@@ -86,7 +86,7 @@ import NouiSlider from "./pages/forms/NouiSlider";
 import Switches from "./pages/forms/switches/Switches";
 import Validation from "./pages/forms/validation/Validation";
 import TinyMCE from "./pages/editors/TinyMCE";
-import DateRange from "./pages/Pickers/DateRange";
+import DateRange from "./pages/Pickers/daterange/DateRange";
 import FlatePickr from "./pages/Pickers/flatepickr/FlatePickr";
 
 function App() {
