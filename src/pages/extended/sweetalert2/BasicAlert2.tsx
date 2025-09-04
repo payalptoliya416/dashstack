@@ -215,7 +215,7 @@ function BasicAlert2() {
     };
 
   return (
-      <div className="flex gap-1 items-center">
+      <div className="flex gap-1 items-center flex-wrap">
       <button onClick={handleClick} className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" >Show Alert </button>
         <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleWithTitleClick}>withTitle</button>
         <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleWithFooterClick}>withFooter</button>

@@ -85,7 +85,7 @@ function Positioned() {
         });
   };
   return (
-    <div className="flex gap-1 items-center">
+    <div className="flex gap-1 items-center flex-wrap">
     <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handletopStart}>TopStart </button>
     <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handletopEnd}>TopEnd</button>
     <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleBottomStart}>BottomStart </button>

@@ -105,7 +105,7 @@ function CustomeMessage() {
     });
   };
   return (
-    <div className="flex gap-1 items-center">
+    <div className="flex gap-1 items-center flex-wrap">
     <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleCommunity}>Join Community </button>
     <button className="px-5 py-2 rounded bg-[#25B865] text-white text-sm font-semibold" onClick={handleEmailVerify}>Email Verification</button>
     <button className="px-5 py-2 rounded bg-[#D13B4C] text-white text-sm font-semibold" onClick={handleNotification}>Notification Message </button>

@@ -102,7 +102,7 @@ function TypeAlert() {
   };
 
   return (
-    <div className="flex gap-1 items-center">
+    <div className="flex gap-1 items-center flex-wrap">
     <button className="px-5 py-2 rounded bg-[#25B865] text-white text-sm font-semibold" onClick={handleSuccess}>Success </button>
     <button className="px-5 py-2 rounded bg-[#02A0E4] text-white text-sm font-semibold" onClick={handleInfo}>Info</button>
     <button className="px-5 py-2 rounded bg-[#E49E3D] text-white text-sm font-semibold" onClick={handleWarning}>Warning </button>

@@ -157,7 +157,7 @@ MySwal.fire({
 
   return (
     <>
-    <div className="flex gap-1 items-center">
+    <div className="flex gap-1 items-center flex-wrap">
     <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleALert}>Alert </button>
     <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleConfirm}>Confirm</button>
     <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleMixin}>Mixin </button>

@@ -7,26 +7,26 @@ import TypeAlert from "./TypeAlert";
 function SweetAlert2() {
   return (
     <>
-      <div className="grid grid-cols-12 gap-7">
-        <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 xl:col-span-6">
+      <div className="grid grid-cols-12 2xl:gap-7">
+        <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7 2xl:mb-0">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
            Basic
           </div>
           <div className="p-6"><BasicAlert2/></div>
         </div>
-        <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 xl:col-span-6">
+        <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7 2xl:mb-0">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
            Positioned
           </div>
           <div className="p-6"><Positioned/></div>
         </div>
-        <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 xl:col-span-6">
+        <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7 2xl:mb-0">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
            Types
           </div>
           <div className="p-6"><TypeAlert/></div>
         </div>
-        <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 xl:col-span-6">
+        <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7 2xl:mb-0">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
            Confirmation
           </div>
@@ -51,7 +51,7 @@ function SweetAlert2() {
           </p>
         </div>
           <div className="py-4 px-6">
-             <p className=" text-sm text-[#4B5675]">For full documentation please visit the link: <a href="https://github.com/sweetalert2/sweetalert2-react-content"><strong className="underline">https://github.com/sweetalert2/sweetalert2-react-content</strong></a></p>
+             <p className=" text-sm text-[#4B5675]">For full documentation please visit the link: <a href="https://github.com/sweetalert2/sweetalert2-react-content" className=" break-all"><strong className="underline">https://github.com/sweetalert2/sweetalert2-react-content</strong></a></p>
           </div>
       </div>
     </>
