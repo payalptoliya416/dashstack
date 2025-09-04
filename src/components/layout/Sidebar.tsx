@@ -26,6 +26,9 @@ import {
   Group,
   NotebookPen,
   Pipette,
+  MapPin,
+  UserCog,
+  Blocks,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import { useEffect, useState, type FC } from "react";
@@ -66,7 +69,7 @@ export const middleLinks: SidebarLink[] = [
   },
    {
     name: "Account Settings",
-    icon: CircleUser,
+    icon: UserCog,
     children: [
       { name: "Account", path: "/account-setting/account" },
       { name: "Security", path: "/account-setting/Security" },
@@ -181,6 +184,27 @@ export const componentLink: SidebarLink[] = [
       { name: "DateRange", path: "/daterange" },
     ],
   },
+   {
+    name: "Maps",
+    icon: MapPin,
+    children: [
+      { name: "Vector", path: "/map" },
+    ],
+  },
+
+  //  {
+  //   name: "Extended",
+  //   icon: Blocks,
+  //   children: [
+  //     { name: "Select2", path: "/select2" },
+  //     { name: "Sweetalert2", path: "/sweetalert2" },
+  //     { name: "Slick Slider", path: "/slickslider" },
+  //     { name: "Dropzone", path: "/dropzone" },
+  //     { name: "Hot Toast", path: "/hot-toast" },
+  //     { name: "Toastity", path: "/toastity" },
+  //   ],
+  // },
+
   { name: "Pricing", path: "/pricing", icon: Gift },
   { name: "Calendar", path: "/calendar", icon: CalendarDays },
   { name: "To-Do", path: "/todo", icon: ClipboardList },

@@ -6,6 +6,7 @@ import "boxicons/css/boxicons.min.css";
 import "flatpickr/dist/flatpickr.min.css";
 import "react-date-range/dist/styles.css"; 
 import "react-date-range/dist/theme/default.css";
+import "jsvectormap/dist/jsvectormap.css";
 import App from "./App.tsx";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";

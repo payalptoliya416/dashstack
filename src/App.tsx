@@ -88,6 +88,13 @@ import Validation from "./pages/forms/validation/Validation";
 import TinyMCE from "./pages/editors/TinyMCE";
 import DateRange from "./pages/Pickers/daterange/DateRange";
 import FlatePickr from "./pages/Pickers/flatepickr/FlatePickr";
+import Maps from "./pages/maps/Maps";
+import Select2 from "./pages/extended/select2/Select2";
+import SweetAlert2 from "./pages/extended/sweetalert2/SweetAlert2";
+import SlickSlider from "./pages/extended/slick-slider/SlickSlider";
+import DropZone from "./pages/extended/dropzone/DropZone";
+import HotToast from "./pages/extended/hot-toast/HotToast";
+import Toastity from "./pages/extended/toastity/Toastity";
 
 function App() {
   return (
@@ -178,6 +185,17 @@ function App() {
               {/* --flatepikr-- */}
               <Route path="/flatpickr" element={<FlatePickr />} />
               <Route path="/daterange" element={<DateRange />} />
+              
+              {/* --maps-- */}
+              <Route path="/map" element={<Maps />} />
+
+              {/* --extended-- */}
+              <Route path="/select2" element={<Select2 />} />
+              <Route path="/sweetalert2" element={<SweetAlert2 />} />
+              <Route path="/slickslider" element={<SlickSlider />} />
+              <Route path="/dropzone" element={<DropZone />} />
+              <Route path="/hot-toast" element={<HotToast />} />
+              <Route path="/toastity" element={<Toastity />} />
               
               {/* --Base UI */}
               <Route path="/ui-accordion" element={<UIAccordion />} />
