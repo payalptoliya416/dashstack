@@ -91,3 +91,7 @@
     margin: 0 6px !important;
   }
 }
+
+.swal2-container{
+  z-index: 99999;
+}
