@@ -7,14 +7,13 @@ export const WeekNumbersPicker: React.FC = () => {
 
   return (
     <div>
-      <h3 className="font-bold mb-2">Week Numbers</h3>
       <Flatpickr
         value={date || undefined}
         options={{ weekNumbers: true, dateFormat: "Y-m-d" }}
         onChange={(dates) => setDate(dates[0] || null)}
-        className="border rounded px-3 py-2 w-full"
+        className="border border-gray-100 rounded px-3 py-2 w-full text-sm"
+         placeholder="Select date..."
       />
-      {date && <p className="mt-2 text-orange-600">Selected: {date.toDateString()}</p>}
     </div>
   );
 };

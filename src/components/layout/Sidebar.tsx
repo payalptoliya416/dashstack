@@ -24,6 +24,8 @@ import {
   NotepadTextDashed,
   TableProperties,
   Group,
+  NotebookPen,
+  Pipette,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import { useEffect, useState, type FC } from "react";
@@ -154,7 +156,7 @@ export const componentLink: SidebarLink[] = [
   },
   {
     name: "Forms",
-    icon: TableProperties,
+    icon: NotebookPen,
     children: [
       { name: "Radios", path: "/form-radio" },
       { name: "Checkboxs", path: "/form-checkboxs" },
@@ -173,7 +175,7 @@ export const componentLink: SidebarLink[] = [
   },
    {
     name: "Pickers",
-    icon: TableProperties,
+    icon: Pipette,
     children: [
       { name: "Flatpickr", path: "/flatpickr" },
       { name: "DateRange", path: "/daterange" },

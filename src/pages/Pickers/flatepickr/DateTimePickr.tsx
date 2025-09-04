@@ -7,14 +7,13 @@ export const DateTimePicker: React.FC = () => {
 
   return (
     <div>
-      <h3 className="font-bold mb-2">Date & Time Picker</h3>
       <Flatpickr
         value={date || undefined}
         options={{ enableTime: true, dateFormat: "Y-m-d H:i" }}
         onChange={(dates) => setDate(dates[0] || null)}
-        className="border rounded px-3 py-2 w-full"
+        className="border border-gray-100 rounded px-3 py-2 w-full text-sm"
+         placeholder="Select date..."
       />
-      {date && <p className="mt-2 text-blue-600">Selected: {date.toLocaleString()}</p>}
     </div>
   );
 };

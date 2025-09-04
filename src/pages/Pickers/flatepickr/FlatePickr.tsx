@@ -1,5 +1,5 @@
 
-import Flatpickr from "react-flatpickr";
+
 import "flatpickr/dist/flatpickr.min.css";
 import { BasicPickr } from "./BasicPickr";
 import { DateTimePicker } from "./DateTimePickr";
@@ -12,8 +12,8 @@ function FlatePickr() {
   
   return (
     <>
-    <div className="grid grid-cols-2 gap-7">
-      <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+      <div className="rounded-lg shadow border border-gray-100 bg-white ">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Basic
         </div>
@@ -21,7 +21,7 @@ function FlatePickr() {
                 <BasicPickr/>
           </div>
       </div>
-      <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
+      <div className="rounded-lg shadow border border-gray-100 bg-white ">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           DateTime
         </div>
@@ -29,7 +29,7 @@ function FlatePickr() {
              <DateTimePicker/>
           </div>
       </div>
-      <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
+      <div className="rounded-lg shadow border border-gray-100 bg-white ">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Multiple
         </div>
@@ -37,7 +37,7 @@ function FlatePickr() {
          <MultiplePickr/>
           </div>
       </div>
-      <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
+      <div className="rounded-lg shadow border border-gray-100 bg-white ">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
         weekNumbers
         </div>
@@ -45,7 +45,7 @@ function FlatePickr() {
            <WeekNumbersPicker/>
           </div>
       </div>
-      <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
+      <div className="rounded-lg shadow border border-gray-100 bg-white ">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
          rangeCalendar
         </div>
@@ -53,7 +53,7 @@ function FlatePickr() {
             <RangeCalendarPickr/>
           </div>
       </div>
-      <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
+      <div className="rounded-lg shadow border border-gray-100 bg-white ">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Handler
         </div>
@@ -62,6 +62,21 @@ function FlatePickr() {
           </div>
       </div>
     </div>
+       <div className="rounded-lg shadow-md border border-gray-200 bg-white mt-7">
+        <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px]">
+          <h3 className="font-bold text-[17px] text-[#252f4a]">Uses Instruction</h3>
+        </div>
+        <div className="py-4 px-6 border-b border-gray-200">
+          <p className=" text-sm text-[#4B5675]">Quill is delivered primarily via npm.
+          <span className="text-[#e83e8c] py-[3px] px-2 rounded bg-[#f1f2f3] text-sm w-max ms-2">
+            npm install --save react-flatpickr
+          </span>
+          </p>
+        </div>
+          <div className="py-4 px-6">
+             <p className=" text-sm text-[#4B5675]">For full documentation please visit the link: <strong>https://github.com/haoxins/react-flatpickr</strong></p>
+          </div>
+      </div>
     </>
   );
 }
