@@ -2,7 +2,8 @@ import { X } from "lucide-react";
 import BadgeButton from "./BadgeButton";
 import Tooltip from "./Tooltip";
 import PopoverTooltip from "./PopoverTooltip";
-
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 type AlertItem = {
   id: number;
@@ -45,6 +46,9 @@ const alerts: AlertItem[] = [
 function UIMiscellaneous() {
   return (
     <>
+  <motion.div
+                  {...usePageAnimation()}
+                  className="overflow-hidden">
       <div className="rounded-lg shadow border border-gray-200 bg-white mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px]">
           Alert
@@ -193,6 +197,7 @@ function UIMiscellaneous() {
     </div>
   </div>
 </div>
+ </motion.div>
     </>
   );
 }

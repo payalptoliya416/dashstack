@@ -1,5 +1,7 @@
 import React, { type JSX } from "react";
 import UIOptionTable from "./UIOptionTable";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
+import {motion} from 'framer-motion';
 
 const avatars = [
   "/images/f1.png",
@@ -88,6 +90,9 @@ function UIAvatar(): JSX.Element {
   
   return (
     <>
+    <motion.div
+                  {...usePageAnimation()}
+                  className="overflow-hidden">
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
 
       {/* Default */}
@@ -310,6 +315,7 @@ function UIAvatar(): JSX.Element {
       </div>
     </div>
     <UIOptionTable title="Options" options={avatarOptions} />
+                  </motion.div>
     </>
   );
 }

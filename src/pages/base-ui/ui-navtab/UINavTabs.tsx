@@ -8,6 +8,8 @@ import RichContent from "./RichContent";
 import { ThemeTab } from "./ThemeTab";
 import UnderTab from "./UnderTab";
 import WithIcon from "./WithIcon";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 type Theme = {
   color: string;
@@ -25,6 +27,9 @@ const themes: Theme[] = [
 function UINavTabs() {
   return (
     <>
+      <motion.div
+                  {...usePageAnimation()}
+                  className="overflow-hidden">
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-7">
         <div className="rounded-lg shadow-md border border-gray-200 bg-white">
           <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px]">
@@ -118,6 +123,7 @@ function UINavTabs() {
       </div>
 
        <UIOptionTable title="Options" options={NavTabData} />
+          </motion.div>
     </>
   );
 }

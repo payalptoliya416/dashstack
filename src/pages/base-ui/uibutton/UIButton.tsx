@@ -2,10 +2,13 @@ import {Bell,} from "lucide-react";
 import UIOptionTable from "../UIOptionTable";
 import type { ButtonType} from "../../../types/UiType";
 import { brandButtons, buttonData, buttonOption, buttons, IconData, sizes, socialButtons } from "./UIButtonData";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function UIButton() {
   return (
     <>
+    <motion.div {...usePageAnimation()}  className="overflow-hidden">
       <div className="rounded-lg shadow-md border border-gray-200 bg-white mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px]">
           Sizing
@@ -569,6 +572,7 @@ function UIButton() {
       </div>
 
       <UIOptionTable title="Options" options={buttonOption} />
+       </motion.div>
     </>
   );
 }

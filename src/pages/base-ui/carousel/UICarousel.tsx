@@ -5,6 +5,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 const images = [
   "/images/g1.jpg",
@@ -17,7 +19,9 @@ const images = [
 function UICarousel() {
   const [controlledIndex, setControlledIndex] = useState(0);
   return (
-    <>
+      <motion.div
+                  {...usePageAnimation()}
+                  className="overflow-hidden">
      <div className="p-6 grid grid-cols-1 xl:grid-cols-2 gap-6 carousel-parent">
       {/* Basic */}
       <div className="rounded-lg shadow-md bg-white">
@@ -109,7 +113,7 @@ function UICarousel() {
         </Swiper>
       </div>
     </div>
-    </>
+                  </motion.div>
   )
 }
 

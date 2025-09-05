@@ -1,5 +1,6 @@
 import React from "react";
-
+import { usePageAnimation } from "../../hooks/usePageAnimation";
+import {motion} from 'framer-motion';
 export interface Option {
   reference: string;
   details: React.ReactNode;
@@ -12,6 +13,7 @@ interface OptionTableProps {
 
 const UIOptionTable: React.FC<OptionTableProps> = ({ title = "Options", options }) => {
   return (
+    <motion.div {...usePageAnimation()}  className="overflow-hidden">
     <div className="grid grid-cols-12 rounded-lg shadow-md border border-gray-200 bg-white mt-7">
       <div className="col-span-12">
         <div className="p-6 font-bold text-[17px]">{title}</div>
@@ -48,6 +50,7 @@ const UIOptionTable: React.FC<OptionTableProps> = ({ title = "Options", options 
         </div>
       </div>
     </div>
+   </motion.div>
   );
 };
 

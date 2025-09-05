@@ -3,6 +3,8 @@ import toast, { Toaster } from "react-hot-toast";
 import PlacementToast from "./PlacementToast";
 import UIOptionTable from "../UIOptionTable";
 import { ToastData } from "./ToastData";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function UIToasts() {
   const handleLIve = ()=>{
@@ -12,6 +14,9 @@ function UIToasts() {
   }
   return (
     <>
+    <motion.div
+                  {...usePageAnimation()}
+                  className="overflow-hidden">
      <Toaster
         position="top-center"
         reverseOrder={false}
@@ -226,6 +231,7 @@ function UIToasts() {
         </div>
 
            <UIOptionTable title="Options" options={ToastData} />
+           </motion.div>
     </>
   );
 }

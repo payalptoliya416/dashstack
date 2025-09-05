@@ -6,6 +6,8 @@ import { BadgeCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import PositionModal from "./PositionModal";
 import { ModalOptions } from "./ModalData";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 interface ButtonType {
   color: string;
   text: string;
@@ -64,6 +66,9 @@ const [isModal, setIsModal] = useState(false);
   };
   return (
     <>
+      <motion.div
+                  {...usePageAnimation()}
+                  className="overflow-hidden">
       <div className="p-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
         <div className="rounded-lg shadow-md border border-gray-200 bg-white mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px]">
@@ -301,6 +306,7 @@ const [isModal, setIsModal] = useState(false);
         </div>
       </PositionModal>
       </div>
+                  </motion.div>
       <UIOptionTable title="Options" options={ModalOptions} />
     </>
   );

@@ -7,10 +7,15 @@ import { cardOption } from "./DropdownData";
 import { MenuSizrDrop } from "./MenuSizeDrop";
 import { ThemeDrop } from "./ThemeDrop";
 import { ThemeSoft } from "./ThemeSoftDrop";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function UIDropdown() {
   return (
     <>
+    <motion.div
+                  {...usePageAnimation()}
+                  className="overflow-hidden">
       <div className="rounded-lg shadow-md border border-gray-200 bg-white mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px]">
           Basic
@@ -106,6 +111,7 @@ function UIDropdown() {
       </div>
 
         <UIOptionTable title="Options" options={cardOption} />
+        </motion.div>
     </>
   )
 }

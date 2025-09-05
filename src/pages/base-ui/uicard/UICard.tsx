@@ -2,9 +2,13 @@ import { cardData, cardOption, cards, flushCards } from "./UICardData";
 import UnderlineTabs from "./UnderlineTabs";
 import ButtonTabs from "./ButtonTabs";
 import UIOptionTable from "../UIOptionTable";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
+
 function UICard() {
   return (
     <>
+      <motion.div {...usePageAnimation()}  className="overflow-hidden">
       <div className="rounded-lg shadow-md border border-gray-200 bg-white mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px]">
           Sink
@@ -293,6 +297,7 @@ function UICard() {
         </div>
 
         <UIOptionTable title="Options" options={cardOption} />
+       </motion.div>
     </>
   );
 }

@@ -2,7 +2,8 @@
 import { ChevronDown, ChevronUp, Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import UIOptionTable from "./UIOptionTable";
-
+import { usePageAnimation } from "../../hooks/usePageAnimation";
+import {motion} from 'framer-motion';
 interface Option {
   reference: string;
   details: React.ReactNode;
@@ -194,6 +195,9 @@ function UIAccordion() {
 
   return (
     <>
+    <motion.div
+                  {...usePageAnimation()}
+                  className="overflow-hidden">
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
       <Accordion title="Default" items={items} variant="default" />
       <Accordion title="Flush" items={items} variant="flush" />
@@ -203,6 +207,7 @@ function UIAccordion() {
       <Accordion title="RevIcon" items={items} variant="revIcon" />
     </div>
     <UIOptionTable title="Options" options={accordionOptions} />
+                  </motion.div>
     </>
   );
 }
