@@ -66,14 +66,15 @@
   }
 }
 @media (max-width: 767px) {
-  .rdrDateDisplay ,.rdrMonths{
+  .rdrDateDisplay,
+  .rdrMonths {
     flex-direction: column;
     gap: 10px;
   }
-  .rdrDateDisplayItem{
+  .rdrDateDisplayItem {
     width: 100% !important;
   }
-  .rdrDateDisplayItem + .rdrDateDisplayItem{
+  .rdrDateDisplayItem + .rdrDateDisplayItem {
     margin-left: 0 !important;
   }
 }
@@ -92,6 +93,26 @@
   }
 }
 
-.swal2-container{
+.swal2-container {
   z-index: 99999;
+}
+
+/* ---slide slider -- */
+.slick-dots {
+  bottom: -42px !important;
+}
+.slick-dots li button:before {
+  background-color: #3e97ff !important;
+  border-radius: 20px !important;
+  content: "" !important;
+  width: 6px !important;
+  height: 6px !important;
+}
+.slick-dots li.slick-active button:before {
+  width: 15px !important;
+}
+@media(max-width:575px){
+  .slick-dots li{
+    margin: 0 !important;
+  }
 }
