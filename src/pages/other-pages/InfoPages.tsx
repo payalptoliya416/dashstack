@@ -1,5 +1,7 @@
 import { BadgeCheck, Info } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 const plans = [
   {
@@ -102,7 +104,7 @@ function InfoPages() {
   const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
 
   return (
-    <div className="w-full">
+    <motion.div {...usePageAnimation()}   className="w-full overflow-hidden">
       <div className="flex py-10 sm:py-16 px-4 sm:px-8 justify-center">
         <div className="border rounded-full border-gray-200">
           <button
@@ -216,7 +218,7 @@ function InfoPages() {
       </div>
       </div>
       </div> 
-    </div>
+    </motion.div>
   );
 }
 

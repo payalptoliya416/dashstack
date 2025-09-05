@@ -1,6 +1,8 @@
 import { Switch } from "@headlessui/react";
 import { Plus } from "lucide-react";
 import { useState, type ReactNode } from "react";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 interface FormRowProps {
   label: string;
@@ -36,7 +38,7 @@ function Account() {
     };
   return (
     <>
-     <div className="p-6 shadow-sm rounded-lg bg-white">
+     <motion.div {...usePageAnimation()} className="p-6 shadow-sm rounded-lg bg-white overflow-hidden">
          <h3 className="text-[#252F4A] text-sm mb-2 font-bold">Avatar & Cover</h3>
          <p className="text-sm text-[#4B5675] mb-7">Change avatar and cover images in your account</p>
          
@@ -195,7 +197,7 @@ function Account() {
               </div>
             </div>
           </div>
-     </div>
+      </motion.div>
     </>
   );
 }

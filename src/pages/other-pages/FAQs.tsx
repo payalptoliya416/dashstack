@@ -1,5 +1,7 @@
 import { Map, MessageSquareMore, Minus, PhoneCall, Plus } from "lucide-react"
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 interface AccordionItem {
   id: number;
@@ -79,6 +81,7 @@ function FAQs() {
 
   return (
     <>
+       <motion.div {...usePageAnimation()}  className="overflow-hidden">       
     <div className="px-6 py-16 flex justify-center items-center text-center rounded-t-lg">
       <div>
       <button className="text-[#3e97ff] text-[13px] rounded-full leading-[13px] font-semibold mb-4">FAQ'S</button>
@@ -136,6 +139,7 @@ function FAQs() {
       <button className="text-white bg-[#3E97FF] px-5 py-2 rounded text-sm">Get touch</button>
       </div>
     </div>
+    </motion.div>
     </>
   )
 }

@@ -6,6 +6,8 @@ import { addColumn, addTask, deleteColumn, deleteTask, emptyColumn, setSelectedC
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../../redux/store";
 import toast, { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function Kanban() {
       const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +42,9 @@ function Kanban() {
 
   return (
     <>
-  
+    <motion.div
+      {...usePageAnimation()}
+      className="overflow-hidden">
         <div className="flex justify-between items-center border-b border-gray-200 pb-5 flex-wrap sm:flex-nowrap gap-5 md:gap-1">
           <h1 className="text-2xl xl:text-[32px] font-bold">Kanban Board</h1>
           <div className="flex gap-2 items-center w-full sm:w-auto justify-end">
@@ -595,7 +599,7 @@ function Kanban() {
     </DialogPanel>
   </div>
        </Dialog>
-
+    </motion.div>
     </>
   )
 }

@@ -1,11 +1,13 @@
 import { SquareArrowOutUpRight, UserCog } from "lucide-react";
 import AccountTab from "./AccountTab";
 import { Outlet } from "react-router-dom";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function AccountLayout() {
   return (
     <>
-      <div className="shadow-sm rounded bg-white">
+      <motion.div {...usePageAnimation()}  className="shadow-sm rounded bg-white overflow-hidden">
         <div className="flex justify-center md:justify-between flex-col md:flex-row gap-8 items-center border-b border-gray-100 py-8 px-6">
           <div className="flex gap-4 sm:gap-5 items-center flex-wrap">
             <div className="w-16 sm:w-[73px] h-16 sm:h-[73px] rounded-full border-4 border-[#3e97ff] flex justify-center items-center"> <UserCog className="text-[#3e97ff] " size={30}/> </div>
@@ -34,7 +36,7 @@ function AccountLayout() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
        <div className="mt-6">
         <Outlet />
       </div>

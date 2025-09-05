@@ -1,6 +1,7 @@
 import { Switch } from "@headlessui/react";
 import { useState, type ReactNode } from "react";
-
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 interface FormRowProps {
   label: string;
   children: ReactNode;
@@ -78,6 +79,7 @@ function Security() {
   };
   return (
     <>
+    <motion.div {...usePageAnimation()}  className="overflow-hidden">
       <div className="p-6 shadow-sm rounded-lg bg-white mb-7">
         <h3 className="text-[#252F4A] text-[17px] mb-2 font-bold">Password</h3>
         <p className="text-sm text-[#4B5675] mb-7"> Change password on your account </p>
@@ -217,7 +219,6 @@ function Security() {
       </div>
     </div>
       </div>
-
       <div className="p-6 shadow-sm rounded-lg bg-white">
          <h3 className="text-[#252F4A] text-[17px] mb-2 font-bold">Delete Account</h3>
         <p className="text-sm text-[#4B5675] mb-7"> He moonlights difficult engrossed it, sportsmen. Interested has all Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to. </p>
@@ -235,6 +236,7 @@ function Security() {
           <button className="text-black bg-[#e49e3d] py-2 px-5 rounded text-xs sm:text-sm opacity-70">Deactivate Account</button>
          </div>
       </div>
+    </motion.div>
     </>
   );
 }

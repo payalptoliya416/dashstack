@@ -3,6 +3,8 @@ import { projects } from "./UserProfileData";
 import { MessageSquareMore, Paperclip } from "lucide-react";
 import UseProgressBar from "../../hooks/useProgressBar";
 import ActionMenu from "./ActionMenu";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function ProfileProject() {
   const [loading, setLoading] = useState(false);
@@ -16,6 +18,9 @@ function ProfileProject() {
 
   return (
     <>
+     <motion.div
+      {...usePageAnimation()}
+      className="overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-5">
         {projects.map((project) => (
             <div className="shadow-sm rounded-lg p-6 bg-white">
@@ -93,6 +98,7 @@ function ProfileProject() {
           )}
         </button>
       </div>
+      </motion.div>
     </>
   );
 }

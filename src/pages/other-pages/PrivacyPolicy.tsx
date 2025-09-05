@@ -1,6 +1,8 @@
 import { ThumbsDown, ThumbsUp } from "lucide-react";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function PrivacyPolicy() {
   const [selected, setSelected] = useState<"yes" | "no" | null>(null);
@@ -22,7 +24,7 @@ function PrivacyPolicy() {
   };
 
   return (
-    <>
+    <motion.div {...usePageAnimation()} className="overflow-hidden">
       <Toaster
         position="top-center"
         reverseOrder={false}
@@ -256,7 +258,7 @@ function PrivacyPolicy() {
           )}
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
 

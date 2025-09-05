@@ -4,6 +4,8 @@ import UseProgressBar from "../../hooks/useProgressBar";
 import { connectionsData, experiences, interests, introData, skills } from "./UserProfileData";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function ProfileOverview() {
     const [connections, setConnections] = useState(connectionsData);
@@ -29,9 +31,11 @@ function ProfileOverview() {
 
   return (
     <>
-          <div>
-      <h3 className="text-lg font-bold mb-4">Profile Overview</h3>
-     <div className="grid grid-cols-12 gap-7">
+     <motion.div
+      {...usePageAnimation()}
+      className="overflow-hidden">
+          <h3 className="text-lg font-bold mb-4">Profile Overview</h3>
+        <div className="grid grid-cols-12 gap-7">
               <div className="col-span-12 xl:col-span-4">
                 <div className="shadow-sm rounded-lg p-6 bg-white mb-6">
                     <div className="flex  justify-between mb-10">
@@ -169,7 +173,7 @@ function ProfileOverview() {
                    </div>
               </div>
         </div>
-    </div>
+    </motion.div>
     </>
   )
 }

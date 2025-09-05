@@ -1,11 +1,15 @@
 import { CircleQuestionMark, EllipsisVertical, Facebook, Twitter, Linkedin, Youtube, ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { usePageAnimation } from '../../hooks/usePageAnimation';
+import {motion} from 'framer-motion';
 
 function ExpiredCard() {
    const [expanded, setExpanded] = useState(false);
   return (
+     <motion.div
+              {...usePageAnimation()}
+              className="overflow-hidden">
       <div className="min-h-screen w-full flex justify-center my-5 px-5 sm:px-1">
       <div>
         <div className="bg-white rounded-xl w-full max-w-[650px] shadow-lg">
@@ -151,6 +155,7 @@ function ExpiredCard() {
         </Link>
       </div>
     </div>
+              </motion.div>
   )
 }
 

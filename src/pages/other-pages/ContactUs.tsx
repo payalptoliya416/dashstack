@@ -1,6 +1,7 @@
 import { Map, MessageSquareMore, PhoneCall } from "lucide-react"
 import { useState, type ChangeEvent, type FormEvent } from "react";
-
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 interface FormData {
   firstName: string;
   lastName: string;
@@ -33,6 +34,7 @@ function ContactUs() {
   };
   return (
     <>
+    <motion.div {...usePageAnimation()}  className="overflow-hidden">
      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7 py-10 sm:py-16 px-8">
          <div className="shadow-sm rounded-md p-6 flex flex-col text-center">
                <MessageSquareMore className="text-[#3e97ff] mb-4 mx-auto" size={30}/>
@@ -166,6 +168,7 @@ function ContactUs() {
         allowFullScreen
       ></iframe>
     </div>
+     </motion.div>
     </>
   )
 }

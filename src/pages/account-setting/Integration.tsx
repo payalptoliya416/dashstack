@@ -3,6 +3,8 @@ import { ArrowRight, Loader2, Plus, SquareArrowOutUpRight, X } from "lucide-reac
 import { Fragment, useState } from "react";
 import { Switch, Dialog, Transition } from "@headlessui/react";
 import toast, { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 interface Integration {
   id: number;
   name: string;
@@ -174,6 +176,7 @@ function Integration() {
     
   return (
     <>
+     <motion.div {...usePageAnimation()}  className="overflow-hidden">
      <Toaster 
             position="top-center" 
             reverseOrder={false} 
@@ -443,6 +446,7 @@ function Integration() {
         </div>
     </Dialog>
     </Transition>
+      </motion.div>
     </>
   )
 }

@@ -4,6 +4,8 @@ import { Fragment, useState } from "react";
 import { albums } from "./UserProfileData";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function ProfileGallery() {
 
@@ -18,6 +20,9 @@ function ProfileGallery() {
 
   return (
    <>
+    <motion.div
+         {...usePageAnimation()}
+         className="overflow-hidden">
            <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-5">
            {albums.map((album) => (
                <div key={album.id} className="shadow-sm rounded-lg bg-white">
@@ -96,7 +101,8 @@ function ProfileGallery() {
                    )}
                </button>
            </div> 
-           </>
+    </motion.div>
+    </>
   )
 }
 

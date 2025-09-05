@@ -1,9 +1,13 @@
 import { CircleQuestionMark, EllipsisVertical, Facebook, Twitter, Linkedin, Youtube, ArrowLeft, MoveRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import { usePageAnimation } from '../../hooks/usePageAnimation';
+import {motion} from 'framer-motion';
 
 function CouponSale() {
-  return (
+  return ( 
+  <motion.div
+            {...usePageAnimation()}
+            className="overflow-hidden">
       <div className="min-h-screen w-full flex justify-center my-5 px-5 sm:px-1">
       <div>
         <div className="bg-white rounded-xl w-full max-w-[650px] shadow-lg">
@@ -127,6 +131,7 @@ function CouponSale() {
         </Link>
       </div>
     </div>
+            </motion.div>
   )
 }
 

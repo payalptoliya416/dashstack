@@ -1,6 +1,8 @@
 import { ThumbsDown, ThumbsUp } from "lucide-react";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function TermsOfServices() {
   const [selected, setSelected] = useState<"yes" | "no" | null>(null);
@@ -22,6 +24,8 @@ function TermsOfServices() {
   };
   return (
     <>
+     <motion.div
+      {...usePageAnimation()} className="overflow-hidden">
       <Toaster
         position="top-center"
         reverseOrder={false}
@@ -333,7 +337,8 @@ function TermsOfServices() {
           <button className="py-2 px-10 cursor-pointer rounded-full text-[#d13b4c] text-sm border border-[#d13b4c]  hover:bg-[#d13b4c] hover:text-white transition-all duration-500">Decline</button>
           <button className="py-2 px-10 cursor-pointer rounded-full text-white text-sm bg-[#25b865] border border-[#25b865]">Accept</button>
         </div>
-      </div>
+        </div>
+     </motion.div>
     </>
   );
 }

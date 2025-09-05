@@ -1,6 +1,8 @@
 import { SquareArrowOutUpRight, Trash2 } from "lucide-react";
 import { type ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "../../components/ui/DataTable";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 interface PaymentMethod {
   id: number;
@@ -163,7 +165,7 @@ function PlanBilling() {
 
   return (
     <>
-      <div className="p-6 shadow-sm rounded-lg bg-white mb-7">
+      <motion.div {...usePageAnimation()}  className="p-6 shadow-sm rounded-lg bg-white mb-7 overflow-hidden">
         <div className="grid grid-cols-12 gap-2 mb-8">
           <div className="col-span-12 md:col-span-4 mb-7 sm:mb-0">
             <h3 className="text-[#252F4A] text-[17px] mb-2 font-bold leading-[17px]">
@@ -344,7 +346,7 @@ function PlanBilling() {
             <DataTable data={billingData} columns={columns} isPaginated={true} pageSize={5} />
             </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

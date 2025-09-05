@@ -6,6 +6,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 interface Member {
   id: number;
@@ -82,6 +84,7 @@ function AboutUs() {
   const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ";
   return (
     <>
+       <motion.div {...usePageAnimation()}  className="overflow-hidden">
     <div className="px-8 py-13 sm:py-16">
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-5 items-center">
         <div>
@@ -293,6 +296,7 @@ function AboutUs() {
           </div>
         </Dialog>
       </Transition>
+       </motion.div>
     </>
   )
 }

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { usersData } from "./UserProfileData";
 import toast from "react-hot-toast";
 import type { UserType } from "../../types/UserProfile";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function ProfileFollowers() {
   const [loadingIndex, setLoadingIndex] = useState<number | null>(null);
@@ -43,6 +45,9 @@ function ProfileFollowers() {
 
   return (
     <>
+     <motion.div
+      {...usePageAnimation()}
+      className="overflow-hidden">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
         {users.map((user, index) => (
           <div key={index} className="py-10 px-6 rounded-lg shadow-sm bg-white">
@@ -98,6 +103,7 @@ function ProfileFollowers() {
           )}
         </button>
       </div>
+      </motion.div>
     </>
   );
 }

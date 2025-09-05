@@ -2,6 +2,9 @@ import { Link, Outlet } from "react-router-dom";
 import ProfileTabs from "./ProfileTabs";
 import { Toaster } from "react-hot-toast";
 import { BadgeCheck } from "lucide-react";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
+
 export default function ProfileLayout() {
   return (
     <>
@@ -16,7 +19,9 @@ export default function ProfileLayout() {
                },
              }}
            />
-           <div className="w-full shadow rounded-lg bg-white p-[1px]">
+            <motion.div
+      {...usePageAnimation()}
+       className="w-full shadow rounded-lg bg-white p-[1px] overflow-hidden">
              <img src="/images/profile-bg.png" alt="" className="rounded-t-lg w-full" />
                  <div className="flex gap-5 sm:gap-2 items-end p-4 sm:p-6 -mt-8 sm:-mt-24 border-b border-gray-200">
                      <div className="shadow-sm rounded p-1 w-36 h-28 sm:h-36 bg-white">
@@ -40,7 +45,7 @@ export default function ProfileLayout() {
                       </div>
                  </div>
                  </div>
-           </div>  
+           </motion.div>  
 
       {/* Tab content */}
       <div className="mt-6">

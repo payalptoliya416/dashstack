@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 interface PageHeaderProps {
   tag?: string;        
   title: string;      
@@ -6,7 +8,7 @@ interface PageHeaderProps {
 
 export default function PageHeader({ tag, title, description }: PageHeaderProps) {
   return (
-    <div className="px-6 py-24 md:py-32 flex justify-center items-center text-center bg-[#F1F2F3]">
+    <motion.div {...usePageAnimation()} className="overflow-hidden px-6 py-24 md:py-32 flex justify-center items-center text-center bg-[#F1F2F3]">
       <div>
         {tag && (
           <button className="uppercase text-[#3e97ff] bg-[#ecf5ff] text-[13px] rounded-full leading-[13px] px-4 py-[6px] font-semibold mb-6">
@@ -21,6 +23,6 @@ export default function PageHeader({ tag, title, description }: PageHeaderProps)
         </p>
         <div className="h-[2px] bg-[#3e97ff] w-12 mb-5 mx-auto" />
       </div>
-    </div>
+    </motion.div>
   );
 }

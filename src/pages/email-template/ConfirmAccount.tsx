@@ -1,8 +1,13 @@
 import { CircleQuestionMark, EllipsisVertical, Facebook, Twitter, Youtube, Linkedin, ArrowLeft } from 'lucide-react';
 import { Link } from "react-router-dom";
+import { usePageAnimation } from '../../hooks/usePageAnimation';
+import {motion} from 'framer-motion';
 
 function ConfirmAccount() {
   return (
+     <motion.div
+          {...usePageAnimation()}
+          className="overflow-hidden">
     <div className="min-h-screen w-full flex justify-center my-5 px-5 sm:px-1">
       <div>
       <div className="bg-white rounded-xl w-full max-w-[650px] shadow-lg">
@@ -127,6 +132,7 @@ function ConfirmAccount() {
         </Link>
       </div>
     </div>
+    </motion.div>
   );
 }
 

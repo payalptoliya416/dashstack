@@ -1,6 +1,8 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 import PageHeader from "./PageHeader";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 const tabs = [
     { label: "About", path: "/info/about-us"},
@@ -50,8 +52,7 @@ function PagesLayout() {
   const currentHeader = pageHeaders[pathname];
 
   return (
-    <>
-      <div className="shadow-sm rounded-lg p-[1px] bg-white">
+      <motion.div {...usePageAnimation()} className="shadow-sm rounded-lg p-[1px] bg-white overflow-hidden">
         {currentHeader && (
           <PageHeader
             tag={currentHeader.tag}
@@ -104,8 +105,8 @@ function PagesLayout() {
             </ul>
           </div>
         </div>
-      </div>
-    </>
+    
+    </motion.div>
   );
 }
 

@@ -8,9 +8,14 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { usePageAnimation } from '../../hooks/usePageAnimation';
+import {motion} from 'framer-motion';
 
 function WelcomeMessage() {
   return (
+     <motion.div
+              {...usePageAnimation()}
+              className="overflow-hidden">
     <div className="min-h-screen w-full flex justify-center my-5 px-5 sm:px-1">
      <div>
        <div className="bg-white rounded-xl w-full max-w-[650px] shadow-lg">
@@ -135,6 +140,7 @@ function WelcomeMessage() {
          <Link to='/eCommerce' className="block group text-[#3E97FF] text-base cursor-pointer my-11 text-center font-bold">  <ArrowLeft className="inline-block text-[#3E97FF] me-1 transition-transform duration-200 group-hover:-translate-x-1" size={12}/> Back to Home </Link>
      </div>
     </div>
+              </motion.div>
   );
 }
 

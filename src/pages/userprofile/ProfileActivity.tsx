@@ -1,6 +1,9 @@
 
 import {  Brush, Camera,FileArchive, MapPin, Plus, SquareUserRound, Tag, Video } from "lucide-react"
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
+
 function ProfileActivity() {
 
   const [loadingMore, setLoadingMore] = useState<boolean>(false);
@@ -14,8 +17,10 @@ function ProfileActivity() {
   };
 
   return (
-     <div>
-             <div className="shadow-sm rounded-lg p-6 bg-white mb-6 relative after:absolute after:w-[1px] after:h-full after:bg-gray-100 after:content-[''] after:top-0 after:left-11.5 z-10 after:-z-10">
+    <motion.div
+      {...usePageAnimation()}
+      className="overflow-hidden">
+      <div className="shadow-sm rounded-lg p-6 bg-white mb-6 relative after:absolute after:w-[1px] after:h-full after:bg-gray-100 after:content-[''] after:top-0 after:left-11.5 z-10 after:-z-10">
              <div className="flex items-start gap-3 mb-2 py-4">
                  <div>
                               <div className="w-[47px] h-[47px] bg-white roudned-full flex items-center justify-center border border-gray-100 rounded-full ">
@@ -203,8 +208,8 @@ function ProfileActivity() {
                   )}
                 </button>
              </div>
-             </div>
-        </div>
+      </div>
+      </motion.div>
   )
 }
 

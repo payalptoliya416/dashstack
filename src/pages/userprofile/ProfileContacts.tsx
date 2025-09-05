@@ -3,6 +3,8 @@ import { useState } from "react";
 import { contactsData } from "./UserProfileData";
 import toast from "react-hot-toast";
 import type { ContactType } from "../../types/UserProfile";
+import { motion } from "framer-motion";
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function ProfileContacts() {
   const [contacts, setContacts] = useState<ContactType[]>(contactsData);
@@ -36,6 +38,9 @@ function ProfileContacts() {
 
   return (
     <>
+     <motion.div
+      {...usePageAnimation()}
+      className="overflow-hidden">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
         {contacts.map((contact, index) => (
           <div
@@ -81,6 +86,7 @@ function ProfileContacts() {
           )}
         </button>
       </div>
+      </motion.div>
     </>
   );
 }
