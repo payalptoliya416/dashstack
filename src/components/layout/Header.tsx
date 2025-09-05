@@ -1,4 +1,4 @@
-import { ChevronDown, Menu, Search } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { Fragment, useState, type FC } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import LanguageDropdown from "../ui/LanguageDropdown";
