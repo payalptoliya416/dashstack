@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 function Toastity() {
   // === Positions ===
   const notify = (position: any) =>
-    toast("🦄 Wow! This is a toast!", { position });
+    toast("Wow! This is a toast!", { position });
 
   // === States ===
   const notifySuccess = () => toast.success(" Success! Operation done.");
@@ -40,16 +40,7 @@ function Toastity() {
   return (
     <>
       <ToastContainer
-        position="top-right"
-        autoClose={3000} 
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored" 
+         style={{ zIndex: 999999 }} 
       />
 
       {/* === Positions === */}

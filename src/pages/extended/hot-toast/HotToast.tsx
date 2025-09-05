@@ -3,8 +3,9 @@ import { Toaster, toast } from "react-hot-toast";
 function HotToast() {
   return (
     <>
-      {/* Toast container */}
-      <Toaster />
+      <Toaster  containerStyle={{
+    zIndex: 999999, 
+  }}/>
 
       <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
@@ -77,7 +78,6 @@ function HotToast() {
         </div>
       </div>
 
-      {/* Toast Position Section */}
       <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Toast Position
@@ -121,7 +121,8 @@ function HotToast() {
           </button>
         </div>
       </div>
-            <div className="rounded-lg shadow-md border border-gray-200 bg-white mt-7">
+
+      <div className="rounded-lg shadow-md border border-gray-200 bg-white mt-7">
         <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px]">
           <h3 className="font-bold text-[17px] text-[#252f4a]">Uses Instruction</h3>
         </div>
