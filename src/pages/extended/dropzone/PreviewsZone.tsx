@@ -91,11 +91,11 @@ function PreviewsZone() {
       <div
         {...getRootProps({
           className:
-            "border border-gray-300 rounded border-dotted p-6 min-h-[300px] flex justify-center items-center flex-col cursor-pointer",
+            "border border-gray-300 rounded border-dotted p-4 sm:p-6 min-h-[300px] flex justify-center items-center flex-col cursor-pointer text-center",
         })}
       >
         <input {...getInputProps()} />
-        <div className="w-[60px] h-[60px] rounded-full bg-[#f1f2f3] border border-gray-300 flex justify-center items-center mx-auto mb-4">
+        <div className="w-12 sm:w-[60px] h-12 sm:h-[60px] rounded-full bg-[#f1f2f3] border border-gray-300 flex justify-center items-center mx-auto mb-4">
           <Upload size={20} />
         </div>
         <h3 className="text-[#252f4a] text-base mb-2 font-bold">

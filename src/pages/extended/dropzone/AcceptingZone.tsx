@@ -36,11 +36,11 @@ function AcceptingZone() {
       <div
         {...getRootProps({
           className:
-            "border border-gray-300 rounded border-dotted p-6 min-h-[300px] flex justify-center items-center flex-col mb-7 cursor-pointer",
+            "border border-gray-300 rounded border-dotted p-4 sm:p-6 min-h-[300px] flex justify-center items-center flex-col mb-7 cursor-pointer text-center",
         })}
       >
         <input {...getInputProps()} />
-        <div className="w-[60px] h-[60px] rounded-full bg-[#f1f2f3] border border-gray-300 flex justify-center items-center mx-auto mb-4">
+        <div className="w-12 sm:w-[60px] h-12 sm:h-[60px] rounded-full bg-[#f1f2f3] border border-gray-300 flex justify-center items-center mx-auto mb-4">
           <Upload size={20} />
         </div>
         <h3 className="text-[#252f4a] text-base mb-2 font-bold">
@@ -55,9 +55,9 @@ function AcceptingZone() {
       {files.map((f, i) => (
         <div
           key={i}
-          className="border border-gray-100 rounded px-4 py-2 flex justify-between items-center mb-2"
+          className="border border-gray-100 rounded px-2 sm:px-4 py-2 flex justify-between items-center mb-2"
         >
-          <div className="flex gap-5 items-center">
+          <div className="flex gap-3 sm:gap-5 items-center">
             <img
               src={f.preview}
               alt={f.file.name}
