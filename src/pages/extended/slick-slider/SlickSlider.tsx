@@ -13,46 +13,46 @@ function SlickSlider() {
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Single
           </div>
-          <div className="p-4 sm:-p-6"> <SingleSlider/></div>
+          <div className="p-4 sm:p-6"> <SingleSlider/></div>
       </div>
       <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Multiple
           </div>
-          <div className="p-4 sm:-p-6"><MultipleSlider/></div>
+          <div className="p-4 sm:p-6"><MultipleSlider/></div>
       </div>
       <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Responsive
           </div>
-          <div className="p-4 sm:-p-6"><ResponsiveSlider/></div>
+          <div className="p-4 sm:p-6"><ResponsiveSlider/></div>
       </div>
       <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
         Multiple Rows
           </div>
-          <div className="p-4 sm:-p-6"><MultipleRowsSlider/></div>
+          <div className="p-4 sm:p-6"><MultipleRowsSlider/></div>
       </div>
       <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Variable Width
           </div>
-          <div className="p-4 sm:-p-6"><VariableWidthSlider/></div>
+          <div className="p-4 sm:p-6"><VariableWidthSlider/></div>
       </div>
       <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
            Auto Play
           </div>
-          <div className="p-4 sm:-p-6"><AutoPlaySlider/></div>
+          <div className="p-4 sm:p-6"><AutoPlaySlider/></div>
       </div>
       <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
            Custom Paging
           </div>
-          <div className="p-4 sm:-p-6"><CustomPagingSlider/></div>
+          <div className="p-4 sm:p-6"><CustomPagingSlider/></div>
       </div>
           <div className="rounded-lg shadow-md border border-gray-200 bg-white mt-7">
-        <div className="p-4 md:p-4 sm:-p-6 border-b border-gray-200 font-bold text-[17px]">
+        <div className="p-4 md:p-4 sm:p-6 border-b border-gray-200 font-bold text-[17px]">
           <h3 className="font-bold text-[17px] text-[#252f4a]">Uses Instruction</h3>
         </div>
         <div className="py-4 px-6 border-b border-gray-200">
