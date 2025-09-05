@@ -9,6 +9,7 @@ import "react-date-range/dist/theme/default.css";
 import "jsvectormap/dist/jsvectormap.css";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import "react-toastify/dist/ReactToastify.css";
 import App from "./App.tsx";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
