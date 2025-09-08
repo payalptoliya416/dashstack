@@ -12,7 +12,7 @@ function AccountLayout() {
           <div className="flex gap-4 sm:gap-5 items-center flex-wrap">
             <div className="w-16 sm:w-[73px] h-16 sm:h-[73px] rounded-full border-4 border-blue-text flex justify-center items-center"> <UserCog className="text-blue-text " size={30}/> </div>
             <div>
-              <h3 className="text-base sm:text-[21px] font-bold text-[#252F4A] mb-1 sm:mb-2">
+              <h3 className="text-base sm:text-21 font-bold text-[#252F4A] mb-1 sm:mb-2">
                 Account Settings
               </h3>
               <p className="text-[]6B7177] text-sm sm:max-w-64">

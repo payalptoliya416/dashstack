@@ -136,7 +136,7 @@ function AboutUs() {
          {statsData.map((stat, index) => (
         <div key={index} className="px-4">
           <h2 className="text-darkgray text-[32px] mb-2 font-bold">{stat.value}</h2>
-          <h3 className="text-blue text-[21px] mb-4 leading-[22px] font-semibold">
+          <h3 className="text-blue text-21 mb-4 leading-[22px] font-semibold">
             {stat.title}
           </h3>
           <p className="text-sm text-lightgray">{stat.description}</p>

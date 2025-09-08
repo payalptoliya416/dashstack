@@ -61,7 +61,7 @@ export const DonutChart: React.FC<DonutChartProps> = ({
       </div>
 
       <div>
-        <h3 className="text-[21px] font-bold mb-1">{title}</h3>
+        <h3 className="text-21 font-bold mb-1">{title}</h3>
         <p className="font-semibold text-sm mb-1">{subtitle}</p>
         <p className="text-sm text-gray-600">{description}</p>
       </div>

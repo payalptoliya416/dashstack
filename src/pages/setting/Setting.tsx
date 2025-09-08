@@ -142,7 +142,7 @@ function Setting() {
 
           <div className="grid grid-cols-12 sm:gap-6 xl:gap-[60px]">
             <div className="col-span-12 sm:col-span-6 mb-6 sm:mb-0">
-              <label className="block text-[#606060] text-sm font-semibold mb-11">
+              <label className="block text-[#606060] text-sm font-semibold mb-[11px]">
                 Site Name
               </label>
               <input
@@ -159,7 +159,7 @@ function Setting() {
             </div>
 
             <div className="col-span-12 sm:col-span-6 mb-6 sm:mb-0">
-              <label className="block text-[#606060] text-sm font-semibold mb-11">
+              <label className="block text-[#606060] text-sm font-semibold mb-[11px]">
                 Copyright
               </label>
               <input
@@ -178,7 +178,7 @@ function Setting() {
             <div className="col-span-12 sm:col-span-6 mb-6 sm:mb-0">
               <div className="flex flex-col sm:gap-6 xl:gap-[60px]">
                 <div className=" mb-6 sm:mb-0">
-                  <label className="block text-[#606060] text-sm font-semibold mb-11">
+                  <label className="block text-[#606060] text-sm font-semibold mb-[11px]">
                     SEO Title
                   </label>
                   <input
@@ -194,7 +194,7 @@ function Setting() {
                   )}
                 </div>
                 <div>
-                  <label className="block text-[#606060] text-sm font-semibold mb-11">
+                  <label className="block text-[#606060] text-sm font-semibold mb-[11px]">
                     SEO Keywords
                   </label>
                   <input
@@ -214,7 +214,7 @@ function Setting() {
 
             <div className="col-span-12 sm:col-span-6 flex flex-col h-full">
               <label
-                className="block text-[#606060] text-sm font-semibold mb-11 sm:mt-[6px]"
+                className="block text-[#606060] text-sm font-semibold mb-[11px] sm:mt-[6px]"
               >
                 SEO Description
               </label>

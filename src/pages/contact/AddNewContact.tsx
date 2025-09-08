@@ -137,7 +137,7 @@ function AddNewContact() {
                 key={name}
                 className="col-span-12 sm:col-span-6 mb-6 sm:mb-0"
               >
-                <label className="block text-[#606060] text-sm font-semibold mb-11">
+                <label className="block text-[#606060] text-sm font-semibold mb-[11px]">
                   {label}
                 </label>
                 <input
@@ -157,7 +157,7 @@ function AddNewContact() {
             ))}
 
             <div className="col-span-12 sm:col-span-6">
-              <label className="block text-[#606060] text-sm font-semibold mb-11">
+              <label className="block text-[#606060] text-sm font-semibold mb-[11px]">
                 Gender
               </label>
               <select
