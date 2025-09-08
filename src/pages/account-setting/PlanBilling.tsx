@@ -124,7 +124,7 @@ function PlanBilling() {
     cell: (info) => (
       <a
         href="#"
-        className="text-[#3e97ff] hover:underline"
+        className="text-blue-text hover:underline"
       >
         {info.getValue() as string}
       </a>
@@ -142,7 +142,7 @@ function PlanBilling() {
       const value = info.getValue() as BillingStatus;
       return (
         <span
-          className={`text-[11px] px-[7px] py-[5px] rounded leading-[11px] ${statusColors[value]}`}
+          className={`text-11 px-[7px] py-[5px] rounded leading-[13px] ${statusColors[value]}`}
         >
           {value}
         </span>
@@ -171,7 +171,7 @@ function PlanBilling() {
             <h3 className="text-[#252F4A] text-[17px] mb-2 font-bold leading-[17px]">
               Subscription
             </h3>
-            <p className="text-sm text-[#4B5675]">
+            <p className="text-sm text-lightgray">
               Manage your subscription plan.
             </p>
           </div>
@@ -188,10 +188,10 @@ function PlanBilling() {
                       Active
                     </button>
                   </div>
-                  <p className="text-sm text-[#4B5675]">
+                  <p className="text-sm text-lightgray">
                     Our most popular plan for small teams.
                   </p>
-                  <p className="text-sm text-[#4B5675]">
+                  <p className="text-sm text-lightgray">
                     Active until <strong>Dec 09, 2024</strong>
                   </p>
                 </div>
@@ -243,34 +243,34 @@ function PlanBilling() {
               </div>
             </div>
             <div className="py-4 px-6 border border-gray-100 rounded flex items-start sm:items-center justify-between flex-col sm:flex-row gap-4">
-              <h3 className="text-[#4B5675] text-sm">Payment method</h3>
+              <h3 className="text-lightgray text-sm">Payment method</h3>
              <div className="flex sm:items-center gap-4  flex-col sm:flex-row">
-               <p className="text-xs text-[#4B5675]">
+               <p className="text-xs text-lightgray">
                 Mastercard - 03/26 <br /> **** **** **** 9632
               </p>
-              <button className="py-2 px-5 rounded border border-gray-200 text-sm bg-[#f1f2f3] text-[#252f4a]">
+              <button className="py-2 px-5 rounded border border-gray-200 text-sm bg-[#f1f2f3] text-darkgray">
                 Update <SquareArrowOutUpRight className="inline-block ms-2" size={14} />
               </button>
              </div>
             </div>
             <div className="py-4 px-6 border border-t-0 border-gray-100 rounded flex items-start sm:items-center justify-between  flex-col sm:flex-row gap-4">
-              <h3 className="text-[#4B5675] text-sm">Billing period</h3>
+              <h3 className="text-lightgray text-sm">Billing period</h3>
              <div className="flex sm:items-center gap-4  flex-col sm:flex-row">
-               <p className="text-sm text-[#4B5675]">
+               <p className="text-sm text-lightgray">
                 Plan billed monthly
               </p>
-              <button className="py-2 px-5 rounded border border-gray-200 text-sm bg-[#f1f2f3] text-[#252f4a]">
+              <button className="py-2 px-5 rounded border border-gray-200 text-sm bg-[#f1f2f3] text-darkgray">
                 Update <SquareArrowOutUpRight className="inline-block ms-2" size={14} />
               </button>
              </div>
             </div>
             <div className="py-4 px-6 border border-t-0 border-gray-100 rounded flex items-start sm:items-center justify-between  flex-col sm:flex-row gap-4">
-              <h3 className="text-[#4B5675] text-sm">License keys</h3>
+              <h3 className="text-lightgray text-sm">License keys</h3>
              <div className="flex sm:items-center gap-4  flex-col sm:flex-row">
-               <p className="text-sm text-[#4B5675]">
+               <p className="text-sm text-lightgray">
                Redeem a license key
               </p>
-              <button className="py-2 px-5 rounded border border-gray-200 text-sm bg-[#f1f2f3] text-[#252f4a]">
+              <button className="py-2 px-5 rounded border border-gray-200 text-sm bg-[#f1f2f3] text-darkgray">
                 Redeem <SquareArrowOutUpRight className="inline-block ms-2" size={14} />
               </button>
              </div>
@@ -284,7 +284,7 @@ function PlanBilling() {
             <h3 className="text-[#252F4A] text-[17px] mb-2 font-bold leading-[17px]">
               Subscription
             </h3>
-            <p className="text-sm text-[#4B5675]">
+            <p className="text-sm text-lightgray">
               Manage your subscription plan.
             </p>
           </div>
@@ -301,18 +301,18 @@ function PlanBilling() {
                   <img src={method.image} alt="" className="w-8 h-8" />
                   <div>
                     <h3 className="text-sm text-[#252D4A] font-semibold">{method.title}</h3>
-                    <p className="text-sm text-[#6B7177]">{method.subText}</p>
+                    <p className="text-sm text-graytext">{method.subText}</p>
                   </div>
                 </div>
 
                 {/* Right Side */}
                 <div className="flex gap-5 items-center">
                   {method.isDefault ? (
-                    <button className="text-[11px] leading-[11px] text-white rounded py-[5px] px-[7px] bg-[#25b865]">
+                    <button className="text-11 leading-[13px] text-white rounded py-[5px] px-[7px] bg-[#25b865]">
                       Default
                     </button>
                   ) : (
-                    <p className="text-sm text-[#3e97ff]">Set as default</p>
+                    <p className="text-sm text-blue-text">Set as default</p>
                   )}
                   <Trash2 className="text-[#d13b4c]" size={15} />
                 </div>
@@ -326,7 +326,7 @@ function PlanBilling() {
              <div className="col-span-3 text-sm sm:hidden"></div>
             <div className="col-span-12 sm::col-span-9">
               <div className="flex items-center gap-2 justify-center">
-                 <button className="px-5 py-2 rounded bg-[#3E97FF] text-sm text-white cursor-pointer">Save Changes</button>
+                 <button className="px-5 py-2 rounded bg-blue text-sm text-white cursor-pointer">Save Changes</button>
                  <button className="px-5 py-2 rounded text-[#d13b4c] bg-[#d13b4c1a] hover:text-white hover:bg-[#d13b4c] transition-all duration-500 text-sm cursor-pointer">Reset</button>
               </div>
             </div>
@@ -338,7 +338,7 @@ function PlanBilling() {
             <h3 className="text-[#252F4A] text-[17px] mb-2 font-bold leading-[17px]">
             Billing History
             </h3>
-            <p className="text-sm text-[#4B5675]">
+            <p className="text-sm text-lightgray">
             View your previos billing history
             </p>
           </div>

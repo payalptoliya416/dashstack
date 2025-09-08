@@ -9,9 +9,9 @@ interface BadgeButtonProps {
 
 const colorVariants = {
   blue: {
-    base: "bg-[#ecf5ff] text-[#3e97ff]",
-    badge: "bg-[#3e97ff] text-white",
-    dot: "bg-[#3e97ff]",
+    base: "bg-[#ecf5ff] text-blue-text",
+    badge: "bg-blue-text text-white",
+    dot: "bg-blue-text",
   },
   gray: {
     base: "bg-[#f1f2f3] text-[#505863]",

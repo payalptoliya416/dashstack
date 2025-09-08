@@ -11,8 +11,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
     <div className="space-y-2">
       {/* Top row */}
       <div className="flex justify-between items-center">
-        <h4 className="text-[13px] text-[#4B5675]">{label}</h4>
-        <h4 className="text-[13px] text-[#4B5675]">
+        <h4 className="text-13 text-lightgray">{label}</h4>
+        <h4 className="text-13 text-lightgray">
           {amount} ({percentage}%)
         </h4>
       </div>

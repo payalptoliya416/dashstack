@@ -77,7 +77,7 @@ function ProfileGallery() {
                </div>
    
                {/* Footer */}
-               <div className="p-6 flex items-center text-[#6b7177] text-[13px] gap-2">
+               <div className="p-6 flex items-center text-[#6b7177] text-13 gap-2">
                    {album.photoCount} Photos{" "}
                    <span className="inline-block w-1 h-1 rounded-full bg-[#6b7177]"></span>{" "}
                    {album.date}

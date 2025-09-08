@@ -23,7 +23,7 @@ function BasicAlert2() {
         const btn = document.querySelector(".swal2-confirm") as HTMLButtonElement;
         if (btn) {
           btn.className =
-            "bg-[#3E97FF] hover:bg-blue-600 text-white px-4 mb-3 py-2 rounded text-sm font-semibold";
+            "bg-blue hover:bg-blue-600 text-white px-4 mb-3 py-2 rounded text-sm font-semibold";
         }
       },
     });
@@ -36,7 +36,7 @@ function BasicAlert2() {
           <h1 class="text-xl font-bold text-gray-900 mb-2 pt-7">
            The Internet?
           </h1>
-          <p class="text-sm text-[#6B7177]">That thing is still around?</p>
+          <p class="text-sm text-graytext">That thing is still around?</p>
         </div>
       `,
       showConfirmButton: true,
@@ -47,7 +47,7 @@ function BasicAlert2() {
         const btn = document.querySelector(".swal2-confirm") as HTMLButtonElement;
         if (btn) {
           btn.className =
-            "bg-[#3E97FF] hover:bg-blue-600 text-white px-4 mb-3 py-2 rounded text-sm font-semibold";
+            "bg-blue hover:bg-blue-600 text-white px-4 mb-3 py-2 rounded text-sm font-semibold";
         }
          const icon = document.querySelector(".swal2-icon") as HTMLDivElement;
       if (icon) {
@@ -65,7 +65,7 @@ function BasicAlert2() {
             <h1 class="text-xl font-bold text-gray-900 mb-2 pt-7">
             Oops...
             </h1>
-            <p class="text-sm text-[#6B7177]">Something went wrong!</p>
+            <p class="text-sm text-graytext">Something went wrong!</p>
         </div>
         `,
         footer: `
@@ -81,7 +81,7 @@ function BasicAlert2() {
         const btn = document.querySelector(".swal2-confirm") as HTMLButtonElement;
         if (btn) {
             btn.className =
-            "bg-[#3E97FF] hover:bg-blue-600 text-white px-4 mb-3 py-2 rounded text-sm font-semibold";
+            "bg-blue hover:bg-blue-600 text-white px-4 mb-3 py-2 rounded text-sm font-semibold";
         }
 
         const icon = document.querySelector(".swal2-icon") as HTMLDivElement;
@@ -108,12 +108,12 @@ function BasicAlert2() {
     // --withHTML
     const handleWithHTML = () => {
     MySwal.fire({
-      title: "<strong class='text-[#252f4a] text-xl font-block'>HTML <u>example</u></strong>",
+      title: "<strong class='text-darkgray text-xl font-block'>HTML <u>example</u></strong>",
       icon: "info",
       html: `
-        <div class="text-center text-[#6B7177] text-sm font-semibold">
+        <div class="text-center text-graytext text-sm font-semibold">
           You can use <strong>bold text</strong>,
-          <a href="#" class="text-[#252f4a]">links</a>,
+          <a href="#" class="text-darkgray">links</a>,
           and other HTML tags.
         </div>
       `,
@@ -127,7 +127,7 @@ function BasicAlert2() {
         const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
         if (confirm) {
           confirm.className =
-            "bg-[#3E97FF] text-white px-4 py-2 rounded text-sm font-semibold flex items-center justify-center";
+            "bg-blue text-white px-4 py-2 rounded text-sm font-semibold flex items-center justify-center";
               confirm.innerHTML = `<i class='fi fi-rr-social-network me-2'></i><span>Great!</span>`;
         }
 
@@ -145,7 +145,7 @@ function BasicAlert2() {
      MySwal.fire({
         html: `
         <div class="text-center">
-            <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">
+            <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">
            Do you want to save the changes?
             </h1>
         </div>
@@ -160,7 +160,7 @@ function BasicAlert2() {
         const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
         if (confirm) {
           confirm.className =
-            "bg-[#3E97FF] text-white px-4 py-2 rounded text-sm font-semibold";
+            "bg-blue text-white px-4 py-2 rounded text-sm font-semibold";
         }
 
         const deny = document.querySelector(".swal2-deny") as HTMLButtonElement;
@@ -180,7 +180,7 @@ function BasicAlert2() {
         MySwal.fire({
             html: `
         <div class="text-center">
-            <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">
+            <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">
             Saved!
             </h1>
         </div>
@@ -190,14 +190,14 @@ function BasicAlert2() {
           buttonsStyling: false,
           didOpen: () => {
             const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
-            if (confirm) confirm.className = "bg-[#3E97FF] text-white px-4 py-2 rounded text-sm font-semibold";
+            if (confirm) confirm.className = "bg-blue text-white px-4 py-2 rounded text-sm font-semibold";
           },
         });
       } else if (result.isDenied) {
          MySwal.fire({
            html: `
         <div class="text-center">
-            <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">
+            <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">
             Changes are not saved
             </h1>
         </div>
@@ -207,7 +207,7 @@ function BasicAlert2() {
           buttonsStyling: false,
           didOpen: () => {
             const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
-            if (confirm) confirm.className = "bg-[#3E97FF] text-white px-4 py-2 rounded text-sm font-semibold";
+            if (confirm) confirm.className = "bg-blue text-white px-4 py-2 rounded text-sm font-semibold";
           },
         });
       }
@@ -216,11 +216,11 @@ function BasicAlert2() {
 
   return (
       <div className="flex gap-1 items-center flex-wrap">
-      <button onClick={handleClick} className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" >Show Alert </button>
-        <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleWithTitleClick}>withTitle</button>
-        <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleWithFooterClick}>withFooter</button>
-        <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleWithHTML}>withHTML</button>
-        <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleAction}>Actions</button>
+      <button onClick={handleClick} className="px-5 py-2 rounded bg-blue text-white text-sm font-semibold" >Show Alert </button>
+        <button className="px-5 py-2 rounded bg-blue text-white text-sm font-semibold" onClick={handleWithTitleClick}>withTitle</button>
+        <button className="px-5 py-2 rounded bg-blue text-white text-sm font-semibold" onClick={handleWithFooterClick}>withFooter</button>
+        <button className="px-5 py-2 rounded bg-blue text-white text-sm font-semibold" onClick={handleWithHTML}>withHTML</button>
+        <button className="px-5 py-2 rounded bg-blue text-white text-sm font-semibold" onClick={handleAction}>Actions</button>
       </div>
   )
 }

@@ -36,7 +36,7 @@ export const Header: FC<HeaderProps> = ({
   };
   
   return (
-    <header className="w-full px-4 xl:px-[31px] py-[13px] bg-white shadow flex-col sm:flex-row flex justify-between items-center gap-5 lg:gap-auto sticky top-0 z-[999]">
+    <header className="w-full px-4 xl:px-[31px] py-13 bg-white shadow flex-col sm:flex-row flex justify-between items-center gap-5 lg:gap-auto sticky top-0 z-[999]">
       {/* ---left side */}
       <div className="flex justify-between sm:justify-center sm:items-center gap-5 xl:gap-[26px] w-full sm:w-auto">
         <button
@@ -54,11 +54,11 @@ export const Header: FC<HeaderProps> = ({
         </button>
 
         {/* <div className="flex items-center bg-gray-100 bg-opacity-[60%] rounded-full w-full sm:w-auto xl:w-[450px] px-4 py-[10px] border border-[#D5D5D5] ">
-          <Search className="text-[#202224] w-5 h-5 mr-[13px]" />
+          <Search className="text-darkgray w-5 h-5 mr-13" />
           <input
             type="text"
             placeholder="Search"
-            className="bg-transparent focus:outline-none w-full text-sm text-gray-700 placeholder-[#202224]"
+            className="bg-transparent focus:outline-none w-full text-sm text-gray-700 placeholder-darkgray"
           />
         </div> */}
         <MegaMenu/>

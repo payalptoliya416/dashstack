@@ -25,7 +25,7 @@ function ProductCard({ product }: { product: Product }) {
             />
           ))}
         </div>
-        <h3 className="text-[13px] text-end">{product.reviews} Reviews</h3>
+        <h3 className="text-13 text-end">{product.reviews} Reviews</h3>
       </div>
     </div>
   );

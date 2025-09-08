@@ -30,7 +30,7 @@ export default function BasicTab() {
                   ? "border border-gray-200 border-b-white rounded-t-md relative after:absolute after:-bottom-1 after:left-0 after:content-[''] after:bg-white after:w-full after:h-1"
                   : tab === "disabled"
                   ? "text-gray-400 cursor-not-allowed"
-                  : "text-gray-700 hover:bg-gray-100 hover:text-[#3e97ff]"
+                  : "text-gray-700 hover:bg-gray-100 hover:text-blue-text"
               }`}
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}

@@ -9,7 +9,7 @@ function UnderMaintenance() {
           alt=""
           className="max-w-32 md:max-w-52 mx-auto mb-10"
         />
-        <h3 className="text-[#202224] font-semibold text-lg sm:text-2xl md:text-[32px] mb-7 md:mb-[35px]">
+        <h3 className="text-darkgray font-semibold text-lg sm:text-2xl md:text-[32px] mb-7 md:mb-[35px]">
           Under Maintenance!
         </h3>
         <p className="text-base sm:text-lg max-w-[500px] mb-5">
@@ -17,16 +17,16 @@ function UnderMaintenance() {
           caused.
         </p>
         <ul className="flex justify-center gap-5 mt-8 text-gray-500">
-          <li className="text-sm font-semibold text-[#252f4a]">
+          <li className="text-sm font-semibold text-darkgray">
             <Facebook size={16} />
           </li>
-          <li className="text-sm font-semibold text-[#252f4a]">
+          <li className="text-sm font-semibold text-darkgray">
             <Twitter size={16} />
           </li>
-          <li className="text-sm font-semibold text-[#252f4a]">
+          <li className="text-sm font-semibold text-darkgray">
             <Instagram size={16} />
           </li>
-          <li className="text-sm font-semibold text-[#252f4a]">
+          <li className="text-sm font-semibold text-darkgray">
             <Linkedin size={16} />
           </li>
         </ul>

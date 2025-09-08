@@ -26,7 +26,7 @@ function ProfileProject() {
             <div className="shadow-sm rounded-lg p-6 bg-white">
                 <div className="flex justify-between items-center mb-8">
                   <button
-                    className="py-[5px] px-[7px] rounded-full text-[11px] leading-[11px]"
+                    className="py-[5px] px-[7px] rounded-full text-11 leading-[13px]"
                     style={{ color: project.typeColor, backgroundColor: project.typeBg }}
                   >
                     {project.type}
@@ -35,18 +35,18 @@ function ProfileProject() {
                 </div>
                 <div className="flex justify-between items-center mb-8">
                   <div>
-                    <h3 className="text-[#252f4A] text-[13px] sm:text-[15px] leading-[15px] mb-1">{project.title}</h3>
-                    <div className="text-[#6B7177] text-sm flex items-center">
+                    <h3 className="text-[#252f4A] text-13 sm:text-[15px] leading-[15px] mb-1">{project.title}</h3>
+                    <div className="text-graytext text-sm flex items-center">
                       <span>Client: </span>
-                      <button className="text-[#6B7177] text-[11px] leading-[11px] py-[5px] px-[7px] bg-[#F1F2F3] ms-1">{project.client}</button>
+                      <button className="text-graytext text-11 leading-[13px] py-[5px] px-[7px] bg-[#F1F2F3] ms-1">{project.client}</button>
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-sm text-[#6B7177]">Started: <span className="text-xs text-[#25B865]">{project.started}</span></h3>
-                    <h3 className="text-sm text-[#6B7177]">Deadline: <span className="text-xs text-[#D13B4C]">{project.deadline}</span></h3>
+                    <h3 className="text-sm text-graytext">Started: <span className="text-xs text-[#25B865]">{project.started}</span></h3>
+                    <h3 className="text-sm text-graytext">Deadline: <span className="text-xs text-[#D13B4C]">{project.deadline}</span></h3>
                   </div>
                 </div>
-                <p className="mb-4 text-sm text-[#6B7177]">{project.description}</p>
+                <p className="mb-4 text-sm text-graytext">{project.description}</p>
                 <div className="mb-8">
                   <UseProgressBar
                     label="Inprogress"
@@ -70,10 +70,10 @@ function ProfileProject() {
                     ))}
                   </div>
                   <div className="flex gap-4">
-                    <div className="text-sm text-[#6B7177]">
+                    <div className="text-sm text-graytext">
                       <Paperclip className="inline-block rotate-[317deg]" size={12} /> {project.attachments}
                     </div>
-                    <div className="text-sm text-[#6B7177]">
+                    <div className="text-sm text-graytext">
                       <MessageSquareMore className="inline-block" size={12} /> {project.comments}
                     </div>
                   </div>

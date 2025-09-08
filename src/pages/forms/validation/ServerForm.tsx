@@ -196,7 +196,7 @@ function ServerForm() {
             checked={form.terms}
             onChange={handleChange}
             className={`appearance-none w-5 h-5 bg-[#EEF0F3] border-none rounded cursor-pointer 
-             checked:bg-[#3E97FF] checked:border-[#3E97FF] relative 
+             checked:bg-blue checked:border-blue relative 
              checked:after:content-['✔'] checked:after:absolute checked:after:text-white 
              checked:after:font-bold checked:after:text-[12px] checked:after:left-[5px] checked:after:top-[1px] me-2 ${errors.terms ? "border-[#d13b4c]" : ""}`}
           />
@@ -209,7 +209,7 @@ function ServerForm() {
 
       <button
         type="submit"
-        className="text-white bg-[#3E97FF] px-5 py-2 rounded text-sm"
+        className="text-white bg-blue px-5 py-2 rounded text-sm"
       >
         Submit form
       </button>

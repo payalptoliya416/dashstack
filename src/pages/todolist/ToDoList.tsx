@@ -38,7 +38,7 @@ function ToDoList() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           transition={{ duration: 0.2 }}
-          className="text-white text-sm font-bold bg-[#4379EE] rounded-md py-2 sm:py-[11px] px-[27px]"
+          className="text-white text-sm font-bold bg-[#4379EE] rounded-md py-2 sm:py-11 px-[27px]"
         >
           {showInput ? "Save" : "Add New Task"}
         </motion.button>
@@ -73,7 +73,7 @@ function ToDoList() {
             className={`flex justify-between items-center p-4 sm:p-8 rounded-xl border transition-all duration-200 ${
               task.completed
                 ? "bg-[#4379EE] text-white"
-                : "bg-[#FBFCFF] text-[#202224] border-[#D5D5D5]/60"
+                : "bg-[#FBFCFF] text-darkgray border-[#D5D5D5]/60"
             }`}
           >
             <div className="flex items-center gap-6">
@@ -95,7 +95,7 @@ function ToDoList() {
                 <motion.button
                  whileTap={{ scale: 0.9 }}
                   onClick={() => dispatch(deleteTask(task.id))}
-                  className="cursor-pointer p-1 rounded-xl bg-[#6C99FF] py-2 sm:py-[11px] px-4 sm:px-[22px] flex justify-center items-center"
+                  className="cursor-pointer p-1 rounded-xl bg-[#6C99FF] py-2 sm:py-11 px-4 sm:px-[22px] flex justify-center items-center"
                 >
                   <Trash2 className="text-white" strokeWidth={1} size={17} />
                 </motion.button>

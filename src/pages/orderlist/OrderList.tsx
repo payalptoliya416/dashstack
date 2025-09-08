@@ -138,11 +138,11 @@ const FilterButton: React.FC<FilterButtonProps> = ({
     <button
       type="button"
       onClick={onClick}
-      className={`text-[#202224] text-sm px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-[#979797] font-semibold w-full  whitespace-nowrap
+      className={`text-darkgray text-sm px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-[#979797] font-semibold w-full  whitespace-nowrap
                 ${
                   isActive
-                    ? "bg-[#4880FF] text-white shadow-md"
-                    : "hover:bg-[#4880FF] hover:text-white hover:border-[#4880FF]"
+                    ? "bg-blue-light text-white shadow-md"
+                    : "hover:bg-blue-light hover:text-white hover:border-blue-light"
                 }
                 ${className || ""}`}
     >
@@ -235,7 +235,7 @@ const DateFilter: React.FC<DateFilterProps> = ({
                     ${
                       isSelected
                         ? "bg-[#6085FF] text-white"
-                        : "text-[#202224]/50 hover:bg-gray-100"
+                        : "text-darkgray/50 hover:bg-gray-100"
                     }
                     ${isToday && !isSelected ? "border border-blue-500" : ""}
                 `}
@@ -268,7 +268,7 @@ const DateFilter: React.FC<DateFilterProps> = ({
   return (
     <div className="bg-white rounded-2xl shadow-lg w-[280px] sm:w-[387px]">
       <div className="flex justify-between items-center py-5 sm:py-[25px] px-5 sm:px-[31px] border-b border-[#979797]/50">
-        <span className="text-[#202224] text-[15px] font-bold">
+        <span className="text-darkgray text-[15px] font-bold">
           {monthNames[currentMonth]} {currentYear}
         </span>
         <div className="flex gap-3">
@@ -286,7 +286,7 @@ const DateFilter: React.FC<DateFilterProps> = ({
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-7 text-center text-xs font-medium text-[#202224] p-3 sm:p-6">
+      <div className="grid grid-cols-7 text-center text-xs font-medium text-darkgray p-3 sm:p-6">
         <div>S</div>
         <div>M</div>
         <div>T</div>
@@ -306,7 +306,7 @@ const DateFilter: React.FC<DateFilterProps> = ({
           onClick={() => {
             onSelectDate(selectedDates);
           }}
-          className=" text-xs font-bold py-[9px] px-6 sm:px-[33px] rounded-lg bg-[#4880FF] text-white"
+          className=" text-xs font-bold py-[9px] px-6 sm:px-[33px] rounded-lg bg-blue-light text-white"
         >
           Apply Now
         </button>
@@ -345,7 +345,7 @@ const OrderTypeFilter: React.FC<OrderTypeFilterProps> = ({
 
   return (
     <div className="bg-white rounded-2xl shadow-lg w-[180px] sm:w-[521px] ">
-      <h3 className="font-bold text-base sm:text-lg text-[#202224] px-3 sm:px-6 pt-3 sm:pt-6">
+      <h3 className="font-bold text-base sm:text-lg text-darkgray px-3 sm:px-6 pt-3 sm:pt-6">
         Select Order Type
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-3 sm:p-6 border-b border-[#979797]/50">
@@ -365,7 +365,7 @@ const OrderTypeFilter: React.FC<OrderTypeFilterProps> = ({
       <div className="text-center pb-3  sm:pb-6">
         <button
           onClick={() => onSelectTypes(currentSelectedTypes)}
-          className=" text-xs font-bold py-[9px] px-6 sm:px-[33px] rounded-lg bg-[#4880FF] text-white"
+          className=" text-xs font-bold py-[9px] px-6 sm:px-[33px] rounded-lg bg-blue-light text-white"
         >
           Apply Now
         </button>
@@ -401,7 +401,7 @@ const OrderStatusFilter: React.FC<OrderStatusFilterProps> = ({
 
   return (
     <div className="bg-white rounded-xl shadow-lg  w-[180px] sm:w-[521px]">
-      <h3 className="font-bold text-base sm:text-lg text-[#202224] px-3 sm:px-6 pt-3 sm:pt-6">
+      <h3 className="font-bold text-base sm:text-lg text-darkgray px-3 sm:px-6 pt-3 sm:pt-6">
         Select Order Status
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-3 sm:p-6 border-b border-[#979797]/50">
@@ -421,7 +421,7 @@ const OrderStatusFilter: React.FC<OrderStatusFilterProps> = ({
       <div className="text-center pb-3  sm:pb-6">
         <button
           onClick={() => onSelectStatuses(currentSelectedStatuses)}
-          className=" text-xs font-bold py-[9px] px-6 sm:px-[33px] rounded-lg bg-[#4880FF] text-white"
+          className=" text-xs font-bold py-[9px] px-6 sm:px-[33px] rounded-lg bg-blue-light text-white"
         >
           Apply Now
         </button>
@@ -494,7 +494,7 @@ function OrderList() {
           {({ open }) => (
             <>
               <Popover.Button
-                className={`flex items-center gap-2 px-4 py-1 sm:p-3 xl:p-6 border-r border-[#B9B9B9]/50 text-[#202224] text-sm font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-opacity-75 cursor-pointer
+                className={`flex items-center gap-2 px-4 py-1 sm:p-3 xl:p-6 border-r border-[#B9B9B9]/50 text-darkgray text-sm font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-opacity-75 cursor-pointer
                         ${open ? "bg-blue-50" : ""}`}
               >
                 Date

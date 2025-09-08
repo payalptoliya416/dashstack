@@ -7,9 +7,9 @@ function FaltIcon() {
     <>
       <div className="rounded-lg shadow-md border border-gray-200 bg-white mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 flex justify-between items-center ">
-          <h3 className="font-bold text-[17px] text-[#252f4a]"> Regular</h3>
+          <h3 className="font-bold text-[17px] text-darkgray"> Regular</h3>
             <a href="https://www.flaticon.com/icon-fonts-most-downloaded?weight=regular&type=uicon"  target="_blank"
-              className="text-[#3e97ff] text-sm flex justify-center items-center gap-2 font-bold">
+              className="text-blue-text text-sm flex justify-center items-center gap-2 font-bold">
               All Regular Icons <ArrowRight size={14} className="font-bold"/>
             </a>
         </div>
@@ -18,9 +18,9 @@ function FaltIcon() {
             {regularIcon.map((icon, index) => (
             <div
               key={index}
-              className="relative border border-gray-100 rounded py-9 sm:py-12 px-4 flex justify-center items-center group overflow-hidden" > <i className={`fi ${icon.name} text-2xl text-[#252f4a]`}></i>
+              className="relative border border-gray-100 rounded py-9 sm:py-12 px-4 flex justify-center items-center group overflow-hidden" > <i className={`fi ${icon.name} text-2xl text-darkgray`}></i>
               <div className="absolute inset-0 bg-[#eef0f3] flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 z-10">
-                <span className="text-[#252f4a] text-sm font-medium">
+                <span className="text-darkgray text-sm font-medium">
                   {icon.name}
                 </span>
               </div>
@@ -32,9 +32,9 @@ function FaltIcon() {
       {/* --- */}
       <div className="rounded-lg shadow-md border border-gray-200 bg-white mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 flex justify-between items-center ">
-          <h3 className="font-bold text-[17px] text-[#252f4a]"> Solid</h3>
+          <h3 className="font-bold text-[17px] text-darkgray"> Solid</h3>
             <a href="https://www.flaticon.com/icon-fonts-most-downloaded?weight=solid&type=uicon"  target="_blank"
-              className="text-[#3e97ff] text-sm flex justify-center items-center gap-2 font-bold">
+              className="text-blue-text text-sm flex justify-center items-center gap-2 font-bold">
               All Solid Icons <ArrowRight size={14} className="font-bold"/>
             </a>
         </div>
@@ -43,9 +43,9 @@ function FaltIcon() {
             {solidIcon.map((icon, index) => (
             <div
               key={index}
-              className="relative border border-gray-100 rounded py-9 sm:py-12 px-4 flex justify-center items-center group overflow-hidden" > <i className={`fi ${icon.name} text-2xl text-[#252f4a]`}></i>
+              className="relative border border-gray-100 rounded py-9 sm:py-12 px-4 flex justify-center items-center group overflow-hidden" > <i className={`fi ${icon.name} text-2xl text-darkgray`}></i>
               <div className="absolute inset-0 bg-[#eef0f3] flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 z-10">
-                <span className="text-[#252f4a] text-sm font-medium">
+                <span className="text-darkgray text-sm font-medium">
                   {icon.name}
                 </span>
               </div>
@@ -57,9 +57,9 @@ function FaltIcon() {
       {/* --- */}
       <div className="rounded-lg shadow-md border border-gray-200 bg-white mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 flex justify-between items-center ">
-          <h3 className="font-bold text-[17px] text-[#252f4a]"> Straight</h3>
+          <h3 className="font-bold text-[17px] text-darkgray"> Straight</h3>
             <a href="https://www.flaticon.com/icon-fonts-most-downloaded?corner=straight&type=uicon"  target="_blank"
-              className="text-[#3e97ff] text-sm flex justify-center items-center gap-2 font-bold">
+              className="text-blue-text text-sm flex justify-center items-center gap-2 font-bold">
               All Straight Icons <ArrowRight size={14} className="font-bold"/>
             </a>
         </div>
@@ -68,9 +68,9 @@ function FaltIcon() {
             {straightIcon.map((icon, index) => (
             <div
               key={index}
-              className="relative border border-gray-100 rounded py-9 sm:py-12 px-4 flex justify-center items-center group overflow-hidden" > <i className={`fi ${icon.name} text-2xl text-[#252f4a]`}></i>
+              className="relative border border-gray-100 rounded py-9 sm:py-12 px-4 flex justify-center items-center group overflow-hidden" > <i className={`fi ${icon.name} text-2xl text-darkgray`}></i>
               <div className="absolute inset-0 bg-[#eef0f3] flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 z-10">
-                <span className="text-[#252f4a] text-sm font-medium">
+                <span className="text-darkgray text-sm font-medium">
                   {icon.name}
                 </span>
               </div>
@@ -82,9 +82,9 @@ function FaltIcon() {
       {/* --- */}
       <div className="rounded-lg shadow-md border border-gray-200 bg-white mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 flex justify-between items-center ">
-          <h3 className="font-bold text-[17px] text-[#252f4a]"> Bold</h3>
+          <h3 className="font-bold text-[17px] text-darkgray"> Bold</h3>
             <a href="https://www.flaticon.com/icon-fonts-most-downloaded?weight=bold&type=uicon"  target="_blank"
-              className="text-[#3e97ff] text-sm flex justify-center items-center gap-2 font-bold">
+              className="text-blue-text text-sm flex justify-center items-center gap-2 font-bold">
               All Bold Icons <ArrowRight size={14} className="font-bold"/>
             </a>
         </div>
@@ -93,9 +93,9 @@ function FaltIcon() {
             {boldIcon.map((icon, index) => (
             <div
               key={index}
-              className="relative border border-gray-100 rounded py-9 sm:py-12 px-4 flex justify-center items-center group overflow-hidden" > <i className={`fi ${icon.name} text-2xl text-[#252f4a]`}></i>
+              className="relative border border-gray-100 rounded py-9 sm:py-12 px-4 flex justify-center items-center group overflow-hidden" > <i className={`fi ${icon.name} text-2xl text-darkgray`}></i>
               <div className="absolute inset-0 bg-[#eef0f3] flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 z-10">
-                <span className="text-[#252f4a] text-sm font-medium">
+                <span className="text-darkgray text-sm font-medium">
                   {icon.name}
                 </span>
               </div>
@@ -107,9 +107,9 @@ function FaltIcon() {
       {/* --- */}
       <div className="rounded-lg shadow-md border border-gray-200 bg-white mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 flex justify-between items-center ">
-          <h3 className="font-bold text-[17px] text-[#252f4a]"> Brand</h3>
+          <h3 className="font-bold text-[17px] text-darkgray"> Brand</h3>
             <a href="https://www.flaticon.com/icon-fonts-most-downloaded?brands=1&type=uicon"  target="_blank"
-              className="text-[#3e97ff] text-sm flex justify-center items-center gap-2 font-bold">
+              className="text-blue-text text-sm flex justify-center items-center gap-2 font-bold">
               All Brand Icons <ArrowRight size={14} className="font-bold"/>
             </a>
         </div>
@@ -118,9 +118,9 @@ function FaltIcon() {
             {brandIcon.map((icon, index) => (
             <div
               key={index}
-              className="relative border border-gray-100 rounded py-9 sm:py-12 px-4 flex justify-center items-center group overflow-hidden" > <i className={`fi ${icon.name} text-2xl text-[#252f4a]`}></i>
+              className="relative border border-gray-100 rounded py-9 sm:py-12 px-4 flex justify-center items-center group overflow-hidden" > <i className={`fi ${icon.name} text-2xl text-darkgray`}></i>
               <div className="absolute inset-0 bg-[#eef0f3] flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 z-10">
-                <span className="text-[#252f4a] text-sm font-medium">
+                <span className="text-darkgray text-sm font-medium">
                   {icon.name}
                 </span>
               </div>

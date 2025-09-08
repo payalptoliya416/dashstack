@@ -191,16 +191,16 @@ const ECommerce: FC = () => {
           <div className="px-6 py-4 rounded-lg shadow-sm flex items-center justify-between bg-white">
             <div>
               <h3 className="text-lg mb-2 font-semibold">Performance Goal</h3>
-              <p className="text-[13px] text-gray-600 mb-2">
+              <p className="text-13 text-gray-600 mb-2">
                 Monthly performance reports
               </p>
               <p className="text-sm text-gray-600 font-semibold mb-3 mt-16">
                 Sales:{" "}
-                <span className="text-lg text-[#3e97ff] font-bold ">
+                <span className="text-lg text-blue-text font-bold ">
                   $5.65K
                 </span>
               </p>
-              <button className="py-2 px-4 text-sm bg-[#4880FF] text-white rounded">
+              <button className="py-2 px-4 text-sm bg-blue-light text-white rounded">
                 View Reports
               </button>
             </div>
@@ -378,7 +378,7 @@ const ECommerce: FC = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold mb-2">$89,585</h4>
-                  <p className="text-[13px]">Store Sales</p>
+                  <p className="text-13">Store Sales</p>
                 </div>
               </div>
               <div className="mb-6 p-4 rounded-lg border border-gray-100 flex justify-between items-center">
@@ -387,7 +387,7 @@ const ECommerce: FC = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold mb-2">$42,455</h4>
-                  <p className="text-[13px]">Store Orders</p>
+                  <p className="text-13">Store Orders</p>
                 </div>
               </div>
               <div className="p-4 rounded-lg border border-gray-100 flex justify-between items-center">
@@ -396,7 +396,7 @@ const ECommerce: FC = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold mb-2">$38,625</h4>
-                  <p className="text-[13px]">Store Earnings</p>
+                  <p className="text-13">Store Earnings</p>
                 </div>
               </div>
             </div>
@@ -432,7 +432,7 @@ const ECommerce: FC = () => {
                     <p className="text-xs">2,456 Sales</p>
                   </div>
                 </div>
-                <div className="text-[#3E98FF] bg-[#ecf5ff] text-[11px] px-[7px] py-[5px] rounded font-bold">
+                <div className="text-[#3E98FF] bg-[#ecf5ff] text-11 px-[7px] py-[5px] rounded font-bold">
                   $5,458
                 </div>
               </div>
@@ -448,7 +448,7 @@ const ECommerce: FC = () => {
                     <p className="text-xs">Expected earningss</p>
                   </div>
                 </div>
-                <div className="text-[#25b865] bg-[#e9f8f0] text-[11px] px-[7px] py-[5px] rounded font-bold">
+                <div className="text-[#25b865] bg-[#e9f8f0] text-11 px-[7px] py-[5px] rounded font-bold">
                   $8,568
                 </div>
               </div>
@@ -462,7 +462,7 @@ const ECommerce: FC = () => {
                     <p className="text-xs">Overview of Profit</p>
                   </div>
                 </div>
-                <div className="text-[#d13b4c] bg-[#fbeff1] text-[11px] px-[7px] py-[5px] rounded font-bold">
+                <div className="text-[#d13b4c] bg-[#fbeff1] text-11 px-[7px] py-[5px] rounded font-bold">
                   $76,578
                 </div>
               </div>
@@ -498,7 +498,7 @@ const ECommerce: FC = () => {
                   <p className="text-xs">24 DEC, 2023</p>
                 </div>
               </div>
-              <div className="text-[#3E98FF] bg-[#ecf5ff] text-[11px] px-[7px] py-[5px] rounded font-bold">
+              <div className="text-[#3E98FF] bg-[#ecf5ff] text-11 px-[7px] py-[5px] rounded font-bold">
                 $250.0
               </div>
             </div>
@@ -512,7 +512,7 @@ const ECommerce: FC = () => {
                   <p className="text-xs">23 DEC, 2023</p>
                 </div>
               </div>
-              <div className="text-[#d13b4c] bg-[#fbeff1] text-[11px] px-[7px] py-[5px] rounded font-bold">
+              <div className="text-[#d13b4c] bg-[#fbeff1] text-11 px-[7px] py-[5px] rounded font-bold">
                 $220.00
               </div>
             </div>
@@ -528,7 +528,7 @@ const ECommerce: FC = () => {
                   <p className="text-xs">22 DEC, 2023</p>
                 </div>
               </div>
-              <div className="text-[#25b865] bg-[#e9f8f0] text-[11px] px-[7px] py-[5px] rounded font-bold">
+              <div className="text-[#25b865] bg-[#e9f8f0] text-11 px-[7px] py-[5px] rounded font-bold">
                 $180.00
               </div>
             </div>
@@ -542,7 +542,7 @@ const ECommerce: FC = () => {
                   <p className="text-xs">21 DEC, 2023</p>
                 </div>
               </div>
-              <div className="text-[#e49e3d] bg-[#fcf3e8] text-[11px] px-[7px] py-[5px] rounded font-bold">
+              <div className="text-[#e49e3d] bg-[#fcf3e8] text-11 px-[7px] py-[5px] rounded font-bold">
                 $150.00
               </div>
             </div>
@@ -556,7 +556,7 @@ const ECommerce: FC = () => {
                   <p className="text-xs">20 DEC, 2023</p>
                 </div>
               </div>
-              <div className="text-[#02a0e4] bg-[#e6f6fc] text-[11px] px-[7px] py-[5px] rounded font-bold">
+              <div className="text-[#02a0e4] bg-[#e6f6fc] text-11 px-[7px] py-[5px] rounded font-bold">
                 $200.00
               </div>
             </div>

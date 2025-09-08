@@ -10,7 +10,7 @@ function Confirmation() {
     MySwal.fire({
         html: `
         <div class="text-center">
-            <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">
+            <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">
           Are you sure?
             </h1>
             <p class='text-sm'>You won't be able to revert this!</p>
@@ -25,7 +25,7 @@ function Confirmation() {
         const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
         if (confirm)
           confirm.className =
-            "bg-[#3E97FF] text-white px-4 py-2 rounded text-sm font-semibold";
+            "bg-blue text-white px-4 py-2 rounded text-sm font-semibold";
 
         const cancel = document.querySelector(".swal2-cancel") as HTMLButtonElement;
         if (cancel)
@@ -37,7 +37,7 @@ function Confirmation() {
         MySwal.fire({
           html: `
         <div class="text-center">
-            <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">
+            <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">
         Deleted!
             </h1>
             <p class='text-sm'>Your file has been deleted.</p>
@@ -50,7 +50,7 @@ function Confirmation() {
             const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
             if (confirm)
               confirm.className =
-                "bg-[#3E97FF] text-white px-4 py-2 rounded text-sm font-semibold";
+                "bg-blue text-white px-4 py-2 rounded text-sm font-semibold";
           },
         });
       }
@@ -61,7 +61,7 @@ function Confirmation() {
    MySwal.fire({
       html: `
         <div class="text-center">
-          <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">
+          <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">
             Are you sure?
           </h1>
           <p class='text-sm'>You won't be able to revert this!</p>
@@ -77,7 +77,7 @@ function Confirmation() {
         const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
         if (confirm)
           confirm.className =
-            "bg-[#3E97FF] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold ms-2";
+            "bg-blue hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold ms-2";
 
         const cancel = document.querySelector(".swal2-cancel") as HTMLButtonElement;
         if (cancel)
@@ -89,7 +89,7 @@ function Confirmation() {
         MySwal.fire({
           html: `
             <div class="text-center">
-              <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">
+              <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">
                 Deleted!
               </h1>
               <p class='text-sm'>Your file has been deleted.</p>
@@ -102,14 +102,14 @@ function Confirmation() {
             const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
             if (confirm)
               confirm.className =
-                "bg-[#3E97FF] hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold";
+                "bg-blue hover:bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold";
           },
         });
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         MySwal.fire({
           html: `
             <div class="text-center">
-              <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">
+              <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">
                 Cancelled
               </h1>
               <p class='text-sm'>Your imaginary file is safe :)</p>
@@ -122,7 +122,7 @@ function Confirmation() {
             const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
             if (confirm)
               confirm.className =
-                "bg-[#3E97FF] hover:bg-gray-600 text-white px-4 py-2 rounded text-sm font-semibold";
+                "bg-blue hover:bg-gray-600 text-white px-4 py-2 rounded text-sm font-semibold";
           },
         });
       }
@@ -136,7 +136,7 @@ MySwal.fire({
       position: "top-end",
       icon: "success",
       html: `
-              <h1 class="text-sm font-bold text-[#252f4a]">
+              <h1 class="text-sm font-bold text-darkgray">
                Signed in successfully
               </h1>
           `,
@@ -158,9 +158,9 @@ MySwal.fire({
   return (
     <>
     <div className="flex gap-1 items-center flex-wrap">
-    <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleALert}>Alert </button>
-    <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleConfirm}>Confirm</button>
-    <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleMixin}>Mixin </button>
+    <button className="px-5 py-2 rounded bg-blue text-white text-sm font-semibold" onClick={handleALert}>Alert </button>
+    <button className="px-5 py-2 rounded bg-blue text-white text-sm font-semibold" onClick={handleConfirm}>Confirm</button>
+    <button className="px-5 py-2 rounded bg-blue text-white text-sm font-semibold" onClick={handleMixin}>Mixin </button>
     </div>
     </>
   )

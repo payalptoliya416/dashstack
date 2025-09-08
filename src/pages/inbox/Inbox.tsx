@@ -387,12 +387,12 @@ const getPageButtons = () => {
               <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-[#4880FF] text-white py-2 xl:py-3 xl:w-full rounded-md xl:rounded-xl xl:mb-6 px-4 xl:px-6 text-sm order-1"
+              className="bg-blue-light text-white py-2 xl:py-3 xl:w-full rounded-md xl:rounded-xl xl:mb-6 px-4 xl:px-6 text-sm order-1"
             >
               + Compose
             </motion.button>
             <div className="xl:mb-8 order-3 sm:order-2 mx-4 sm:mx-0">
-            <h3 className="text-[#202224] xl:mb-4 font-bold text-base hidden xl:block">My Email</h3>
+            <h3 className="text-darkgray xl:mb-4 font-bold text-base hidden xl:block">My Email</h3>
             <div className="hidden xl:block">
               {mailItems.map((item, index) => (
                 <SidebarItem
@@ -405,7 +405,7 @@ const getPageButtons = () => {
             </div>
             <div className="xl:hidden">
               <Popover className="relative">
-                <PopoverButton className="text-[#202224] font-bold text-base focus:outline-none">
+                <PopoverButton className="text-darkgray font-bold text-base focus:outline-none">
                     My Email
                 </PopoverButton>
 
@@ -426,7 +426,7 @@ const getPageButtons = () => {
             </div>
             </div>
             <div className="order-4 sm:order-3 mx-4 sm:mx-0">
-            <h3 className="text-[#202224] mb-8 font-bold text-base hidden xl:block">Label</h3>
+            <h3 className="text-darkgray mb-8 font-bold text-base hidden xl:block">Label</h3>
 
             <div className="hidden xl:flex gap-6 flex-col mb-10">
             {checkboxData.map((item) => (
@@ -441,7 +441,7 @@ const getPageButtons = () => {
 
             <div className="xl:hidden">
               <Popover className="relative">
-                <PopoverButton className="text-[#202224] font-bold text-base focus:outline-none">
+                <PopoverButton className="text-darkgray font-bold text-base focus:outline-none">
                   Select Labels
                 </PopoverButton>
 
@@ -455,7 +455,7 @@ const getPageButtons = () => {
             </div>
             </div>
             <div className="order-5 sm:order-4 mx-4 sm:mx-0">
-              <h3 className="text-[#202224] mb-8 font-bold text-base hidden xl:block">Metting</h3>
+              <h3 className="text-darkgray mb-8 font-bold text-base hidden xl:block">Metting</h3>
               <div className="hidden xl:block">
               <div className="flex items-center gap-3 text-sm font-semibold px-4 mb-7">
                 <Video size={17}/> New meeting
@@ -466,7 +466,7 @@ const getPageButtons = () => {
               </div>
             <div className="xl:hidden">
               <Popover className="relative">
-                <PopoverButton className="text-[#202224] font-bold text-base focus:outline-none">
+                <PopoverButton className="text-darkgray font-bold text-base focus:outline-none">
                    Metting
                 </PopoverButton>
                 <PopoverPanel
@@ -483,8 +483,8 @@ const getPageButtons = () => {
               </Popover>
             </div>
             </div>
-            <div className="flex items-center gap-[14px] text-[#202224] opacity-[60%] font-semibold text-sm px-4 order-2 sm:order-5">
-              <Plus size={18} className="text-[#202224]" /> Create New Label
+            <div className="flex items-center gap-[14px] text-darkgray opacity-[60%] font-semibold text-sm px-4 order-2 sm:order-5">
+              <Plus size={18} className="text-darkgray" /> Create New Label
             </div>
           </div>
           <div className="col-span-12 xl:col-span-9 h-full">
@@ -499,13 +499,13 @@ const getPageButtons = () => {
                     activeTab === "Sent" ? "hidden" : ""
                   }`}
                 >
-                  <Search className="text-[#202224] w-5 h-5 mr-[13px]" />
+                  <Search className="text-darkgray w-5 h-5 mr-13" />
                   <input
                     type="text"
                     placeholder="Search"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="bg-transparent focus:outline-none w-full text-sm text-gray-700 placeholder-[#202224]"
+                    className="bg-transparent focus:outline-none w-full text-sm text-gray-700 placeholder-darkgray"
                   />
                 </div>
                 <div
@@ -516,7 +516,7 @@ const getPageButtons = () => {
                   <div className="w-6 h-6 rounded-md bg-[#F5F5F5] flex justify-center items-center">
                     <ChevronLeft size={17} />
                   </div>
-                  <h3 className="text-[#202224] text-xl font-bold">
+                  <h3 className="text-darkgray text-xl font-bold">
                     Minerva Barnett
                   </h3>
                   <button className="text-xs px-[10px] py-1 bg-[#D456FD]/20 text-[#D456FD] rounded-md">
@@ -557,7 +557,7 @@ const getPageButtons = () => {
                 activeTab === "Sent" ? "hidden" : ""
               }`}
             >
-              <h3 className="text-[#202224] text-opacity-[60%] text-sm">
+              <h3 className="text-darkgray text-opacity-[60%] text-sm">
                 Showing {filteredMessages.length === 0 ? 0 : startIndex + 1}–
                 {Math.min(startIndex + ITEMS_PER_PAGE, filteredMessages.length)}{" "}
                 of {filteredMessages.length}

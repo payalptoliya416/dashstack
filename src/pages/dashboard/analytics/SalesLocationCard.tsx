@@ -76,7 +76,7 @@
 //           <span className="text-xl font-bold">
 //             ${totalSales.toLocaleString()}
 //           </span>
-//           <span className="text-green-500 text-[11px] font-medium">
+//           <span className="text-green-500 text-11 font-medium">
 //             <TrendingUp className="inline-block" size={13} /> 12.68%
 //           </span>
 //         </div>
@@ -172,7 +172,7 @@ export const SalesLocationCard: React.FC = () => {
       <div className="px-4 mt-4">
         <div className="flex items-center gap-2">
           <span className="text-xl font-bold">${totalSales.toLocaleString()}</span>
-          <span className="text-green-500 text-[11px] font-medium">
+          <span className="text-green-500 text-11 font-medium">
             <TrendingUp className="inline-block" size={13} /> 12.68%
           </span>
         </div>

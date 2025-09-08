@@ -62,7 +62,7 @@ function PagesLayout() {
         )}
         <Outlet />
         <div className="py-13 sm:py-16 px-3 sm:px-8">
-          <div className="h-[2px] bg-[#3e97ff] w-12 mb-5" />
+          <div className="h-[2px] bg-blue-text w-12 mb-5" />
           <h3 className="font-bold mb-2 text-[#252f4A] text-sm">
             WRAPCODERS INC.
           </h3>
@@ -80,7 +80,7 @@ function PagesLayout() {
                         to={tab.path}
                         className={({ isActive }) =>
                         `text-sm font-semibold ${
-                            isActive ? "text-[#3e97ff]" : "text-[#252f4a]"
+                            isActive ? "text-blue-text" : "text-darkgray"
                         }`
                         }
                     >
@@ -90,16 +90,16 @@ function PagesLayout() {
                 ))}
             </ul>
             <ul className="flex gap-5 items-center">
-              <li className="text-sm font-semibold text-[#252f4a]">
+              <li className="text-sm font-semibold text-darkgray">
                 <Facebook size={16} />
               </li>
-              <li className="text-sm font-semibold text-[#252f4a]">
+              <li className="text-sm font-semibold text-darkgray">
                 <Twitter size={16} />
               </li>
-              <li className="text-sm font-semibold text-[#252f4a]">
+              <li className="text-sm font-semibold text-darkgray">
                 <Instagram size={16} />
               </li>
-              <li className="text-sm font-semibold text-[#252f4a]">
+              <li className="text-sm font-semibold text-darkgray">
                 <Linkedin size={16} />
               </li>
             </ul>

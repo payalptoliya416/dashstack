@@ -46,49 +46,49 @@ function Elements() {
         <div className="p-6">
           <form action="">
            <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Basic Input</label>
-            <input type="text"  className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]" />
+             <label className="text-sm text-lightgray mb-2 block">Basic Input</label>
+            <input type="text"  className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray" />
            </div>
            <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Input with Placeholder</label>
-            <input type="text"  className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]" placeholder="Placeholder"/>
+             <label className="text-sm text-lightgray mb-2 block">Input with Placeholder</label>
+            <input type="text"  className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray" placeholder="Placeholder"/>
            </div>
            <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Input with Value</label>
-            <input type="text" value="Input with value" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]"/>
+             <label className="text-sm text-lightgray mb-2 block">Input with Value</label>
+            <input type="text" value="Input with value" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray"/>
            </div>
            <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Disabled Input</label>
-            <input type="text" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 disabled:bg-[#EEF0F3] text-[#4B5675]" placeholder="Disabled input" disabled/>
+             <label className="text-sm text-lightgray mb-2 block">Disabled Input</label>
+            <input type="text" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 disabled:bg-[#EEF0F3] text-lightgray" placeholder="Disabled input" disabled/>
            </div>
            <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Input Date</label>
-            <input type="date" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]"/>
+             <label className="text-sm text-lightgray mb-2 block">Input Date</label>
+            <input type="date" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray"/>
            </div>
            <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Input Time</label>
-            <input type="time" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]"/>
+             <label className="text-sm text-lightgray mb-2 block">Input Time</label>
+            <input type="time" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray"/>
            </div>
            <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Example Textarea</label>
-            <textarea rows={3} className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]"/>
+             <label className="text-sm text-lightgray mb-2 block">Example Textarea</label>
+            <textarea rows={3} className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray"/>
            </div>
            <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Form Text</label>
-            <input type="password" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]"/>
+             <label className="text-sm text-lightgray mb-2 block">Form Text</label>
+            <input type="password" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray"/>
             <p className="text-xs text-[#4b5675] mt-1">Must be 8-20 characters long.</p>
            </div>
            <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Color Picker</label>
-            <input type="color" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]"/>
+             <label className="text-sm text-lightgray mb-2 block">Color Picker</label>
+            <input type="color" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray"/>
            </div>
            <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Input Border Style</label>
-            <input type="text" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]" placeholder="Enter your name"/>
+             <label className="text-sm text-lightgray mb-2 block">Input Border Style</label>
+            <input type="text" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray" placeholder="Enter your name"/>
            </div>
            <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Datalist Example</label>
-            <input list="datalistOptions" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]" placeholder="Search your country..."/>
+             <label className="text-sm text-lightgray mb-2 block">Datalist Example</label>
+            <input list="datalistOptions" className="border rounded border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray" placeholder="Search your country..."/>
             <datalist id="datalistOptions">
               <option value="Switzerland"></option>
               <option value="New York"></option>
@@ -100,17 +100,17 @@ function Elements() {
               </datalist>
            </div>
              <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Rounded Input</label>
-            <input type="text" className="border rounded-full border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]" placeholder="Enter your name"/>
+             <label className="text-sm text-lightgray mb-2 block">Rounded Input</label>
+            <input type="text" className="border rounded-full border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray" placeholder="Enter your name"/>
            </div>
              <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Floating Input</label>
+             <label className="text-sm text-lightgray mb-2 block">Floating Input</label>
           <div className="relative w-full">
             <input
               type="password"
               id="floating-input"
               placeholder=" " 
-              className="peer block w-full rounded border border-gray-100 px-3 py-4 text-xs  placeholder-transparent focus:border-blue-500 focus:ring focus:ring-blue-200 focus:outline-none text-[#4B5675]"
+              className="peer block w-full rounded border border-gray-100 px-3 py-4 text-xs  placeholder-transparent focus:border-blue-500 focus:ring focus:ring-blue-200 focus:outline-none text-lightgray"
             />
             <label
               htmlFor="floating-input"
@@ -121,30 +121,30 @@ function Elements() {
           </div>
            </div>
             <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Sizing</label>
-            <input type="text" className="border rounded-md border-gray-100 py-[14px] px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675] mb-3" placeholder="Large Text"/>
-            <input type="text" className="border rounded-md border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675] mb-3" placeholder="Normal Text"/>
-            <input type="text" className="border rounded-md border-gray-100 py-1 px-2 w-full text-xs focus:outline-blue-500 text-[#4B5675] placeholder:text-xs" placeholder="Normal Text"/>
+             <label className="text-sm text-lightgray mb-2 block">Sizing</label>
+            <input type="text" className="border rounded-md border-gray-100 py-[14px] px-3 w-full text-sm focus:outline-blue-500 text-lightgray mb-3" placeholder="Large Text"/>
+            <input type="text" className="border rounded-md border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray mb-3" placeholder="Normal Text"/>
+            <input type="text" className="border rounded-md border-gray-100 py-1 px-2 w-full text-xs focus:outline-blue-500 text-lightgray placeholder:text-xs" placeholder="Normal Text"/>
            </div>
             <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Default file input example</label>
-            <input type="file" className="border rounded-md border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]"/>
+             <label className="text-sm text-lightgray mb-2 block">Default file input example</label>
+            <input type="file" className="border rounded-md border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray"/>
            </div>
             <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Disabled file input example</label>
-            <input type="file" className="border rounded-md border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675] disabled:bg-[#EEF0F3]" disabled/>
+             <label className="text-sm text-lightgray mb-2 block">Disabled file input example</label>
+            <input type="file" className="border rounded-md border-gray-100 py-2 px-3 w-full text-sm focus:outline-blue-500 text-lightgray disabled:bg-[#EEF0F3]" disabled/>
            </div>
             <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Small file input example</label>
-            <input type="file" className="border rounded-md border-gray-100 py-1 px-3 w-full text-xs focus:outline-blue-500 text-[#4B5675]"/>
+             <label className="text-sm text-lightgray mb-2 block">Small file input example</label>
+            <input type="file" className="border rounded-md border-gray-100 py-1 px-3 w-full text-xs focus:outline-blue-500 text-lightgray"/>
            </div>
             <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Large file input example</label>
-            <input type="file" className="border rounded-md border-gray-100 py-[14px] px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]"/>
+             <label className="text-sm text-lightgray mb-2 block">Large file input example</label>
+            <input type="file" className="border rounded-md border-gray-100 py-[14px] px-3 w-full text-sm focus:outline-blue-500 text-lightgray"/>
            </div>
             <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Form Select</label>
-            <select name="" id="" className="border rounded-md border-gray-100 py-[14px] px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]">
+             <label className="text-sm text-lightgray mb-2 block">Form Select</label>
+            <select name="" id="" className="border rounded-md border-gray-100 py-[14px] px-3 w-full text-sm focus:outline-blue-500 text-lightgray">
               <option value="">Open this select menu</option>
               <option value="one">One</option>
               <option value="two">Two</option>
@@ -152,8 +152,8 @@ function Elements() {
             </select>
            </div>
             <div className="mb-12">
-             <label className="text-sm text-[#4B5675] mb-2 block">Solid Checkbox</label>
-            <select name="" id="" className="border rounded-md border-gray-100 py-[14px] px-3 w-full text-sm focus:outline-blue-500 text-[#4B5675]">
+             <label className="text-sm text-lightgray mb-2 block">Solid Checkbox</label>
+            <select name="" id="" className="border rounded-md border-gray-100 py-[14px] px-3 w-full text-sm focus:outline-blue-500 text-lightgray">
               <option value="">Open this select menu</option>
               <option value="one">One</option>
               <option value="two">Two</option>

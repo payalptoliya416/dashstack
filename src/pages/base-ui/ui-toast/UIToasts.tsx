@@ -38,14 +38,14 @@ function UIToasts() {
              <div className="p-4 flex justify-between items-center border-b border-gray-100 gap-5 sm:gap-2">
                   <div className="flex gap-3 sm:gap-5 items-center">
                     <img src="/images/bell.svg" alt="" />
-                    <h3 className="font-bold text-[#252f4a]">Toast Notification</h3>
+                    <h3 className="font-bold text-darkgray">Toast Notification</h3>
                   </div>
                   <div className="flex gap-3 sm:gap-5 items-center">
                     <p className="text-[#7B7177] text-xs">11 mins ago</p>
                     <X className="text-[#6c757d]/40"/>
                   </div>
              </div>
-             <div className="p-4 text-sm text-[#4B5675]">
+             <div className="p-4 text-sm text-lightgray">
               Hello, world! This is a toast message.
              </div>
           </div>
@@ -57,7 +57,7 @@ function UIToasts() {
           Live
         </div>
         <div className="p-6">
-         <button className="py-2 px-5 rounded bg-[#3e97ff] text-white text-sm" onClick={handleLIve}>Show Live Toast</button>
+         <button className="py-2 px-5 rounded bg-blue-text text-white text-sm" onClick={handleLIve}>Show Live Toast</button>
         </div>
       </div>
 
@@ -70,14 +70,14 @@ function UIToasts() {
              <div className="p-4 flex justify-between items-center border-b border-gray-100 gap-5 sm:gap-2">
                   <div className="flex gap-3 sm:gap-5 items-center">
                     <img src="/images/bell.svg" alt="" />
-                    <h3 className="font-bold text-[#252f4a]">Toast Notification</h3>
+                    <h3 className="font-bold text-darkgray">Toast Notification</h3>
                   </div>
                   <div className="flex gap-3 sm:gap-5 items-center">
                     <p className="text-[#7B7177] text-xs">just now</p>
                     <X className="text-[#6c757d]/40"/>
                   </div>
              </div>
-             <div className="p-4 text-sm text-[#4B5675]">
+             <div className="p-4 text-sm text-lightgray">
            See? Just like this.
              </div>
           </div>
@@ -85,14 +85,14 @@ function UIToasts() {
              <div className="p-4 flex justify-between items-center border-b border-gray-100 gap-5 sm:gap-2">
                   <div className="flex gap-3 sm:gap-5 items-center">
                     <img src="/images/bell.svg" alt="" />
-                    <h3 className="font-bold text-[#252f4a]">Toast Notification</h3>
+                    <h3 className="font-bold text-darkgray">Toast Notification</h3>
                   </div>
                   <div className="flex gap-3 sm:gap-5 items-center">
                     <p className="text-[#7B7177] text-xs">2 seconds ago</p>
                     <X className="text-[#6c757d]/40"/>
                   </div>
              </div>
-             <div className="p-4 text-sm text-[#4B5675]">
+             <div className="p-4 text-sm text-lightgray">
              Heads up, toasts will stack automatically
              </div>
           </div>
@@ -104,7 +104,7 @@ function UIToasts() {
           solidColor
         </div>
         <div className="p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          <div className="bg-[#3e97ff] max-w-[348px] rounded shadow-sm mb-0 md:mb-4">
+          <div className="bg-blue-text max-w-[348px] rounded shadow-sm mb-0 md:mb-4">
              <div className="p-4 flex justify-between items-center">
                   <div className="flex gap-5 items-center">
                     <img src="/images/bell.svg" alt="" />
@@ -170,7 +170,7 @@ function UIToasts() {
              <div className="p-4 flex justify-between items-center">
                   <div className="flex gap-5 items-center">
                     <img src="/images/bell.svg" alt="" />
-                    <h3 className="font-bold text-[#3e97ff]">Toast Notification</h3>
+                    <h3 className="font-bold text-blue-text">Toast Notification</h3>
                   </div>
                    <X className="text-[#6c757d]/40"/>
              </div>

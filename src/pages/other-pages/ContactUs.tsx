@@ -37,21 +37,21 @@ function ContactUs() {
     <motion.div {...usePageAnimation()}  className="overflow-hidden">
      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7 py-10 sm:py-16 px-8">
          <div className="shadow-sm rounded-md p-6 flex flex-col text-center">
-               <MessageSquareMore className="text-[#3e97ff] mb-4 mx-auto" size={30}/>
+               <MessageSquareMore className="text-blue-text mb-4 mx-auto" size={30}/>
                <h2 className="text-[17px] leading-[17px] text-[#252D4A] mb-2 font-semibold">Chat to sales</h2>
-               <p className="text-[#4B5675] text-sm mb-4">Speaks to our friendly teams.</p>
+               <p className="text-lightgray text-sm mb-4">Speaks to our friendly teams.</p>
                <a href="javascript:voide()" className="text-sm font-semibold">support@wrapcoders.com</a>
          </div>
          <div className="shadow-sm rounded-md p-6 flex flex-col text-center">
-               <Map className="text-[#3e97ff] mb-4 mx-auto" size={30}/>
+               <Map className="text-blue-text mb-4 mx-auto" size={30}/>
                <h2 className="text-[17px] leading-[17px] text-[#252D4A] mb-2 font-semibold">Visit our store</h2>
-               <p className="text-[#4B5675] text-sm mb-4">Visit our office HQ.</p>
+               <p className="text-lightgray text-sm mb-4">Visit our office HQ.</p>
                <a href="javascript:voide()" className="text-sm font-semibold">Smith Street, California, USA</a>
          </div>
          <div className="shadow-sm rounded-md p-6 flex flex-col text-center">
-               <PhoneCall className="text-[#3e97ff] mb-4 mx-auto" size={30}/>
+               <PhoneCall className="text-blue-text mb-4 mx-auto" size={30}/>
                <h2 className="text-[17px] leading-[17px] text-[#252D4A] mb-2 font-semibold">Call now us</h2>
-               <p className="text-[#4B5675] text-sm mb-4">Mon-Fri from 10am to 6pm.</p>
+               <p className="text-lightgray text-sm mb-4">Mon-Fri from 10am to 6pm.</p>
                <a href="javascript:voide()" className="text-sm font-semibold">+1(375)-98745-632</a>
          </div>
     </div> 
@@ -59,14 +59,14 @@ function ContactUs() {
     <form className="p-6 sm:p-9 md:p-16 rounded-2xl shadow-sm col-span-12 xl:col-span-6 xl:col-start-4 bg-[#F1F2F3]"
       onSubmit={handleSubmit}
     >
-      <h3 className="text-2xl text-[#252f4a] font-bold mb-2">Get in touch</h3>
-      <p className="text-[#4B5675] text-sm mb-4">
+      <h3 className="text-2xl text-darkgray font-bold mb-2">Get in touch</h3>
+      <p className="text-lightgray text-sm mb-4">
         Our friendly team would love to hear from you.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mb-5 md:mb-8">
         <div>
-          <label htmlFor="firstName" className="text-[13px] text-[#4b5675] block mb-2">
+          <label htmlFor="firstName" className="text-13 text-[#4b5675] block mb-2">
             Firstname
           </label>
           <input
@@ -80,7 +80,7 @@ function ContactUs() {
         </div>
 
         <div>
-          <label htmlFor="lastName" className="text-[13px] text-[#4b5675] block mb-2">
+          <label htmlFor="lastName" className="text-13 text-[#4b5675] block mb-2">
             Lastname
           </label>
           <input
@@ -94,7 +94,7 @@ function ContactUs() {
         </div>
 
         <div>
-          <label htmlFor="email" className="text-[13px] text-[#4b5675] block mb-2">
+          <label htmlFor="email" className="text-13 text-[#4b5675] block mb-2">
             Email
           </label>
           <input
@@ -108,7 +108,7 @@ function ContactUs() {
         </div>
 
         <div>
-          <label htmlFor="phone" className="text-[13px] text-[#4b5675] block mb-2">
+          <label htmlFor="phone" className="text-13 text-[#4b5675] block mb-2">
             Phone
           </label>
           <input
@@ -123,7 +123,7 @@ function ContactUs() {
       </div>
 
       <div className="mb-5 md:mb-8">
-        <label htmlFor="subject" className="text-[13px] text-[#4b5675] block mb-2">
+        <label htmlFor="subject" className="text-13 text-[#4b5675] block mb-2">
           Subject
         </label>
         <input
@@ -137,7 +137,7 @@ function ContactUs() {
       </div>
 
       <div className="mb-5 md:mb-8">
-        <label htmlFor="message" className="text-[13px] text-[#4b5675] block mb-2">
+        <label htmlFor="message" className="text-13 text-[#4b5675] block mb-2">
           Message
         </label>
         <textarea
@@ -151,7 +151,7 @@ function ContactUs() {
 
       <button
         type="submit"
-        className="bg-[#3e97ff]/60 py-[10px] px-5 rounded w-full text-white text-sm"
+        className="bg-blue-text/60 py-[10px] px-5 rounded w-full text-white text-sm"
       >
         Send Message
       </button>

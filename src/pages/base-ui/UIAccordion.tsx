@@ -73,7 +73,7 @@ const accordionOptions: Option[] = [
         Please visit:{" "}
         <a
           href="https://react-bootstrap.netlify.app/docs/components/accordion"
-          className="text-[#252f4a] font-bold"
+          className="text-darkgray font-bold"
           target="_blank"
           rel="noreferrer"
         >
@@ -136,7 +136,7 @@ function Accordion({ title, items, variant }: AccordionProps) {
               <div key={item.id}>
                 <button
                   onClick={() => toggleItem(index)}
-                  className={`px-6 py-4 cursor-pointer text-[#4B5675] ${
+                  className={`px-6 py-4 cursor-pointer text-lightgray ${
                     isOpen ? "bg-[#eef0f3]" : "bg-[#faf9fa]"
                   } text-sm font-bold w-full flex ${
                     variant === "reversed" || variant === "revIcon"

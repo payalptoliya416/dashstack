@@ -35,7 +35,7 @@ function PreviewsZone() {
     MySwal.fire({
       html: `
         <div class="text-center">
-            <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">Are you sure?</h1>
+            <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">Are you sure?</h1>
             <p class='text-sm'>You won't be able to revert this!</p>
         </div>
       `,
@@ -50,7 +50,7 @@ function PreviewsZone() {
         ) as HTMLButtonElement;
         if (confirm)
           confirm.className =
-            "bg-[#3E97FF] text-white px-4 py-2 rounded text-sm font-semibold";
+            "bg-blue text-white px-4 py-2 rounded text-sm font-semibold";
 
         const cancel = document.querySelector(
           ".swal2-cancel"
@@ -65,7 +65,7 @@ function PreviewsZone() {
         MySwal.fire({
           html: `
             <div class="text-center">
-              <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">Deleted!</h1>
+              <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">Deleted!</h1>
               <p class='text-sm'>Your file has been deleted.</p>
             </div>
           `,
@@ -78,7 +78,7 @@ function PreviewsZone() {
             ) as HTMLButtonElement;
             if (confirm)
               confirm.className =
-                "bg-[#3E97FF] text-white px-4 py-2 rounded text-sm font-semibold";
+                "bg-blue text-white px-4 py-2 rounded text-sm font-semibold";
           },
         });
       }
@@ -98,10 +98,10 @@ function PreviewsZone() {
         <div className="w-12 sm:w-[60px] h-12 sm:h-[60px] rounded-full bg-[#f1f2f3] border border-gray-300 flex justify-center items-center mx-auto mb-4">
           <Upload size={20} />
         </div>
-        <h3 className="text-[#252f4a] text-base mb-2 font-bold">
+        <h3 className="text-darkgray text-base mb-2 font-bold">
           Drop files here or click to upload.
         </h3>
-        <p className="text-[#6B7177] text-sm">
+        <p className="text-graytext text-sm">
           (This is just a demo drop zone. Selected files are not actually
           uploaded.)
         </p>

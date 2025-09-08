@@ -77,7 +77,7 @@ const NotificationPopover: React.FC = () => {
                <a href="javascript:void(0)"  className="py-3 pl-5 pr-3 flex gap-3 items-center">
                 <img src={item.icon} alt={item.title} />
                 <div>
-                  <h4 className="text-sm font-semibold mb-[1px] text-[#202224]">
+                  <h4 className="text-sm font-semibold mb-[1px] text-darkgray">
                     {item.title}
                   </h4>
                   <p className="text-[#B5B5B5] font-semibold text-xs">{item.message}</p>
@@ -86,7 +86,7 @@ const NotificationPopover: React.FC = () => {
             ))}
           </ul>
           <p
-            className="text-[#A8A8A8] py-[14px] text-center text-[13px] leading-[14px] cursor-pointer hover:underline"
+            className="text-[#A8A8A8] py-[14px] text-center text-13 leading-[14px] cursor-pointer hover:underline"
             onClick={loadMoreNotifications}
           >
             See all notifications

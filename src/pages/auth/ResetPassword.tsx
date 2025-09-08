@@ -65,10 +65,10 @@ function ResetPassword() {
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="bg-white py-14 px-6 sm:px-10 md:py-[90px] md:px-[57px] rounded-xl w-full max-w-[500px] md:max-w-[630px] shadow-lg"
       >
-        <h1 className="text-2xl md:text-[32px] font-bold text-[#202224] text-center mb-4">
+        <h1 className="text-2xl md:text-[32px] font-bold text-darkgray text-center mb-4">
           Reset Password
         </h1>
-        <p className="text-[#202224]/80 text-center mb-8 sm:text-lg text-sm">
+        <p className="text-darkgray/80 text-center mb-8 sm:text-lg text-sm">
           Set a new password for <span className="font-semibold">{email}</span>
         </p>
 
@@ -84,7 +84,7 @@ function ResetPassword() {
         )}
 
         <form onSubmit={handleSubmit}>
-          <label className="block font-semibold text-base text-[#202224]/80 mb-2">
+          <label className="block font-semibold text-base text-darkgray/80 mb-2">
             New Password:
           </label>
           <input
@@ -96,10 +96,10 @@ function ResetPassword() {
               setError("");
               setSuccess("");
             }}
-            className="bg-[#F1F4F9] rounded-md py-3 px-4 text-[#202224] w-full mb-6"
+            className="bg-[#F1F4F9] rounded-md py-3 px-4 text-darkgray w-full mb-6"
           />
 
-          <label className="block font-semibold text-base text-[#202224]/80 mb-2">
+          <label className="block font-semibold text-base text-darkgray/80 mb-2">
             Confirm Password:
           </label>
           <input
@@ -111,12 +111,12 @@ function ResetPassword() {
               setError("");
               setSuccess("");
             }}
-            className="bg-[#F1F4F9] rounded-md py-3 px-4 text-[#202224] w-full mb-6"
+            className="bg-[#F1F4F9] rounded-md py-3 px-4 text-darkgray w-full mb-6"
           />
 
           <button
             type="submit"
-            className="cursor-pointer text-white bg-[#4880FF]/90 rounded-md w-full py-3 hover:bg-[#3c6fe6] transition"
+            className="cursor-pointer text-white bg-blue-light/90 rounded-md w-full py-3 hover:bg-[#3c6fe6] transition"
           >
             Reset Password
           </button>

@@ -29,11 +29,11 @@ export default function ProfileLayout() {
                      </div>
                      <div className="flex justify-between w-full flex-col sm:flex-row gap-4">
                            <div>
-                               <h3 className="text-[#202224] text-base font-bold mb-1">Alexndra Della <BadgeCheck className="text-[#25b865] inline-block ms-1" size={12}/></h3>
-                             <p className="text-[#202224]/80% text-sm">California, United States</p>
+                               <h3 className="text-darkgray text-base font-bold mb-1">Alexndra Della <BadgeCheck className="text-[#25b865] inline-block ms-1" size={12}/></h3>
+                             <p className="text-darkgray/80% text-sm">California, United States</p>
                            </div>
                            <div className="flex gap-1 items-center">
-                             <Link to='/account-setting/account' className="bg-[#3e97ff] rounded text-white py-1 sm:py-2 px-3 sm:px-4 text-xs sm:text-sm">Edit Profile</Link>
+                             <Link to='/account-setting/account' className="bg-blue-text rounded text-white py-1 sm:py-2 px-3 sm:px-4 text-xs sm:text-sm">Edit Profile</Link>
                              <button className="bg-[#25B865] rounded text-white py-1 sm:py-2 px-3 sm:px-4 text-xs sm:text-sm">Message</button>
                            </div>
                      </div>

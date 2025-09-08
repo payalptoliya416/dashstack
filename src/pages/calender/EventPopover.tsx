@@ -46,7 +46,7 @@ useEffect(() => {
       <>
         <Popover.Button
           ref={buttonRef}
-          className={`relative z-10 text-[10px] font-bold py-1 sm:py-2 xl:py-[11px] pl-2 xl:pl-[13px] pr-1 flex w-full items-center overflow-hidden focus:outline-none cursor-pointer ${event.bg} ${event.text}`}
+          className={`relative z-10 text-[10px] font-bold py-1 sm:py-2 xl:py-11 pl-2 xl:pl-13 pr-1 flex w-full items-center overflow-hidden focus:outline-none cursor-pointer ${event.bg} ${event.text}`}
           style={{
             backgroundImage: "url('/images/pattern2.png')",
             backgroundRepeat: "repeat",
@@ -82,7 +82,7 @@ useEffect(() => {
               alt=""
               className="rounded-md mb-[5px]"
             />
-            <div className="text-sm sm:text-base font-bold text-[#202224] break-words">
+            <div className="text-sm sm:text-base font-bold text-darkgray break-words">
               {event.title}
             </div>
             <div className="text-xs sm:text-sm font-semibold text-[#646464] mb-[3px]">
@@ -105,7 +105,7 @@ useEffect(() => {
               />
             ))}
              {event.extraAttendeeCount !== undefined && event.extraAttendeeCount > 0 && (
-              <div className="w-6 h-6 rounded-full border border-[#4880FF] leading-[10px] text-[#4880FF] text-[10px] flex justify-center items-center">
+              <div className="w-6 h-6 rounded-full border border-blue-light leading-[10px] text-blue-light text-[10px] flex justify-center items-center">
                 {event.extraAttendeeCount}+
               </div>
             )}

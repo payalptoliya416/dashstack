@@ -64,7 +64,7 @@ const Switches: React.FC = () => {
             {/* Default Round Switch */}
             <label className="inline-flex items-center cursor-pointer">
               <input type="checkbox" className="sr-only peer" />
-              <div className="relative w-10 h-5 bg-white border border-gray-200 rounded-full peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+              <div className="relative w-10 h-5 bg-white border border-gray-200 rounded-full peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
                 after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:after:translate-x-5">
               </div>
               <span className="ml-3 text-sm font-medium text-gray-900">Default</span>
@@ -73,7 +73,7 @@ const Switches: React.FC = () => {
             {/* Square Switch */}
             <label className="inline-flex items-center cursor-pointer">
               <input type="checkbox" className="sr-only peer" />
-              <div className="relative w-10 h-5 bg-white border border-gray-200 rounded-md peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+              <div className="relative w-10 h-5 bg-white border border-gray-200 rounded-md peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
                 after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded after:h-3 after:w-3 after:transition-all peer-checked:after:translate-x-5">
               </div>
               <span className="ml-3 text-sm font-medium text-gray-900">Square</span>
@@ -99,7 +99,7 @@ const Switches: React.FC = () => {
                 />
                 <div
                   className={`relative w-10 h-5 rounded-full transition border border-gray-100 ${
-                    isTextOn ? "bg-[#3E97FF]" : "bg-white"
+                    isTextOn ? "bg-blue" : "bg-white"
                   }`}
                 >
                   {isTextOn ? (
@@ -134,7 +134,7 @@ const Switches: React.FC = () => {
                 />
                 <div
                   className={`relative w-10 h-5 rounded transition border border-gray-100 ${
-                    isTextSquareOn ? "bg-[#3E97FF]" : "bg-white"
+                    isTextSquareOn ? "bg-blue" : "bg-white"
                   }`}
                 >
                   {isTextSquareOn ? (
@@ -177,7 +177,7 @@ const Switches: React.FC = () => {
                 />
                 <div
                   className={`relative w-10 h-5 rounded-full transition border border-gray-100 ${
-                    isIconOn ? "bg-[#3E97FF]" : "bg-white"
+                    isIconOn ? "bg-blue" : "bg-white"
                   }`}
                 >
                   {isIconOn ? (
@@ -212,7 +212,7 @@ const Switches: React.FC = () => {
                 />
                 <div
                   className={`relative w-10 h-5 rounded transition  border border-gray-100 ${
-                    isIconSquareOn ? "bg-[#3E97FF]" : "bg-white"
+                    isIconSquareOn ? "bg-blue" : "bg-white"
                   }`}
                 >
                   {isIconSquareOn ? (
@@ -247,7 +247,7 @@ const Switches: React.FC = () => {
             <div className="mb-4">
                <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" />
-                <div className="relative w-10 h-5 bg-white border border-gray-200 rounded-full peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+                <div className="relative w-10 h-5 bg-white border border-gray-200 rounded-full peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
                   after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:after:translate-x-5">
                 </div>
                 <span className="ml-3 text-sm font-medium text-gray-900">Small</span>
@@ -256,7 +256,7 @@ const Switches: React.FC = () => {
             <div className="mb-4">
                <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" />
-                <div className="relative w-12 h-6 bg-white border border-gray-200 rounded-full peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+                <div className="relative w-12 h-6 bg-white border border-gray-200 rounded-full peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
                   after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-6">
                 </div>
                 <span className="ml-3 text-sm font-medium text-gray-900">Default</span>
@@ -265,7 +265,7 @@ const Switches: React.FC = () => {
             <div className="mb-4">
                <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" />
-                <div className="relative w-14 h-7 bg-white border border-gray-200 rounded-full peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+                <div className="relative w-14 h-7 bg-white border border-gray-200 rounded-full peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
                   after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-7">
                 </div>
                 <span className="ml-3 text-sm font-medium text-gray-900">Large</span>
@@ -275,7 +275,7 @@ const Switches: React.FC = () => {
           <div className="mb-4">
                <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" />
-                <div className="relative w-10 h-5 bg-white border border-gray-200 rounded peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+                <div className="relative w-10 h-5 bg-white border border-gray-200 rounded peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
                   after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded after:h-3 after:w-3 after:transition-all peer-checked:after:translate-x-5">
                 </div>
                 <span className="ml-3 text-sm font-medium text-gray-900">Small Square</span>
@@ -284,7 +284,7 @@ const Switches: React.FC = () => {
             <div className="mb-4">
                <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" />
-                <div className="relative w-12 h-6 bg-white border border-gray-200 rounded peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+                <div className="relative w-12 h-6 bg-white border border-gray-200 rounded peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
                   after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-6">
                 </div>
                 <span className="ml-3 text-sm font-medium text-gray-900">Default Square</span>
@@ -293,7 +293,7 @@ const Switches: React.FC = () => {
             <div className="mb-4">
                <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" />
-                <div className="relative w-14 h-7 bg-white border border-gray-200 rounded peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+                <div className="relative w-14 h-7 bg-white border border-gray-200 rounded peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
                   after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-7">
                 </div>
                 <span className="ml-3 text-sm font-medium text-gray-900">Large Square</span>
@@ -315,7 +315,7 @@ const Switches: React.FC = () => {
             checked={selectedGroup1 === "opt1"}
             onChange={() => setSelectedGroup1("opt1")}
           />
-          <div className="relative w-10 h-5 bg-white border border-gray-200 rounded-full peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+          <div className="relative w-10 h-5 bg-white border border-gray-200 rounded-full peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
             after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:after:translate-x-5">
           </div>
           <span className="ml-3 text-sm font-medium text-gray-900">Option 1</span>
@@ -330,7 +330,7 @@ const Switches: React.FC = () => {
             checked={selectedGroup1 === "opt2"}
             onChange={() => setSelectedGroup1("opt2")}
           />
-          <div className="relative w-12 h-6 bg-white border border-gray-200 rounded-full peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+          <div className="relative w-12 h-6 bg-white border border-gray-200 rounded-full peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
             after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-6">
           </div>
           <span className="ml-3 text-sm font-medium text-gray-900">Option 2</span>
@@ -345,7 +345,7 @@ const Switches: React.FC = () => {
             checked={selectedGroup1 === "opt3"}
             onChange={() => setSelectedGroup1("opt3")}
           />
-          <div className="relative w-14 h-7 bg-white border border-gray-200 rounded-full peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+          <div className="relative w-14 h-7 bg-white border border-gray-200 rounded-full peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
             after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-7">
           </div>
           <span className="ml-3 text-sm font-medium text-gray-900">Option 3</span>
@@ -363,7 +363,7 @@ const Switches: React.FC = () => {
             checked={selectedGroup2 === "opt1"}
             onChange={() => setSelectedGroup2("opt1")}
           />
-          <div className="relative w-10 h-5 bg-white border border-gray-200 rounded peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+          <div className="relative w-10 h-5 bg-white border border-gray-200 rounded peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
             after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded after:h-3 after:w-3 after:transition-all peer-checked:after:translate-x-5">
           </div>
           <span className="ml-3 text-sm font-medium text-gray-900">Option 1</span>
@@ -378,7 +378,7 @@ const Switches: React.FC = () => {
             checked={selectedGroup2 === "opt2"}
             onChange={() => setSelectedGroup2("opt2")}
           />
-          <div className="relative w-12 h-6 bg-white border border-gray-200 rounded peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+          <div className="relative w-12 h-6 bg-white border border-gray-200 rounded peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
             after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-6">
           </div>
           <span className="ml-3 text-sm font-medium text-gray-900">Option 2</span>
@@ -393,7 +393,7 @@ const Switches: React.FC = () => {
             checked={selectedGroup2 === "opt3"}
             onChange={() => setSelectedGroup2("opt3")}
           />
-          <div className="relative w-14 h-7 bg-white border border-gray-200 rounded peer-checked:bg-[#3E97FF] peer-checked:border-transparent peer-focus:outline-none 
+          <div className="relative w-14 h-7 bg-white border border-gray-200 rounded peer-checked:bg-blue peer-checked:border-transparent peer-focus:outline-none 
             after:content-[''] after:absolute after:top-[3px] after:left-1 after:bg-[#EEF0F3] after:rounded after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-7">
           </div>
           <span className="ml-3 text-sm font-medium text-gray-900">Option 3</span>

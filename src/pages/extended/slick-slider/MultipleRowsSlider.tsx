@@ -18,7 +18,7 @@ const MultipleRowsSlider: React.FC = () => {
   <Slider {...settings}>
         {[...Array(12)].map((_, i) => (
           <div key={i} className="p-2">
-            <div className="h-32 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a]">
+            <div className="h-32 bg-[#EEF0F3] flex items-center justify-center text-darkgray">
               Slide {i + 1}
             </div>
           </div>

@@ -23,13 +23,13 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
       </div>
     </div>
     <div>
-      <h3 className="text-sm font-bold text-[#202224] leading-[26px] break-words">
+      <h3 className="text-sm font-bold text-darkgray leading-[26px] break-words">
         {event.title}
       </h3>
-      <p className="text-[#202224]/60 text-xs font-semibold">
+      <p className="text-darkgray/60 text-xs font-semibold">
         {event.dateTime}
       </p>
-      <p className="text-[#202224]/60 text-xs font-semibold">{event.address}</p>
+      <p className="text-darkgray/60 text-xs font-semibold">{event.address}</p>
       <div className="flex gap-2 mt-2">
         {event.attendees.map((attendee, idx) => (
           <div key={idx} className="w-6 h-6 rounded-full">
@@ -38,7 +38,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
         ))}
         {event.extraAttendeeCount !== undefined &&
           event.extraAttendeeCount > 0 && (
-            <div className="w-6 h-6 rounded-full border border-[#4880FF] leading-[10px] text-[#4880FF] text-[10px] flex justify-center items-center">
+            <div className="w-6 h-6 rounded-full border border-blue-light leading-[10px] text-blue-light text-[10px] flex justify-center items-center">
               {event.extraAttendeeCount}+
             </div>
           )}
@@ -106,11 +106,11 @@ const Calender: React.FC = () => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.2 }}
-              className="block bg-[#4880FF] text-sm text-white rounded-md py-2 xl:py-3 px-2 w-full text-center mb-6"
+              className="block bg-blue-light text-sm text-white rounded-md py-2 xl:py-3 px-2 w-full text-center mb-6"
             >
               + Add New Event
             </MotionLink>
-            <h3 className="text-[#202224] font-bold text-lg mb-[15px]">
+            <h3 className="text-darkgray font-bold text-lg mb-[15px]">
               You are going to
             </h3>
           </div>
@@ -126,7 +126,7 @@ const Calender: React.FC = () => {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   transition={{ duration: 0.2 }}
-                  className="text-[#202224] font-bold text-sm bg-[#E2EAF8]/70 rounded-xl leading-[28px] py-1 xl:py-[5px] px-5 xl:px-8 mb-[27px] mt-[14px]"
+                  className="text-darkgray font-bold text-sm bg-[#E2EAF8]/70 rounded-xl leading-[28px] py-1 xl:py-[5px] px-5 xl:px-8 mb-[27px] mt-[14px]"
                 >
                   See More
                 </motion.button>

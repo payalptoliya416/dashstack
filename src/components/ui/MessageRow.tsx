@@ -55,7 +55,7 @@ const MessageRow: FC<MessageProps> = ({
 
       {/* Name */}
       <div className="col-span-7 md:col-span-2">
-        <h3 className="text-[#202224] text-sm font-bold ">{name}</h3>
+        <h3 className="text-darkgray text-sm font-bold ">{name}</h3>
       </div>
 
       {/* Label */}
@@ -77,7 +77,7 @@ const MessageRow: FC<MessageProps> = ({
       <div
         className={`md:mx-2 ${label ? 'col-span-6 sm:col-span-8 md:col-span-7' : 'col-span-9 sm:col-span-10 md:col-span-8'  }`}
       >
-        <p className="text-sm font-medium text-[#202224]">{message}</p>
+        <p className="text-sm font-medium text-darkgray">{message}</p>
       </div>
       {/* Time */}
       <div className="col-span-3 sm:col-span-2 md:col-span-1 text-right">

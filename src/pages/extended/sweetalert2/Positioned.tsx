@@ -11,7 +11,7 @@ function Positioned() {
           position: "top-start", 
             html: `
         <div class="text-center">
-            <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">
+            <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">
            Your work has been saved
             </h1>
         </div>
@@ -21,7 +21,7 @@ function Positioned() {
           buttonsStyling: false,
           didOpen: () => {
             const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
-            if (confirm) confirm.className = "bg-[#3E97FF] text-white px-4 py-2 rounded text-sm font-semibold";
+            if (confirm) confirm.className = "bg-blue text-white px-4 py-2 rounded text-sm font-semibold";
           },
         });
   };
@@ -31,7 +31,7 @@ function Positioned() {
           position: "top-end", 
             html: `
         <div class="text-center">
-            <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">
+            <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">
            Your work has been saved
             </h1>
         </div>
@@ -41,7 +41,7 @@ function Positioned() {
           buttonsStyling: false,
           didOpen: () => {
             const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
-            if (confirm) confirm.className = "bg-[#3E97FF] text-white px-4 py-2 rounded text-sm font-semibold";
+            if (confirm) confirm.className = "bg-blue text-white px-4 py-2 rounded text-sm font-semibold";
           },
         });}
     // --handlebottomStart
@@ -50,7 +50,7 @@ function Positioned() {
           position: "bottom-start", 
             html: `
         <div class="text-center">
-            <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">
+            <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">
            Your work has been saved
             </h1>
         </div>
@@ -60,7 +60,7 @@ function Positioned() {
           buttonsStyling: false,
           didOpen: () => {
             const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
-            if (confirm) confirm.className = "bg-[#3E97FF] text-white px-4 py-2 rounded text-sm font-semibold";
+            if (confirm) confirm.className = "bg-blue text-white px-4 py-2 rounded text-sm font-semibold";
           },
         });
   };
@@ -70,7 +70,7 @@ function Positioned() {
           position: "bottom-end", 
             html: `
         <div class="text-center">
-            <h1 class="text-xl font-bold text-[#252f4a] mb-2 pt-7">
+            <h1 class="text-xl font-bold text-darkgray mb-2 pt-7">
            Your work has been saved
             </h1>
         </div>
@@ -80,16 +80,16 @@ function Positioned() {
           buttonsStyling: false,
           didOpen: () => {
             const confirm = document.querySelector(".swal2-confirm") as HTMLButtonElement;
-            if (confirm) confirm.className = "bg-[#3E97FF] text-white px-4 py-2 rounded text-sm font-semibold";
+            if (confirm) confirm.className = "bg-blue text-white px-4 py-2 rounded text-sm font-semibold";
           },
         });
   };
   return (
     <div className="flex gap-1 items-center flex-wrap">
-    <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handletopStart}>TopStart </button>
-    <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handletopEnd}>TopEnd</button>
-    <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleBottomStart}>BottomStart </button>
-    <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm font-semibold" onClick={handleBottomEnd}>BottomEnd </button>
+    <button className="px-5 py-2 rounded bg-blue text-white text-sm font-semibold" onClick={handletopStart}>TopStart </button>
+    <button className="px-5 py-2 rounded bg-blue text-white text-sm font-semibold" onClick={handletopEnd}>TopEnd</button>
+    <button className="px-5 py-2 rounded bg-blue text-white text-sm font-semibold" onClick={handleBottomStart}>BottomStart </button>
+    <button className="px-5 py-2 rounded bg-blue text-white text-sm font-semibold" onClick={handleBottomEnd}>BottomEnd </button>
     </div>
   )
 }

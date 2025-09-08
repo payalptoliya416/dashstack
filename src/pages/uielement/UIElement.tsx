@@ -106,7 +106,7 @@ function UIElement() {
             {({ open }) => (
               <>
                 <Popover.Button
-                  className={`flex items-center gap-12 px-4 py-1 sm:p-3 xl:p-6 border-r border-[#B9B9B9]/50 text-[#202224] text-sm font-bold focus:outline-none cursor-pointer
+                  className={`flex items-center gap-12 px-4 py-1 sm:p-3 xl:p-6 border-r border-[#B9B9B9]/50 text-darkgray text-sm font-bold focus:outline-none cursor-pointer
                     ${open ? "bg-blue-50" : ""}`}
                 >
                   Charts

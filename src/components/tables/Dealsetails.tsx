@@ -84,7 +84,7 @@ function Dealsetails() {
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
-                    className="text-[#202224] text-sm font-bold py-4 px-5 whitespace-nowrap"
+                    className="text-darkgray text-sm font-bold py-4 px-5 whitespace-nowrap"
                   >
                     {flexRender(
                       header.column.columnDef.header,

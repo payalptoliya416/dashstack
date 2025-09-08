@@ -96,7 +96,7 @@ export const buttonOption: Option[] = [
         Please visit:{" "}
         <a
           href="https://react-bootstrap.netlify.app/docs/components/buttons"
-          className="text-[#252f4a] font-bold"
+          className="text-darkgray font-bold"
           target="_blank"
           rel="noreferrer"
         >

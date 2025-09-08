@@ -116,7 +116,7 @@ function UIMiscellaneous() {
          <div className="p-6">
       <div className="flex gap-2 items-center flex-wrap border-b border-gray-100 pb-4 sm:pb-6">
         <Tooltip text="This top tooltip is  themed via CSS variables. Tooltip on Primary" color='#3e97ff'>
-          <button className="px-5 py-2 rounded text-white bg-[#3e97ff] font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500">
+          <button className="px-5 py-2 rounded text-white bg-blue-text font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500">
             Tooltip Primary
           </button>
         </Tooltip>
@@ -160,7 +160,7 @@ function UIMiscellaneous() {
   <div className="p-6">
     <div className="flex gap-2 items-center flex-wrap border-b border-gray-100 pb-4 sm:pb-6">
       <PopoverTooltip text="This top tooltip is themed via CSS variables. Tooltip on Primary" bgcolor="#3e97ff" head='Primary'>
-        <button className="px-5 py-2 rounded text-white bg-[#3e97ff] font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500">
+        <button className="px-5 py-2 rounded text-white bg-blue-text font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500">
           Popover Primary
         </button>
       </PopoverTooltip>

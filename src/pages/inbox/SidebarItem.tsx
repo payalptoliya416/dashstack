@@ -12,15 +12,15 @@ export const SidebarItem = ({
 }) => (
   <div
     onClick={() => setActiveTab(item.label)}
-    className={`flex justify-between items-center gap-2 py-3 px-4 rounded-xl cursor-pointer transition duration-500 hover:bg-[#4880FF]/13 hover:text-[#4880FF] ${
-      activeTab === item.label ? "bg-[#4880FF]/13 text-[#4880FF]" : ""
+    className={`flex justify-between items-center gap-2 py-3 px-4 rounded-xl cursor-pointer transition duration-500 hover:bg-blue-light/13 hover:text-blue-light ${
+      activeTab === item.label ? "bg-blue-light/13 text-blue-light" : ""
     }`}
   >
     <div className="flex items-center gap-3">
       {item.icon}
       <h3
         className={`text-sm font-bold ${
-          activeTab === item.label ? "text-[#4880FF]" : "text-[#202224]"
+          activeTab === item.label ? "text-blue-light" : "text-darkgray"
         }`}
       >
         {item.label}
@@ -29,8 +29,8 @@ export const SidebarItem = ({
     <div
       className={`text-sm font-bold ${
         activeTab === item.label
-          ? "text-[#4880FF]"
-          : "text-[#202224] opacity-60"
+          ? "text-blue-light"
+          : "text-darkgray opacity-60"
       }`}
     >
       {item.count}

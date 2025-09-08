@@ -30,7 +30,7 @@ export default function UnderTab() {
                   ? "border-b-2"
                   : tab === "disabled"
                   ? "text-gray-400 cursor-not-allowed"
-                  : "text-gray-700 hover:border-b-2 hover:text-[#3e97ff]"
+                  : "text-gray-700 hover:border-b-2 hover:text-blue-text"
               }`}
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}

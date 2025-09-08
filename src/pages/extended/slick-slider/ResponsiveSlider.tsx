@@ -39,7 +39,7 @@ const ResponsiveSlider: React.FC = () => {
       <Slider {...settings}>
         {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
           <div key={num} className="p-2">
-            <div className="h-40 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a]">
+            <div className="h-40 bg-[#EEF0F3] flex items-center justify-center text-darkgray">
                {num}
             </div>
           </div>

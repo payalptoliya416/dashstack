@@ -78,10 +78,10 @@ function Login() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -40 }}
         transition={{ duration: 0.4, ease: "easeOut" }} className="bg-white py-14 px-6 sm:px-10 md:py-[90px] md:px-[57px] rounded-xl w-full max-w-[500px] md:max-w-[630px] shadow-lg">
-        <h1 className="text-2xl md:text-[32px] mb-[15px] font-bold text-[#202224] text-center">
+        <h1 className="text-2xl md:text-[32px] mb-[15px] font-bold text-darkgray text-center">
           Login to Account
         </h1>
-        <h2 className="font-semibold text-sm sm:text-lg mb-8 sm:mb-[37px] text-[#202224]/80 text-center">
+        <h2 className="font-semibold text-sm sm:text-lg mb-8 sm:mb-[37px] text-darkgray/80 text-center">
           Please enter your email and password to continue
         </h2>
 
@@ -95,7 +95,7 @@ function Login() {
           <div className="mb-6">
             <label
               htmlFor="email"
-              className="font-semibold text-base sm:text-lg text-[#202224]/80 mb-[10px] block"
+              className="font-semibold text-base sm:text-lg text-darkgray/80 mb-[10px] block"
             >
               Email address:
             </label>
@@ -106,7 +106,7 @@ function Login() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter Email Address"
-              className="bg-[#F1F4F9] rounded-md py-3 px-4 sm:p-4 text-[#202224] w-full"
+              className="bg-[#F1F4F9] rounded-md py-3 px-4 sm:p-4 text-darkgray w-full"
             />
             {errors.email && (
               <p className="text-red-500 mt-2 text-sm font-medium">
@@ -118,11 +118,11 @@ function Login() {
             <div className="flex justify-between items-center">
               <label
                 htmlFor="password"
-                className="font-semibold text-base sm:text-lg text-[#202224]/80 mb-[10px] block"
+                className="font-semibold text-base sm:text-lg text-darkgray/80 mb-[10px] block"
               >
                 Password
               </label>
-              <p className="text-[#202224]/60 text-sm font-semibold cursor-pointer"   onClick={() => navigate("/forgot-password")}>
+              <p className="text-darkgray/60 text-sm font-semibold cursor-pointer"   onClick={() => navigate("/forgot-password")}>
                 Forget Password?
               </p>
             </div>
@@ -133,7 +133,7 @@ function Login() {
               value={formData.password}
               onChange={handleChange}
               placeholder="Enter Password"
-              className="bg-[#F1F4F9] rounded-md py-3 px-4 sm:p-4 text-[#202224] w-full"
+              className="bg-[#F1F4F9] rounded-md py-3 px-4 sm:p-4 text-darkgray w-full"
             />
             {errors.password && (
               <p className="text-red-500 mt-2 text-sm font-medium">
@@ -154,7 +154,7 @@ function Login() {
                 <span className="pointer-events-none absolute left-2 top-1 text-[#656565] text-sm scale-110 hidden peer-checked:block">
                 ✓
                 </span>
-                <span className="ml-3 text-[#202224]/60 text-base sm:text-lg font-semibold">
+                <span className="ml-3 text-darkgray/60 text-base sm:text-lg font-semibold">
                 Remember Password
                 </span>
             </label>
@@ -163,13 +163,13 @@ function Login() {
             <div className="mx-4 sm:mx-10">
               <button
                 type="submit"
-                className="cursor-pointer text-white bg-[#4880FF]/90 rounded-md w-full sm:mb-[18px] py-2 sm:py-[15px] hover:bg-[#3c6fe6] transition"
+                className="cursor-pointer text-white bg-blue-light/90 rounded-md w-full sm:mb-[18px] py-2 sm:py-[15px] hover:bg-[#3c6fe6] transition"
               >
                 Sign In
               </button>
             </div>
 
-            <p className="text-center text-[#202224]/65 text-base sm:text-lg font-semibold mt-4 flex items-center flex-col sm:flex-row justify-center gap-1">
+            <p className="text-center text-darkgray/65 text-base sm:text-lg font-semibold mt-4 flex items-center flex-col sm:flex-row justify-center gap-1">
               Don’t have an account? 
               <Link
                 to="/register"

@@ -30,7 +30,7 @@ const AnalyticsCard: React.FC<AnalyticsCardProps> = ({
             {prevValue} (Prev)
           </p>
         </div>
-        <h2 className="text-lg font-bold text-[#202224]">{value}</h2>
+        <h2 className="text-lg font-bold text-darkgray">{value}</h2>
       </div>
 
       {/* Chart */}

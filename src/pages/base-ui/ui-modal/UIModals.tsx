@@ -39,7 +39,7 @@ function UIModals() {
 
   // --- Buttons array ---
   const buttons: ButtonType[] = [
-    { color: "bg-[#3e97ff]", text: "Primary" },
+    { color: "bg-blue-text", text: "Primary" },
     { color: "bg-[#505863]", text: "Secondary" },
     { color: "bg-[#25b865]", text: "Success" },
     { color: "bg-[#02a0e4]", text: "Info" },
@@ -75,7 +75,7 @@ const [isModal, setIsModal] = useState(false);
           Basic
         </div>
         <div className="p-4 sm:p-6">
-          <button className="px-5 py-2 rounded bg-[#3e97ff] text-white text-sm font-semibold cursor-pointer"    onClick={openModal}>Launch Live Modal</button>
+          <button className="px-5 py-2 rounded bg-blue-text text-white text-sm font-semibold cursor-pointer"    onClick={openModal}>Launch Live Modal</button>
         </div>
         </div>
 
@@ -139,7 +139,7 @@ const [isModal, setIsModal] = useState(false);
                     </button>
                     <button
                       type="button"
-                      className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg hover:bg-[#3e97ff] transition-colors"
+                      className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-text transition-colors"
                       onClick={closeModal}
                     >
                       Save Changes
@@ -264,7 +264,7 @@ const [isModal, setIsModal] = useState(false);
           Modal Usecase
         </div>
         <div className="p-4 sm:p-6 flex gap-2 items-center flex-wrap">
-          <button className="px-5 py-2 rounded bg-[#3e97ff] text-white text-sm font-semibold" onClick={() => openModala("success")}>Usecase Success</button>
+          <button className="px-5 py-2 rounded bg-blue-text text-white text-sm font-semibold" onClick={() => openModala("success")}>Usecase Success</button>
           <button className="px-5 py-2 rounded bg-[#d13b4c] text-white text-sm font-semibold" onClick={() => openModala("danger")}>Usecase Danger</button>
           <button className="px-5 py-2 rounded bg-[#e49e3d] text-white text-sm font-semibold" onClick={() => openModala("warning")}>Usecase Warning</button>
           <button className="px-5 py-2 rounded bg-[#02a0e4] text-white text-sm font-semibold"  onClick={() => openModala("info")}>Usecase Info</button>
@@ -281,11 +281,11 @@ const [isModal, setIsModal] = useState(false);
           Modal Position
         </div>
         <div className="p-4 sm:p-6 flex gap-2 items-center flex-wrap">
-          <button className="px-5 py-2 rounded bg-[#3e97ff] text-white text-sm font-semibold" onClick={() => openPositionModal("items-start justify-start")}>Top Start</button>
-          <button className="px-5 py-2 rounded bg-[#3e97ff] text-white text-sm font-semibold" onClick={() => openPositionModal("items-start justify-end")}>Usecase End</button>
-          <button className="px-5 py-2 rounded bg-[#3e97ff] text-white text-sm font-semibold" onClick={() => openPositionModal("items-end justify-end")}>Bottom End</button>
-          <button className="px-5 py-2 rounded bg-[#3e97ff] text-white text-sm font-semibold" onClick={() => openPositionModal("items-end justify-start")}>Bottom Start</button>
-          <button className="px-5 py-2 rounded bg-[#3e97ff] text-white text-sm font-semibold" onClick={() => openPositionModal("items-start justify-center")}>Top Center</button>
+          <button className="px-5 py-2 rounded bg-blue-text text-white text-sm font-semibold" onClick={() => openPositionModal("items-start justify-start")}>Top Start</button>
+          <button className="px-5 py-2 rounded bg-blue-text text-white text-sm font-semibold" onClick={() => openPositionModal("items-start justify-end")}>Usecase End</button>
+          <button className="px-5 py-2 rounded bg-blue-text text-white text-sm font-semibold" onClick={() => openPositionModal("items-end justify-end")}>Bottom End</button>
+          <button className="px-5 py-2 rounded bg-blue-text text-white text-sm font-semibold" onClick={() => openPositionModal("items-end justify-start")}>Bottom Start</button>
+          <button className="px-5 py-2 rounded bg-blue-text text-white text-sm font-semibold" onClick={() => openPositionModal("items-start justify-center")}>Top Center</button>
         </div>
         
         </div>
@@ -299,10 +299,10 @@ const [isModal, setIsModal] = useState(false);
             <BadgeCheck className="w-7 h-7 text-[#25b865]" />
           </div>
           <h2 className="text-2xl mb-4 font-bold">Congratulations!</h2>
-          <h3 className="text-[#4B5675] mb-4 text-lg">
+          <h3 className="text-lightgray mb-4 text-lg">
             You’ve successfully bought <span className="font-black">0.365 BTC</span>
           </h3>
-           <p className="text-sm text-[#4B5675]">Learn when you receive bitcoin in your wallet. <Link to='' className="font-bold">Click here</Link></p>
+           <p className="text-sm text-lightgray">Learn when you receive bitcoin in your wallet. <Link to='' className="font-bold">Click here</Link></p>
         </div>
       </PositionModal>
       </div>

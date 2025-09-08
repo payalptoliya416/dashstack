@@ -32,10 +32,10 @@ export function RecentOrderTable({ data }: Props) {
               />
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-[#202224]">
+              <h3 className="text-sm font-semibold text-darkgray">
                 {row.customerName}
               </h3>
-              <p className="text-[13px]">{row.customerEmail}</p>
+              <p className="text-13">{row.customerEmail}</p>
             </div>
           </div>
         );
@@ -46,7 +46,7 @@ export function RecentOrderTable({ data }: Props) {
       header: "Coupon",
       cell: (info) =>
         info.getValue() ? (
-          <button className="border border-[#25B865] px-[7px] py-[5px] rounded text-[#25B865] text-[11px] leading-[11px]">
+          <button className="border border-[#25B865] px-[7px] py-[5px] rounded text-[#25B865] text-11 leading-[13px]">
             {info.getValue() as string}
           </button>
         ) : (
@@ -94,7 +94,7 @@ export function RecentOrderTable({ data }: Props) {
         };
         return (
           <button
-            className={`text-[11px] px-[7px] py-[5px] rounded leading-[11px] ${styles[status]}`}
+            className={`text-11 px-[7px] py-[5px] rounded leading-[13px] ${styles[status]}`}
           >
             {status}
           </button>

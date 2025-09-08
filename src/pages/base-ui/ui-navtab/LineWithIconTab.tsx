@@ -36,10 +36,10 @@ export default function LineWithIcon() {
             className={`flex items-center font-bold px-4 py-2 text-sm cursor-pointer transition-all duration-300 outline-none focus:outline-none
                     ${
                         activeTab === tab
-                        ? "border-b-2 text-[#3e97ff]"
+                        ? "border-b-2 text-blue-text"
                         : tab === "disabled"
                         ? "text-gray-400 cursor-not-allowed"
-                        : "text-gray-700 hover:border-b-2 hover:text-[#3e97ff]"
+                        : "text-gray-700 hover:border-b-2 hover:text-blue-text"
                     }`}
         >
             {tabIcons[tab]} 

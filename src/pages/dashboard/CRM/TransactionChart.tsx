@@ -58,8 +58,8 @@ export const ChartCard: React.FC<{
           {icon}
         </div>
         <div>
-          <h3 className="text-[17px] text-[#252f4a] font-semibold">{title}</h3>
-          <h4 className="text-[13px] text-[#6B7177]">
+          <h3 className="text-[17px] text-darkgray font-semibold">{title}</h3>
+          <h4 className="text-13 text-graytext">
             <span className={growthColor}>{growthText} </span>from last week
           </h4>
         </div>

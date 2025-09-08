@@ -21,32 +21,32 @@ const SingleSlider: React.FC = () => {
     <div className="grid grid-cols-1">
     <div className="w-full mx-auto mb-7 relative group">
       <Slider {...settings}>
-        <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a] text-sm">
+        <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-darkgray text-sm">
           <div className="flex justify-center items-center h-full">
            1
           </div>
         </div>
-        <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a] text-sm">
+        <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-darkgray text-sm">
           <div className="flex justify-center items-center h-full">
           2
           </div>
         </div>
-        <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a] text-sm">
+        <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-darkgray text-sm">
            <div className="flex justify-center items-center h-full">
            3
           </div>
         </div>
-        <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a] text-sm">
+        <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-darkgray text-sm">
            <div className="flex justify-center items-center h-full">
            4
           </div>
         </div>
-        <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a] text-sm">
+        <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-darkgray text-sm">
            <div className="flex justify-center items-center h-full">
           5
           </div>
         </div>
-        <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a] text-sm">
+        <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-darkgray text-sm">
            <div className="flex justify-center items-center h-full">
            6
           </div>

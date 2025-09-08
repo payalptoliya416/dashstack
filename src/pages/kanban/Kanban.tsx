@@ -74,7 +74,7 @@ function Kanban() {
         <Settings size={14} />
         </div>
         <button
-        className="flex items-center px-2 sm:px-5 py-2 gap-1 sm:gap-3 bg-[#3E97FF] rounded text-white text-[12px] sm:text-sm"
+        className="flex items-center px-2 sm:px-5 py-2 gap-1 sm:gap-3 bg-blue rounded text-white text-[12px] sm:text-sm"
        onClick={() => {
     const defaultTitle = "New Board"; 
         const colors = ["#3E97FF", "#F7B923", "#FF6B6B", "#6BCB77"]; 
@@ -129,7 +129,7 @@ function Kanban() {
                       className={`px-4 py-2 rounded-sm border-t-2 shadow-sm flex justify-between items-center mb-4 bg-white`}
                       style={{ borderColor: column.borderColor }}
                     >
-                      <h3 className="text-sm text-[#202224] font-semibold">
+                      <h3 className="text-sm text-darkgray font-semibold">
                         {column.title} ({column.taskCount})
                       </h3>
                       <div className="w-9 h-9 rounded-full hover:bg-[#EEF0F3] cursor-pointer transition-all duration-500 flex justify-center items-center">
@@ -231,15 +231,15 @@ function Kanban() {
                         className="p-6 rounded-lg shadow-sm cursor-grab hover:shadow-md transition mb- bg-white mb-4"
                     >
                         <h3 className="text-[#252F4A] text-sm font-bold mb-3">{task.title}</h3>
-                        <p className="text-[#4B5675] text-sm mb-7">{task.description}</p>
+                        <p className="text-lightgray text-sm mb-7">{task.description}</p>
                         <div className="grid grid-cols-2 gap-3 mb-7">
                         <div className="flex gap-1">
                             {task.tags.map((tag: string) => (
                             <button
                                 key={tag}
-                                className={`text-[11px] leading-[11px] py-[5px] px-[7px] rounded ${
+                                className={`text-11 leading-[13px] py-[5px] px-[7px] rounded ${
                                 tag === "primary"
-                                    ? "bg-[#ecf5ff] text-[#3e97ff]"
+                                    ? "bg-[#ecf5ff] text-blue-text"
                                     : tag === "danger"
                                     ? "bg-[#fbeff1] text-[#d13b4c]"
                                     : tag === "warning"
@@ -257,7 +257,7 @@ function Kanban() {
                             </button>
                             ))}
                         </div>
-                        <div className="flex text-[#6B7177] text-[11px] leading-[11px] gap-1 items-center justify-center">
+                        <div className="flex text-graytext text-11 leading-[13px] gap-1 items-center justify-center">
                             <CalendarDays size={12} /> {task.dueDate}
                         </div>
                         </div>
@@ -277,10 +277,10 @@ function Kanban() {
                             ))}
                         </div>
                         <div className="flex gap-4">
-                            <div className="text-sm text-[#6B7177]">
+                            <div className="text-sm text-graytext">
                             <Paperclip className="inline-block rotate-[317deg]" size={12} /> {task.attachments}
                             </div>
-                            <div className="text-sm text-[#6B7177]">
+                            <div className="text-sm text-graytext">
                             <MessageSquareMore className="inline-block" size={12} /> {task.comments}
                             </div>
                         </div>
@@ -289,7 +289,7 @@ function Kanban() {
                     ))}
 
                     <div
-                    className="py-2 px-4 border border-gray-200 rounded flex justify-center mb-4 text-sm gap-5 text-[#4B5675] cursor-pointer hover:bg-gray-100"
+                    className="py-2 px-4 border border-gray-200 rounded flex justify-center mb-4 text-sm gap-5 text-lightgray cursor-pointer hover:bg-gray-100"
                     onClick={() => {
                         const newTask: Task = {
                         id: Math.floor(Math.random() * 10000),
@@ -310,7 +310,7 @@ function Kanban() {
                          toast.success("Task added successfully!");
                     }}
                     >
-                    <Plus size={18} className="text-[#4B5675]" /> Add Task
+                    <Plus size={18} className="text-lightgray" /> Add Task
                     </div>
                   </div>
          ))}
@@ -339,9 +339,9 @@ function Kanban() {
                         {selectedTask.tags.map((tag) => (
                         <button
                             key={tag}
-                            className={`text-[11px] leading-[11px] py-[5px] px-[7px] rounded uppercase ${
+                            className={`text-11 leading-[13px] py-[5px] px-[7px] rounded uppercase ${
                             tag === "primary"
-                                ? "bg-[#ecf5ff] text-[#3e97ff]"
+                                ? "bg-[#ecf5ff] text-blue-text"
                                 : tag === "danger"
                                 ? "bg-[#fbeff1] text-[#d13b4c]"
                                 : tag === "warning"
@@ -367,10 +367,10 @@ function Kanban() {
                 </div>
 
                 <div className="p-6 border-b border-gray-200">
-                    <p className="mb-4 text-sm text-[#4B5675]">{selectedTask.description}</p>
+                    <p className="mb-4 text-sm text-lightgray">{selectedTask.description}</p>
 
                     <div className="flex items-center gap-2 mb-5">
-                    <p className="text-[#4B5675] text-sm">Assigned:</p>
+                    <p className="text-lightgray text-sm">Assigned:</p>
                     <div className="flex items-center">
                         {selectedTask.assignees.map((assignee, index) => (
                         <img
@@ -386,17 +386,17 @@ function Kanban() {
                     </div>
 
                     <div className="flex gap-1 mb-5">
-                    <p className="text-[#4B5675] text-sm">Due Date:</p>
-                    <div className="flex text-[#D13B4B] text-[11px] leading-[11px] gap-1 items-center justify-center">
+                    <p className="text-lightgray text-sm">Due Date:</p>
+                    <div className="flex text-[#D13B4B] text-11 leading-[13px] gap-1 items-center justify-center">
                         <CalendarDays size={12} /> {selectedTask.dueDate}
                     </div>
                     </div>
 
                     <div className="flex gap-4">
-                    <div className="text-sm text-[#6B7177]">
+                    <div className="text-sm text-graytext">
                         <Paperclip className="inline-block rotate-[317deg]" size={12} /> {selectedTask.attachments} Attachments
                     </div>
-                    <div className="text-sm text-[#6B7177]">
+                    <div className="text-sm text-graytext">
                         <MessageSquareMore className="inline-block" size={12} /> {selectedTask.comments} Comments
                     </div>
                     </div>
@@ -412,7 +412,7 @@ function Kanban() {
                                 checked:before:text-white checked:before:flex checked:before:items-center 
                                 checked:before:justify-center checked:before:h-full checked:before:w-full"
                     />
-                    <label htmlFor="checkmark" className="text-[#4B5675] text-sm cursor-pointer">
+                    <label htmlFor="checkmark" className="text-lightgray text-sm cursor-pointer">
                         Make as complete
                     </label>
                     </div>
@@ -453,7 +453,7 @@ function Kanban() {
 
             <div className="p-6 border-b border-gray-200">
                 <div className="mb-6">
-                <label className="text-sm text-[#4B5675] block mb-2">Title</label>
+                <label className="text-sm text-lightgray block mb-2">Title</label>
                 <input
                     type="text"
                     className="border border-gray-200 rounded px-3 py-2 w-full text-sm"
@@ -464,7 +464,7 @@ function Kanban() {
                 </div>
 
                 <div>
-                <label className="text-sm text-[#4B5675] block mb-2">Color</label>
+                <label className="text-sm text-lightgray block mb-2">Color</label>
                 <select
                     className="border border-gray-200 rounded px-3 py-2 w-full text-sm"
                     value={editColor}
@@ -489,7 +489,7 @@ function Kanban() {
                 Close
                 </button>
                 <button
-                className="text-white bg-[#3E97FF] py-2 px-5 rounded text-sm"
+                className="text-white bg-blue py-2 px-5 rounded text-sm"
                 onClick={() => {
                     if (!selectedColumn) return;
 
@@ -533,12 +533,12 @@ function Kanban() {
           <h2 className="text-[#f8bb86] text-6xl">!</h2>
         </div>
         <h3 className="text-xl font-semibold text-[#252F4A] mb-3 pt-10">Are you sure?</h3>
-        <p className="text-sm text-[#6B7177]">
+        <p className="text-sm text-graytext">
           You are about to delete the column. This action cannot be undone.
         </p>
         <div className="flex gap-3 items-center justify-center pt-4 pb-3">
           <button
-            className="px-[15px] py-2 text-white rounded text-sm bg-[#3E97FF] cursor-pointer"
+            className="px-[15px] py-2 text-white rounded text-sm bg-blue cursor-pointer"
             onClick={() => {
       if (selectedColumnId !== null) {
         dispatch(deleteColumn(selectedColumnId));
@@ -551,7 +551,7 @@ function Kanban() {
             Yes, Delete it!
           </button>
           <button
-            className="px-[15px] py-2 text-white rounded text-sm bg-[#3E97FF]"
+            className="px-[15px] py-2 text-white rounded text-sm bg-blue"
             onClick={() => setIsDelete(false)}
           >
             Cancel
@@ -571,12 +571,12 @@ function Kanban() {
           <h2 className="text-[#f8bb86] text-6xl">!</h2>
         </div>
         <h3 className="text-xl font-semibold text-[#252F4A] mb-3 pt-10">Are you sure?</h3>
-        <p className="text-sm text-[#6B7177]">
+        <p className="text-sm text-graytext">
           You are about to delete all tasks in this column. This action cannot be undone.
         </p>
         <div className="flex gap-3 items-center justify-center pt-4 pb-3">
           <button
-            className="px-[15px] py-2 text-white rounded text-sm bg-[#3E97FF]  cursor-pointer"
+            className="px-[15px] py-2 text-white rounded text-sm bg-blue  cursor-pointer"
              onClick={() => {
       if (selectedColumnId !== null) {
         dispatch(emptyColumn(selectedColumnId));
@@ -589,7 +589,7 @@ function Kanban() {
             Yes, Delete all tasks!
           </button>
           <button
-            className="px-[15px] py-2 text-white rounded text-sm bg-[#3E97FF]"
+            className="px-[15px] py-2 text-white rounded text-sm bg-blue"
             onClick={() => setIsEMpty(false)}
           >
             Cancel

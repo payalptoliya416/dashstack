@@ -163,15 +163,15 @@ function AnalyTics() {
           </div>
           <div className="col-span-12 xl:col-span-4 rounded-lg shadow-sm bg-white bg-[url('/images/bg-analytic.svg')] bg-[100% 100%] bg-no-repeat w-full h-full py-16 xl:py-24 px-6">
             <div className="flex justify-center items-center flex-col  text-center">
-              <Rocket size={50} className="text-[#3e97ff] -rotate-45 mb-7" />
+              <Rocket size={50} className="text-blue-text -rotate-45 mb-7" />
               <h3 className="text-5 font-bold mb-6">
                 Grow faster with pro's help
               </h3>
-              <p className="text-sm text-[#6B7177] mb-6 max-w-[300px]">
+              <p className="text-sm text-graytext mb-6 max-w-[300px]">
                 Experience top-notch features with our services and insights.
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               </p>
-              <button className="py-2 px-5 text-white rounded bg-[#3E97FF] text-sm">
+              <button className="py-2 px-5 text-white rounded bg-blue text-sm">
                 Get Started
               </button>
             </div>
@@ -219,7 +219,7 @@ function AnalyTics() {
                     <h3 className="text-sm font-semibold mb-1">{item.name}</h3>
                     <h3 className="font-bold text-base">
                       {item.value.toFixed(2)}%
-                      <span className="text-[13px] font-light">
+                      <span className="text-13 font-light">
                         {" "}
                         (+{item.change.toFixed(1)})
                       </span>

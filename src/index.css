@@ -2,12 +2,22 @@
 
 @theme {
   --font-sans: "Nunito Sans", sans-serif;
+  --color-primary: #0B7CFF;
+  --color-blue-light:#4880FF;
+  --color-blue: #3E97FF;
+  --color-graytext:#6B7177;
+  --color-lightgray:#4B5675;
+  --color-darkgray: #252f4a;
+  --color-blue-text:#3e97ff;
+
+  --text-13: 13px;
+  --text-11: 11px;
 }
 
 @layer base {
   body {
     font-family: var(--font-sans);
-    color: #202224;
+    color: #252f4a;
   }
 
   ::-webkit-scrollbar {

@@ -57,7 +57,7 @@ function HotToast() {
             </div>
           ));
         }}
-        className="px-5 py-2 rounded text-sm bg-[#3E97FF] text-white font-semibold"
+        className="px-5 py-2 rounded text-sm bg-blue text-white font-semibold"
       >
         Content
       </button>
@@ -85,37 +85,37 @@ function HotToast() {
         <div className="p-4 sm:p-6 flex flex-wrap items-center gap-2">
           <button
             onClick={() => toast.success("Position set to top-left.", { position: "top-left" })}
-            className="px-5 py-2 rounded text-sm bg-[#3E97FF] text-white font-semibold"
+            className="px-5 py-2 rounded text-sm bg-blue text-white font-semibold"
           >
             top-left
           </button>
           <button
             onClick={() => toast.success("Position set to top-center.", { position: "top-center" })}
-            className="px-5 py-2 rounded text-sm bg-[#3E97FF] text-white font-semibold"
+            className="px-5 py-2 rounded text-sm bg-blue text-white font-semibold"
           >
             top-center
           </button>
           <button
             onClick={() => toast.success("Position set to top-right.", { position: "top-right" })}
-            className="px-5 py-2 rounded text-sm bg-[#3E97FF] text-white font-semibold"
+            className="px-5 py-2 rounded text-sm bg-blue text-white font-semibold"
           >
             top-right
           </button>
           <button
             onClick={() => toast("Position set to bottom-left.", { position: "bottom-left" })}
-            className="px-5 py-2 rounded text-sm bg-[#3E97FF] text-white font-semibold"
+            className="px-5 py-2 rounded text-sm bg-blue text-white font-semibold"
           >
             bottom-left
           </button>
           <button
             onClick={() => toast.success("Position set to bottom-center.", { position: "bottom-center" })}
-            className="px-5 py-2 rounded text-sm bg-[#3E97FF] text-white font-semibold"
+            className="px-5 py-2 rounded text-sm bg-blue text-white font-semibold"
           >
             bottom-center
           </button>
           <button
             onClick={() => toast.success("Position set to bottom-right.", { position: "bottom-right" })}
-            className="px-5 py-2 rounded text-sm bg-[#3E97FF] text-white font-semibold"
+            className="px-5 py-2 rounded text-sm bg-blue text-white font-semibold"
           >
             bottom-right
           </button>
@@ -124,17 +124,17 @@ function HotToast() {
 
       <div className="rounded-lg shadow-md border border-gray-200 bg-white mt-7">
         <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px]">
-          <h3 className="font-bold text-[17px] text-[#252f4a]">Uses Instruction</h3>
+          <h3 className="font-bold text-[17px] text-darkgray">Uses Instruction</h3>
         </div>
         <div className="py-4 px-6 border-b border-gray-200">
-          <p className=" text-sm text-[#4B5675]">HotToast is delivered primarily via npm
+          <p className=" text-sm text-lightgray">HotToast is delivered primarily via npm
           <span className="text-[#e83e8c] py-[3px] px-2 rounded bg-[#f1f2f3] text-sm w-max ms-2">
         npm install react-hot-toast
           </span>
           </p>
         </div>
           <div className="py-4 px-6">
-             <p className=" text-sm text-[#4B5675]">For full documentation please visit the link: <a href="https://react-hot-toast.com/docs" className=" break-all"><strong className="underline">https://react-hot-toast.com/docs</strong></a></p>
+             <p className=" text-sm text-lightgray">For full documentation please visit the link: <a href="https://react-hot-toast.com/docs" className=" break-all"><strong className="underline">https://react-hot-toast.com/docs</strong></a></p>
           </div>
       </div>
     </>

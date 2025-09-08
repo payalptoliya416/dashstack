@@ -63,7 +63,7 @@ function InvoiceTable({ data }: Props) {
                   {headerGroup.headers.map((header) => (
                     <th
                       key={header.id}
-                      className="text-[#202224] text-sm font-bold py-4 px-5 whitespace-nowrap text-center"
+                      className="text-darkgray text-sm font-bold py-4 px-5 whitespace-nowrap text-center"
                     >
                       {flexRender(
                         header.column.columnDef.header,
@@ -91,7 +91,7 @@ function InvoiceTable({ data }: Props) {
           </table>
         </div>
       </div>
-      <div className="col-span-12 text-end pr-[60px] pt-4 text-base font-bold text-[#202224]">
+      <div className="col-span-12 text-end pr-[60px] pt-4 text-base font-bold text-darkgray">
         Total = ${total}
       </div>
     </div>

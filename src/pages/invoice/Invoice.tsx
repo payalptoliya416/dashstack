@@ -162,10 +162,10 @@ const handleDownloadPdf = () => {
             className="p-4 rounded-xl border border-[#D5D5D5] bg-[#FAFBFD] cursor-pointer"
             title="Download PDF"
           >
-            <FileText className="text-[#202224]" size={20} />
+            <FileText className="text-darkgray" size={20} />
           </motion.button>
 
-          <button className="flex items-center bg-[#4880FF] text-white font-semibold rounded-2xl pr-10 pl-6 sm:pl-10 py-4 relative overflow-hidden">
+          <button className="flex items-center bg-blue-light text-white font-semibold rounded-2xl pr-10 pl-6 sm:pl-10 py-4 relative overflow-hidden">
             <span className="z-10 relative text-sm pr-10 sm:pr-14">Send</span>
             <span className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#6E9AFF] py-2 sm:py-3 px-3 sm:px-4 rounded-md sm:rounded-xl">
               <Send size={16} />

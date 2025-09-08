@@ -38,13 +38,13 @@ function PrivacyPolicy() {
         }}
       />
       <div className="px-8">
-        <p className="text-[#252f4a] text-sm mt-16">
+        <p className="text-darkgray text-sm mt-16">
           Updated: <strong>26 March, 2024</strong>
         </p>
-        <h3 className="text-[#252f4a] text-sm mt-12 font-bold mb-4">
+        <h3 className="text-darkgray text-sm mt-12 font-bold mb-4">
           Information Collected
         </h3>
-        <p className="text-[#4B5675] mb-4 text-sm">
+        <p className="text-lightgray mb-4 text-sm">
           Our Site collects information regarding domain names, IP address
           (static or dynamic IP-address that sometimes point to a particular
           identifiable computer or device), type of browser, operating system,
@@ -53,7 +53,7 @@ function PrivacyPolicy() {
           service quality and to track site trends and statistics. Most of the
           time, this information does not personally identify you.
         </p>
-        <p className="text-[#4B5675] mb-4 text-sm">
+        <p className="text-lightgray mb-4 text-sm">
           We also collect any personal information that you choose to provide
           when you use this Site. This may include, but is not limited to the
           events when you: create an account, order and/or download products,
@@ -72,10 +72,10 @@ function PrivacyPolicy() {
           each communication or, you may unsubscribe via your account
           preferences.
         </p>
-        <h3 className="text-[#252f4a] text-sm mt-12 font-bold mb-4">
+        <h3 className="text-darkgray text-sm mt-12 font-bold mb-4">
           Use, Sharing or Disclosing of Personal Information
         </h3>
-        <p className="text-[#4B5675] mb-4 text-sm">
+        <p className="text-lightgray mb-4 text-sm">
           Please note that we do not sell or rent your personal information to
           any third party. The main purpose we use your personal for is to
           communicate with you in the most efficient manner. We may share,
@@ -96,37 +96,37 @@ function PrivacyPolicy() {
           third parties are authorized to use your personal information ONLY for
           the sole purpose of providing these services to us.
         </p>
-        <h3 className="text-[#252f4a] text-sm mt-12 font-bold mb-4">
+        <h3 className="text-darkgray text-sm mt-12 font-bold mb-4">
           Use of Cookies
         </h3>
-        <p className="text-[#4B5675] mb-4 text-sm">
+        <p className="text-lightgray mb-4 text-sm">
           Cookies are used by us occasionally. In their nature Cookies are small
           text files that can be used by a web site to identify/recognize a
           repeat visitor to the web site. Cookies may be used by us for variable
           reasons, including:
         </p>
         <ul className="list-disc ps-4">
-          <li className="text-[#4B5675] mb-1 text-sm">
+          <li className="text-lightgray mb-1 text-sm">
             To facilitate the navigation of our website
           </li>
-          <li className="text-[#4B5675] mb-1 text-sm">
+          <li className="text-lightgray mb-1 text-sm">
             To help the sign up and login process for our services
           </li>
-          <li className="text-[#4B5675] mb-1 text-sm">
+          <li className="text-lightgray mb-1 text-sm">
             To make your experience personalized
           </li>
-          <li className="text-[#4B5675] mb-1 text-sm">
+          <li className="text-lightgray mb-1 text-sm">
             For analysis of page frequency visitation
           </li>
-          <li className="text-[#4B5675] mb-1 text-sm">
+          <li className="text-lightgray mb-1 text-sm">
             In order to provide social sharing widgets and videos features of
             the website
           </li>
-          <li className="text-[#4B5675] mb-1 text-sm">
+          <li className="text-lightgray mb-1 text-sm">
             To be able to measure effectiveness of advertising and promotions
           </li>
         </ul>
-        <p className="text-[#4B5675] mb-4 text-sm">
+        <p className="text-lightgray mb-4 text-sm">
           In case you do not wish PrepBootstrap. to deploy cookies in your
           browser, you can opt out by changing your browser settings to reject
           cookies or to notify you when a web site tries to put a cookie in your
@@ -135,10 +135,10 @@ function PrivacyPolicy() {
           products and/or services at this site may be affected and full site
           functionality is not guaranteed.
         </p>
-        <h3 className="text-[#252f4a] text-sm mt-12 font-bold mb-4">
+        <h3 className="text-darkgray text-sm mt-12 font-bold mb-4">
           Information Security
         </h3>
-        <p className="text-[#4B5675] mb-4 text-sm">
+        <p className="text-lightgray mb-4 text-sm">
           We make sure that appropriate security measures are taken to protect
           your personal information from unauthorized access, alteration, use or
           disclosure. Among these measures are a variety of security
@@ -160,35 +160,35 @@ function PrivacyPolicy() {
           including termination in case they fail to comply with these
           complications.
         </p>
-        <h3 className="text-[#252f4a] text-sm mt-12 font-bold mb-4">
+        <h3 className="text-darkgray text-sm mt-12 font-bold mb-4">
           Credit Card Processing
         </h3>
-        <p className="text-[#4B5675] mb-4 text-sm">
+        <p className="text-lightgray mb-4 text-sm">
           A third-party service provider is used by us to manage credit card
           processing. This service provider is not permitted to store, retain,
           or use your personal information except for the sole purpose of credit
           card processing on our behalf.
         </p>
-        <h3 className="text-[#252f4a] text-sm mt-12 font-bold mb-4">
+        <h3 className="text-darkgray text-sm mt-12 font-bold mb-4">
           Revision of Personal Data
         </h3>
-        <p className="text-[#4B5675] mb-2 text-sm">
+        <p className="text-lightgray mb-2 text-sm">
           PrepBootstrap retains minimum Personal Data that is reasonable and
           needed in the management and maintenance of a product supplier to
           customer relationship. PrepBootstrap customers may review and update
           their profile and subscription information on the PrepBootstrap
           website customer portal.
         </p>
-        <p className="text-[#4B5675] mb-4 text-sm">
+        <p className="text-lightgray mb-4 text-sm">
           If you have issues revising your Personal Data, send mail to
           admin@prepbootstrap.com and state your need and contact information
           for help.
         </p>
 
-        <h3 className="text-[#252f4a] text-sm mt-12 font-bold mb-4">
+        <h3 className="text-darkgray text-sm mt-12 font-bold mb-4">
           Retention and Deletion of Personal Data
         </h3>
-        <p className="text-[#4B5675] mb-2 text-sm">
+        <p className="text-lightgray mb-2 text-sm">
           PrepBootstrap will retain your Personal Data for as long as your
           account is active; as needed to provide you products or services; as
           stated in the Terms of Use agreement; as needed for the purposes
@@ -197,7 +197,7 @@ function PrivacyPolicy() {
           financial audit requirements and enforce our agreements; or to the
           extent that is permitted by law.
         </p>
-        <p className="text-[#4B5675] mb-4 text-sm">
+        <p className="text-lightgray mb-4 text-sm">
           If requested, PrepBootstrap will delete your Personal Data in a manner
           that ensures your identify cannot be reconstructed or read. A deletion
           request may not result in the entire deletion of your data. Purchase
@@ -207,10 +207,10 @@ function PrivacyPolicy() {
           Data, send mail to admin@prepbootstrap.com with "Subject: Remove My
           Personal Data" and explicitly state your need and contact information.
         </p>
-        <h3 className="text-[#252f4a] text-sm mt-12 font-bold mb-4">
+        <h3 className="text-darkgray text-sm mt-12 font-bold mb-4">
           Personal Data Transfer, Processing and Storage
         </h3>
-        <p className="text-[#4B5675] mb-4 text-sm">
+        <p className="text-lightgray mb-4 text-sm">
           The Personal Data that we store is not highly sensitive and is needed
           in order to conduct normal and expected business practices.
           Specifically, Personal Data, as described in this policy, is stored on
@@ -224,10 +224,10 @@ function PrivacyPolicy() {
           use. It is a reasonable and expected use of customer and prospective
           customer data.
         </p>
-        <div className="mt-16 text-[#4B5675] mb-4 text-sm font-medium">
+        <div className="mt-16 text-lightgray mb-4 text-sm font-medium">
           74 out of 86 found this helpful
         </div>
-        <h2 className="text-[#252f4a] text-xl mb-6 font-bold">
+        <h2 className="text-darkgray text-xl mb-6 font-bold">
           Was this article helpful?
         </h2>
         <div className="flex gap-4">

@@ -7,11 +7,11 @@ import type {
 } from "../../../types/DashboardModule";
 
 const statusColors: Record<CampaignStatus, string> = {
-  "In Progress": "bg-[#ecf5ff] text-[#3e97ff]",
+  "In Progress": "bg-[#ecf5ff] text-blue-text",
   Upcoming: "bg-[#fff7ec] text-[#e49e3d]",
   Completed: "bg-[#e9f8f0] text-[#25b865]",
   Rejected: "bg-[#fbeff1] text-[#d13b4c]",
-  Updating: "bg-[#ecf5ff] text-[#3e97ff]",
+  Updating: "bg-[#ecf5ff] text-blue-text",
 };
 
 const campaignData: CampaignRow[] = [
@@ -20,7 +20,7 @@ const campaignData: CampaignRow[] = [
     name: "[US] Google Display Network",
     description: "Maximizing well-planned advertising.",
     status: "In Progress",
-    stateColors: ["bg-[#3e97ff]", "bg-[#3e97ff]", "bg-[#d5d5d5]"],
+    stateColors: ["bg-blue-text", "bg-blue-text", "bg-[#d5d5d5]"],
   },
   {
     id: 2,
@@ -48,7 +48,7 @@ const campaignData: CampaignRow[] = [
     name: "[GB] Black Friday 2024",
     description: "When running several campaigns.",
     status: "Updating",
-    stateColors: ["bg-[#3e97ff]", "bg-[#3e97ff]", "bg-[#d5d5d5]"],
+    stateColors: ["bg-blue-text", "bg-blue-text", "bg-[#d5d5d5]"],
   },
 ];
 
@@ -77,7 +77,7 @@ export default function CampaignStateTable() {
         const value = info.getValue() as CampaignStatus;
         return (
           <span
-            className={`text-[11px] px-[7px] py-[5px] rounded ${statusColors[value]}`}
+            className={`text-11 px-[7px] py-[5px] rounded ${statusColors[value]}`}
           >
             {value}
           </span>

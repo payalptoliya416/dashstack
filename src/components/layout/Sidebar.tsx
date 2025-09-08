@@ -278,7 +278,7 @@ useEffect(() => {
         <div>
           {/* Fixed top header */}
           <div className="text-center font-bold text-xl mt-6 mb-[30px] whitespace-nowrap overflow-hidden">
-            <span className="text-[#4880FF]">{collapsed ? "D" : "Dash"}</span>
+            <span className="text-blue-light">{collapsed ? "D" : "Dash"}</span>
             {!collapsed && "Stack"}
           </div>
 
@@ -319,15 +319,15 @@ useEffect(() => {
                         } 
                         ${
                           isActive && !isLogout
-                            ? "bg-[#4880FF] text-white shadow-md"
-                            : "text-[#202224] hover:bg-[#4880FF]/70 hover:text-white hover:backdrop-blur-md hover:shadow-md"
+                            ? "bg-blue-light text-white shadow-md"
+                            : "text-darkgray hover:bg-blue-light/70 hover:text-white hover:backdrop-blur-md hover:shadow-md"
                         } 
                         relative after:content-[''] after:absolute after:top-0 after:left-[-17px] xl:after:left-[-27px]
                         after:w-[9px] after:h-full after:rounded-r-[20px] after:transition-all after:duration-300
                         ${
                           isActive && !isLogout
-                            ? "after:bg-[#4880FF]"
-                            : "after:bg-transparent hover:after:bg-[#4880FF]/70"
+                            ? "after:bg-blue-light"
+                            : "after:bg-transparent hover:after:bg-blue-light/70"
                         }`
                           }
                         >
@@ -348,13 +348,13 @@ useEffect(() => {
                             ? "mx-1 justify-center"
                             : "mx-3 xl:mx-5"
                         } 
-                        text-[#202224] hover:bg-[#4880FF]/70 hover:text-white hover:backdrop-blur-md hover:shadow-md
+                        text-darkgray hover:bg-blue-light/70 hover:text-white hover:backdrop-blur-md hover:shadow-md
                         relative after:content-[''] after:absolute after:top-0 after:left-[-17px] xl:after:left-[-27px]
                         after:w-[9px] after:h-full after:rounded-r-[20px] after:transition-all after:duration-300
                         ${
                           isOpen
-                            ? "after:bg-[#4880FF]"
-                            : "after:bg-transparent hover:after:bg-[#4880FF]/70"
+                            ? "after:bg-blue-light"
+                            : "after:bg-transparent hover:after:bg-blue-light/70"
                         }
                       `}
                         >
@@ -381,8 +381,8 @@ useEffect(() => {
                                   `flex items-center gap-2 px-2 py-2 lg:py-2 rounded text-sm transition-all duration-300 mx-3 xl:mx-5
                               ${
                                 isActive
-                                  ? "bg-[#4880FF] text-white shadow-md"
-                                  : "text-[#202224] hover:bg-[#4880FF]/70 hover:text-white hover:shadow-md"
+                                  ? "bg-blue-light text-white shadow-md"
+                                  : "text-darkgray hover:bg-blue-light/70 hover:text-white hover:shadow-md"
                               }`
                                 }
                               >
@@ -400,6 +400,11 @@ useEffect(() => {
                   )}
                 </div>
               ))}
+              <div className={`p-3 xl:p-6 rounded bg-primary mx-3 xl:mx-5 text-white text-center ${collapsed ? 'hidden': ''}`}>
+                    <h3 className="text-base uppercase mb-2">Support Center</h3>
+                    <p className="text-13 leading-[16px] w-full max-w-36 mb-6">Window is a production ready admin dashboard to get started up and running quickly.</p>
+                    <button className="px-3 py-2 bg-blue rounded text-sm w-full">Get Support</button>
+              </div>
             </nav>
           </div>
         </div>

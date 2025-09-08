@@ -71,10 +71,10 @@ function DashboardPage() {
             >
               <div className="flex justify-between items-center mb-[29px]">
                 <div>
-                  <h4 className="mb-[14px] text-[#202224] text-base font-semibold">
+                  <h4 className="mb-[14px] text-darkgray text-base font-semibold">
                     {card.title}
                   </h4>
-                  <h2 className="text-[#202224] text-xl sm:text-[28px] font-bold">
+                  <h2 className="text-darkgray text-xl sm:text-[28px] font-bold">
                     {card.value}
                   </h2>
                 </div>
@@ -85,7 +85,7 @@ function DashboardPage() {
                 />
               </div>
 
-              <p className="text-base text-[#202224]">
+              <p className="text-base text-darkgray">
                 <span
                   className={`mr-1 ${
                     card.trend === "up" ? "text-[#00B69B]" : "text-[#F93C65]"

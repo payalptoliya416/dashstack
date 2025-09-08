@@ -137,7 +137,7 @@ function AddNewContact() {
                 key={name}
                 className="col-span-12 sm:col-span-6 mb-6 sm:mb-0"
               >
-                <label className="block text-[#606060] text-sm font-semibold mb-[11px]">
+                <label className="block text-[#606060] text-sm font-semibold mb-11">
                   {label}
                 </label>
                 <input
@@ -157,7 +157,7 @@ function AddNewContact() {
             ))}
 
             <div className="col-span-12 sm:col-span-6">
-              <label className="block text-[#606060] text-sm font-semibold mb-[11px]">
+              <label className="block text-[#606060] text-sm font-semibold mb-11">
                 Gender
               </label>
               <select
@@ -182,7 +182,7 @@ function AddNewContact() {
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         transition={{ duration: 0.2 }}
-        className="bg-[#4880FF] text-white font-bold px-20 sm:px-24 py-3 sm:py-4 rounded-xl"
+        className="bg-blue-light text-white font-bold px-20 sm:px-24 py-3 sm:py-4 rounded-xl"
       >
         Add Now
       </motion.button>  

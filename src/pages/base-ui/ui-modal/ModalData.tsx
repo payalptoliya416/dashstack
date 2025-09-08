@@ -92,7 +92,7 @@ export const ModalOptions: Option[] = [
             <tr>
                 <td className="px-6 py-2 border-b border-gray-100">Default</td>
                 <td className="px-6 py-2 border-b border-gray-100">
-                <p className="text-[#6B7177] font-bold">None</p>
+                <p className="text-graytext font-bold">None</p>
                 </td>
                 <td className="px-6 py-2 border-b border-gray-100">
                 <button className="text-[#e83e8c] py-[2px] px-2 rounded bg-[#f1f2f3] text-sm">
@@ -224,7 +224,7 @@ export const ModalOptions: Option[] = [
         Please visit:{" "}
         <a
           href="https://react-bootstrap.netlify.app/docs/components/modal"
-          className="text-[#252f4a] font-bold"
+          className="text-darkgray font-bold"
           target="_blank"
           rel="noreferrer"
         >

@@ -57,10 +57,10 @@ function ProfileFollowers() {
                 alt={user.name}
                 className="w-20 h-20 rounded-full mb-6"
               />
-              <h3 className="text-[#252f4a] mb-2 text-sm text-center">
+              <h3 className="text-darkgray mb-2 text-sm text-center">
                 {user.name}
               </h3>
-              <p className="text-[13px] text-[#6B7177] mb-4 text-center">
+              <p className="text-13 text-graytext mb-4 text-center">
                 {user.email}
               </p>
               <button

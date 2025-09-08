@@ -10,7 +10,7 @@ function TypeAlert() {
     MySwal.fire({
             html: `
         <div class="text-center">
-            <h1 class="text-sm  text-[#252f4a] mb-2">
+            <h1 class="text-sm  text-darkgray mb-2">
           Success: Good job!
             </h1>
         </div>
@@ -29,7 +29,7 @@ function TypeAlert() {
     MySwal.fire({
             html: `
         <div class="text-center">
-            <h1 class="text-sm  text-[#252f4a] mb-2">
+            <h1 class="text-sm  text-darkgray mb-2">
         Info: About information
             </h1>
         </div>
@@ -48,7 +48,7 @@ function TypeAlert() {
     MySwal.fire({
             html: `
         <div class="text-center">
-            <h1 class="text-sm  text-[#252f4a] mb-2">
+            <h1 class="text-sm  text-darkgray mb-2">
          Warning: Your attention
             </h1>
         </div>
@@ -67,7 +67,7 @@ function TypeAlert() {
     MySwal.fire({
             html: `
         <div class="text-center">
-            <h1 class="text-sm  text-[#252f4a] mb-2">
+            <h1 class="text-sm  text-darkgray mb-2">
          Error: Something error
             </h1>
         </div>
@@ -86,7 +86,7 @@ function TypeAlert() {
     MySwal.fire({
             html: `
         <div class="text-center">
-            <h1 class="text-sm  text-[#252f4a] mb-2">
+            <h1 class="text-sm  text-darkgray mb-2">
          Question: What's the matter?
             </h1>
         </div>

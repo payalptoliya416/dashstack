@@ -101,8 +101,8 @@ const SentChatView: FC = () => {
             <div
               className={`p-3 md:p-5 rounded-t-2xl max-w-[70%] text-sm ${
                 msg.sender === "me"
-                  ? "bg-[#4880FF] text-white rounded-l-2xl"
-                  : "bg-[#F6F6F6] text-[#202224] rounded-r-2xl"
+                  ? "bg-blue-light text-white rounded-l-2xl"
+                  : "bg-[#F6F6F6] text-darkgray rounded-r-2xl"
               }`}
             >
               <div className="mb-4 md:mb-[21px] break-words">
@@ -198,7 +198,7 @@ const SentChatView: FC = () => {
             />
             <button
               onClick={handleSend}
-              className="bg-[#4880FF] py-1 sm:py-[9px] px-3 sm:px-6 text-white flex justify-center items-center gap-2 rounded-md sm:rounded-lg cursor-pointer"
+              className="bg-blue-light py-1 sm:py-[9px] px-3 sm:px-6 text-white flex justify-center items-center gap-2 rounded-md sm:rounded-lg cursor-pointer"
             >
              <span className="hidden sm:block">Send</span>  <Send size={15} />
             </button>

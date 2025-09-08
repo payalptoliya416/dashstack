@@ -84,7 +84,7 @@ function FAQs() {
        <motion.div {...usePageAnimation()}  className="overflow-hidden">       
     <div className="px-6 py-16 flex justify-center items-center text-center rounded-t-lg">
       <div>
-      <button className="text-[#3e97ff] text-[13px] rounded-full leading-[13px] font-semibold mb-4">FAQ'S</button>
+      <button className="text-blue-text text-13 rounded-full leading-[13px] font-semibold mb-4">FAQ'S</button>
       <h2 className="font-bold text-[28px] text-[#252f4A] mb-4">Frequently asked questions</h2>
       <p className="text-[17px]">Everything you need to know about the product and billing.</p>
       </div>
@@ -94,7 +94,7 @@ function FAQs() {
         <div key={item.id} className="rounded overflow-hidden shadow-sm">
           <button
             onClick={() => toggleAccordion(item.id)}
-            className="w-full flex justify-between items-center px-6 py-4 bg-[#F8F9FA] text-[#4B5675] text-sm font-semibold"
+            className="w-full flex justify-between items-center px-6 py-4 bg-[#F8F9FA] text-lightgray text-sm font-semibold"
           >
             {item.question}
             {openId === item.id ? (
@@ -105,7 +105,7 @@ function FAQs() {
           </button>
 
           {openId === item.id && (
-            <p className="px-6 py-4 text-sm text-[#4B5675] bg-white">
+            <p className="px-6 py-4 text-sm text-lightgray bg-white">
               {item.answer}
             </p>
           )}
@@ -114,29 +114,29 @@ function FAQs() {
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7 py-10 sm:py-16 px-8">
          <div className="shadow-sm rounded-md p-6 flex flex-col text-center">
-               <MessageSquareMore className="text-[#3e97ff] mb-4 mx-auto" size={30}/>
+               <MessageSquareMore className="text-blue-text mb-4 mx-auto" size={30}/>
                <h2 className="text-[17px] leading-[17px] text-[#252D4A] mb-2 font-semibold">Chat to sales</h2>
-               <p className="text-[#4B5675] text-sm mb-4">Speaks to our friendly teams.</p>
+               <p className="text-lightgray text-sm mb-4">Speaks to our friendly teams.</p>
                <a href="javascript:voide()" className="text-sm font-semibold">support@wrapcoders.com</a>
          </div>
          <div className="shadow-sm rounded-md p-6 flex flex-col text-center">
-               <Map className="text-[#3e97ff] mb-4 mx-auto" size={30}/>
+               <Map className="text-blue-text mb-4 mx-auto" size={30}/>
                <h2 className="text-[17px] leading-[17px] text-[#252D4A] mb-2 font-semibold">Visit our store</h2>
-               <p className="text-[#4B5675] text-sm mb-4">Visit our office HQ.</p>
+               <p className="text-lightgray text-sm mb-4">Visit our office HQ.</p>
                <a href="javascript:voide()" className="text-sm font-semibold">Smith Street, California, USA</a>
          </div>
          <div className="shadow-sm rounded-md p-6 flex flex-col text-center">
-               <PhoneCall className="text-[#3e97ff] mb-4 mx-auto" size={30}/>
+               <PhoneCall className="text-blue-text mb-4 mx-auto" size={30}/>
                <h2 className="text-[17px] leading-[17px] text-[#252D4A] mb-2 font-semibold">Call now us</h2>
-               <p className="text-[#4B5675] text-sm mb-4">Mon-Fri from 10am to 6pm.</p>
+               <p className="text-lightgray text-sm mb-4">Mon-Fri from 10am to 6pm.</p>
                <a href="javascript:voide()" className="text-sm font-semibold">+1(375)-98745-632</a>
          </div>
     </div>
      <div className="px-6 py-10 sm:py-16 flex justify-center items-center text-center rounded-t-lg border-b border-gray-100">
       <div>
       <h2 className="font-bold text-2xl sm:text-[28px] text-[#252f4A] mb-4">Still Have A Question?</h2>
-      <p className="text-sm md:text-[17px] text-[#4B5675] mb-3 w-full max-w-[600px]">There are several ways to say "not yet" and "still have questions" in an email response, depending on the context and tone of the message.</p>
-      <button className="text-white bg-[#3E97FF] px-5 py-2 rounded text-sm">Get touch</button>
+      <p className="text-sm md:text-[17px] text-lightgray mb-3 w-full max-w-[600px]">There are several ways to say "not yet" and "still have questions" in an email response, depending on the context and tone of the message.</p>
+      <button className="text-white bg-blue px-5 py-2 rounded text-sm">Get touch</button>
       </div>
     </div>
     </motion.div>

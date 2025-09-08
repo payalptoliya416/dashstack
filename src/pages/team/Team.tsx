@@ -24,7 +24,7 @@ const MotionLink = motion(Link);
         <MainTitle title="Team" />
         <MotionLink  whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          transition={{ duration: 0.2 }} to='/team/add-team-member' className="text-white text-sm font-bold bg-[#4379EE] rounded-md py-2 sm:py-[11px] px-[27px] transition-all duration-200 hover:shadow-md">
+          transition={{ duration: 0.2 }} to='/team/add-team-member' className="text-white text-sm font-bold bg-[#4379EE] rounded-md py-2 sm:py-11 px-[27px] transition-all duration-200 hover:shadow-md">
           Add New Member
         </MotionLink>
       </div>
@@ -49,11 +49,11 @@ const MotionLink = motion(Link);
               />
             </div>
             <div className="text-center">
-              <h2 className="text-[#202224] text-base font-bold mb-1">{member.name}</h2>
-              <h3 className="text-[#202224]/60 text-sm font-semibold mb-[9px]">{member.position}</h3>
+              <h2 className="text-darkgray text-base font-bold mb-1">{member.name}</h2>
+              <h3 className="text-darkgray/60 text-sm font-semibold mb-[9px]">{member.position}</h3>
               <a
                 href={`mailto:${member.email}`}
-                className="text-sm text-[#202224]/80 font-normal"
+                className="text-sm text-darkgray/80 font-normal"
               >
                 {member.email}
               </a>

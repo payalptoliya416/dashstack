@@ -6,7 +6,7 @@ export default function ActionMenu() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <Menu.Button>
-        <h3 className="text-[#3e97ff] text-xs py-[6px] px-[10px] border border-gray-100 rounded-full bg-[#F8F9FA]">
+        <h3 className="text-blue-text text-xs py-[6px] px-[10px] border border-gray-100 rounded-full bg-[#F8F9FA]">
           Action <ChevronDown size={10} className="inline-block" />
         </h3>
       </Menu.Button>

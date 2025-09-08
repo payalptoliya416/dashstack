@@ -54,13 +54,13 @@ export default function PlacementToast() {
           <div className="p-4 flex justify-between items-center border-b border-gray-100 gap-5 sm:gap-2">
             <div className="flex gap-3 sm:gap-5 items-center">
               <img src="/images/bell.svg" alt="" />
-              <h3 className="font-bold text-[#252f4a]">Toast Notification</h3>
+              <h3 className="font-bold text-darkgray">Toast Notification</h3>
             </div>
             <div className="flex gap-3 sm:gap-5 items-center">
               <p className="text-[#7B7177] text-xs">11 mins ago</p>
             </div>
           </div>
-          <div className="p-4 text-sm text-[#4B5675]">
+          <div className="p-4 text-sm text-lightgray">
             Hello, world! This is a toast message.
           </div>
         </div>

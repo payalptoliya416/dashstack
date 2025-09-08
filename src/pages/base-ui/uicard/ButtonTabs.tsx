@@ -25,7 +25,7 @@ export default function ButtonTabs() {
             className={`px-4 py-2 text-sm font-medium rounded-md transition-all duration-300
               ${
                 activeTab === tab
-                  ? "bg-[#3e97ff] text-white shadow"
+                  ? "bg-blue-text text-white shadow"
                   : tab === "disabled"
                   ? "text-gray-400 cursor-not-allowed"
                   : "text-gray-700 hover:bg-gray-100"

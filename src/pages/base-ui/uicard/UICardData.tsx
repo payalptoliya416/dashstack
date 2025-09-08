@@ -228,14 +228,14 @@ export const cardOption: Option[] = [
     Set a <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
           background-color 
         </button>  with contrasting foreground 
-             <button className="text-[#252f4a] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+             <button className="text-darkgray py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
         color 
         </button>
        Previously it was required to manually pair your choice of
-             <button className="text-[#252f4a] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+             <button className="text-darkgray py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
         and 
         </button>
-         <button className="text-[#252f4a] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+         <button className="text-darkgray py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
         .bg-(color)
         </button> 
        utilities for styling, which you still may use if you prefer.
@@ -263,7 +263,7 @@ export const cardOption: Option[] = [
     details: (
       <>
     	Use the Bootstrap grid system and its
-         <button className="text-[#252f4a] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
+         <button className="text-darkgray py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">
         display: flex;
         </button> 
      classesto control how many grid columns (wrapped around your cards) you show per row. For example, here's
@@ -322,7 +322,7 @@ export const cardOption: Option[] = [
         Please visit:{" "}
         <a
           href="https://react-bootstrap.netlify.app/docs/components/cards"
-          className="text-[#252f4a] font-bold"
+          className="text-darkgray font-bold"
           target="_blank"
           rel="noreferrer"
         >

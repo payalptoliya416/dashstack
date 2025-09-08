@@ -36,7 +36,7 @@ export const LabelCheckbox = ({
       />
       <label
         htmlFor={item.id}
-        className="text-sm font-semibold text-[#202224] cursor-pointer"
+        className="text-sm font-semibold text-darkgray cursor-pointer"
       >
         {item.label}
       </label>

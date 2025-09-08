@@ -95,12 +95,12 @@ function AccoNotification() {
     <>
         <motion.div  {...usePageAnimation()} className="p-6 shadow-sm rounded-lg bg-white mb-7 overflow-hidden">
         <h3 className="text-[#252F4A] text-[17px] mb-2 font-bold leading-[17px]">Nofication Settings</h3>
-        <p className="text-sm text-[#4B5675] mb-7"> Select how you'll be notified when the following changes occur.</p>
+        <p className="text-sm text-lightgray mb-7"> Select how you'll be notified when the following changes occur.</p>
 
       {categories.map((category, idx) => (
         <div key={idx} className="grid grid-cols-12 mb-12 gap-3">
           <div className="col-span-12 sm:col-span-4">
-            <p className="text-sm text-[#4B5675]">{category.title}</p>
+            <p className="text-sm text-lightgray">{category.title}</p>
           </div>
 
           <div className="col-span-12 sm:col-span-8 grid grid-cols-3 xl:grid-cols-4 gap-1">
@@ -110,13 +110,13 @@ function AccoNotification() {
                   type="checkbox"
                   id={`${category.title}-${opt.value}`}
                   className="appearance-none w-5 h-5 bg-[#EEF0F3] border-none rounded cursor-pointer
-                    checked:bg-[#3E97FF] checked:border-[#3E97FF] relative
+                    checked:bg-blue checked:border-blue relative
                     checked:after:content-['✔'] checked:after:absolute checked:after:text-white
                     checked:after:font-bold checked:after:text-[12px] checked:after:left-[5px] checked:after:top-[1px]"
                 />
                 <label
                   htmlFor={`${category.title}-${opt.value}`}
-                  className="text-sm text-[#4B5675] cursor-pointer"
+                  className="text-sm text-lightgray cursor-pointer"
                 >
                   {opt.label}
                 </label>
@@ -132,7 +132,7 @@ function AccoNotification() {
           <h3 className="text-[#252F4A] text-[17px] mb-2 font-bold leading-[17px]">
             Push Notify
           </h3>
-          <p className="text-sm text-[#4B5675]">
+          <p className="text-sm text-lightgray">
             You will get only notifications you have enabled.
           </p>
         </div>
@@ -145,13 +145,13 @@ function AccoNotification() {
                 name="pushNotify"
                 checked={selectedRadio === option.id}
                 onChange={() => setSelectedRadio(option.id)}
-                className="h-4 w-4 text-[#3e97ff] border-gray-300 focus:ring-[#3e97ff]"
+                className="h-4 w-4 text-blue-text border-gray-300 focus:ring-blue-text"
               />
               <label htmlFor={option.id} className="cursor-pointer">
                 <h3 className="text-[#252F4A] text-sm mb-2 font-bold leading-[14px]">
                   {option.title}
                 </h3>
-                <p className="text-sm text-[#4B5675]">{option.description}</p>
+                <p className="text-sm text-lightgray">{option.description}</p>
               </label>
             </div>
           ))}
@@ -164,7 +164,7 @@ function AccoNotification() {
           <h3 className="text-[#252F4A] text-[17px] mb-2 font-bold leading-[17px]">
             Miscellaneous
           </h3>
-          <p className="text-sm text-[#4B5675]">
+          <p className="text-sm text-lightgray">
             You will get only notifications you have enabled.
           </p>
         </div>
@@ -174,7 +174,7 @@ function AccoNotification() {
               <Switch
                 checked={switchStates[option.id]}
                 onChange={() => toggleSwitch(option.id)}
-                className="group inline-flex cursor-pointer h-5 w-11 items-center rounded-full bg-gray-100 transition data-[checked]:bg-[#3E97FF]"
+                className="group inline-flex cursor-pointer h-5 w-11 items-center rounded-full bg-gray-100 transition data-[checked]:bg-blue"
               >
                 <span className="size-3 translate-x-1 rounded-full bg-gray-500 group-data-[checked]:bg-white transition group-data-[checked]:translate-x-6" />
               </Switch>
@@ -182,7 +182,7 @@ function AccoNotification() {
                 <h3 className="text-[#252F4A] text-sm mb-2 font-bold leading-[14px]">
                   {option.title}
                 </h3>
-                <p className="text-sm text-[#4B5675]">{option.description}</p>
+                <p className="text-sm text-lightgray">{option.description}</p>
               </label>
             </div>
           ))}
@@ -194,7 +194,7 @@ function AccoNotification() {
             <div className="col-span-3 text-sm sm:hidden"></div>
             <div className="col-span-12 sm::col-span-9">
               <div className="flex items-center gap-2 justify-center">
-                 <button className="px-5 py-2 rounded bg-[#3E97FF] text-sm text-white cursor-pointer">Save Changes</button>
+                 <button className="px-5 py-2 rounded bg-blue text-sm text-white cursor-pointer">Save Changes</button>
                  <button className="px-5 py-2 rounded text-[#d13b4c] bg-[#d13b4c1a] hover:text-white hover:bg-[#d13b4c] transition-all duration-500 text-sm cursor-pointer">Reset</button>
               </div>
             </div>

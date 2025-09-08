@@ -27,10 +27,10 @@ export default function PillsTab() {
             className={`px-4 py-2 text-sm rounded-md transition-all duration-300 font-bold
               ${
                 activeTab === tab
-                  ? "bg-[#3e97ff] text-white shadow"
+                  ? "bg-blue-text text-white shadow"
                   : tab === "disabled"
                   ? "text-gray-400 cursor-not-allowed"
-                  : "text-gray-700 hover:bg-gray-100 hover:text-[#3e97ff]"
+                  : "text-gray-700 hover:bg-gray-100 hover:text-blue-text"
               }`}
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}

@@ -129,16 +129,16 @@ const CommingSoon: React.FC = () => {
         </div>
 
         <ul className="flex justify-center gap-5 mt-8 text-gray-500">
-           <li className="text-sm font-semibold text-[#252f4a]">
+           <li className="text-sm font-semibold text-darkgray">
                 <Facebook size={16} />
               </li>
-              <li className="text-sm font-semibold text-[#252f4a]">
+              <li className="text-sm font-semibold text-darkgray">
                 <Twitter size={16} />
               </li>
-              <li className="text-sm font-semibold text-[#252f4a]">
+              <li className="text-sm font-semibold text-darkgray">
                 <Instagram size={16} />
               </li>
-              <li className="text-sm font-semibold text-[#252f4a]">
+              <li className="text-sm font-semibold text-darkgray">
                 <Linkedin size={16} />
               </li>
         </ul>

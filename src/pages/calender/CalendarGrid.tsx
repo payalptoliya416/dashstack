@@ -107,14 +107,14 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
         <div className="flex gap-1 sm:gap-2 items-center">
           <button
             onClick={onShowSidebar}
-            className="md:hidden px-4 mr-2 py-2 text-xs font-medium text-white bg-[#202224] hover:bg-[#333537] rounded-lg shadow-sm transition duration-200"
+            className="md:hidden px-4 mr-2 py-2 text-xs font-medium text-white bg-darkgray hover:bg-[#333537] rounded-lg shadow-sm transition duration-200"
           >
             {" "}
             Events{" "}
           </button>
           <button
             onClick={handleToday}
-            className="text-sm font-semibold text-[#202224]/60 py-2 rounded-md cursor-pointer"
+            className="text-sm font-semibold text-darkgray/60 py-2 rounded-md cursor-pointer"
           >
             Today
           </button>
@@ -122,7 +122,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
         <div className="flex items-center gap-4">
           <button
             onClick={handlePrev}
-            className="text-[#202224]/60 hover:text-[#202224] transition"
+            className="text-darkgray/60 hover:text-darkgray transition"
           >
             <svg
               width="8"
@@ -140,7 +140,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
               />
             </svg>
           </button>
-          <h2 className="text-sm md:text-base xl:text-2xl font-bold text-[#202224]">
+          <h2 className="text-sm md:text-base xl:text-2xl font-bold text-darkgray">
             {viewMode === "month"
               ? currentDate.format("MMMM YYYY")
               : viewMode === "week"
@@ -152,7 +152,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
 
           <button
             onClick={handleNext}
-            className="text-[#202224]/60 hover:text-[#202224] transition"
+            className="text-darkgray/60 hover:text-darkgray transition"
           >
             <svg
               width="8"
@@ -180,7 +180,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
               className={`text-xs font-semibold px-4 py-2 xl:py-3 border-r border-[#D5D5D5] last:border-r-0 cursor-pointer ${
                 viewMode === mode
                   ? "bg-[#5A8DFF] text-white"
-                  : "text-[#202224] bg-transparent"
+                  : "text-darkgray bg-transparent"
               } ${
                 mode === "day"
                   ? "rounded-l-xl"
@@ -201,7 +201,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
             {["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].map((day) => (
               <div
                 key={day}
-                className="pt-4 pb-[13px] text-[10px] sm:text-xs xl:text-sm font-bold  text-[#202224]"
+                className="pt-4 pb-13 text-[10px] sm:text-xs xl:text-sm font-bold  text-darkgray"
               >
                 {day}
               </div>
@@ -218,7 +218,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
                   key={idx}
                   className={`relative h-24 sm:h-[122px] border-r border-b border-[#3F3F3F]/21 p-1 text-right text-base font-semibold ${
                     isCurrentMonth
-                      ? "text-[#202224]"
+                      ? "text-darkgray"
                       : "text-[#B2B2B2] bg-[url(/images/pattern.png)] bg-no-repeat bg-cover"
                   } ${isToday ? "bg-[#E2EAF8]/50" : ""}`}
                 >
@@ -300,7 +300,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
 
       {viewMode === "day" && (
         <div className="px-4 sm:px-6 md:px-8 py-4">
-          <h2 className="text-lg font-semibold text-[#202224] mb-4">
+          <h2 className="text-lg font-semibold text-darkgray mb-4">
             {currentDate.format("dddd, MMMM D, YYYY")}
           </h2>
 
@@ -362,7 +362,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
 
       {viewMode === "week" && (
         <div className="px-4 sm:px-6 md:px-8 py-4">
-          <div className="grid grid-cols-7 text-center text-xs font-bold text-[#202224] bg-[#F1F4F9] rounded-t-xl">
+          <div className="grid grid-cols-7 text-center text-xs font-bold text-darkgray bg-[#F1F4F9] rounded-t-xl">
             {weekDays.map((date) => (
               <div key={date.toString()} className="py-3">
                 {date.format("ddd")}

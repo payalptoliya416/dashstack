@@ -15,7 +15,7 @@ function UIButton() {
         </div>
         <div className="p-4 sm:p-6">
           <div className="flex gap-2 items-center flex-wrap border-b border-gray-100 pb-4 sm:pb-6">
-            <button className="px-5 py-2 rounded text-white bg-[#3e97ff] font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500">
+            <button className="px-5 py-2 rounded text-white bg-blue-text font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500">
               Primary
             </button>
             <button className="px-5 py-2 rounded text-white bg-[#505863] font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500">
@@ -33,12 +33,12 @@ function UIButton() {
             <button className="px-5 py-2 rounded text-white bg-[#02a0e4] font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500">
               Info
             </button>
-            <button className="px-5 py-2 rounded text-white bg-[#252f4a] font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500">
+            <button className="px-5 py-2 rounded text-white bg-darkgray font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500">
               Dark
             </button>
           </div>
           <div className="flex gap-2 items-center flex-wrap pt-4 sm:pt-6">
-            <button className="px-5 py-2 text-white bg-[#3e97ff] font-semibold text-sm rounded-full cursor-pointer hover:opacity-85 transition-all duration-500">
+            <button className="px-5 py-2 text-white bg-blue-text font-semibold text-sm rounded-full cursor-pointer hover:opacity-85 transition-all duration-500">
               Primary
             </button>
             <button className="px-5 py-2 text-white bg-[#505863] font-semibold text-sm rounded-full cursor-pointer hover:opacity-85 transition-all duration-500">
@@ -56,7 +56,7 @@ function UIButton() {
             <button className="px-5 py-2 text-white bg-[#02a0e4] font-semibold text-sm rounded-full cursor-pointer hover:opacity-85 transition-all duration-500">
               Info
             </button>
-            <button className="px-5 py-2 text-white bg-[#252f4a] font-semibold text-sm rounded-full cursor-pointer hover:opacity-85 transition-all duration-500">
+            <button className="px-5 py-2 text-white bg-darkgray font-semibold text-sm rounded-full cursor-pointer hover:opacity-85 transition-all duration-500">
               Dark
             </button>
           </div>
@@ -99,7 +99,7 @@ function UIButton() {
         </div>
         <div className="p-4 sm:p-6">
           <div className="flex gap-2 items-center flex-wrap border-b border-gray-100 pb-4 sm:pb-6">
-            <button className="px-5 py-2 rounded text-[#3e97ff] bg-[#3e97ff1a] font-semibold text-sm hover:text-white hover:bg-[#3e97ff] transition-all duration-500 cursor-pointer">
+            <button className="px-5 py-2 rounded text-blue-text bg-[#3e97ff1a] font-semibold text-sm hover:text-white hover:bg-blue-text transition-all duration-500 cursor-pointer">
               Primary
             </button>
             <button className="px-5 py-2 rounded text-[#505863] bg-[#5058631a] font-semibold text-sm hover:text-white hover:bg-[#505863] transition-all duration-500 cursor-pointer">
@@ -117,12 +117,12 @@ function UIButton() {
             <button className="px-5 py-2 rounded text-[#02a0e4] bg-[#02a0e41a] font-semibold text-sm hover:text-white hover:bg-[#02a0e4] transition-all duration-500 cursor-pointer">
               Info
             </button>
-            <button className="px-5 py-2 rounded text-[#252f4a] bg-[#252f4a1a] font-semibold text-sm hover:text-white hover:bg-[#252f4a] transition-all duration-500 cursor-pointer">
+            <button className="px-5 py-2 rounded text-darkgray bg-[#252f4a1a] font-semibold text-sm hover:text-white hover:bg-darkgray transition-all duration-500 cursor-pointer">
               Dark
             </button>
           </div>
           <div className="flex gap-2 items-center flex-wrap pt-4 sm:pt-6">
-            <button className="px-5 py-2 text-[#3e97ff] bg-[#3e97ff1a] font-semibold text-sm rounded-full hover:text-white hover:bg-[#3e97ff] transition-all duration-500 cursor-pointer">
+            <button className="px-5 py-2 text-blue-text bg-[#3e97ff1a] font-semibold text-sm rounded-full hover:text-white hover:bg-blue-text transition-all duration-500 cursor-pointer">
               Primary
             </button>
             <button className="px-5 py-2 text-[#505863] bg-[#5058631a] font-semibold text-sm rounded-full hover:text-white hover:bg-[#505863] transition-all duration-500 cursor-pointer">
@@ -140,7 +140,7 @@ function UIButton() {
             <button className="px-5 py-2 text-[#02a0e4] bg-[#02a0e41a] font-semibold text-sm rounded-full hover:text-white hover:bg-[#02a0e4] transition-all duration-500 cursor-pointer">
               Info
             </button>
-            <button className="px-5 py-2 text-[#252f4a] bg-[#252f4a1a] font-semibold text-sm rounded-full hover:text-white hover:bg-[#252f4a] transition-all duration-500 cursor-pointer">
+            <button className="px-5 py-2 text-darkgray bg-[#252f4a1a] font-semibold text-sm rounded-full hover:text-white hover:bg-darkgray transition-all duration-500 cursor-pointer">
               Dark
             </button>
           </div>
@@ -552,7 +552,7 @@ function UIButton() {
             {sizes.map((size, i) => (
               <button
                 key={i}
-                className={`${size.padding} rounded text-white bg-[#3e97ff] font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500`}
+                className={`${size.padding} rounded text-white bg-blue-text font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500`}
               >
                 {size.label}
               </button>
@@ -562,7 +562,7 @@ function UIButton() {
             {sizes.map((size, i) => (
               <button
                 key={i}
-                className={`${size.padding} rounded-full text-white bg-[#3e97ff] font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500`}
+                className={`${size.padding} rounded-full text-white bg-blue-text font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500`}
               >
                 {size.label}
               </button>

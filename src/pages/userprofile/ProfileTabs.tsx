@@ -19,7 +19,7 @@ export default function ProfileTabs() {
           to={tab.path}
           className={({ isActive }) =>
             `flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-[10px] rounded text-sm cursor-pointer transition-all duration-500 ${
-              isActive ? "bg-[#3e97ff] text-white" : "text-[#202224] hover:bg-[#e0f0ff] "
+              isActive ? "bg-blue-text text-white" : "text-darkgray hover:bg-[#e0f0ff] "
             }`
           }
         >

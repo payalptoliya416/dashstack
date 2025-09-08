@@ -145,7 +145,7 @@ function RichContent({color}: RichContentProps) {
             <div>{<div className="w-6 h-6">{tab.icon}</div>}</div>
             <div>
               <h3 className="text-base font-bold">{tab.label}</h3>
-              <p className="text-[13px] text-[#6B7177] font-bold">
+              <p className="text-13 text-graytext font-bold">
                 {tab.content}
               </p>
             </div>

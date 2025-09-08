@@ -390,7 +390,7 @@ const ExpandingTable = () => {
             className={`px-3 py-[6px] border border-gray-200 cursor-pointer ${
               currentPage === 1
                 ? "text-gray-400 bg-gray-100"
-                : "bg-[#f8f9fa] text-[#252f4a]"
+                : "bg-[#f8f9fa] text-darkgray"
             }`}
             onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
           >
@@ -401,8 +401,8 @@ const ExpandingTable = () => {
               key={num}
               className={`px-3 py-[6px] border border-gray-200 cursor-pointer ${
                 currentPage === num
-                  ? "bg-[#3e97ff] text-white"
-                  : "bg-[#f8f9fa] text-[#252f4a]"
+                  ? "bg-blue-text text-white"
+                  : "bg-[#f8f9fa] text-darkgray"
               }`}
               onClick={() => setCurrentPage(num)}
             >
@@ -413,7 +413,7 @@ const ExpandingTable = () => {
             className={`px-3 py-[6px] border border-gray-200 cursor-pointer ${
               currentPage === totalPages
                 ? "text-gray-400 bg-gray-100"
-                : "bg-[#f8f9fa] text-[#252f4a]"
+                : "bg-[#f8f9fa] text-darkgray"
             }`}
             onClick={() =>
               currentPage < totalPages && setCurrentPage(currentPage + 1)

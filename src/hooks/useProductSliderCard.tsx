@@ -79,8 +79,8 @@ const [isFavorite, setIsFavorite] = useState(false)
       <div className="p-4 sm:p-6">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-[#202224] text-lg font-bold mb-2">{title}</h2>
-            <h3 className="text-[#4880FF] text-base font-bold mb-2">{price}</h3>
+            <h2 className="text-darkgray text-lg font-bold mb-2">{title}</h2>
+            <h3 className="text-blue-light text-base font-bold mb-2">{price}</h3>
           </div>
           <motion.div whileTap={{ scale: 0.85 }} className="w-[44px] h-[44px] rounded-full bg-[#F9F9F9] flex justify-center items-center cursor-pointer"    onClick={() => setIsFavorite(!isFavorite)}>
             <Heart size={18} color={heartColor ? "#FF3B3B" : "#626262"} fill={isFavorite && heartColor? "#FF3B3B" : isFavorite  ? "#000000" :"none"}/>

@@ -47,7 +47,7 @@ const FeatherIcon: React.FC = () => {
 
                 {/* Hover overlay (existing) */}
                 <div className="absolute inset-0 bg-[#eef0f3] flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 z-10">
-                  <span className="text-[#252f4a] text-sm font-medium">
+                  <span className="text-darkgray text-sm font-medium">
                     {icon.name}
                   </span>
                 </div>
@@ -55,7 +55,7 @@ const FeatherIcon: React.FC = () => {
                 {/* Click overlay */}
                 {activeIndex === index && (
                   <div className="absolute inset-0 bg-[#eef0f3] flex justify-center items-center z-20">
-                    <span className="text-[#252f4a] text-sm font-medium">
+                    <span className="text-darkgray text-sm font-medium">
                       {icon.name}
                     </span>
                   </div>
@@ -68,7 +68,7 @@ const FeatherIcon: React.FC = () => {
 
       <div className="rounded-lg shadow-md border border-gray-200 bg-[#F8F9FA] mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px]">
-          <h3 className="font-bold text-[17px] text-[#252f4a]">Installation</h3>
+          <h3 className="font-bold text-[17px] text-darkgray">Installation</h3>
         </div>
         <div className="p-6">
           <p className="text-[#e83e8c] py-[3px] px-2 rounded bg-[#f1f2f3] text-sm w-max">

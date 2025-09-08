@@ -111,8 +111,8 @@ function InfoPages() {
             onClick={() => setBilling("monthly")}
             className={`px-3 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold ${
               billing === "monthly"
-                ? "bg-[#3E97FF] text-white"
-                : "text-[#4B5675]"
+                ? "bg-blue text-white"
+                : "text-lightgray"
             }`}
           >
             Monthly billing
@@ -121,8 +121,8 @@ function InfoPages() {
             onClick={() => setBilling("annual")}
             className={`px-3 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold ${
               billing === "annual"
-                ? "bg-[#3E97FF] text-white"
-                : "text-[#4B5675]"
+                ? "bg-blue text-white"
+                : "text-lightgray"
             }`}
           >
             Annual billing
@@ -143,7 +143,7 @@ function InfoPages() {
                   className="text-start py-3 px-6 border-l border-gray-200 align-top min-w-[350px]"
                 >
                   <h3 className="text-lg font-bold">{plan.name}</h3>
-                  <p className="text-2xl font-extrabold text-[#202224] mt-2">
+                  <p className="text-2xl font-extrabold text-darkgray mt-2">
                     {billing === "monthly"
                       ? plan.monthlyPrice
                       : plan.annualPrice}
@@ -155,7 +155,7 @@ function InfoPages() {
                   <p className="text-sm text-gray-500 mt-1 mb-5">
                     {plan.description}
                   </p>
-                  <button className="mt-4 w-full px-5 py-2 rounded bg-[#3E97FF] text-white text-sm">
+                  <button className="mt-4 w-full px-5 py-2 rounded bg-blue text-white text-sm">
                     Get Started
                   </button>
                 </th>
@@ -203,10 +203,10 @@ function InfoPages() {
                   className="border-l border-gray-200"
                 >
                   <div className="flex flex-col gap-3 px-6 py-3">
-                    <button className="px-5 py-2 rounded bg-[#3E97FF] text-white text-sm w-full">
+                    <button className="px-5 py-2 rounded bg-blue text-white text-sm w-full">
                       Get Started
                     </button>
-                    <button className="px-5 py-2 rounded bg-[#f1f2f3] text-[#252f4a] text-sm w-full border border-gray-200">
+                    <button className="px-5 py-2 rounded bg-[#f1f2f3] text-darkgray text-sm w-full border border-gray-200">
                       Chat to Sales
                     </button>
                   </div>

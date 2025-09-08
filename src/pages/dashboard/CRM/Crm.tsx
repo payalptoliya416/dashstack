@@ -478,25 +478,25 @@ function Crm() {
               <div className="grid grid-cols-2 border-b border-gray-100 ">
                 <div className="p-6 border-t border-r border-gray-100 text-center">
                   <h3 className="text-[#252fa4 font-bold text-lg">5h : 33m</h3>
-                  <p className="text-[#6B7177] text-[13px]">Billable Hours</p>
+                  <p className="text-graytext text-13">Billable Hours</p>
                 </div>
                 <div className="p-6 border-t  border-gray-100 text-center">
                   <h3 className="text-[#252fa4 font-bold text-lg">6h : 14m</h3>
-                  <p className="text-[#6B7177] text-[13px]">Unbillable Hours</p>
+                  <p className="text-graytext text-13">Unbillable Hours</p>
                 </div>
                 <div className="p-6 border-t border-r border-gray-100 text-center">
                   <h3 className="text-[#252fa4 font-bold text-lg">15 / 30</h3>
-                  <p className="text-[#6B7177] text-[13px]">Tasks Completed</p>
+                  <p className="text-graytext text-13">Tasks Completed</p>
                 </div>
                 <div className="p-6 border-t  border-gray-100 text-center">
                   <h3 className="text-[#252fa4 font-bold text-lg">16 / 25</h3>
-                  <p className="text-[#6B7177] text-[13px]">Projects Done</p>
+                  <p className="text-graytext text-13">Projects Done</p>
                 </div>
               </div>
             </div>
             <a
               href="javascript:void(0)"
-              className="p-6 text-[#3e97ff] text-sm flex justify-center items-center gap-2 font-bold"
+              className="p-6 text-blue-text text-sm flex justify-center items-center gap-2 font-bold"
             >
               View Details <ArrowRight size={14} />
             </a>
@@ -532,12 +532,12 @@ function Crm() {
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold">{m.title}</h3>
-                    <p className="text-[13px] mb-2">{m.time}</p>
+                    <p className="text-13 mb-2">{m.time}</p>
                     <div className="flex gap-2 items-center">
-                      <button className="text-[11px] leading-[11px] flex gap-1 items-center border p-2 border-gray-100 rounded-full">
+                      <button className="text-11 leading-[13px] flex gap-1 items-center border p-2 border-gray-100 rounded-full">
                         <CalendarDays size={12} /> {m.date} {m.month} 2024
                       </button>
-                      <button className="text-[11px] leading-[11px] flex gap-1 items-center border p-2 border-gray-100 rounded-full">
+                      <button className="text-11 leading-[13px] flex gap-1 items-center border p-2 border-gray-100 rounded-full">
                         <span
                           className="w-[7px] h-[7px] rounded-full inline-block"
                           style={{ backgroundColor: m.tagColor }}
@@ -572,7 +572,7 @@ function Crm() {
 
             <a
               href="javascript:void(0)"
-              className="p-6 text-[#3e97ff] text-sm flex justify-center items-center gap-2 font-bold"
+              className="p-6 text-blue-text text-sm flex justify-center items-center gap-2 font-bold"
             >
               View Details <ArrowRight size={14} />
             </a>
@@ -590,7 +590,7 @@ function Crm() {
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-sm text-[#202224] font-semibold max-w-[350px]">
+                  <h2 className="text-sm text-darkgray font-semibold max-w-[350px]">
                     Eroll Maxhuni uploaded 4 new photos to album{" "}
                     <span className="text-[#e49e3d]">Summer Trip</span>
                   </h2>
@@ -630,7 +630,7 @@ function Crm() {
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-sm text-[#202224] font-semibold max-w-[350px]">
+                  <h2 className="text-sm text-darkgray font-semibold max-w-[350px]">
                     Arlind Nushi checked in at Laborator
                   </h2>
                   <p className="text-[#282D32] text-sm mb-4 max-w-[350px]">
@@ -638,16 +638,16 @@ function Crm() {
                     team, today at <strong>10:00 AM</strong>
                   </p>
                   <div className="flex gap-1 items-center">
-                    <button className="text-[11px] leading-[11px] bg-[#fbeff1] text-[#d13b4c] py-[5px] px-[7px] rounded">
+                    <button className="text-11 leading-[13px] bg-[#fbeff1] text-[#d13b4c] py-[5px] px-[7px] rounded">
                       React
                     </button>
-                    <button className="text-[11px] leading-[11px] bg-[#e9f8f0] text-[#25b865] py-[5px] px-[7px] rounded">
+                    <button className="text-11 leading-[13px] bg-[#e9f8f0] text-[#25b865] py-[5px] px-[7px] rounded">
                       Typescript
                     </button>
-                    <button className="text-[11px] leading-[11px] bg-[#fcf3e8] text-[#e49e3d] py-[5px] px-[7px] rounded">
+                    <button className="text-11 leading-[13px] bg-[#fcf3e8] text-[#e49e3d] py-[5px] px-[7px] rounded">
                       Admin
                     </button>
-                    <button className="text-[11px] leading-[11px] bg-[#ecf5ff] text-[#3e97ff] py-[5px] px-[7px] rounded">
+                    <button className="text-11 leading-[13px] bg-[#ecf5ff] text-blue-text py-[5px] px-[7px] rounded">
                       Dashboard
                     </button>
                   </div>
@@ -656,11 +656,11 @@ function Crm() {
               <div className="flex items-start gap-3 mb-1 py-4">
                 <div>
                   <div className="w-[47px] h-[47px] roudned-full flex items-center justify-center border border-gray-100 rounded-full ">
-                    <SquareUser className="text-[#252f4a]" size={16} />
+                    <SquareUser className="text-darkgray" size={16} />
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-sm text-[#202224] font-semibold max-w-[350px]">
+                  <h2 className="text-sm text-darkgray font-semibold max-w-[350px]">
                     Another conference call today, at{" "}
                     <span className="text-[#d13b4c] font-bold">11:00 AM</span>
                   </h2>

@@ -16,7 +16,7 @@ type Theme = {
 };
 
 const themes: Theme[] = [
-  { color: "bg-[#3e97ff]"},
+  { color: "bg-blue-text"},
   { color: "bg-[#505863]"},
   { color: "bg-[#25b865]"},
   { color: "bg-[#02a0e4]"},

@@ -169,12 +169,12 @@ function UICard() {
           <div className="p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
              {flushCards.map((card) => (
           <div key={card.id} className="shadow rounded-lg">
-            <h3 className="p-6 text-[17px] text-[#252f4a] font-bold">
+            <h3 className="p-6 text-[17px] text-darkgray font-bold">
               {card.title}
             </h3>
-            <p className="p-6 text-[#4B5675] text-sm">{card.description}</p>
+            <p className="p-6 text-lightgray text-sm">{card.description}</p>
             <div className="p-6 flex gap-4">
-              <button className="text-sm font-semibold py-2 px-5 transition-all duration-300 hover:rounded-full text-[#3e97ff] hover:bg-[#3e97ff1a]">
+              <button className="text-sm font-semibold py-2 px-5 transition-all duration-300 hover:rounded-full text-blue-text hover:bg-[#3e97ff1a]">
                 Card Link
               </button>
               <button className="text-sm font-semibold py-2 px-5 transition-all duration-300 hover:rounded-full text-[#d13b4c] hover:bg-[#d13b4c1a]">
@@ -229,66 +229,66 @@ function UICard() {
         <div className="p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           <div className="shadow rounded-lg flex flex-col justify-between">
             <div>
-              <h4 className="p-6 border-b text-[#252f4a] text-sm border-gray-100">Height 100%</h4>
+              <h4 className="p-6 border-b text-darkgray text-sm border-gray-100">Height 100%</h4>
             <div className="p-6">
               <h2 className="font-bold mb-2 text-[17px]">Height 100%</h2>
               <p className="text-sm text-[#4b5675]">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
             </div>
             </div>
-             <h4 className="p-6 border-t text-[#252f4a] text-sm border-gray-100">Height 100%</h4>
+             <h4 className="p-6 border-t text-darkgray text-sm border-gray-100">Height 100%</h4>
           </div>
           <div className="h-full flex flex-col">
             <div className="shadow rounded-lg flex flex-col justify-between mb-6 flex-1">
             <div>
-              <h4 className="p-6 border-b text-[#252f4a] text-sm border-gray-100">Height 100%</h4>
+              <h4 className="p-6 border-b text-darkgray text-sm border-gray-100">Height 100%</h4>
             <div className="p-6">
               <h2 className="font-bold mb-2 text-[17px]">Height 100%</h2>
               <p className="text-sm text-[#4b5675]">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
             </div>
             </div>
-             <h4 className="p-6 border-t text-[#252f4a] text-sm border-gray-100">Height 100%</h4>
+             <h4 className="p-6 border-t text-darkgray text-sm border-gray-100">Height 100%</h4>
           </div>
           <div className="shadow rounded-lg flex flex-col justify-between flex-1">
             <div>
-              <h4 className="p-6 border-b text-[#252f4a] text-sm border-gray-100">Height 100%</h4>
+              <h4 className="p-6 border-b text-darkgray text-sm border-gray-100">Height 100%</h4>
             <div className="p-6">
               <h2 className="font-bold mb-2 text-[17px]">Height 100%</h2>
               <p className="text-sm text-[#4b5675]">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
             </div>
             </div>
-             <h4 className="p-6 border-t text-[#252f4a] text-sm border-gray-100">Height 100%</h4>
+             <h4 className="p-6 border-t text-darkgray text-sm border-gray-100">Height 100%</h4>
           </div>
           </div>
           <div className="h-full flex flex-col">
             <div className="shadow rounded-lg flex flex-col justify-between mb-6 flex-1">
             <div>
-              <h4 className="p-6 border-b text-[#252f4a] text-sm border-gray-100">Height 100%</h4>
+              <h4 className="p-6 border-b text-darkgray text-sm border-gray-100">Height 100%</h4>
             <div className="p-6">
               <h2 className="font-bold mb-2 text-[17px]">Height 100%</h2>
               <p className="text-sm text-[#4b5675]">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
             </div>
             </div>
-             <h4 className="p-6 border-t text-[#252f4a] text-sm border-gray-100">Height 100%</h4>
+             <h4 className="p-6 border-t text-darkgray text-sm border-gray-100">Height 100%</h4>
           </div>
           <div className="shadow rounded-lg flex flex-col justify-between mb-6 flex-1">
             <div>
-              <h4 className="p-6 border-b text-[#252f4a] text-sm border-gray-100">Height 100%</h4>
+              <h4 className="p-6 border-b text-darkgray text-sm border-gray-100">Height 100%</h4>
             <div className="p-6">
               <h2 className="font-bold mb-2 text-[17px]">Height 100%</h2>
               <p className="text-sm text-[#4b5675]">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
             </div>
             </div>
-             <h4 className="p-6 border-t text-[#252f4a] text-sm border-gray-100">Height 100%</h4>
+             <h4 className="p-6 border-t text-darkgray text-sm border-gray-100">Height 100%</h4>
           </div>
           <div className="shadow rounded-lg flex flex-col justify-between flex-1">
             <div>
-              <h4 className="p-6 border-b text-[#252f4a] text-sm border-gray-100">Height 100%</h4>
+              <h4 className="p-6 border-b text-darkgray text-sm border-gray-100">Height 100%</h4>
             <div className="p-6">
               <h2 className="font-bold mb-2 text-[17px]">Height 100%</h2>
               <p className="text-sm text-[#4b5675]">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
             </div>
             </div>
-             <h4 className="p-6 border-t text-[#252f4a] text-sm border-gray-100">Height 100%</h4>
+             <h4 className="p-6 border-t text-darkgray text-sm border-gray-100">Height 100%</h4>
           </div>
           </div>
           <div>

@@ -39,7 +39,7 @@ export default function WithIcon() {
       ? "border border-gray-200 border-b-white rounded-t-md after:absolute after:-bottom-1 after:left-0 after:content-[''] after:bg-white after:w-full after:h-1"
       : tab === "disabled"
       ? "text-gray-400 cursor-not-allowed"
-      : "text-gray-700 hover:text-[#3e97ff] hover:border hover:border-gray-200 hover:border-b-white hover:rounded-t-md hover:after:absolute hover:after:-bottom-1 hover:after:left-0 hover:after:content-[''] hover:after:bg-white hover:after:w-full hover:after:h-1"
+      : "text-gray-700 hover:text-blue-text hover:border hover:border-gray-200 hover:border-b-white hover:rounded-t-md hover:after:absolute hover:after:-bottom-1 hover:after:left-0 hover:after:content-[''] hover:after:bg-white hover:after:w-full hover:after:h-1"
   }`}
   >
     {tabIcons[tab]}

@@ -33,7 +33,7 @@ const avatarOptions: Option[] = [
     details: (
       <>
         Use <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">(size)</button> as:{" "}
-        <span className="text-[#252f4a] font-bold">xs, sm, md, lg, xl, xxl</span>
+        <span className="text-darkgray font-bold">xs, sm, md, lg, xl, xxl</span>
       </>
     ),
   },
@@ -43,7 +43,7 @@ const avatarOptions: Option[] = [
       <>
         Use avatar solid color{" "}
         <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">(colors)</button> from{" "}
-        <span className="text-[#252f4a] font-bold">bg-colors</span>
+        <span className="text-darkgray font-bold">bg-colors</span>
       </>
     ),
   },
@@ -53,7 +53,7 @@ const avatarOptions: Option[] = [
       <>
         Use avatar soft color{" "}
         <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">(colors)</button> from{" "}
-        <span className="text-[#252f4a] font-bold">bg-colors-subtle</span>
+        <span className="text-darkgray font-bold">bg-colors-subtle</span>
       </>
     ),
   },
@@ -62,8 +62,8 @@ const avatarOptions: Option[] = [
     details: (
       <>
         Use <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">(shape)</button> as:{" "}
-        <span className="text-[#252f4a] font-bold">circle, rounded, 0</span>. Default value is{" "}
-        <span className="text-[#252f4a] font-bold">circle</span>
+        <span className="text-darkgray font-bold">circle, rounded, 0</span>. Default value is{" "}
+        <span className="text-darkgray font-bold">circle</span>
       </>
     ),
   },
@@ -72,7 +72,7 @@ const avatarOptions: Option[] = [
     details: (
       <>
         Use <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">(status)</button> as:{" "}
-        <span className="text-[#252f4a] font-bold">active, busy, inactive</span>
+        <span className="text-darkgray font-bold">active, busy, inactive</span>
       </>
     ),
   },
@@ -81,7 +81,7 @@ const avatarOptions: Option[] = [
     details: (
       <>
         Use <button className="text-[#e83e8c] py-[2px] mx-1 px-1 rounded bg-[#f1f2f3] text-sm">(size)</button> as:{" "}
-        <span className="text-[#252f4a] font-bold">xs, sm, md, lg, xl, xxl</span>
+        <span className="text-darkgray font-bold">xs, sm, md, lg, xl, xxl</span>
       </>
     ),
   },
@@ -175,7 +175,7 @@ function UIAvatar(): JSX.Element {
           Soft
         </div>
         <div className="flex gap-1 items-center p-4 sm:p-6 flex-wrap">
-          <div className="w-12 h-12 rounded-full bg-[#ecf5ff] flex justify-center items-center text-[#3e97ff]">
+          <div className="w-12 h-12 rounded-full bg-[#ecf5ff] flex justify-center items-center text-blue-text">
             A
           </div>
           <div className="w-12 h-12 rounded-full bg-[#f1f2f3] flex justify-center items-center text-[#505863]">
@@ -202,22 +202,22 @@ function UIAvatar(): JSX.Element {
           Shape
         </div>
         <div className="flex gap-1 items-center p-4 sm:p-6 flex-wrap">
-          <div className="w-12 h-12 bg-[#3e97ff] flex justify-center items-center text-white">
+          <div className="w-12 h-12 bg-blue-text flex justify-center items-center text-white">
             A
           </div>
-          <div className="w-12 h-12 rounded-sm bg-[#3e97ff] flex justify-center items-center text-white">
+          <div className="w-12 h-12 rounded-sm bg-blue-text flex justify-center items-center text-white">
             B
           </div>
-          <div className="w-12 h-12 rounded-lg bg-[#3e97ff] flex justify-center items-center text-white">
+          <div className="w-12 h-12 rounded-lg bg-blue-text flex justify-center items-center text-white">
             C
           </div>
-          <div className="w-12 h-12 rounded-xl bg-[#3e97ff] flex justify-center items-center text-white">
+          <div className="w-12 h-12 rounded-xl bg-blue-text flex justify-center items-center text-white">
             D
           </div>
-          <div className="w-12 h-12 rounded-2xl bg-[#3e97ff] flex justify-center items-center text-white">
+          <div className="w-12 h-12 rounded-2xl bg-blue-text flex justify-center items-center text-white">
             E
           </div>
-          <div className="w-12 h-12 rounded-full bg-[#3e97ff] flex justify-center items-center text-white">
+          <div className="w-12 h-12 rounded-full bg-blue-text flex justify-center items-center text-white">
             F
           </div>
         </div>

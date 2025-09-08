@@ -19,32 +19,32 @@ function AutoPlaySlider() {
       <div className="w-full mx-auto mb-7 relative group">
       <Slider {...settings}>
         <div className="px-2">
-          <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a] text-sm">
+          <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-darkgray text-sm">
             <h3>1</h3>
           </div>
         </div>
         <div className="px-2">
-          <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a] text-sm">
+          <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-darkgray text-sm">
             <h3>2</h3>
           </div>
         </div>
         <div className="px-2">
-          <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a] text-sm">
+          <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-darkgray text-sm">
             <h3>3</h3>
           </div>
         </div>
         <div className="px-2">
-          <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a] text-sm">
+          <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-darkgray text-sm">
             <h3>4</h3>
           </div>
         </div>
         <div className="px-2">
-          <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a] text-sm">
+          <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-darkgray text-sm">
             <h3>5</h3>
           </div>
         </div>
         <div className="px-2">
-          <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-[#252f4a] text-sm">
+          <div className="h-36 bg-[#EEF0F3] flex items-center justify-center text-darkgray text-sm">
             <h3>6</h3>
           </div>
         </div>

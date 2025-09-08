@@ -36,12 +36,12 @@ function Radios() {
                   key={plan.id}
                   onClick={() => setSelected1(plan.id)}
                   className={`cursor-pointer border-2 rounded p-4 md:p-6 flex gap-3 items-start transition 
-                  ${isActive ? "border-[#3E97FF]" : "border-gray-100"}`}
+                  ${isActive ? "border-blue" : "border-gray-100"}`}
                 >
                   <div>
                     <span
                       className={`w-6 h-6 flex items-center justify-center rounded-full border transition 
-                      ${isActive ? "bg-[#3E97FF] border-[#3E97FF]" : "border-gray-300"}`}
+                      ${isActive ? "bg-blue border-blue" : "border-gray-300"}`}
                     >
                       {isActive && <Check className="w-3 h-3 text-white" />}
                     </span>
@@ -49,10 +49,10 @@ function Radios() {
 
                   <div className="w-full">
                     <div className="flex justify-between">
-                      <h3 className="text-base text-[#252f4a] font-bold mb-3">
+                      <h3 className="text-base text-darkgray font-bold mb-3">
                         {plan.title}
                       </h3>
-                      <h3 className="text-base text-[#252f4a] font-semibold">
+                      <h3 className="text-base text-darkgray font-semibold">
                         {plan.price}
                       </h3>
                     </div>
@@ -81,21 +81,21 @@ function Radios() {
                   key={option.id}
                   onClick={() => setSelected2(option.id)}
                   className={`cursor-pointer border-2 rounded p-4 md:p-6 flex gap-3 items-start transition justify-between
-                  ${isActive ? "border-[#3E97FF]" : "border-gray-100"}`}
+                  ${isActive ? "border-blue" : "border-gray-100"}`}
                 >
                   <div>
-                    <h3 className="text-base text-[#252f4a] mb-2 font-bold">
+                    <h3 className="text-base text-darkgray mb-2 font-bold">
                       {option.title}
                     </h3>
                     <p className="text-[#6C757D] text-sm mb-4">
                       {option.description}
                     </p>
-                    <h4 className="text-sm text-[#252f4a] font-bold">{option.price}</h4>
+                    <h4 className="text-sm text-darkgray font-bold">{option.price}</h4>
                   </div>
                   <div>
                     <span
                       className={`w-6 h-6 flex items-center justify-center rounded-full border transition
-                      ${isActive ? "bg-[#3E97FF] border-[#3E97FF]" : "border-gray-300"}`}
+                      ${isActive ? "bg-blue border-blue" : "border-gray-300"}`}
                     >
                       {isActive && <Check className="w-3 h-3 text-white" />}
                     </span>
@@ -121,17 +121,17 @@ function Radios() {
                   key={option.id}
                   onClick={() => setSelected3(option.id)}
                   className={`cursor-pointer border-2 rounded p-4 sm:p-6 flex gap-6 items-center transition
-                  ${isActive ? "border-[#3E97FF]" : "border-gray-100"}`}
+                  ${isActive ? "border-blue" : "border-gray-100"}`}
                 >
                   <img src={option.imgSrc} alt="" className="w-full max-w-10" />
                   <div className="w-full">
                     <div className="flex justify-between">
-                      <h3 className="text-base text-[#252f4a] font-bold mb-1">
+                      <h3 className="text-base text-darkgray font-bold mb-1">
                         {option.title}
                       </h3>
                       <span
                         className={`w-6 h-6 flex items-center justify-center rounded-full border transition
-                        ${isActive ? "bg-[#3E97FF] border-[#3E97FF]" : "border-gray-300"}`}
+                        ${isActive ? "bg-blue border-blue" : "border-gray-300"}`}
                       >
                         {isActive && <Check className="w-3 h-3 text-white" />}
                       </span>
@@ -161,17 +161,17 @@ function Radios() {
                   key={plan.id}
                   onClick={() => setSelected4(plan.id)}
                   className={`cursor-pointer border-2 rounded p-4 sm:p-6 flex gap-6 items-start flex-col sm:flex-row transition
-                  ${isActive ? "border-[#3E97FF]" : "border-gray-100"}`}
+                  ${isActive ? "border-blue" : "border-gray-100"}`}
                 >
                   <img src={plan.imgSrc} alt="" className="w-full max-w-14" />
                   <div className="w-full">
                     <div className="flex justify-between">
-                      <h3 className="text-base text-[#252f4a] font-bold mb-1">
+                      <h3 className="text-base text-darkgray font-bold mb-1">
                         {plan.title} {plan.price !== "Free" && <small className="font-normal">/{plan.price.split('/')[1]}</small>}
                       </h3>
                       <span
                         className={`w-6 h-6 flex items-center justify-center rounded-full border transition
-                        ${isActive ? "bg-[#3E97FF] border-[#3E97FF]" : "border-gray-300"}`}
+                        ${isActive ? "bg-blue border-blue" : "border-gray-300"}`}
                       >
                         {isActive && <Check className="w-3 h-3 text-white" />}
                       </span>
@@ -202,14 +202,14 @@ function Radios() {
                   key={plan.id}
                   onClick={() => setSelected5(plan.id)}
                   className={`cursor-pointer border-2 rounded p-4 sm:p-6 text-center transition
-                  ${isActive ? "border-[#3E97FF]" : "border-gray-100"}`}
+                  ${isActive ? "border-blue" : "border-gray-100"}`}
                 >
                   <Icon className="inline-block" size={30} />
                   <div className="my-6">
-                    <h3 className="text-base text-[#252f4a] font-bold mb-1">
+                    <h3 className="text-base text-darkgray font-bold mb-1">
                       {plan.title}{" "}
                       {plan.popular && (
-                        <span className="bg-[#e9f8f0] text-[#25b865] py-1 px-[7px] rounded text-[11px] leading-[11px]">
+                        <span className="bg-[#e9f8f0] text-[#25b865] py-1 px-[7px] rounded text-11 leading-[13px]">
                           Popular
                         </span>
                       )}
@@ -223,7 +223,7 @@ function Radios() {
                   </div>
                   <span
                     className={`w-6 h-6 flex items-center justify-center rounded-full border transition mx-auto
-                    ${isActive ? "bg-[#3E97FF] border-[#3E97FF]" : "border-gray-300"}`}
+                    ${isActive ? "bg-blue border-blue" : "border-gray-300"}`}
                   >
                     {isActive && <Check className="w-3 h-3 text-white" />}
                   </span>
@@ -248,19 +248,19 @@ function Radios() {
                   key={card.id}
                   onClick={() => setSelected6(card.id)}
                   className={`cursor-pointer border-2 rounded p-4 sm:p-6 flex gap-5 transition
-                  ${isActive ? "border-[#3E97FF]" : "border-gray-100"}`}
+                  ${isActive ? "border-blue" : "border-gray-100"}`}
                 >
                   <span
                     className={`w-6 h-6 flex items-center justify-center rounded-full border transition
-                    ${isActive ? "bg-[#3E97FF] border-[#3E97FF]" : "border-gray-300"}`}
+                    ${isActive ? "bg-blue border-blue" : "border-gray-300"}`}
                   >
                     {isActive && <Check className="w-3 h-3 text-white" />}
                   </span>
                   <div>
-                    <h3 className="text-[#252f4a] text-base mb-2 font-bold">
+                    <h3 className="text-darkgray text-base mb-2 font-bold">
                       {card.name}
                     </h3>
-                    <h5 className="text-xs text-[#252f4a] font-semibold">
+                    <h5 className="text-xs text-darkgray font-semibold">
                       {card.company}
                     </h5>
                     <ul className="mt-8">
@@ -317,14 +317,14 @@ function Radios() {
                   key={plan.id}
                   onClick={() => setSelected7(plan.id)}
                   className={`cursor-pointer border-2 rounded text-center transition
-                  ${isActive ? "border-[#3E97FF]" : "border-gray-100"}`}
+                  ${isActive ? "border-blue" : "border-gray-100"}`}
                 >
                   <img src={plan.imgSrc} alt="" />
                   <div className="p-4 sm:p-6">
-                    <h3 className="text-[#252f4a] mb-2 font-bold">
+                    <h3 className="text-darkgray mb-2 font-bold">
                       {plan.title}{" "}
                       {plan.popular && (
-                        <span className="bg-[#fbeff1] text-[#d13b4c] py-1 px-[7px] rounded text-[11px] leading-[11px]">
+                        <span className="bg-[#fbeff1] text-[#d13b4c] py-1 px-[7px] rounded text-11 leading-[13px]">
                           popular
                         </span>
                       )}
@@ -335,7 +335,7 @@ function Radios() {
                     </h4>
                     <span
                       className={`w-6 h-6 flex items-center justify-center rounded-full border transition mx-auto
-                      ${isActive ? "bg-[#3E97FF] border-[#3E97FF]" : "border-gray-300"}`}
+                      ${isActive ? "bg-blue border-blue" : "border-gray-300"}`}
                     >
                       {isActive && <Check className="w-3 h-3 text-white" />}
                     </span>
@@ -361,12 +361,12 @@ function Radios() {
                   key={image.id}
                   onClick={() => setSelected8(image.id)}
                   className={`cursor-pointer border-2 rounded text-center relative transition
-                  ${isActive ? "border-[#3E97FF]" : "border-gray-100"}`}
+                  ${isActive ? "border-blue" : "border-gray-100"}`}
                 >
                   <img src={image.imgSrc} alt="" />
                   <span
                     className={`w-5 h-5 rounded-full border-2 absolute block top-6 right-6 transition
-                    ${isActive ? "bg-[#3E97FF] border-transparent" : "bg-white  border-white"}`}
+                    ${isActive ? "bg-blue border-transparent" : "bg-white  border-white"}`}
                   >
                     {isActive && <Check className="w-3 h-3 text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />}
                   </span>

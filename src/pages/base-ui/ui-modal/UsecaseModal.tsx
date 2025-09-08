@@ -27,11 +27,11 @@ const UsecaseModal: React.FC<UsecaseModalProps> = ({ open, onClose, type }) => {
       title: "Congratulations!",
       message: (
         <>
-        <h3 className="text-[#4B5675] mb-4 text-lg">
+        <h3 className="text-lightgray mb-4 text-lg">
           You've successfully bought <span className="font-black">0.365 BTC</span> for
           <span className="font-black"> $350 USD.</span>
         </h3>
-         <p className="text-sm text-[#4B5675] mb-6">Learn when you receive bitcoin in your wallet. <Link to='' className="font-bold">Click here</Link></p>
+         <p className="text-sm text-lightgray mb-6">Learn when you receive bitcoin in your wallet. <Link to='' className="font-bold">Click here</Link></p>
         </>
       ),
       button: "OK",
@@ -42,10 +42,10 @@ const UsecaseModal: React.FC<UsecaseModalProps> = ({ open, onClose, type }) => {
       title: "Unable to Process!",
       message: (
         <>
-        <h3 className="text-[#4B5675] mb-4 text-lg">
+        <h3 className="text-lightgray mb-4 text-lg">
           We are sorry, we were unable to process your payment. Please try again later.
         </h3>
-         <p className="text-sm text-[#4B5675] mb-6">Learn when you receive bitcoin in your wallet. <Link to='' className="font-bold">Click here</Link></p>
+         <p className="text-sm text-lightgray mb-6">Learn when you receive bitcoin in your wallet. <Link to='' className="font-bold">Click here</Link></p>
         </>
       ),
       button: "Return",
@@ -68,7 +68,7 @@ const UsecaseModal: React.FC<UsecaseModalProps> = ({ open, onClose, type }) => {
       icon: <Info className="w-7 h-7" />,
       title: "Incorrect Information!",
       message: (
-        <h3 className="text-[#4B5675] mb-4 text-lg">
+        <h3 className="text-lightgray mb-4 text-lg">
           In this example, you can see a form where you can request some additional information from the customer when they land on the app page.
         </h3>
       ),
@@ -126,7 +126,7 @@ const UsecaseModal: React.FC<UsecaseModalProps> = ({ open, onClose, type }) => {
                   {button}
                 </button>
 
-                <p className="text-sm text-[#4B5675] mb-4 pt-6">
+                <p className="text-sm text-lightgray mb-4 pt-6">
                   Earn up to $5 USD for each friend you refer!
                   <Link to="" className="font-bold">
                     {" "}Invite friends

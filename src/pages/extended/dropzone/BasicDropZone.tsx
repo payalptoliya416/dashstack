@@ -33,10 +33,10 @@ function BasicDropZone() {
         <div className="w-12 sm:w-[60px] h-12 sm:h-[60px] rounded-full bg-[#f1f2f3] border border-gray-300 flex justify-center items-center mx-auto mb-4">
           <Upload size={20} />
         </div>
-        <h3 className="text-[#252f4a] text-base mb-2 font-bold">
+        <h3 className="text-darkgray text-base mb-2 font-bold">
           Drop files here or click to upload.
         </h3>
-        <p className="text-[#6B7177] text-sm">
+        <p className="text-graytext text-sm">
           (This is just a demo drop zone. Selected files are not actually
           uploaded.)
         </p>
@@ -56,10 +56,10 @@ function BasicDropZone() {
                 className="w-12 h-12 rounded-full object-cover"
               />
               <div>
-                <h3 className="text-[#252f4a] text-sm font-semibold">
+                <h3 className="text-darkgray text-sm font-semibold">
                   {file.name}
                 </h3>
-                <p className="text-[#6B7177] text-sm">
+                <p className="text-graytext text-sm">
                   {(file.size / (1024 * 1024)).toFixed(2)} MB
                 </p>
               </div>

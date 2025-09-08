@@ -54,12 +54,12 @@ function ProductStockTable<T>({
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr
                   key={headerGroup.id}
-                  className="text-left text-sm text-[#202224] border-b border-[#D5D5D5]/60"
+                  className="text-left text-sm text-darkgray border-b border-[#D5D5D5]/60"
                 >
                   {headerGroup.headers.map((header) => (
                     <th
                       key={header.id}
-                      className="py-4 px-10 font-bold text-sm text-[#202224] whitespace-nowrap"
+                      className="py-4 px-10 font-bold text-sm text-darkgray whitespace-nowrap"
                     >
                       {header.isPlaceholder
                         ? null
@@ -80,12 +80,12 @@ function ProductStockTable<T>({
                     index === table.getRowModel().rows.length - 1
                       ? ""
                       : "border-b border-[#D5D5D5]/60"
-                  } bg-white text-sm font-semibold text-[#202224]`}
+                  } bg-white text-sm font-semibold text-darkgray`}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <td
                       key={cell.id}
-                      className="py-4 sm:py-6 px-6 sm:px-[30px] whitespace-nowrap text-[#202224]/90 text-sm font-semibold"
+                      className="py-4 sm:py-6 px-6 sm:px-[30px] whitespace-nowrap text-darkgray/90 text-sm font-semibold"
                     >
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </td>

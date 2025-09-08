@@ -107,7 +107,7 @@ export function DataTable<T>({
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
-                    className="py-[12px] px-[20px] text-sm font-extrabold text-[#202224] text-start"
+                    className="py-[12px] px-[20px] text-sm font-extrabold text-darkgray text-start"
                   >
                     {flexRender(
                       header.column.columnDef.header,
@@ -131,7 +131,7 @@ export function DataTable<T>({
                 {row.getVisibleCells().map((cell) => (
                   <td
                     key={cell.id}
-                    className="py-[14px] px-[20px] text-sm font-semibold text-[#202224] whitespace-nowrap"
+                    className="py-[14px] px-[20px] text-sm font-semibold text-darkgray whitespace-nowrap"
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>

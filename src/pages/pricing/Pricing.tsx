@@ -61,13 +61,13 @@ function Pricing() {
             className="rounded-3xl bg-[url('/images/pricingbg.png')] bg-cover w-full h-full px-5"
           >
             <div className="border-b-2 border-[#212121]/10 py-4 sm:py-6 lg:py-10 text-center">
-              <h3 className="text-[#202224] text-[22px] font-bold mb-[10px]">
+              <h3 className="text-darkgray text-[22px] font-bold mb-[10px]">
                 {plan.name}
               </h3>
               <h6 className="text-[#212121]/80 text-base font-normal mb-2.5">
                 Monthly Charge
               </h6>
-              <h2 className="text-[#4880FF] text-3xl sm:text-4xl lg:text-[46px] font-extrabold">
+              <h2 className="text-blue-light text-3xl sm:text-4xl lg:text-[46px] font-extrabold">
                 {plan.price}
               </h2>
             </div>
@@ -87,12 +87,12 @@ function Pricing() {
 
             <div className="flex flex-col justify-center items-center py-6 lg:py-10">
               <button
-             className={`rounded-full py-3 md:py-4 lg:py-[19px] px-[48px] mb-6 border border-[#4880FF] 
+             className={`rounded-full py-3 md:py-4 lg:py-[19px] px-[48px] mb-6 border border-blue-light 
             transition-all duration-200
             ${
               plan.isPopular
-                ? "bg-[#4880FF] text-white"
-                : "text-[#4880FF] hover:bg-[#4880FF] hover:text-white active:bg-[#3a6edc] active:text-white"
+                ? "bg-blue-light text-white"
+                : "text-blue-light hover:bg-blue-light hover:text-white active:bg-[#3a6edc] active:text-white"
             }`}
               >
                 Get Started

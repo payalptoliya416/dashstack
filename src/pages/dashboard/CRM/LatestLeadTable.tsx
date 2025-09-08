@@ -51,7 +51,7 @@ export function LatestLeadTable({ data }: Props) {
         const value = info.getValue() as ProposalStatus;
         return (
           <span
-            className={`text-[11px] px-[7px] py-[5px] rounded leading-[11px] ${statusColors[value]}`}
+            className={`text-11 px-[7px] py-[5px] rounded leading-[13px] ${statusColors[value]}`}
           >
             {value}
           </span>
@@ -70,7 +70,7 @@ export function LatestLeadTable({ data }: Props) {
         const value = info.getValue() as WorkStatus;
         return (
           <span
-            className={`text-[11px] px-[7px] py-[5px] rounded leading-[11px] ${statusColors[value]}`}
+            className={`text-11 px-[7px] py-[5px] rounded leading-[13px] ${statusColors[value]}`}
           >
             {value}
           </span>
