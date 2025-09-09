@@ -29,6 +29,7 @@ import {
   MapPin,
   UserCog,
   Blocks,
+  ChartNoAxesCombined,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import { useEffect, useState, type FC } from "react";
@@ -157,6 +158,17 @@ export const componentLink: SidebarLink[] = [
       { name: "ReactTable", path: "/table-react" },
     ],
   },
+  {
+    name: "Charts",
+    icon: ChartNoAxesCombined,
+    children: [
+      { name: "ApexCharts", path: "/charts-apexCharts" },
+      { name: "ChartJs", path: "/charts-chartjs" },
+      { name: "Recharts", path: "/charts-recharts" },
+      { name: "Progressbar", path: "/charts-progressbar" },
+    ],
+  },
+
   {
     name: "Forms",
     icon: NotebookPen,

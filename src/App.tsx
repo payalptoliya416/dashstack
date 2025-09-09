@@ -95,6 +95,10 @@ import SlickSlider from "./pages/extended/slick-slider/SlickSlider";
 import DropZone from "./pages/extended/dropzone/DropZone";
 import HotToast from "./pages/extended/hot-toast/HotToast";
 import Toastity from "./pages/extended/toastity/Toastity";
+import ApexCharts from "./pages/comp-charts/apexCharts/ApexCharts";
+import ChartJs from "./pages/comp-charts/chartjs/ChartJs";
+import Recharts from "./pages/comp-charts/recharts/Recharts";
+import ProgressBar from "./pages/comp-charts/progressbar/ProgressBar";
 
 function App() {
   return (
@@ -177,6 +181,12 @@ function App() {
               <Route path="/form-nouislider" element={<NouiSlider />} />
               <Route path="/form-switchs" element={<Switches />} />
               <Route path="/form-validaiton" element={<Validation />} />
+
+              {/* --charts-- */}
+              <Route path="/charts-apexCharts" element={<ApexCharts />} />
+              <Route path="/charts-chartjs" element={<ChartJs />} />
+              <Route path="/charts-recharts" element={<Recharts />} />
+              <Route path="/charts-progressbar" element={<ProgressBar />} />
 
               {/* --editors-- */}
               <Route path="/editors" element={<TinyMCE />} />
