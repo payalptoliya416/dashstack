@@ -29,6 +29,7 @@ function DoughnutChart() {
 
   const options = {
     responsive: true,
+      maintainAspectRatio: false, 
      cutout: "60%",
     plugins: {
       legend: {
@@ -45,7 +46,7 @@ function DoughnutChart() {
   };
 
   return (
-    <div style={{ width: "70%", margin: "auto", padding: "20px" }}>
+    <div style={{ width: "100%", height: "350px", margin: "auto", padding: "20px" }}>
       <Doughnut data={data} options={options} />
     </div>
   );

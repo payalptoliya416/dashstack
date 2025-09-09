@@ -51,6 +51,7 @@ const RadarChart: React.FC = () => {
 
   const options: ChartOptions<"radar"> = {
     responsive: true,
+          maintainAspectRatio: false, 
     plugins: {
       legend: {
         position: "bottom",
@@ -83,7 +84,7 @@ const RadarChart: React.FC = () => {
   };
 
   return (
-    <div style={{ width: "70%", margin: "auto", padding: "20px" }}>
+    <div style={{ width: "100%", height: "350px", margin: "auto", padding: "20px" }}>
       <Radar data={data} options={options} />
     </div>
   );

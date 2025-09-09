@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import ProgressBarTable from "./ProgressBarTable";
 
 function ProgressBar() {
-  const [percentage, setPercentage] = useState(60);
+  const [percentage] = useState(60);
   const [animatedValue, setAnimatedValue] = useState(0);
   const [returningValue, setReturningValue] = useState(0);
   const [reactMoveValue, setReactMoveValue] = useState(0);
@@ -44,20 +45,23 @@ function ProgressBar() {
   }, []);
 
   return (
-    <div className="grid grid-cols-3 gap-7">
+    <>
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
       <div className="rounded-lg shadow border border-gray-100 bg-white ">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Basic
         </div>
         <div className="p-6 flex justify-center items-center">
-          <div className="w-52 h-52">
+          <div className="w-56 h-56">
             <CircularProgressbar
               value={percentage}
               text={`${percentage}%`}
+              strokeWidth={6} 
               styles={buildStyles({
                 pathColor: "#3E97FF",
                 textColor: "#3E97FF",
                 trailColor: "#e5e7eb",
+                textSize:"14px",
               })}
             />
           </div>
@@ -68,15 +72,17 @@ function ProgressBar() {
           Linecap
         </div>
         <div className="p-6 flex justify-center items-center">
-          <div className="w-52 h-52">
+          <div className="w-56 h-56">
             <CircularProgressbar
               value={percentage}
               text={`${percentage}%`}
+               strokeWidth={6} 
               styles={buildStyles({
                 pathColor: "#3E97FF",
                 textColor: "#3E97FF",
                 trailColor: "#e5e7eb",
                 strokeLinecap: "round",
+                textSize:"14px",
               })}
             />
           </div>
@@ -87,15 +93,17 @@ function ProgressBar() {
           Filled
         </div>
         <div className="p-6 flex justify-center items-center">
-          <div className="w-52 h-52">
+          <div className="w-56 h-56">
             <CircularProgressbar
               value={percentage}
               text={`${percentage}%`}
+               strokeWidth={6} 
               styles={buildStyles({
                 pathColor: "#3E97FF",
                 textColor: "#3E97FF",
                 trailColor: "#e5e7eb",
                 backgroundColor: "#3E97FF",
+                textSize:"14px",
               })}
               background
               backgroundPadding={6}
@@ -108,16 +116,17 @@ function ProgressBar() {
           Animation Speed
         </div>
         <div className="p-6 flex justify-center items-center">
-          <div className="w-52 h-52">
+          <div className="w-56 h-56">
             <CircularProgressbar
               value={animatedValue}
               text={`${animatedValue}%`}
+               strokeWidth={6} 
               styles={buildStyles({
                 pathColor: "#3E97FF",
                 textColor: "#3E97FF",
                 trailColor: "#e5e7eb",
                 strokeLinecap: "round",
-                //  transition: "stroke-dashoffset 0.5s ease 0s"
+                textSize:"14px",
               })}
             />
           </div>
@@ -128,15 +137,17 @@ function ProgressBar() {
           Animation Returning
         </div>
         <div className="p-6 flex justify-center items-center">
-          <div className="w-52 h-52">
+          <div className="w-56 h-56">
             <CircularProgressbar
               value={returningValue}
               text={`${returningValue}%`}
+               strokeWidth={6} 
               styles={buildStyles({
                 pathColor: "#3E97FF",
                 textColor: "#3E97FF",
                 trailColor: "#e5e7eb",
                 strokeLinecap: "round",
+                textSize:"14px",
               })}
             />
           </div>
@@ -147,21 +158,25 @@ function ProgressBar() {
           Animation React Move
         </div>
         <div className="p-6 flex justify-center items-center">
-          <div className="w-52 h-52">
+          <div className="w-56 h-56">
             <CircularProgressbar
               value={reactMoveValue}
               text={`${reactMoveValue}%`}
+               strokeWidth={6} 
               styles={buildStyles({
                 pathColor: "#3E97FF",
                 textColor: "#3E97FF",
                 trailColor: "#e5e7eb",
                 strokeLinecap: "round",
+                textSize:"14px",
               })}
             />
           </div>
         </div>
       </div>
     </div>
+    <ProgressBarTable/>
+    </>
   );
 }
 

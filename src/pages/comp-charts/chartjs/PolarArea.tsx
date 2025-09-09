@@ -30,6 +30,7 @@ function PolarAreaChart() {
 
   const options = {
     responsive: true,
+          maintainAspectRatio: false, 
     plugins: {
       legend: {
         position: 'bottom' as const,
@@ -52,7 +53,7 @@ function PolarAreaChart() {
   };
 
   return (
-    <div style={{ width: '70%', margin: 'auto', padding: '20px' }}>
+    <div style={{ width: '100%', height: "350px", margin: 'auto', padding: '20px' }}>
       <PolarArea data={data} options={options} />
     </div>
   );

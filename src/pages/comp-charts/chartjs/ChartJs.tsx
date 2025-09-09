@@ -1,3 +1,5 @@
+import UIOptionTable from "../../base-ui/UIOptionTable"
+import { ChartJsData } from "./ChartTableData"
 import DoughnutChart from "./Doughnut"
 import MultipleBar from "./MultipleBar"
 import PieChart from "./PieChart"
@@ -46,17 +48,17 @@ function ChartJs() {
         </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-7">
-        <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+        <div className="rounded-lg shadow border border-gray-100 bg-white">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
-       Doughnut
+          Doughnut
         </div>
         <div className="p-6">
         <DoughnutChart/>
         </div>
         </div>
 
-         <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
+         <div className="rounded-lg shadow border border-gray-100 bg-white">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
         Pie Chart
         </div>
@@ -65,7 +67,7 @@ function ChartJs() {
         </div>
         </div>
 
-         <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
+         <div className="rounded-lg shadow border border-gray-100 bg-white">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
        Polar Area
         </div>
@@ -74,7 +76,7 @@ function ChartJs() {
         </div>
         </div>
 
-         <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
+         <div className="rounded-lg shadow border border-gray-100 bg-white">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
       Radar Chart
         </div>
@@ -83,7 +85,7 @@ function ChartJs() {
         </div>
         </div>
         </div>
-
+  <UIOptionTable title="Options" options={ChartJsData} />
     </>
   )
 }
