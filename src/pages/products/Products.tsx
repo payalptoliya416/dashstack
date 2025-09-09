@@ -278,7 +278,7 @@ const getPageButtons = () => {
                 className="w-full bg-no-repeat bg-cover bg-center flex items-center rounded-xl py-8 sm:py-[50px]"
                 style={{ backgroundImage: `url('${slide.bg}')` }}
               >
-                <div className="px-11 sm:px-20 xl:pl-[130px]">
+                <div className="px-[13px] sm:px-20 xl:pl-[130px]">
                   <h6 className="text-base font-semibold leading-[30px] mb-2 text-white">
                     {slide.date}
                   </h6>

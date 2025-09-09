@@ -61,7 +61,7 @@ function PagesLayout() {
           />
         )}
         <Outlet />
-        <div className="py-13 sm:py-16 px-3 sm:px-8">
+        <div className="py-[13px] sm:py-16 px-3 sm:px-8">
           <div className="h-[2px] bg-blue-text w-12 mb-5" />
           <h3 className="font-bold mb-2 text-[#252f4A] text-sm">
             WRAPCODERS INC.

@@ -55,7 +55,7 @@ function ContactUs() {
                <a href="javascript:voide()" className="text-sm font-semibold">+1(375)-98745-632</a>
          </div>
     </div> 
-    <div className="px-8 py-8 md:py-13 sm:py-16 grid grid-cols-12 mx-auto z-10 relative">
+    <div className="px-8 py-8 md:py-[13px] sm:py-16 grid grid-cols-12 mx-auto z-10 relative">
     <form className="p-6 sm:p-9 md:p-16 rounded-2xl shadow-sm col-span-12 xl:col-span-6 xl:col-start-4 bg-[#F1F2F3]"
       onSubmit={handleSubmit}
     >

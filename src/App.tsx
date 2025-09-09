@@ -128,7 +128,6 @@ function App() {
               <Route path="/eCommerce" element={<ECommerce />} />
               <Route path="/crm" element={<Crm />} />
               <Route path="/analytics" element={<AnalyTics />} />
-              {/* ---Dashboard-- */}
 
               <Route path="/products" element={<Products />} />
               <Route path="/favorites" element={<Favorites />} />

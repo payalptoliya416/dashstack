@@ -499,7 +499,7 @@ const getPageButtons = () => {
                     activeTab === "Sent" ? "hidden" : ""
                   }`}
                 >
-                  <Search className="text-darkgray w-5 h-5 mr-13" />
+                  <Search className="text-darkgray w-5 h-5 mr-[13px]" />
                   <input
                     type="text"
                     placeholder="Search"

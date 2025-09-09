@@ -333,7 +333,7 @@ function TermsOfServices() {
             </button>
           )}
         </div>
-        <div className="py-13 sm:py-16 border-t border-b border-gray-100 flex justify-center items-center gap-1 mt-16">
+        <div className="py-[13px] sm:py-16 border-t border-b border-gray-100 flex justify-center items-center gap-1 mt-16">
           <button className="py-2 px-10 cursor-pointer rounded-full text-[#d13b4c] text-sm border border-[#d13b4c]  hover:bg-[#d13b4c] hover:text-white transition-all duration-500">Decline</button>
           <button className="py-2 px-10 cursor-pointer rounded-full text-white text-sm bg-[#25b865] border border-[#25b865]">Accept</button>
         </div>

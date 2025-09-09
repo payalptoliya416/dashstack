@@ -85,7 +85,7 @@ function AboutUs() {
   return (
     <>
        <motion.div {...usePageAnimation()}  className="overflow-hidden">
-    <div className="px-8 py-13 sm:py-16">
+    <div className="px-8 py-[13px] sm:py-16">
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-5 items-center">
         <div>
           <span className="text-blue uppercase text-xs mb-6 block">WHO WE ARE</span>
@@ -113,7 +113,7 @@ function AboutUs() {
         </div>
      </div>
     </div> 
-    <div className="px-8 py-13 sm:py-16">
+    <div className="px-8 py-[13px] sm:py-16">
       <p className="text-center w-full max-w-[600px] mx-auto text-darkgray mb-8 text-xl sm:text-[28px] font-bold">We help hundreds of teams plan better events while saving money.</p>
       <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
               {logoMapData.map((logo, index) => (
@@ -131,7 +131,7 @@ function AboutUs() {
           </div>
         </div>
     </div>
-    <div className="px-8 py-13 sm:py-16">
+    <div className="px-8 py-[13px] sm:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
          {statsData.map((stat, index) => (
         <div key={index} className="px-4">
@@ -160,7 +160,7 @@ function AboutUs() {
         </div>
        </div>
     </div>
-     <div className="px-8 py-13 sm:py-16 ">
+     <div className="px-8 py-[13px] sm:py-16 ">
        <h4 className="text-xs text-blue uppercase mb-6 text-center">Our Team</h4>
        <h2 className="text-darkgray text-2xl md:text-3xl 2xl:text-5xl mb-6 font-bold text-center">Amazing team of us.</h2>
        <p className="text-lightgray text-xl text-center">We're here to bring financial stability, improve the economy.</p>
