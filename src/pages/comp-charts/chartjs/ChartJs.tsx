@@ -1,7 +1,7 @@
-import Doughnut from "./Doughnut"
+import DoughnutChart from "./Doughnut"
 import MultipleBar from "./MultipleBar"
 import PieChart from "./PieChart"
-import PolarArea from "./PolarArea"
+import PolarAreaChart from "./PolarArea"
 import RadarChart from "./RadarChart"
 import RoundedArea from "./RoundedArea"
 import RoundedLine from "./RoundedLine"
@@ -52,7 +52,7 @@ function ChartJs() {
        Doughnut
         </div>
         <div className="p-6">
-        <Doughnut/>
+        <DoughnutChart/>
         </div>
         </div>
 
@@ -70,7 +70,7 @@ function ChartJs() {
        Polar Area
         </div>
         <div className="p-6">
-        <PolarArea/>
+        <PolarAreaChart/>
         </div>
         </div>
 
