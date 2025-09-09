@@ -72,8 +72,8 @@ function StackedColumns() {
         opacity: 1,
       },
       legend: {
-        position: "right",
-        offsetY: 40,
+        position: "top",
+        offsetX: 0,
       },
     } as ApexOptions,
   });
@@ -84,6 +84,7 @@ function StackedColumns() {
         series={state.series}
         type="bar"
         height={400}
+        width='100%'
       />
   );
 }

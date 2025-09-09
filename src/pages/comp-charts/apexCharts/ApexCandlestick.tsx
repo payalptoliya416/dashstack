@@ -76,6 +76,7 @@ const ApexCandlestick: React.FC = () => {
         series={series}
         type="candlestick"
         height={350}
+        width='100%'
       />
     </div>
   );

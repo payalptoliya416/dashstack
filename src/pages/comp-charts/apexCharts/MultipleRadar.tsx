@@ -61,6 +61,7 @@ function MultipleRadar() {
         series={state.series}
         type="radar"
         height={350}
+        width='100%'
       />
     </div>
   );

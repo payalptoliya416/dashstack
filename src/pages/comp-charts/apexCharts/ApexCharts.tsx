@@ -1,8 +1,10 @@
+import UIOptionTable from "../../base-ui/UIOptionTable"
 import ApexCandlestick from "./ApexCandlestick"
 import BarWithLine from "./BarWithLine"
 import BasicArea from "./BasicArea"
 import BasicBar from "./BasicBar"
 import BasicRadar from "./BasicRadar"
+import { ChartTable } from "./ChartTableData"
 import ColumDataLabels from "./ColumDataLabels"
 import GradiuntDonut from "./GradiuntDonut"
 import GradientLine from "./GradiuntLine"
@@ -89,12 +91,12 @@ function ApexCharts() {
         </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
              <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
      Simple Pie
         </div>
-        <div className="p-6">
+        <div className="p-6 flex justify-center items-center">
         <SimplePie/>
         </div>
         </div>
@@ -102,7 +104,7 @@ function ApexCharts() {
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
       Simple Donut
         </div>
-        <div className="p-6">
+        <div className="p-6 flex justify-center items-center">
         <SimpleDonut/>
         </div>
         </div>
@@ -110,13 +112,13 @@ function ApexCharts() {
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
       Gradient Donut
         </div>
-        <div className="p-6">
+        <div className="p-6 flex justify-center items-center">
         <GradiuntDonut/>
         </div>
         </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
              <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
      Basic Radar
@@ -142,6 +144,7 @@ function ApexCharts() {
         </div>
         </div>
         </div>
+    <UIOptionTable title="Options" options={ChartTable} />
     </>
   )
 }

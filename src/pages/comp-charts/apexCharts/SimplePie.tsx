@@ -24,7 +24,7 @@ function SimplePie() {
           breakpoint: 480,
           options: {
             chart: {
-              width: 200,
+            //   width: 200,
             },
             legend: {
               position: "bottom",
@@ -36,14 +36,12 @@ function SimplePie() {
   });
 
   return (
-    <div>
       <ReactApexChart
         options={state.options}
         series={state.series}
         type="pie"
         width={380}
       />
-    </div>
   );
 }
 

@@ -10,7 +10,7 @@ function GradientDonut() {
     series: [44, 55, 41, 17, 15],
     options: {
       chart: {
-        width: 380,
+        // width: 380,
         type: "donut" as const, // ✅ TypeScript fix
       },
       plotOptions: {
@@ -51,7 +51,7 @@ function GradientDonut() {
         {
           breakpoint: 480,
           options: {
-            chart: { width: 200 },
+            // chart: { width: 200 },
             legend: { position: "bottom", horizontalAlign: "center" },
           },
         },

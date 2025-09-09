@@ -69,6 +69,7 @@ function BarWithLine() {
         options={state.options}
         series={state.series}
         height={350}
+        width='100%'
       />
     </div>
   );

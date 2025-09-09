@@ -10,19 +10,19 @@ function SimpleDonut() {
     series: [44, 55, 41, 17, 15],
     options: {
       chart: {
-        type: "donut" as const, // ✅ tell TS this is literal "donut"
+        type: "donut" as const, 
       },
       labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
-         colors: ["#00275E", "#3E97FF", "#85D00B", "#00CCCC", "#6610F2"],  // custom colors
+         colors: ["#00275E", "#3E97FF", "#85D00B", "#00CCCC", "#6610F2"],  
       legend: {
         position: "bottom",
-        horizontalAlign: "center", // center legend
+        horizontalAlign: "center", 
       },
       responsive: [
         {
           breakpoint: 480,
           options: {
-            chart: { width: 200 },
+            // chart: { width: 200 },
             legend: { position: "bottom", horizontalAlign: "center" },
           },
         },

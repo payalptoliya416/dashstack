@@ -76,17 +76,13 @@ const LineDataLabels: React.FC = () => {
   });
 
   return (
-    <div>
-      <div id="chart">
         <ReactApexChart
           options={options}
           series={series}
           type="line"
           height={350}
+          width='100%'
         />
-      </div>
-      <div id="html-dist"></div>
-    </div>
   );
 };
 

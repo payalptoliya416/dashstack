@@ -51,14 +51,13 @@ function BasicRadar() {
   });
 
   return (
-    <div>
       <ReactApexChart
         options={state.options}
         series={state.series}
         type="radar"
         height={350}
+        width='100%'
       />
-    </div>
   );
 }
 
