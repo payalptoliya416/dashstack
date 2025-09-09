@@ -78,9 +78,15 @@ function Maps() {
       <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
         Basic
       </div>
-      <div className="p-6">
-        <div ref={mapRef} style={{ width: "100%", height: "500px" }} />
-      </div>
+       <div className="grid grid-cols-12"> 
+        <div className="col-span-12">
+        <div className="w-full overflow-x-auto bg-white rounded-xl">
+          <div className="min-w-full">
+          <div ref={mapRef} style={{ width: "100%", height: "500px" }} />
+          </div>
+        </div>
+        </div>
+        </div>
     </div>
     
         <div className="rounded-lg shadow-md border border-gray-200 bg-white mt-7">
