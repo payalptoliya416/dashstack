@@ -74,7 +74,7 @@ import FaltIcon from "./pages/icons/flaticon/FaltIcon";
 import Feather from "./pages/icons/feather/FeatherIcon";
 import FontAwesome from "./pages/icons/fontawesome/FontAwesomeIcon";
 import BootstrapIcon from "./pages/icons/bootstrap/BootstrapIcon";
-import LucideIcon from "./pages/icons/LucideIcon";
+import LucideIcon from "./pages/icons/lucide/LucideIcon";
 import TablerIcon from "./pages/icons/TablerIcon";
 import WeatherIcon from "./pages/icons/WeatherIcon";
 import ReactTable from "./pages/table-ui/reacttable/ReactTable";

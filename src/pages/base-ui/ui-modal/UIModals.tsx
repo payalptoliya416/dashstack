@@ -69,7 +69,7 @@ const [isModal, setIsModal] = useState(false);
       <motion.div
                   {...usePageAnimation()}
                   className="overflow-hidden">
-      <div className="p-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
         <div className="rounded-lg shadow-md border border-gray-200 bg-white mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px]">
           Basic

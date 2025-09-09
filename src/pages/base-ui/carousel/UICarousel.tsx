@@ -22,7 +22,7 @@ function UICarousel() {
       <motion.div
                   {...usePageAnimation()}
                   className="overflow-hidden">
-     <div className="p-6 grid grid-cols-1 xl:grid-cols-2 gap-6 carousel-parent">
+     <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 carousel-parent">
       {/* Basic */}
       <div className="rounded-lg shadow-md bg-white">
         <div className="p-4 font-bold text-base  sm:text-lg">Basic</div>

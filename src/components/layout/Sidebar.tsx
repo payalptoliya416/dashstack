@@ -32,7 +32,7 @@ import {
   ChartNoAxesCombined,
 } from "lucide-react";
 import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
-import { useEffect, useState, type FC } from "react";
+import { useEffect, useRef, useState, type FC } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/slice/authSlice";
 
@@ -238,6 +238,7 @@ export const Sidebar: FC<SidebarProps> = ({
   onCloseMobile,
 }) => {
   const dispatch = useDispatch();
+    const location = useLocation();
   const navigate = useNavigate();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
@@ -249,8 +250,6 @@ export const Sidebar: FC<SidebarProps> = ({
     dispatch(logout());
     navigate("/");
   };
-  
-const location = useLocation();
 
 useEffect(() => {
   const activeParent = topLinks
@@ -268,6 +267,19 @@ useEffect(() => {
     setOpenDropdown(null);
   }
 }, [location.pathname]);
+
+  const activeLinkRef = useRef<HTMLAnchorElement | null>(null);
+
+  useEffect(() => {
+    // Scroll active link into view when route changes
+    if (activeLinkRef.current) {
+      activeLinkRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest", // keeps it slightly below top
+      });
+    }
+  }, [location.pathname]);
+
 
   return (
     <>
@@ -313,14 +325,17 @@ useEffect(() => {
                   {group.map(({ name, path, icon: Icon, children }) => {
                     const isLogout = name === "Logout";
                     const isOpen = openDropdown === name;
+                       const hasActiveChild = children?.some(child => child.path === location.pathname);
                     // const isAnyChildActive = children?.some(child => location.pathname === child.path);
                     // const isParentActive = isOpen || isAnyChildActive;
 
                     if (!children) {
+                          const isActive = location.pathname === path;
                       return (
                         <NavLink
                           key={name}
                           to={isLogout ? "#" : path || "#"}
+                          ref={isActive ? activeLinkRef : null}
                           onClick={isLogout ? handleLogOut : undefined}
                           className={({ isActive }) =>
                             `group flex items-center gap-2 px-2 py-2 lg:py-4 my-1 rounded-md text-sm transition-all duration-300
@@ -385,10 +400,13 @@ useEffect(() => {
                         {/* Submenu */}
                         {isOpen && !collapsed && (
                           <div className="my-1 space-y-1">
-                            {children.map((sub) => (
+                            {children.map((sub) => {
+                                  const isSubActive = location.pathname === sub.path;
+                                  return (
                               <NavLink
                                 key={sub.name}
                                 to={sub.path || "#"}
+                                ref={isSubActive  ? activeLinkRef : null}
                                 className={({ isActive }) =>
                                   `flex items-center gap-2 px-2 py-2 lg:py-2 rounded text-sm transition-all duration-300 mx-3 xl:mx-5
                               ${
@@ -400,7 +418,7 @@ useEffect(() => {
                               >
                                 <Dot size={16} /> {sub.name}
                               </NavLink>
-                            ))}
+                                ) })}
                           </div>
                         )}
                       </div>
