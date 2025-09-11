@@ -325,9 +325,6 @@ useEffect(() => {
                   {group.map(({ name, path, icon: Icon, children }) => {
                     const isLogout = name === "Logout";
                     const isOpen = openDropdown === name;
-                       const hasActiveChild = children?.some(child => child.path === location.pathname);
-                    // const isAnyChildActive = children?.some(child => location.pathname === child.path);
-                    // const isParentActive = isOpen || isAnyChildActive;
 
                     if (!children) {
                           const isActive = location.pathname === path;
