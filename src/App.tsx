@@ -76,7 +76,7 @@ import FontAwesome from "./pages/icons/fontawesome/FontAwesomeIcon";
 import BootstrapIcon from "./pages/icons/bootstrap/BootstrapIcon";
 import LucideIcon from "./pages/icons/lucide/LucideIcon";
 import TablerIcon from "./pages/icons/tabler/TablerIcon";
-import WeatherIcon from "./pages/icons/WeatherIcon";
+import WeatherIcon from "./pages/icons/Weather/WeatherIcon";
 import ReactTable from "./pages/table-ui/reacttable/ReactTable";
 import BoxIcon from "./pages/icons/boxicon/BoxIcon";
 import Radios from "./pages/forms/radios/Radios";
