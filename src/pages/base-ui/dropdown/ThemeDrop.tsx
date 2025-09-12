@@ -42,8 +42,8 @@ export const ThemeDrop: React.FC<DropdownProps> = ({ color = '#3e97ff1a', label,
   return (
     <Menu as="div" className="relative inline-block text-left" ref={menuRef}>
       <div>
-        <Menu.Button
-          className={`px-5 py-2 rounded text-white bg-[${color}] font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500`}
+        <Menu.Button  style={{ backgroundColor: color }}
+          className={`px-5 py-2 rounded text-white font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500`}
           onClick={handleMenuToggle}
         >
           {label} <ChevronDown className="inline-block ml-2" size={12} />
@@ -60,8 +60,8 @@ export const ThemeDrop: React.FC<DropdownProps> = ({ color = '#3e97ff1a', label,
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items
-          className={`absolute left-0 mt-2 w-44 md:w-56 origin-top-right rounded-md bg-[${color}] text-white shadow-lg focus:outline-none z-10`}
+        <Menu.Items  style={{ backgroundColor: color }}
+          className={`absolute left-0 mt-2 w-44 md:w-56 origin-top-right rounded-md text-white shadow-lg focus:outline-none z-10`}
         >
           <div className="py-1">
             <Menu.Item as={Fragment}>

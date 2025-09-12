@@ -42,8 +42,8 @@ export const MenuSizrDrop: React.FC<DropdownProps> = ({ color = '#3e97ff', label
   return (
     <Menu as="div" className="relative inline-block text-left" ref={menuRef}>
       <div>
-        <Menu.Button
-          className={`px-5 py-2 rounded text-white bg-[${color}] font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500`}
+        <Menu.Button  style={{ backgroundColor: color }}
+          className={`px-5 py-2 rounded text-white font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500`}
           onClick={handleMenuToggle}
         >
          

@@ -7,14 +7,14 @@ export const SplitDrop: React.FC<DropdownProps> = ({ color, label }) => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div className="flex">
-        <button
-          className={`px-5 py-2 rounded-l text-white bg-[${color}] font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500`}
+        <button  style={{ backgroundColor: color }}
+          className={`px-5 py-2 rounded-l text-white font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500`}
         >
           {label}
         </button>
 
-        <Menu.Button
-          className={`px-[15px] py-2 rounded-r text-white bg-[${color}] focus:outline-none font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500`}
+        <Menu.Button  style={{ backgroundColor: color }}
+          className={`px-[15px] py-2 rounded-r text-white focus:outline-none font-semibold text-sm cursor-pointer hover:opacity-85 transition-all duration-500`}
         >
           <ChevronDown className="inline-block" size={12} />
         </Menu.Button>
