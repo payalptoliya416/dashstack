@@ -430,7 +430,7 @@ useEffect(() => {
               <div className={`p-3 xl:p-6 rounded bg-primary mx-3 xl:mx-5 text-white text-center ${collapsed ? 'hidden': ''}`}>
                     <h3 className="text-base uppercase mb-2">Support Center</h3>
                     <p className="text-13 leading-[16px] w-full max-w-36 mb-6">Window is a production ready admin dashboard to get started up and running quickly.</p>
-                    <button className="px-3 py-2 bg-blue rounded text-sm w-full">Get Support</button>
+                    <a href="javascript:void(0)" className="px-3 py-2 bg-blue rounded text-sm w-full block">Get Support</a>
               </div>
             </nav>
           </div>

@@ -46,7 +46,7 @@ useEffect(() => {
       <>
         <Popover.Button
           ref={buttonRef}
-          className={`relative z-10 text-[10px] font-bold py-1 sm:py-2 xl:py-11 pl-2 xl:pl-[13px] pr-1 flex w-full items-center overflow-hidden focus:outline-none cursor-pointer ${event.bg} ${event.text}`}
+          className={`relative z-10 text-[10px] font-bold py-1 sm:py-2 xl:py-[11px] pl-2 xl:pl-[13px] pr-1 flex w-full items-center overflow-hidden focus:outline-none cursor-pointer ${event.bg} ${event.text}`}
           style={{
             backgroundImage: "url('/images/pattern2.png')",
             backgroundRepeat: "repeat",

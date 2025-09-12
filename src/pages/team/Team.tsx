@@ -24,7 +24,7 @@ const MotionLink = motion(Link);
         <MainTitle title="Team" />
         <MotionLink  whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          transition={{ duration: 0.2 }} to='/team/add-team-member' className="text-white text-sm font-bold bg-[#4379EE] rounded-md py-2 sm:py-11 px-[27px] transition-all duration-200 hover:shadow-md">
+          transition={{ duration: 0.2 }} to='/team/add-team-member' className="text-white text-sm font-bold bg-[#4379EE] rounded-md py-2 sm:py-[11px] px-[27px] transition-all duration-200 hover:shadow-md">
           Add New Member
         </MotionLink>
       </div>
