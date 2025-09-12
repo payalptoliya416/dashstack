@@ -270,28 +270,43 @@ useEffect(() => {
 
   const activeLinkRef = useRef<HTMLAnchorElement | null>(null);
 
-  useEffect(() => {
+useEffect(() => {
   if (activeLinkRef.current) {
     const parent = activeLinkRef.current.closest(".overflow-y-auto") as HTMLElement;
 
     if (parent) {
-      // make sure element is visible before calculating
-      requestAnimationFrame(() => {
-        const parentRect = parent.getBoundingClientRect();
-        const childRect = activeLinkRef.current!.getBoundingClientRect();
+      const parentRect = parent.getBoundingClientRect();
+      const childRect = activeLinkRef.current!.getBoundingClientRect();
 
-        const relativeTop = childRect.top - parentRect.top;
-        const offset = 120; // 👈 top margin (adjust as needed)
-        const scrollTo = parent.scrollTop + relativeTop - offset;
+      const relativeTop = childRect.top - parentRect.top;
+      const offset = 120; // 👈 top margin
+      const target = parent.scrollTop + relativeTop - offset;
 
-        parent.scrollTo({
-          top: scrollTo,
-          behavior: "smooth",
-        });
-      });
+      let start: number | null = null;
+      const duration = 500; // 0.5s
+      const startScroll = parent.scrollTop;
+
+      const step = (timestamp: number) => {
+        if (start === null) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+
+        // easeInOutCubic
+        const ease = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        parent.scrollTop = startScroll + (target - startScroll) * ease;
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      };
+
+      requestAnimationFrame(step);
     }
   }
 }, [location.pathname, openDropdown]);
+
 
   return (
     <>

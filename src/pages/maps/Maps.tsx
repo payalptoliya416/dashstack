@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import jsVectorMap from "jsvectormap";
 import "jsvectormap/dist/jsvectormap.css";
 import "jsvectormap/dist/maps/world";
+import MarkerMap from "./MarkerMap";
 
 function Maps() {
   const mapRef = useRef<HTMLDivElement | null>(null);
@@ -10,7 +11,6 @@ function Maps() {
   useEffect(() => {
     if (!mapRef.current) return;
 
-    // cleanup old instance and DOM content
     if (mapInstance.current) {
       mapInstance.current.destroy();
       mapInstance.current = null;
@@ -88,6 +88,8 @@ function Maps() {
         </div>
         </div>
     </div>
+
+    <MarkerMap/>
     
         <div className="rounded-lg shadow-md border border-gray-200 bg-white mt-7">
         <div className="p-4 md:px-6 md:py-3 border-b border-gray-200 font-bold text-[17px]">
