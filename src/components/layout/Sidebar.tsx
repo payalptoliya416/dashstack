@@ -35,7 +35,6 @@ import type { SidebarLink, SidebarProps } from "../../types/Sidebar";
 import { useEffect, useRef, useState, type FC } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/slice/authSlice";
-import { animate } from "framer-motion";
 
 export const topLinks: SidebarLink[] = [
   // { name: "Dashboard", path: "/dashboard", icon: CircleGauge },
@@ -271,11 +270,12 @@ useEffect(() => {
 
   const activeLinkRef = useRef<HTMLAnchorElement | null>(null);
 
-useEffect(() => {
+  useEffect(() => {
   if (activeLinkRef.current) {
     const parent = activeLinkRef.current.closest(".overflow-y-auto") as HTMLElement;
 
     if (parent) {
+      // make sure element is visible before calculating
       requestAnimationFrame(() => {
         const parentRect = parent.getBoundingClientRect();
         const childRect = activeLinkRef.current!.getBoundingClientRect();
@@ -284,13 +284,9 @@ useEffect(() => {
         const offset = 120; // 👈 top margin (adjust as needed)
         const scrollTo = parent.scrollTop + relativeTop - offset;
 
-        // 👇 Framer Motion animation for scrollTop
-        animate(parent.scrollTop, scrollTo, {
-          duration: 0.6,
-          ease: "easeInOut",
-          onUpdate: (latest) => {
-            parent.scrollTop = latest;
-          },
+        parent.scrollTo({
+          top: scrollTo,
+          behavior: "smooth",
         });
       });
     }
