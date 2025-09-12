@@ -2,21 +2,7 @@ import { Switch } from "@headlessui/react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { usePageAnimation } from "../../hooks/usePageAnimation";
-interface NotificationCategory {
-  title: string;
-}
-
-interface RadioOption {
-  id: string;
-  title: string;
-  description: string;
-}
-
-interface SwitchOption {
-  id: string;
-  title: string;
-  description: string;
-}
+import type { NotificationCategory, RadioOption, SwitchOption } from "../../types/AccountSetting";
 
 const categories: NotificationCategory[] = [
   { title: "Conversations tones" },

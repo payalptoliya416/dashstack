@@ -1,13 +1,9 @@
 import { Switch } from "@headlessui/react";
 import { Plus } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { usePageAnimation } from "../../hooks/usePageAnimation";
-
-interface FormRowProps {
-  label: string;
-  children: ReactNode;
-}
+import type { FormRowProps } from "../../types/AccountSetting";
 
 function FormRow({ label, children }: FormRowProps) {
   return (

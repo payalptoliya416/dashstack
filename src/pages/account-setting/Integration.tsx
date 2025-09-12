@@ -5,22 +5,7 @@ import { Switch, Dialog, Transition } from "@headlessui/react";
 import toast, { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
 import { usePageAnimation } from "../../hooks/usePageAnimation";
-interface Integration {
-  id: number;
-  name: string;
-  installs: string;
-  icon: string;
-  description: string;
-  enabled: boolean;
-}
-interface Available {
-  id: number;
-  name: string;
-  installs: string;
-  icon: string;
-  description: string;
-  enabled: boolean;
-}
+import type { Available, Integration } from "../../types/AccountSetting";
 
 const integrationsData: Integration[] = [
   {
@@ -78,6 +63,7 @@ const integrationsData: Integration[] = [
     enabled: true,
   },
 ];
+
 const availableData: Available[] = [
   {
     id: 1,

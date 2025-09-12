@@ -3,14 +3,7 @@ import { type ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "../../components/ui/DataTable";
 import { motion } from "framer-motion";
 import { usePageAnimation } from "../../hooks/usePageAnimation";
-
-interface PaymentMethod {
-  id: number;
-  image: string;
-  title: string;
-  subText: string;
-  isDefault: boolean;
-}
+import type { PaymentMethod } from "../../types/AccountSetting";
 
 export type BillingStatus = "Paid" | "Pending" | "Reject";
 export interface Billing {

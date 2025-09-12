@@ -1,19 +1,8 @@
 import { Switch } from "@headlessui/react";
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { usePageAnimation } from "../../hooks/usePageAnimation";
-interface FormRowProps {
-  label: string;
-  children: ReactNode;
-}
-
-interface SecurityOption {
-  title: string;
-  description: string;
-  type: "switch" | "button";
-  buttonLabel?: string;
-}
-
+import type { FormRowProps, SecurityOption } from "../../types/AccountSetting";
 
 const securitySwitchOptions: SecurityOption[] = [
   {

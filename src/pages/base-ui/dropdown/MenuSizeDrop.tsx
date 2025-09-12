@@ -1,17 +1,7 @@
 import { Fragment, useState, useEffect, useRef } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDown, Airplay, Star, Trash2, LayoutGridIcon } from 'lucide-react';
-
-interface DropdownProps {
-  color?: string;
-  label: string;
-  closeType: 'default' | 'outside' | 'inside' | 'manual';
-  width: string; 
-}
-
-interface MenuItemRenderProps {
-  active: boolean;
-}
+import type { DropdownProps, MenuItemRenderProps } from '../../../types/Dropdown';
 
 export const MenuSizrDrop: React.FC<DropdownProps> = ({ color = '#3e97ff', label, closeType, width }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,7 +56,7 @@ export const MenuSizrDrop: React.FC<DropdownProps> = ({ color = '#3e97ff', label
         >
           <div className="py-1">
             <Menu.Item as={Fragment}>
-              {({ active }: MenuItemRenderProps) => (
+              {({ active }: MenuItemRenderProps ) => (
                 <a
                   href="#"
                   className={`block px-4 py-[10px] text-sm whitespace-nowrap ${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}`}
