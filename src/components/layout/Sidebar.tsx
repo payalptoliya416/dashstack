@@ -271,14 +271,27 @@ useEffect(() => {
   const activeLinkRef = useRef<HTMLAnchorElement | null>(null);
 
   useEffect(() => {
-    // Scroll active link into view when route changes
-    if (activeLinkRef.current) {
-      activeLinkRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest", // keeps it slightly below top
+  if (activeLinkRef.current) {
+    const parent = activeLinkRef.current.closest(".overflow-y-auto") as HTMLElement;
+
+    if (parent) {
+      // make sure element is visible before calculating
+      requestAnimationFrame(() => {
+        const parentRect = parent.getBoundingClientRect();
+        const childRect = activeLinkRef.current!.getBoundingClientRect();
+
+        const relativeTop = childRect.top - parentRect.top;
+        const offset = 70; // 👈 top margin (adjust as needed)
+        const scrollTo = parent.scrollTop + relativeTop - offset;
+
+        parent.scrollTo({
+          top: scrollTo,
+          behavior: "smooth",
+        });
       });
     }
-  }, [location.pathname]);
+  }
+}, [location.pathname, openDropdown]); // 👈 depend on openDropdown also
 
 
   return (
