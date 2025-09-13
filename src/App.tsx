@@ -40,7 +40,6 @@ import Account from "./pages/account-setting/Account";
 import Security from "./pages/account-setting/Security";
 import AccoNotification from "./pages/account-setting/AccoNotification";
 import PlanBilling from "./pages/account-setting/PlanBilling";
-import Integration from "./pages/account-setting/Integration";
 import Starter from "./pages/other-pages/Starter";
 import FAQs from "./pages/other-pages/FAQs";
 import InfoPages from "./pages/other-pages/InfoPages";
@@ -99,6 +98,7 @@ import ApexCharts from "./pages/comp-charts/apexCharts/ApexCharts";
 import ChartJs from "./pages/comp-charts/chartjs/ChartJs";
 import Recharts from "./pages/comp-charts/recharts/Recharts";
 import ProgressBar from "./pages/comp-charts/progressbar/ProgressBar";
+import IntegrationSeting from "./pages/account-setting/Integration";
 
 function App() {
   return (
@@ -157,7 +157,7 @@ function App() {
                 <Route path="Security" element={<Security />} />
                 <Route path="notification" element={<AccoNotification />} />
                 <Route path="plan-billing" element={<PlanBilling />} />
-                <Route path="integration" element={<Integration />} />
+                <Route path="integration" element={<IntegrationSeting />} />
               </Route>
 
               {/* --Other pages-- */}

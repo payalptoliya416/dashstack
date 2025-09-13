@@ -121,7 +121,7 @@ const availableData: Available[] = [
   },
 ];
 
-function Integration() {
+function IntegrationSeting() {
 
   const [integrations, setIntegrations] = useState<Integration[]>(integrationsData);
   const toggleSwitch = (id: number) => {
@@ -437,4 +437,4 @@ function Integration() {
   )
 }
 
-export default Integration
+export default IntegrationSeting
