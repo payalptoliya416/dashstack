@@ -1,5 +1,7 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function Toastity() {
   // === Positions ===
@@ -38,7 +40,7 @@ function Toastity() {
     });
 
   return (
-    <>
+     <motion.div  {...usePageAnimation()} className="overflow-hidden">
       <ToastContainer
          style={{ zIndex: 999999 }} 
       />
@@ -180,7 +182,7 @@ function Toastity() {
           </p>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
 

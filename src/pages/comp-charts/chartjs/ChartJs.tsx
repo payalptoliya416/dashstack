@@ -8,10 +8,12 @@ import RadarChart from "./RadarChart"
 import RoundedArea from "./RoundedArea"
 import RoundedLine from "./RoundedLine"
 import StackedBar from "./StackedBar"
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function ChartJs() {
   return (
-    <>
+    <motion.div  {...usePageAnimation()} className="overflow-hidden">
        <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Multiple Bar
@@ -86,7 +88,7 @@ function ChartJs() {
         </div>
         </div>
   <UIOptionTable title="Options" options={ChartJsData} />
-    </>
+    </motion.div>
   )
 }
 

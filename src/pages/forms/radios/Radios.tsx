@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { businessPlans, cardPlans, contactCards, iconPlans, imageOptions, paymentOptions, plans, radiosTable, shippingOptions } from "./RadiosData";
 import UIOptionTable from "../../base-ui/UIOptionTable";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function Radios() {
   const [selected1, setSelected1] = useState<string>("basic");
@@ -21,7 +23,7 @@ function Radios() {
   const [selected8, setSelected8] = useState<string>("image1");
 
   return (
-    <>
+     <motion.div  {...usePageAnimation()} className="overflow-hidden">
       {/* Example_1 */}
       <div className="rounded-lg shadow border border-gray-100 bg-white mb-7">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
@@ -377,7 +379,7 @@ function Radios() {
         </div>
       </div>
          <UIOptionTable title="Options" options={radiosTable} />
-    </>
+    </motion.div>
   );
 }
 

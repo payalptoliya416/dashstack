@@ -88,7 +88,7 @@ function MegaMenu() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 col-span-12 xl:col-span-8 gap-4 lg:gap-0">
                         <Link to='/eCommerce' className="flex md:items-center gap-4 flex-col md:flex-row items-start">
                         <div>
-                            <div className="w-14 h-14 rounded flex justify-center items-center bg-[#ECF5FF]">
+                            <div className="w-9 sm:w-14 h-9 sm:h-14 rounded flex justify-center items-center bg-[#ECF5FF]">
                             <ShoppingCart className=" text-blue-text " />
                             </div>
                         </div>
@@ -102,7 +102,7 @@ function MegaMenu() {
 
                         <Link to='/analytics' className="flex md:items-center gap-4 flex-col md:flex-row items-start">
                         <div>
-                            <div className="w-14 h-14 rounded flex justify-center items-center bg-[#E9F8F0]">
+                            <div className="w-9 sm:w-14 h-9 sm:h-14 rounded flex justify-center items-center bg-[#E9F8F0]">
                             <ChartColumnIncreasing className=" text-[#25b865] " />
                             </div>
                         </div>
@@ -116,7 +116,7 @@ function MegaMenu() {
 
                         <Link to='/crm' className="flex md:items-center gap-4 flex-col md:flex-row items-start">
                         <div>
-                            <div className="w-14 h-14 rounded flex justify-center items-center bg-[#FBEFF1]">
+                            <div className="w-9 sm:w-14 h-9 sm:h-14 rounded flex justify-center items-center bg-[#FBEFF1]">
                             <RadioTower className="text-[#d13b4c] " />
                             </div>
                         </div>
@@ -130,7 +130,7 @@ function MegaMenu() {
 
                         <Link to='#' className="flex md:items-center gap-4 flex-col md:flex-row items-start">
                         <div>
-                            <div className="w-14 h-14 rounded flex justify-center items-center bg-[#FCF3E8]">
+                            <div className="w-9 sm:w-14 h-9 sm:h-14 rounded flex justify-center items-center bg-[#FCF3E8]">
                             <BriefcaseBusiness className="text-[#e49e3d] " />
                             </div>
                         </div>
@@ -146,7 +146,7 @@ function MegaMenu() {
 
                         <Link to='#' className="flex md:items-center gap-4 flex-col md:flex-row items-start">
                         <div>
-                            <div className="w-14 h-14 rounded flex justify-center items-center bg-[#EEF0F3]">
+                            <div className="w-9 sm:w-14 h-9 sm:h-14 rounded flex justify-center items-center bg-[#EEF0F3]">
                             <CircleDollarSign className="text-darkgray" />
                             </div>
                         </div>
@@ -162,7 +162,7 @@ function MegaMenu() {
 
                         <Link to='#' className="flex md:items-center gap-4 flex-col md:flex-row items-start">
                         <div>
-                            <div className="w-14 h-14 rounded flex justify-center items-center bg-[#E6F6FC]">
+                            <div className="w-9 sm:w-14 h-9 sm:h-14 rounded flex justify-center items-center bg-[#E6F6FC]">
                             <LifeBuoy className="text-[#02a0e4]" />
                             </div>
                         </div>
@@ -208,7 +208,7 @@ function MegaMenu() {
                         <div className="grid grid-cols-1 lg:grid-cols-2 col-span-12 xl:col-span-8 gap-4 lg:gap-0">
                         <Link to='/inbox' className="flex md:items-center gap-4 flex-col md:flex-row items-start">
                             <div>
-                            <div className="w-14 h-14 rounded flex justify-center items-center bg-[#F1F2F3]">
+                            <div className="w-9 sm:w-14 h-9 sm:h-14 rounded flex justify-center items-center bg-[#F1F2F3]">
                                 <MessageSquareMore className=" text-blue-text " />
                             </div>
                             </div>
@@ -220,7 +220,7 @@ function MegaMenu() {
 
                         <Link to='/inbox' className="flex md:items-center gap-4 flex-col md:flex-row items-start">
                             <div>
-                            <div className="w-14 h-14 rounded flex justify-center items-center bg-[#F1F2F3]">
+                            <div className="w-9 sm:w-14 h-9 sm:h-14 rounded flex justify-center items-center bg-[#F1F2F3]">
                                 <Mail className="text-blue-text " />
                             </div>
                             </div>
@@ -232,7 +232,7 @@ function MegaMenu() {
 
                         <Link to='/contact' className="flex md:items-center gap-4 flex-col md:flex-row items-start">
                             <div>
-                            <div className="w-14 h-14 rounded flex justify-center items-center bg-[#F1F2F3]">
+                            <div className="w-9 sm:w-14 h-9 sm:h-14 rounded flex justify-center items-center bg-[#F1F2F3]">
                                 <Contact className="text-blue-text" />
                             </div>
                             </div>
@@ -244,7 +244,7 @@ function MegaMenu() {
 
                         <Link to='/invoice' className="flex md:items-center gap-4 flex-col md:flex-row items-start">
                             <div>
-                            <div className="w-14 h-14 rounded flex justify-center items-center bg-[#F1F2F3]">
+                            <div className="w-9 sm:w-14 h-9 sm:h-14 rounded flex justify-center items-center bg-[#F1F2F3]">
                                 <File className=" text-blue-text " />
                             </div>
                             </div>
@@ -256,7 +256,7 @@ function MegaMenu() {
 
                         <Link to='/kanban-board' className="flex md:items-center gap-4 flex-col md:flex-row items-start">
                             <div>
-                            <div className="w-14 h-14 rounded flex justify-center items-center bg-[#F1F2F3]">
+                            <div className="w-9 sm:w-14 h-9 sm:h-14 rounded flex justify-center items-center bg-[#F1F2F3]">
                                 <SquareKanban className="text-blue-text " />
                             </div>
                             </div>
@@ -268,7 +268,7 @@ function MegaMenu() {
 
                         <Link to='/calendar' className="flex md:items-center gap-4 flex-col md:flex-row items-start">
                             <div>
-                            <div className="w-14 h-14 rounded flex justify-center items-center bg-[#F1F2F3]">
+                            <div className="w-9 sm:w-14 h-9 sm:h-14 rounded flex justify-center items-center bg-[#F1F2F3]">
                                 <CalendarDays className="text-blue-text" />
                             </div>
                             </div>

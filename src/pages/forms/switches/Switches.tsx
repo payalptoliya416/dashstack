@@ -2,6 +2,8 @@ import { Check, X } from "lucide-react";
 import { useState } from "react";
 import UIOptionTable from "../../base-ui/UIOptionTable";
 import { switchTable } from "./SwitchData";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 interface ThemeSwitch {
   id: string;
   label: string;
@@ -52,7 +54,7 @@ const Switches: React.FC = () => {
   };
 
   return (
-    <>
+     <motion.div  {...usePageAnimation()} className="overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-7">
         {/* Default */}
         <div className="rounded-lg shadow border border-gray-100 bg-white xl:mb-7">
@@ -487,7 +489,7 @@ const Switches: React.FC = () => {
       ))}
     </div>
        <UIOptionTable title="Options" options={switchTable} />
-    </>
+    </motion.div>
   );
 };
 

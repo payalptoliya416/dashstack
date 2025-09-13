@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Plus, Minus } from "lucide-react";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 type PersonData = {
   firstName: string;
@@ -188,6 +190,7 @@ const ExpandingTable = () => {
   };
 
   return (
+    <motion.div  {...usePageAnimation()} className="overflow-hidden">
     <div className="rounded-lg shadow border border-gray-200 bg-white mb-7">
       <div className="p-4 border-b border-gray-200 font-bold text-[17px]">
         Expanding
@@ -424,6 +427,7 @@ const ExpandingTable = () => {
         </ul>
       </div>
     </div>
+    </motion.div>
   );
 };
 

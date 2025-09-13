@@ -6,6 +6,8 @@ import {
   useReactTable,
   createColumnHelper,
 } from "@tanstack/react-table";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 // ---------------- Type Definitions ----------------
 type Person = {
@@ -202,6 +204,7 @@ export default function EditableTable() {
   });
 
   return (
+    <motion.div  {...usePageAnimation()} className="overflow-hidden">
     <div className="rounded-lg shadow border border-gray-200 bg-white mb-7">
       <div className="p-4 border-b border-gray-200 font-bold text-[17px]">
         Editable
@@ -246,5 +249,6 @@ export default function EditableTable() {
         </div>
       </div>
     </div>
+    </motion.div>
   );
 }

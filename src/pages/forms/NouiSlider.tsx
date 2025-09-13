@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 const NouiSlider: React.FC = () => {
   const [skipValue, setSkipValue] = useState(20);
@@ -9,7 +11,7 @@ const NouiSlider: React.FC = () => {
   const [pipsValue, setPipsValue] = useState(50);
 
   return (
-    <>
+      <motion.div  {...usePageAnimation()} className="overflow-hidden">
       {/* Basic Range Slider */}
       <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
@@ -123,7 +125,7 @@ const NouiSlider: React.FC = () => {
           />
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 

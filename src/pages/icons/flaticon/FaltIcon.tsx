@@ -1,10 +1,14 @@
 import "@flaticon/flaticon-uicons/css/all/all.css";
 import { ArrowRight } from "lucide-react";
 import { boldIcon, brandIcon, regularIcon, solidIcon, straightIcon } from "./FlatIconData";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function FaltIcon() {
   return (
     <>
+        <motion.div  {...usePageAnimation()} className="overflow-hidden">
+
       <div className="rounded-lg shadow-md border border-gray-200 bg-white mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 flex justify-between items-center ">
           <h3 className="font-bold text-[17px] text-darkgray"> Regular</h3>
@@ -129,6 +133,7 @@ function FaltIcon() {
           </div>
         </div>
       </div>
+        </motion.div>
     </>
   );
 }

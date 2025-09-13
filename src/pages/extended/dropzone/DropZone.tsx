@@ -2,10 +2,12 @@ import AcceptingZone from "./AcceptingZone"
 import BasicDropZone from "./BasicDropZone"
 import MaxFilesZone from "./MaxFilesZone"
 import PreviewsZone from "./PreviewsZone"
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function DropZone() {
   return (
-    <>
+     <motion.div  {...usePageAnimation()} className="overflow-hidden">
       <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Basic
@@ -45,7 +47,7 @@ function DropZone() {
              <p className=" text-sm text-lightgray">For full documentation please visit the link: <a href="https://react-dropzone.js.org/" className=" break-all"><strong className="underline">https://react-dropzone.js.org/</strong></a></p>
           </div>
       </div>     
-    </>
+    </motion.div>
   )
 }
 

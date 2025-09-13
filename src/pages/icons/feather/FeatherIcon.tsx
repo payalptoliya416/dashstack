@@ -1,7 +1,8 @@
 import { Search } from "lucide-react";
 import { featherIcons } from "./FeatherData";
 import { useState, type ChangeEvent, type JSX} from "react";
-
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 interface FeatherIconType {
   name: string;
   svg: JSX.Element;
@@ -21,6 +22,8 @@ const FeatherIcon: React.FC = () => {
 
   return (
     <>
+        <motion.div  {...usePageAnimation()} className="overflow-hidden">
+
       <div className="rounded-lg shadow-md border border-gray-200 bg-[#F8F9FA] mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px] flex items-center gap-2">
           <Search className="text-[#4b5675]" size={18} />
@@ -76,6 +79,7 @@ const FeatherIcon: React.FC = () => {
           </p>
         </div>
       </div>
+        </motion.div>
     </>
   );
 };

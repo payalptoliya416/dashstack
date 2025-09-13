@@ -2,6 +2,9 @@
 import { Search } from "lucide-react";
 import { useState, type ChangeEvent } from "react";
 import { WeatherIconData, WeatherIcons, type IconItem } from "./WeatherIconData";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
+
 function WeatherIcon() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -16,6 +19,7 @@ function WeatherIcon() {
 
   return (
     <>
+    <motion.div  {...usePageAnimation()} className="overflow-hidden">
       {/* Search Box */}
       <div className="rounded-lg shadow-md border border-gray-200 bg-[#F8F9FA] mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px] flex items-center gap-2">
@@ -76,6 +80,7 @@ function WeatherIcon() {
           </p>
         </div>
       </div>
+    </motion.div>
     </>
   );
 }

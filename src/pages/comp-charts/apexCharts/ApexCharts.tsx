@@ -14,11 +14,12 @@ import RadarPolygone from "./RadarPolygone"
 import SimpleDonut from "./SimpleDonut"
 import SimplePie from "./SimplePie"
 import StackedColumns from "./StackedColumns"
-
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function ApexCharts() {
   return (
-    <>
+    <motion.div  {...usePageAnimation()} className="overflow-hidden">
        <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Gradient Line
@@ -145,7 +146,7 @@ function ApexCharts() {
         </div>
         </div>
     <UIOptionTable title="Options" options={ChartTable} />
-    </>
+    </motion.div>
   )
 }
 

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import UIOptionTable from "../../base-ui/UIOptionTable";
 import { ElementTable } from "./ElementsData";
-
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 interface Theme {
   name: string;
   color: string;
@@ -38,7 +39,7 @@ function Elements() {
 
   const [selectedRadio, setSelectedRadio] = useState<string>("");
   return (
-    <>
+      <motion.div  {...usePageAnimation()} className="overflow-hidden">
       <div className="rounded-lg shadow border border-gray-100 bg-white mb-7">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Form Controls
@@ -400,7 +401,7 @@ function Elements() {
       </div>
 
         <UIOptionTable title="Options" options={ElementTable} />
-    </>
+    </motion.div>
   );
 }
 

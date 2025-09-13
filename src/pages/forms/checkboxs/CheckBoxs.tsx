@@ -19,6 +19,8 @@ import {
   radiosTable,
   shippingOptions,
 } from "./CheckBoxsData";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function Checkboxs() {
   const [selected1, setSelected1] = useState<string[]>([]);
@@ -42,7 +44,7 @@ function Checkboxs() {
     }
   };
   return (
-    <>
+     <motion.div  {...usePageAnimation()} className="overflow-hidden">
       {/* Example_1 */}
       <div className="rounded-lg shadow border border-gray-100 bg-white mb-7">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
@@ -479,7 +481,7 @@ function Checkboxs() {
       </div>
 
       <UIOptionTable title="Options" options={radiosTable} />
-    </>
+    </motion.div>
   );
 }
 

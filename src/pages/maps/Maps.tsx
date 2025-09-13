@@ -1,11 +1,14 @@
 
 import BasicMap from "./BasicMap";
 import MarkerMap from "./MarkerMap";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function Maps() {
  
   return (
     <>
+      <motion.div  {...usePageAnimation()} className="overflow-hidden">
       <BasicMap/>
       <MarkerMap/>
       <div className="rounded-lg shadow-md border border-gray-200 bg-white mt-7">
@@ -23,6 +26,7 @@ function Maps() {
              <p className=" text-sm text-lightgray">For full documentation please visit the link: <a href="https://jvm-docs.vercel.app/docs/introduction" className=" break-all"><strong className="underline">https://jvm-docs.vercel.app/docs/introduction</strong></a></p>
           </div>
       </div>
+      </motion.div>
     </>
   );
 }

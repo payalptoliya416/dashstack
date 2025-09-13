@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import ProgressBarTable from "./ProgressBarTable";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function ProgressBar() {
   const [percentage] = useState(60);
@@ -46,6 +48,7 @@ function ProgressBar() {
 
   return (
     <>
+    <motion.div  {...usePageAnimation()} className="overflow-hidden">
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
       <div className="rounded-lg shadow border border-gray-100 bg-white ">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
@@ -176,6 +179,7 @@ function ProgressBar() {
       </div>
     </div>
     <ProgressBarTable/>
+    </motion.div>
     </>
   );
 }

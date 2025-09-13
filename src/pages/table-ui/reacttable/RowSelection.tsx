@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 type PersonData = {
   firstName: string;
@@ -136,6 +138,7 @@ const RowSelection = () => {
   };
 
   return (
+    <motion.div  {...usePageAnimation()} className="overflow-hidden">
     <div className="rounded-lg shadow border border-gray-200 bg-white mb-7">
       <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px]">
         Row Selection
@@ -290,6 +293,7 @@ const RowSelection = () => {
         </div>
       </div>
     </div>
+    </motion.div>
   );
 };
 

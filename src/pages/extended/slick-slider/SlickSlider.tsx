@@ -5,10 +5,12 @@ import MultipleSlider from "./MultipleSlider"
 import ResponsiveSlider from "./ResponsiveSlider"
 import SingleSlider from "./SingleSlider"
 import VariableWidthSlider from "./VariableWidthSlider"
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function SlickSlider() {
   return (
-    <>
+     <motion.div  {...usePageAnimation()} className="overflow-hidden">
       <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Single
@@ -66,7 +68,7 @@ function SlickSlider() {
              <p className=" text-sm text-lightgray">For full documentation please visit the link: <a href="https://react-slick.neostack.com/docs/get-started" className=" break-all"><strong className="underline">https://react-slick.neostack.com/docs/get-started</strong></a></p>
           </div>
       </div>
-    </>
+    </motion.div>
   )
 }
 

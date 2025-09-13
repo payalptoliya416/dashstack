@@ -3,10 +3,12 @@ import Confirmation from "./Confirmation";
 import CustomeMessage from "./CustomeMessage";
 import Positioned from "./Positioned";
 import TypeAlert from "./TypeAlert";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function SweetAlert2() {
   return (
-    <>
+     <motion.div  {...usePageAnimation()} className="overflow-hidden">
       <div className="grid grid-cols-12 2xl:gap-7">
         <div className="rounded-lg shadow border border-gray-100 bg-white col-span-12 2xl:col-span-6 mb-7 2xl:mb-0">
           <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
@@ -54,7 +56,7 @@ function SweetAlert2() {
              <p className=" text-sm text-lightgray">For full documentation please visit the link: <a href="https://github.com/sweetalert2/sweetalert2-react-content" className=" break-all"><strong className="underline">https://github.com/sweetalert2/sweetalert2-react-content</strong></a></p>
           </div>
       </div>
-    </>
+    </motion.div>
   );
 }
 

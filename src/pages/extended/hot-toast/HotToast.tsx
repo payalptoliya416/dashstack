@@ -1,8 +1,10 @@
 import { Toaster, toast } from "react-hot-toast";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function HotToast() {
   return (
-    <>
+      <motion.div  {...usePageAnimation()} className="overflow-hidden">
       <Toaster  containerStyle={{
     zIndex: 999999, 
   }}/>
@@ -137,7 +139,7 @@ function HotToast() {
              <p className=" text-sm text-lightgray">For full documentation please visit the link: <a href="https://react-hot-toast.com/docs" className=" break-all"><strong className="underline">https://react-hot-toast.com/docs</strong></a></p>
           </div>
       </div>
-    </>
+    </motion.div>
   );
 }
 

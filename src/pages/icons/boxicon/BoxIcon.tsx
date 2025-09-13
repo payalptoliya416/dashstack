@@ -2,6 +2,8 @@
 import { Search } from "lucide-react";
 import { useState, type ChangeEvent } from "react";
 import { BoxAllIcon, BoxIcons, type IconItem } from "./BoxIconData";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function BoxIcon() {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -17,6 +19,8 @@ function BoxIcon() {
 
   return (
     <>
+     <motion.div  {...usePageAnimation()} className="overflow-hidden">
+
       {/* Search Box */}
       <div className="rounded-lg shadow-md border border-gray-200 bg-[#F8F9FA] mb-7">
         <div className="p-4 md:p-6 border-b border-gray-200 font-bold text-[17px] flex items-center gap-2">
@@ -77,6 +81,7 @@ function BoxIcon() {
           </p>
         </div>
       </div>
+     </motion.div>
     </>
   );
 }

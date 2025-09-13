@@ -2,10 +2,12 @@ import { DateRangeBasic } from "./DateRangeBasic";
 import { DateRangeMultiple } from "./DateRangeMultiple";
 import { MyDateRangePicker } from "./DateRangePicker";
 import { DateRangeWeekend } from "./DateRangeWeekend";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function DateRange() {
   return (
-    <>
+      <motion.div  {...usePageAnimation()} className="overflow-hidden">
       <div className="rounded-lg shadow border border-gray-100 bg-white mb-7">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
           Basic
@@ -61,7 +63,7 @@ function DateRange() {
           </p>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
 

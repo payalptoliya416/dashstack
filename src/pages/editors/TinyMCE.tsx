@@ -1,6 +1,8 @@
 
 import { useRef, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../hooks/usePageAnimation";
 
 function TinyMCE() {
   const editorRef = useRef<any>(null);
@@ -9,7 +11,7 @@ function TinyMCE() {
   // const [contentFull, setContentFUll] = useState<string>("Welcome to Full Feature TinyMCE!");
 
   return (
-    <>
+      <motion.div  {...usePageAnimation()} className="overflow-hidden">
       <div className="rounded-lg shadow border border-gray-100 bg-white mb-5 xl:mb-7">
         {/* Header */}
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
@@ -110,7 +112,7 @@ function TinyMCE() {
         />
       </div>
     </div>
-    </>
+    </motion.div>
   );
 }
 

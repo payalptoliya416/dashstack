@@ -7,11 +7,13 @@ import { MultiplePickr } from "./MultiplePickr";
 import { WeekNumbersPicker } from "./WeekNumbers";
 import { RangeCalendarPickr } from "./RangeCalendarPickr";
 import { HandlerPicker } from "./HandlerPickr";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 function FlatePickr() {
   
   return (
-    <>
+     <motion.div  {...usePageAnimation()} className="overflow-hidden">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
       <div className="rounded-lg shadow border border-gray-100 bg-white ">
         <div className="p-4 border-b border-gray-100 font-bold text-[17px]">
@@ -78,7 +80,7 @@ function FlatePickr() {
              <p className=" text-sm text-lightgray">For full documentation please visit the link: <a href="https://github.com/haoxins/react-flatpickr"><strong>https://github.com/haoxins/react-flatpickr</strong></a></p>
           </div>
       </div>
-    </>
+    </motion.div>
   );
 }
 

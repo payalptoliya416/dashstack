@@ -21,6 +21,8 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { Move } from "lucide-react";
+import {motion} from 'framer-motion';
+import { usePageAnimation } from "../../../hooks/usePageAnimation";
 
 // ---------------- Types ----------------
 type Person = {
@@ -190,6 +192,8 @@ export default function DragDropTable() {
   };
 
   return (
+    <motion.div  {...usePageAnimation()} className="overflow-hidden">
+
     <div className="rounded-lg shadow border border-gray-200 bg-white mb-7">
       <div className="p-4 border-b border-gray-200 font-bold text-[17px]">
         Drag & Drop
@@ -239,5 +243,6 @@ export default function DragDropTable() {
         </div>
       </div>
     </div>
+    </motion.div>
   );
 }
