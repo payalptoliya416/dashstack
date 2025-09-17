@@ -52,7 +52,7 @@ function DateRange() {
           <p className="text-sm text-[#4b5675]">
             Quill is delivered primarily via npm.{" "}
             <span className="ms-1 text-[#e83e8c] py-[3px] px-2 rounded bg-[#f1f2f3] text-sm w-max">
-              npm install react-icons --save
+              npm install react-date-range
             </span>
           </p>
         </div>
