@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Check, Info } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 
 function NativeForm() {
   const [form, setForm] = useState({
@@ -43,7 +44,7 @@ function NativeForm() {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      alert("✅ Form submitted successfully!");
+      toast.success("Form submitted successfully!")
     }
   };
 
@@ -80,6 +81,8 @@ function NativeForm() {
   );
 
   return (
+    <>
+    <Toaster/>
     <form className="p-6" onSubmit={handleSubmit} noValidate>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-7 mb-5 sm:mb-7">
         {renderField("first", "First name")}
@@ -118,6 +121,7 @@ function NativeForm() {
         Submit form
       </button>
     </form>
+    </>
   );
 }
 

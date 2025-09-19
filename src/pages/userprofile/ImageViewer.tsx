@@ -11,6 +11,7 @@ import {
   ZoomIn,
   ZoomOut,
 } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 
 type ImageViewerProps = {
   images: string[];
@@ -67,9 +68,9 @@ const ImageViewer = ({ images, initialIndex, onClose }: ImageViewerProps) => {
       }
     } else if (navigator.clipboard) {
       await navigator.clipboard.writeText(images[currentIndex]);
-      alert("Image URL copied to clipboard!");
+      toast("Image URL copied to clipboard!")
     } else {
-      alert("Sharing not supported on this browser");
+      toast("Sharing not supported on this browser")
     }
   };
 
@@ -79,6 +80,7 @@ const ImageViewer = ({ images, initialIndex, onClose }: ImageViewerProps) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-90 z-[99999] flex flex-col items-center justify-center">
+      <Toaster/>
       {/* Top bar actions */}
       <div className="absolute top-0 w-full flex justify-end items-center p-4 z-[99999]">
         <div className="flex gap-4 text-white">

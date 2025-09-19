@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Info, Check } from "lucide-react";
 import { validateForm } from "./validations";
+import toast, { Toaster } from "react-hot-toast";
 
 function TooltipForm() {
   const [form, setForm] = useState({
@@ -31,11 +32,13 @@ function TooltipForm() {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      alert("✅ Tooltip form submitted successfully");
+      toast.success(" Tooltip form submitted successfully")
     }
   };
 
   return (
+  <>
+  <Toaster/>
     <form onSubmit={handleSubmit} className="p-6">
       {/* First, Last, Username */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-7 mb-5 sm:mb-7">
@@ -225,6 +228,7 @@ function TooltipForm() {
         Submit form
       </button>
     </form>
+  </>
   );
 }
 

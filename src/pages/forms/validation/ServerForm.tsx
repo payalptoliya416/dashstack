@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Check, Info } from "lucide-react";
 import { validateForm } from "./validations";
+import toast, { Toaster } from "react-hot-toast";
 
 function ServerForm() {
   const [form, setForm] = useState({
@@ -34,11 +35,13 @@ function ServerForm() {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      alert("✅ Server form submitted successfully");
+      toast.success(" Server form submitted successfully")
     }
   };
 
   return (
+    <>
+    <Toaster/>
     <form onSubmit={handleSubmit} className="p-6">
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-7 mb-5 sm:mb-7">
         {/* First name */}
@@ -214,6 +217,7 @@ function ServerForm() {
         Submit form
       </button>
     </form>
+    </>
   );
 }
 
