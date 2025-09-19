@@ -550,7 +550,7 @@ function Crm() {
 
                 <button
                   onClick={() => handleJoin(m.id)}
-                  className={`text-white py-[2px] px-2 rounded text-sm mt-2 flex items-center justify-center ${
+                  className={`text-white py-[2px] px-2 rounded text-sm mt-2 flex items-center justify-center cursor-pointer ${
                     joinedIds.includes(m.id) ? "opacity-50" : ""
                   }`}
                   style={{ backgroundColor: m.joinBtnColor }}
