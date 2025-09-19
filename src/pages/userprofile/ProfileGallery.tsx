@@ -16,7 +16,7 @@ function ProfileGallery() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 2400);
   };
 
   const handleImageClick = (images: string[], index: number) => {
