@@ -38,7 +38,7 @@ const paymentMethods: PaymentMethod[] = [
   },
   {
     id: 4,
-    image: "/images/py-4.svg",
+    image: "/images/py4.svg",
     title: "BankTransfer ending in - 5%",
     subText: "Last time used: 26 March, 2023",
     isDefault: false,
