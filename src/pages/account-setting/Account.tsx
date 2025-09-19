@@ -16,6 +16,7 @@ function FormRow({ label, children }: FormRowProps) {
 
 function Account() {
     const [enabled, setEnabled] = useState(false)
+    const [enabled2, setEnabled2] = useState(false)
      const [image, setImage] = useState<string | null>(null);
 
     const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -157,8 +158,8 @@ function Account() {
                   </div>
                    <div>
                     <Switch
-                  checked={enabled}
-                  onChange={setEnabled}
+                  checked={enabled2}
+                  onChange={setEnabled2}
                   className="group inline-flex cursor-pointer h-5 w-11 items-center rounded-full bg-gray-100 transition data-checked:bg-blue"
                 >
                   <span className="size-3 translate-x-1 rounded-full bg-gray-500 group-data-checked:bg-white transition group-data-checked:translate-x-6" />
