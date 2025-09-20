@@ -1,5 +1,5 @@
 import { Search } from "lucide-react";
-import { featherIcons } from "./FeatherData";
+import { featherIcons, FeatureIconData } from "./FeatherData";
 import { useState, type ChangeEvent, type JSX} from "react";
 import {motion} from 'framer-motion';
 import { usePageAnimation } from "../../../hooks/usePageAnimation";
@@ -46,8 +46,11 @@ const FeatherIcon: React.FC = () => {
                   setActiveIndex(activeIndex === index ? null : index)
                 }
               >
-                {icon.svg}
-
+               <FeatureIconData
+                  icon={icon}
+                  size={24}
+                  className="text-darkgray"
+                />
                 {/* Hover overlay (existing) */}
                 <div className="absolute inset-0 bg-[#eef0f3] flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 z-10">
                   <span className="text-darkgray text-sm font-medium">
